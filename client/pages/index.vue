@@ -1,9 +1,14 @@
 <template>
-  <Tutorial/>
+  <div class="container">
+    <HomePageComponent />
+  </div>
+
 </template>
 
 <script>
+import HomePageComponent from "../components/HomePageComponent.vue";
 export default {
-  name: 'IndexPage'
+    name: "homepage",
+    components: { HomePageComponent }
 }
 </script>
