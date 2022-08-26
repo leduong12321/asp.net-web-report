@@ -142,7 +142,6 @@ namespace ReportAPI.Controllers
             return new JsonResult("Deleted Successfully");
         }
 
-
         [Route("SaveFile")]
         [HttpPost]
         public JsonResult SaveFile()
@@ -163,7 +162,6 @@ namespace ReportAPI.Controllers
             }
             catch (Exception)
             {
-
                 return new JsonResult("anonymous.png");
             }
         }
