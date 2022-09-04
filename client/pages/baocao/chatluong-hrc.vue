@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    Department
+    Báo cáo chất lượng HRC
   </div>
 
 </template>
