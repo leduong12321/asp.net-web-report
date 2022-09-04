@@ -1,3 +1,4 @@
+
 <template>
   <div class="top-menu">
     <div class="d-flex justify-content-center align-items-center">
@@ -14,4 +15,48 @@
 <script>
 export default {}
 </script>
+
+<style lang="scss">
+.top-menu {
+  margin: 42px auto;
+  .golden-lines {
+    border-bottom: 1px solid $primary;
+    &::after {
+      display: block;
+      content: '';
+      height: 1px;
+      width: 80%;
+      background-color: $primary;
+      position: relative;
+      top: 8px;
+      margin: 0px auto;
+    }
+  }
+  a {
+    color: $gray-700;
+    text-transform: uppercase;
+    font-size: 22px;
+    font-weight: 300;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    &::after {
+      display: block;
+      content: '';
+      height: 1px;
+      background-color: transparent;
+    }
+    &.nuxt-link-exact-active {
+      @extend .golden-lines;
+    }
+    &:hover {
+      @extend .golden-lines;
+    }
+  }
+  .dot {
+    display: inline-block;
+    color: $primary;
+    font-size: 8px;
+  }
+}
+</style>
 

@@ -1,15 +1,15 @@
 <template>
     <div class="container">
-      <BaoCaoSanXuatComponent />
+      <BaoCaoSanXuatComponent/>
     </div>
   
   </template>
   
   <script>
-  import BaoCaoSanXuatComponent from "../components/BaoCaoSanXuatComponent.vue";
+import BaoCaoSanXuatComponent from '../components/BaoCaoSanXuatComponent.vue';
   export default {
-      name: "homepage",
-      components: { BaoCaoSanXuatComponent }
-  }
+    name: "homepage",
+    components: { BaoCaoSanXuatComponent }
+}
   </script>
   
