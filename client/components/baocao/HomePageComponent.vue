@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    TRANG CHỦ
+    {{text}}
   </div>
 
 </template>
@@ -11,7 +11,8 @@ export default {
   name: 'homepage-component',
   data() {
     return {
-      product: []
+      text: '',
+      yourValue: null,
     }
   },
   mounted() {
@@ -20,7 +21,7 @@ export default {
   methods: {
     async refreshData() {
       const result = await this.$axios.get(API_URL+'baocaosanxuat');
-      this.product = result.data;
+      this.text = result.data;
     }
   }
 }
