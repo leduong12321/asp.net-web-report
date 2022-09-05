@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    Employee
+    Báo cáo tổng hợp HSM
   </div>
 
 </template>
