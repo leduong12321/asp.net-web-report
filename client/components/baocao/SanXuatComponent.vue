@@ -75,7 +75,6 @@ export default {
     handSubmit() {
       this.API_URL =
         "https://localhost:44315/ReportViewer?from=" + this.fromDay + "&to=" + this.toDay;
-      // document.getElementById('iframe').contentWindow.location.reload();
       document.getElementById("iframe").src = document.getElementById("iframe").src;
       console.log("from", this.fromDay);
       console.log("to", this.toDay);
