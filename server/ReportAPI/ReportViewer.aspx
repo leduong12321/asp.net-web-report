@@ -7,15 +7,24 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
+    <style>
+        .Css-Report {
+            overflow: hidden;
+            margin: 0px;
+        }
+    </style>
 </head>
-<body>
-    <form id="form1" runat="server">
-        <div>
-            <asp:ScriptManager ID="ScriptManager1" runat="server">
-            </asp:ScriptManager>
-        </div>
-        <rsweb:ReportViewer ID="RdlcReportViewer" runat="server" Height="599px" Width="999px">
-        </rsweb:ReportViewer>
-    </form>
+<body class="Css-Report">
+    <div>
+        <form id="form1" runat="server" style="width:100%; height:100%;">
+            <div>
+                <asp:ScriptManager ID="ScriptManager1" runat="server">
+                </asp:ScriptManager>
+            </div>
+            <rsweb:ReportViewer ID="RdlcReportViewer" runat="server" Width="100%" BackColor="White" ZoomMode="PageWidth"
+                        BorderWidth="1px" DocumentMapCollapsed="True" PageCountMode="Actual" BorderColor="#CCCCCC" BorderStyle="Solid" Height="100%"   >
+            </rsweb:ReportViewer>
+        </form>
+    </div>
 </body>
 </html>

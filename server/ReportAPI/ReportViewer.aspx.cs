@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
-using System.Globalization;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -26,7 +25,7 @@ namespace ReportAPI
                 {
                     SetSqlParameter();
                     GetDataTable();
-                    GenerateReport();
+                    //GenerateReport();
                 }
                 catch
                 {
@@ -41,7 +40,6 @@ namespace ReportAPI
             sqlParameters.Add(new SqlParameter("FromDay", Request.QueryString["from"]));
             sqlParameters.Add(new SqlParameter("ToDay", Request.QueryString["to"]));
         }
-
         private void GetDataTable()
         {
             string query = "SELECT A.TASK_SLAB," +
@@ -72,40 +70,53 @@ namespace ReportAPI
                                      "A.DOWNCOILER," +
                                      "A.ARCHIVE_DATE " +
                                      "FROM PM_PIECE_OUTPUT AS A INNER JOIN SC_MEASURE_MILL AS B ON A.PIECE_ID = B.PIECE_ID INNER JOIN SC_MEASURE_DEVICE AS C ON A.PIECE_ID = C.PIECE_ID INNER JOIN SC_PROFILE_MEASURE AS D ON A.PIECE_ID = D.PIECE_ID INNER JOIN SC_FLAT_MEASURE AS E ON A.PIECE_ID = E.PIECE_ID " +
-                                     "WHERE A.archive_date >= @FromDay AND A.archive_date <= @ToDay AND (B.STAND_ID = 'F4') AND (C.DEVICE_ID = 'WIDTH1') AND (A.PIECE_ID NOT LIKE 'GHOST%' OR A.PIECE_ID = 'GHOST82')";
+                                     "WHERE A.archive_date >=@FromDay AND A.archive_date <=@ToDay AND (B.STAND_ID = 'F4') AND (C.DEVICE_ID = 'WIDTH1') AND (A.PIECE_ID NOT LIKE 'GHOST%' OR A.PIECE_ID = 'GHOST82')";
             string connectionString = ConfigurationManager.ConnectionStrings["HSM_HOAPHATConnectionString"].ConnectionString;
             dataSet = new DataSet();
             using (SqlConnection con = new SqlConnection(connectionString))
             {
                 using (SqlCommand sqlCommand = new SqlCommand(query, con))
                 {
-
                     dynamic time = sqlParameters.ToArray();
-                    dynamic from = Int64.Parse(time[0].Value);
-                    dynamic to = Int64.Parse(time[1].Value);
-                    if (from != null && to != null)
+                    if (time[0].Value != null && time[1].Value != null)
                     {
-                        var dt1 = new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc).AddMilliseconds(from);
-                        var dt2 = new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc).AddMilliseconds(to);
-                        time[0].Value = dt1.ToString("yyyy/MM/dd hh:mm tt");
-                        time[1].Value = dt2.ToString("yyyy/MM/dd hh:mm tt");
-
+                        long from = long.Parse(time[0].Value);
+                        long to = long.Parse(time[1].Value);
+                        time[0].Value = new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc).AddMilliseconds(from);
+                        time[1].Value = new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc).AddMilliseconds(to);
                     } else
                     {
-                        time[0].Value = 1;
+                        time[0].Value = 1659312000000;
+                        time[1].Value = 1662163200000;
                     }
                     sqlCommand.Parameters.AddRange(sqlParameters.ToArray());
+                    
                     SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(sqlCommand);
                     sqlDataAdapter.Fill(dataSet);
+                    RdlcReportViewer.LocalReport.ReportPath = Server.MapPath("~/Views/Reports/ReportBaoCaoSanXuat.rdlc");
+                    RdlcReportViewer.LocalReport.DataSources.Clear();
+                    RdlcReportViewer.LocalReport.DataSources.Add(new ReportDataSource("BaoCaoSanXuatDataset", dataSet.Tables[0]));
+                    RdlcReportViewer.LocalReport.Refresh();
+
+                    ReportParameter fromDateValue = new ReportParameter("fromDate", time[0].Value.ToString());
+                    ReportParameter toDateValue = new ReportParameter("toDate", time[1].Value.ToString());
+                    RdlcReportViewer.LocalReport.SetParameters(fromDateValue);
+                    RdlcReportViewer.LocalReport.SetParameters(toDateValue);
                 }
             }
         }
         private void GenerateReport()
         {
-            RdlcReportViewer.LocalReport.ReportPath = Server.MapPath("~/Views/Reports/ProductHSMReport.rdlc");
             RdlcReportViewer.LocalReport.DataSources.Clear();
             RdlcReportViewer.LocalReport.DataSources.Add(new ReportDataSource("BaoCaoSanXuatDataset", dataSet.Tables[0]));
             RdlcReportViewer.LocalReport.Refresh();
+            //RdlcReportViewer.AsyncRendering = false;
+            //RdlcReportViewer.SizeToReportContent = true;
+        }
+
+        protected void TextBox1_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

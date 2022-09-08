@@ -9,9 +9,9 @@ namespace ProductsApp.Controllers
 {
     public class BaoCaoSanXuatController : ApiController
     {
-        public string[] myData = { "value1", "value2" };
+        public string myData = "TRANG CHỦ";
 
-        public string[] Get()
+        public string Get()
         {
             return myData;
         }
