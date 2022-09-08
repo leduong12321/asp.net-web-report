@@ -56,10 +56,10 @@
 
     <section class="home-section">
       <div class="home-content">
-        <i class="bx bx-menu" v-if="isClose" @click="isClose = !isClose"></i>
-        <i class="bx bxs-x-circle" v-else @click="isClose = !isClose"></i>
+        <i class="bx bx-menu" v-if="isClose" @click="closeSideBar()"></i>
+        <i class="bx bxs-x-circle" v-else @click="closeSideBar()"></i>
       </div>
-      <Nuxt />
+      <Nuxt class="nuxt-body" style="max-width:100%"/>
     </section>
   </div>
 </template>
@@ -134,6 +134,14 @@ export default {
   mounted() {
     this.handleShowSubMenu();
   },
+  // watch: {
+  //   'isClose'() {
+  //     let element = document.getElementsByClassName("nuxt-body");
+  //     element[0].classList.remove('container');
+  //     debugger;
+  //     console.log('e');
+  //   }
+  // },
   methods: {
     handleShowSubMenu() {
       let arrow = document.querySelectorAll(".li");
@@ -145,7 +153,14 @@ export default {
           }
           arrowParent.classList.toggle("showMenu");
         });
-      }
+      };
+    },
+    closeSideBar() {
+      this.isClose = !this.isClose;
+      // setTimeout(() => {
+      //   let element = document.getElementsByClassName("nuxt-body");
+      //   element[0].classList.remove('container');
+      // }, 1);
     },
     handLogout() {
       alert("Do you want logout the website!");
@@ -376,7 +391,7 @@ body {
   font-size: 12px;
 }
 .home-section {
-  background: #e4e9f7;
+  // background: #e4e9f7;
   left: 260px;
   width: calc(100% - 260px);
   transition: all 0.5s ease;
@@ -393,6 +408,7 @@ body {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
+  // position: absolute;
 }
 .home-section .home-content .bx-menu,
 .home-section .home-content .bxs-x-circle,
