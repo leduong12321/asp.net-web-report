@@ -1,7 +1,8 @@
 <template>
   <div>
-    <div class="box">
-      <section>
+    <div class="box mt-4">
+      <div class="d-flex align-items-center mb-2">
+        <div class="mr-2 text-date">Ngày bắt đầu:</div>
         <date-picker
           v-model="fromDay"
           type="datetime"
@@ -11,6 +12,7 @@
           @close="handleOpenChange"
           format="DD-MM-YYYY   HH:mm"
           :class="checkError"
+          class="mr-4 date-ui"
         >
           <template v-slot:footer>
             <button class="mx-btn mx-btn-text" @click="toggleTimePanel">
@@ -18,7 +20,7 @@
             </button>
           </template>
         </date-picker>
-
+        <div class="mr-2 text-date">Ngày kết thúc:</div>
         <date-picker
           v-model="toDay"
           type="datetime"
@@ -28,6 +30,7 @@
           @close="handleOpenChange"
           format="DD-MM-YYYY   HH:mm"
           :class="checkError"
+          class="mr-3 date-ui"
         >
           <template v-slot:footer>
             <button class="mx-btn mx-btn-text" @click="toggleTimePanel">
@@ -36,11 +39,13 @@
           </template>
         </date-picker>
 
-        <b-button variant="outline-primary btn-submit ml-2" @click="handSubmit"
+        <b-button class="btn btn-submit submit ml-2" @click="handSubmit"
           >Tìm kiếm</b-button
         >
-      </section>
-      <p class="text-error-input-date">{{ errorInputDate }}</p>
+      </div>
+      <p class="text-error-input-date" v-if="errorInputDate.length > 0">
+        {{ errorInputDate }}
+      </p>
     </div>
     <iframe
       id="iframe"
@@ -50,6 +55,7 @@
       height="700px"
       allowfullscreen
       style="background-color: white"
+      class="mb-5 iframe"
     ></iframe>
   </div>
 </template>
@@ -113,16 +119,31 @@ export default {
 </script>
 
 <style lang="scss">
-
-.error-input-date {
+.text-error-input-date {
+  color: #cc0033;
+  font-size: 13px;
+  padding-left: 120px;
+}
+.date-ui {
   input {
-    border: 2px solid red;
-    color: white;
-    background-color: #fa5b4c;
+    border: 1px solid #555;
+  }
+  &.error-input-date {
+    input {
+      border: 1px solid #cc0033;
+      background-color: #fce4e4;
+    }
   }
 }
-.text-error-input-date {
-  color: red;
-  font-size: 13px;
+.text-date {
+  font-style: italic;
+}
+.submit {
+  color: #11101d;
+}
+.iframe {
+  border: 0px;
+  min-height: 800px;
+  max-height: 900px;
 }
 </style>

@@ -2,7 +2,7 @@
   <div class="slidebar-container">
     <div class="sidebar" :class="{ 'close-sidebar': isClose }">
       <div class="logo-details">
-        <i class="bx bx-home"></i>
+        <i class="bx bx-color"></i>
         <span class="logo_name">NM.CT QSP</span>
       </div>
       <ul class="nav-links">
@@ -53,24 +53,39 @@
         </li>
       </ul>
     </div>
-
-    <section class="home-section">
+    <div class="header-section">
       <div class="home-content">
-        <i class="bx bx-menu" v-if="isClose" @click="closeSideBar()"></i>
-        <i class="bx bxs-x-circle" v-else @click="closeSideBar()"></i>
+        <i
+          class="bx bx-menu bx-tada"
+          v-if="isClose"
+          @click="closeSideBar()"
+        ></i>
+        <i class="bx bx-x bx-tada" v-else @click="closeSideBar()"></i>
       </div>
-      <Nuxt class="nuxt-body" style="max-width:100%"/>
+      <div class="right-header">
+        <img :src="vnFlag" alt="viet-nam-flag" class="mr-3" />
+        <i class="bx bxs-bell-ring mr-3"></i>
+        <div class="user">
+          <span class="mr-2 mt-1">Hi, Admin</span>
+          <img :src="userImage" alt="user" class="user-image" />
+        </div>
+      </div>
+    </div>
+    <section class="home-section">
+      <Nuxt class="nuxt-body" style="max-width: 100%" />
     </section>
   </div>
 </template>
 
 <script>
 import userImage from "../assets/images/user.png";
+import vnFlag from "../assets/images/vn-flag.png";
 export default {
   data() {
     return {
       isClose: false,
       userImage,
+      vnFlag,
       menus: [
         {
           icon: "bx bx-home",
@@ -153,7 +168,7 @@ export default {
           }
           arrowParent.classList.toggle("showMenu");
         });
-      };
+      }
     },
     closeSideBar() {
       this.isClose = !this.isClose;
@@ -298,9 +313,9 @@ body {
   opacity: 0.6;
   transition: all 0.3s ease;
   &.nuxt-link-exact-active {
-      opacity: 1;
-      font-weight: bold;
-    }
+    opacity: 1;
+    font-weight: bold;
+  }
 }
 .sidebar .nav-links li .sub-menu a:hover {
   opacity: 1;
@@ -390,6 +405,39 @@ body {
 .sidebar .profile-details .job {
   font-size: 12px;
 }
+.header-section {
+  left: 260px;
+  width: calc(100% - 260px);
+  transition: all 0.5s ease;
+  position: relative;
+  height: 50px;
+  box-shadow: 0 10px 30px 0 rgb(47 60 74 / 8%);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.right-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-style: italic;
+  i {
+    font-size: 24px;
+    margin-top: 3px;
+  }
+  img {
+    width: 24px;
+    height: 24px;
+    object-fit: cover;
+    &.user-image {
+      width: 30px;
+      height: 30px;
+    }
+  }
+  .user {
+    margin-right: 46px;
+  }
+}
 .home-section {
   // background: #e4e9f7;
   left: 260px;
@@ -400,28 +448,33 @@ body {
   position: relative;
   height: 100vh;
 }
-.sidebar.close-sidebar ~ .home-section {
+.sidebar.close-sidebar ~ .home-section,
+.sidebar.close-sidebar ~ .header-section {
   left: 78px;
   width: calc(100% - 78px);
 }
 .home-content {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
+  padding-left: 4px;
+  padding-top: 5px;
+  background-color: #11101d;
+  border-radius: 0px 8px 8px 0px;
+  // display: flex;
+  // align-items: center;
+  // flex-wrap: wrap;
   // position: absolute;
 }
-.home-section .home-content .bx-menu,
-.home-section .home-content .bxs-x-circle,
-.home-section .home-content .text {
-  color: #11101d;
-  font-size: 35px;
+.header-section .home-content .bx-menu,
+.header-section .home-content .bx-x,
+.header-section .home-content .text {
+  color: white;
+  font-size: 24px;
 }
-.home-section .home-content .bx-menu,
-.home-section .home-content .bxs-x-circle {
+.header-section .home-content .bx-menu,
+.header-section .home-content .bx-x {
   cursor: pointer;
-  margin-right: 10px;
+  margin-right: 8px;
 }
-.home-section .home-content .text {
+.header-section .home-content .text {
   font-size: 26px;
   font-weight: 600;
 }

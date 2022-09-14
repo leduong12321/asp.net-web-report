@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div >
     <!-- <h1 v-if="error.statusCode === 404">Page not found</h1>
       <h1 v-else>An error occurred</h1>
       <NuxtLink to="/">Home page</NuxtLink> -->
@@ -78,21 +78,21 @@ export default {
   layout: "defaultError", // you can set a custom layout for the error page
 };
 </script>
-<style lang="scss">
+<style lang="scss" scoped>
 //     body {
 //   background-color: #2F3242;
 // }
-html,
-body {
-  height: 100%;
-  width: 100%;
-  margin: 0px;
-  background: linear-gradient(
-    90deg,
-    rgba(47, 54, 64, 1) 23%,
-    rgba(24, 27, 32, 1) 100%
-  );
-}
+// html,
+// body {
+//   height: 100%;
+//   width: 100%;
+//   margin: 0px;
+//   background: linear-gradient(
+//     90deg,
+//     rgba(47, 54, 64, 1) 23%,
+//     rgba(24, 27, 32, 1) 100%
+//   ) !important;
+// }
 svg {
   position: absolute;
   top: 50%;
@@ -108,7 +108,8 @@ svg {
   left: 50%;
   margin-top: -100px;
   margin-left: 50px;
-  color: #fff;
+  // color: #fff;
+  color: linear-gradient(90deg,rgba(47, 54, 64, 1) 23%,rgba(24, 27, 32, 1) 100%) !important;
   font-family: Roboto;
   font-weight: 300;
 }

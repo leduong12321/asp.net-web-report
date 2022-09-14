@@ -9,8 +9,11 @@
     <title></title>
     <style>
         .Css-Report {
-            overflow: hidden;
             margin: 0px;
+        }
+        .Css-Report #RdlcReportViewer_ctl13 {
+            overflow-y: hidden !important;
+            height: 100% !important;
         }
     </style>
 </head>
