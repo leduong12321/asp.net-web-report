@@ -66,7 +66,7 @@
         <img :src="vnFlag" alt="viet-nam-flag" class="mr-3" />
         <i class="bx bxs-bell-ring mr-3"></i>
         <div class="user">
-          <span class="mr-2 mt-1">Hi, Dương Lê</span>
+          <span class="mr-2 mt-1">Hi, Admin</span>
           <img :src="userImage" alt="user" class="user-image" />
         </div>
       </div>

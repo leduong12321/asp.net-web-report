@@ -55,6 +55,7 @@
       height="700px"
       allowfullscreen
       style="background-color: white"
+      class="mb-5 iframe"
     ></iframe>
   </div>
 </template>
@@ -139,5 +140,10 @@ export default {
 }
 .submit {
   color: #11101d;
+}
+.iframe {
+  border: 0px;
+  min-height: 800px;
+  max-height: 900px;
 }
 </style>
