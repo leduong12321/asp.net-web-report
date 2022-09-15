@@ -7,7 +7,7 @@ using System.Web.Http;
 
 namespace ProductsApp.Controllers
 {
-    public class BaoCaoTongHopSanXuatHSMController : ApiController
+    public class TongHopSanLuongHRCController : ApiController
     {
         Product[] products = new Product[]
         {

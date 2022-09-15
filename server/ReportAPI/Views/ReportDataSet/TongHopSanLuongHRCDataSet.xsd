@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="TongHopSanLuongHRC" targetNamespace="http://tempuri.org/TongHopSanLuongHRC.xsd" xmlns:mstns="http://tempuri.org/TongHopSanLuongHRC.xsd" xmlns="http://tempuri.org/TongHopSanLuongHRC.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="TongHopSanLuongHRC" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_UserDSName="TongHopSanLuongHRC" msprop:Generator_DataSetName="TongHopSanLuongHRC">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="TongHopSanLuongHRCDataSet" msprop:Generator_RowEvHandlerName="TongHopSanLuongHRCDataSetRowChangeEventHandler" msprop:Generator_RowDeletedName="TongHopSanLuongHRCDataSetRowDeleted" msprop:Generator_RowDeletingName="TongHopSanLuongHRCDataSetRowDeleting" msprop:Generator_RowEvArgName="TongHopSanLuongHRCDataSetRowChangeEvent" msprop:Generator_TablePropName="TongHopSanLuongHRCDataSet" msprop:Generator_RowChangedName="TongHopSanLuongHRCDataSetRowChanged" msprop:Generator_RowChangingName="TongHopSanLuongHRCDataSetRowChanging" msprop:Generator_TableClassName="TongHopSanLuongHRCDataSetDataTable" msprop:Generator_RowClassName="TongHopSanLuongHRCDataSetRow" msprop:Generator_TableVarName="tableTongHopSanLuongHRCDataSet" msprop:Generator_UserTableName="TongHopSanLuongHRCDataSet">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Sothutu" msprop:Generator_ColumnPropNameInRow="Sothutu" msprop:Generator_ColumnPropNameInTable="SothutuColumn" msprop:Generator_ColumnVarNameInTable="columnSothutu" msprop:Generator_UserColumnName="Sothutu" type="xs:int" minOccurs="0" />
+              <xs:element name="SanPham" msprop:Generator_ColumnPropNameInRow="SanPham" msprop:Generator_ColumnPropNameInTable="SanPhamColumn" msprop:Generator_ColumnVarNameInTable="columnSanPham" msprop:Generator_UserColumnName="SanPham" type="xs:string" minOccurs="0" />
+              <xs:element name="STEEL_GRADE" msprop:Generator_ColumnPropNameInRow="STEEL_GRADE" msprop:Generator_ColumnPropNameInTable="STEEL_GRADEColumn" msprop:Generator_ColumnVarNameInTable="columnSTEEL_GRADE" msprop:Generator_UserColumnName="STEEL_GRADE" type="xs:string" minOccurs="0" />
+              <xs:element name="SoCuon" msprop:Generator_ColumnPropNameInRow="SoCuon" msprop:Generator_ColumnPropNameInTable="SoCuonColumn" msprop:Generator_ColumnVarNameInTable="columnSoCuon" msprop:Generator_UserColumnName="SoCuon" type="xs:int" minOccurs="0" />
+              <xs:element name="TongKhoiLuongPDI" msprop:Generator_ColumnPropNameInRow="TongKhoiLuongPDI" msprop:Generator_ColumnPropNameInTable="TongKhoiLuongPDIColumn" msprop:Generator_ColumnVarNameInTable="columnTongKhoiLuongPDI" msprop:Generator_UserColumnName="TongKhoiLuongPDI" type="xs:double" minOccurs="0" />
+              <xs:element name="TongKhoiLuong" msprop:Generator_ColumnPropNameInRow="TongKhoiLuong" msprop:Generator_ColumnPropNameInTable="TongKhoiLuongColumn" msprop:Generator_ColumnVarNameInTable="columnTongKhoiLuong" msprop:Generator_UserColumnName="TongKhoiLuong" type="xs:double" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
