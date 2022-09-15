@@ -1,12 +1,15 @@
 <template>
   <div class="container">
-    Báo cáo chất lượng HRC
+    <ChatLuongThanhPhamComponent/>
   </div>
 
 </template>
 
 <script>
+
+import ChatLuongThanhPhamComponent from '../../components/baocao/ChatLuongThanhPhamComponent.vue';
 export default {
-  name: 'homepage'
+    name: "homepage",
+    components: { ChatLuongThanhPhamComponent }
 }
 </script>

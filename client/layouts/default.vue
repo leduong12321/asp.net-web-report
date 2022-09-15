@@ -56,11 +56,11 @@
     <div class="header-section">
       <div class="home-content">
         <i
-          class="bx bx-menu bx-tada"
+          class="bx bx-menu"
           v-if="isClose"
           @click="closeSideBar()"
         ></i>
-        <i class="bx bx-x bx-tada" v-else @click="closeSideBar()"></i>
+        <i class="bx bx-x" v-else @click="closeSideBar()"></i>
       </div>
       <div class="right-header">
         <img :src="vnFlag" alt="viet-nam-flag" class="mr-3" />
@@ -72,7 +72,7 @@
       </div>
     </div>
     <section class="home-section">
-      <Nuxt class="nuxt-body" style="max-width: 100%" />
+      <Nuxt class="nuxt-body" style="max-width: 100%; padding: 4px;" />
     </section>
   </div>
 </template>
@@ -83,9 +83,10 @@ import vnFlag from "../assets/images/vn-flag.png";
 export default {
   data() {
     return {
-      isClose: false,
+      isClose: true,
       userImage,
       vnFlag,
+      windowWidth: window.innerWidth,
       menus: [
         {
           icon: "bx bx-home",
@@ -105,8 +106,8 @@ export default {
             },
             {
               icon: "",
-              name: "Tổng hợp HSM",
-              url: "/baocao/tonghop-hsm",
+              name: "Sản lượng HRC",
+              url: "/baocao/sanluong-hrc",
             },
             {
               icon: "",
@@ -147,6 +148,9 @@ export default {
     };
   },
   mounted() {
+    if(this.windowWidth > 1900) {
+      this.isClose = false;
+    }
     this.handleShowSubMenu();
   },
   // watch: {
@@ -502,6 +506,9 @@ body {
   .sidebar.close-sidebar ~ .home-section {
     left: 78px;
     width: calc(100% - 78px);
+  }
+  .nuxt-body {
+    
   }
 }
 </style>
