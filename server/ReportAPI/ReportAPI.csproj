@@ -162,7 +162,6 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Microsoft\Reporting\WebForms\TongHopSanLuongHRC.cs" />
     <Compile Include="Models\BaoCaoSanXuat.cs" />
     <Compile Include="Models\BaoCaoTongHopSanXuatHSM.cs" />
     <Compile Include="Models\ChatLuongThanhPhamHRC.cs" />
