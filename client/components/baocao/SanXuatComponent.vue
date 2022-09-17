@@ -1,8 +1,8 @@
 <template>
   <div>
-    <div class="box mt-4">
+    <div class="box">
       <div class="d-flex align-items-center mb-2">
-        <div class="mr-2 text-date">Ngày bắt đầu:</div>
+        <div class="mr-2 fs-14">Ngày bắt đầu:</div>
         <date-picker
           v-model="fromDay"
           type="datetime"
@@ -20,7 +20,7 @@
             </button>
           </template>
         </date-picker>
-        <div class="mr-2 text-date">Ngày kết thúc:</div>
+        <div class="mr-2 fs-14">Ngày kết thúc:</div>
         <date-picker
           v-model="toDay"
           type="datetime"
@@ -95,7 +95,7 @@ export default {
     },
     loadDataCurent() {
       this.fromDay = new Date(2021, 9, 24).setHours(0, 0, 0).valueOf();
-      this.toDay = new Date(2021, 11, 24).setHours(23, 59, 59).valueOf();
+      this.toDay = new Date().setHours(23, 59, 59).valueOf();
       this.API_URL =
         "https://localhost:44315/ReportViewer?from=" +
         this.fromDay +
@@ -144,6 +144,6 @@ export default {
 .iframe {
   border: 0px;
   min-height: 800px;
-  max-height: 900px;
+  max-height: calc(100% - 100px);
 }
 </style>
