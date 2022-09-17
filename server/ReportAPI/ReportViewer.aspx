@@ -15,6 +15,18 @@
             overflow-y: hidden !important;
             height: 100% !important;
         }
+        @media only screen and (min-width: 1601px) {
+            .Css-Report #RdlcReportViewer {
+            min-height: 100vh !important;
+        }
+        }
+        @media only screen and (max-width: 1600px) {
+          .Css-Report #RdlcReportViewer {
+            max-height: calc(100vh - 175px) !important;
+            overflow-y: scroll;
+            overflow-x: hidden !important;
+          }
+        }
     </style>
 </head>
 <body class="Css-Report">
@@ -25,7 +37,7 @@
                 </asp:ScriptManager>
             </div>
             <rsweb:ReportViewer ID="RdlcReportViewer" runat="server" Width="100%" BackColor="White" ZoomMode="PageWidth"
-                        BorderWidth="1px" DocumentMapCollapsed="True" PageCountMode="Actual" BorderColor="#CCCCCC" BorderStyle="Solid" Height="100%"   >
+                        BorderWidth="1px" DocumentMapCollapsed="True" PageCountMode="Actual" BorderColor="#CCCCCC" BorderStyle="Solid" Height="100%" ShowBackButton="False" ShowZoomControl="False"   >
             </rsweb:ReportViewer>
         </form>
     </div>

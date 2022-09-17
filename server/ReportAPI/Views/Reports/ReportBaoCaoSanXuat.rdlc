@@ -2385,7 +2385,7 @@ Tail</Value>
             <Top>0.09722in</Top>
             <Left>0.09364in</Left>
             <Height>0.5in</Height>
-            <Width>17.59833in</Width>
+            <Width>17.59834in</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -2404,7 +2404,7 @@ Tail</Value>
       <Width>17.86698in</Width>
       <Page>
         <PageHeader>
-          <Height>0.875in</Height>
+          <Height>0.65833in</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
@@ -2598,7 +2598,7 @@ ToLocalTime(Parameters!toDate.Value), "dd.MM.yyyy HH:mm tt")</Value>
           </Style>
         </PageHeader>
         <PageFooter>
-          <Height>1in</Height>
+          <Height>1.31667in</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
@@ -2641,6 +2641,7 @@ ToLocalTime(Parameters!toDate.Value), "dd.MM.yyyy HH:mm tt")</Value>
               <ZIndex>1</ZIndex>
               <Style>
                 <Border>
+                  <Color>Silver</Color>
                   <Style>Solid</Style>
                 </Border>
               </Style>
@@ -2682,7 +2683,7 @@ ToLocalTime(Parameters!toDate.Value), "dd.MM.yyyy HH:mm tt")</Value>
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>="Trang " + Globals!PageNumber.ToString() + " of " + Globals!TotalPages.ToString()</Value>
+                      <Value>="Trang " + Globals!PageNumber.ToString() + " / " + Globals!TotalPages.ToString()</Value>
                       <Style />
                     </TextRun>
                   </TextRuns>
