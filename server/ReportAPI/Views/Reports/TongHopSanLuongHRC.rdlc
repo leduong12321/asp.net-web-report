@@ -860,8 +860,12 @@ ToLocalTime(Parameters!toDate.Value), "dd.MM.yyyy HH:mm tt")</Value>
             </Border>
           </Style>
         </PageFooter>
-        <LeftMargin>1in</LeftMargin>
-        <RightMargin>1in</RightMargin>
+        <PageHeight>11.69in</PageHeight>
+        <PageWidth>16.54in</PageWidth>
+        <InteractiveHeight>11.69in</InteractiveHeight>
+        <InteractiveWidth>16.54in</InteractiveWidth>
+        <LeftMargin>2in</LeftMargin>
+        <RightMargin>2in</RightMargin>
         <TopMargin>1in</TopMargin>
         <BottomMargin>1in</BottomMargin>
         <Style>

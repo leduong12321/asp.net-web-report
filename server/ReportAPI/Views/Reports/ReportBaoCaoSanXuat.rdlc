@@ -2425,7 +2425,7 @@ Tail</Value>
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox3</rd:DefaultName>
-              <Top>0.14722in</Top>
+              <Top>0.14332in</Top>
               <Left>0.09364in</Left>
               <Height>0.18945in</Height>
               <Width>0.69133in</Width>
@@ -2458,7 +2458,7 @@ Tail</Value>
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox7</rd:DefaultName>
-              <Top>0.14722in</Top>
+              <Top>0.14166in</Top>
               <Left>7.55285in</Left>
               <Height>0.38056in</Height>
               <Width>3.48333in</Width>
@@ -2477,7 +2477,7 @@ Tail</Value>
               <Source>Embedded</Source>
               <Value>logo</Value>
               <Sizing>FitProportional</Sizing>
-              <Top>0.14722in</Top>
+              <Top>0.08889in</Top>
               <Left>15.86999in</Left>
               <Height>0.5in</Height>
               <Width>1.82198in</Width>
@@ -2508,7 +2508,7 @@ ToLocalTime(Parameters!fromDate.Value), "dd.MM.yyyy HH:mm tt")</Value>
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox48</rd:DefaultName>
-              <Top>0.14722in</Top>
+              <Top>0.14332in</Top>
               <Left>0.78497in</Left>
               <Height>0.18945in</Height>
               <Width>1.99167in</Width>
@@ -2543,9 +2543,9 @@ ToLocalTime(Parameters!toDate.Value), "dd.MM.yyyy HH:mm tt")</Value>
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox48</rd:DefaultName>
-              <Top>0.33667in</Top>
+              <Top>0.33277in</Top>
               <Left>0.78497in</Left>
-              <Height>0.18945in</Height>
+              <Height>0.25612in</Height>
               <Width>1.99167in</Width>
               <ZIndex>4</ZIndex>
               <Style>
@@ -2575,9 +2575,9 @@ ToLocalTime(Parameters!toDate.Value), "dd.MM.yyyy HH:mm tt")</Value>
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox3</rd:DefaultName>
-              <Top>0.33667in</Top>
+              <Top>0.33277in</Top>
               <Left>0.09364in</Left>
-              <Height>0.18945in</Height>
+              <Height>0.25612in</Height>
               <Width>0.69133in</Width>
               <ZIndex>5</ZIndex>
               <Style>

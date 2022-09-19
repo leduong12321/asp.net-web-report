@@ -150,7 +150,6 @@
                             <PaddingBottom>2.5pt</PaddingBottom>
                           </Style>
                         </Textbox>
-                        <rd:Selected>true</rd:Selected>
                       </CellContents>
                     </TablixCell>
                     <TablixCell>
@@ -1252,10 +1251,10 @@ ToLocalTime(Parameters!toDate.Value), "dd.MM.yyyy HH:mm tt")</Value>
         <PageWidth>16.54in</PageWidth>
         <InteractiveHeight>11.69in</InteractiveHeight>
         <InteractiveWidth>16.54in</InteractiveWidth>
-        <LeftMargin>1in</LeftMargin>
-        <RightMargin>1in</RightMargin>
-        <TopMargin>1in</TopMargin>
-        <BottomMargin>1in</BottomMargin>
+        <LeftMargin>0.75in</LeftMargin>
+        <RightMargin>0.75in</RightMargin>
+        <TopMargin>0.75in</TopMargin>
+        <BottomMargin>0.75in</BottomMargin>
         <Style />
       </Page>
     </ReportSection>
