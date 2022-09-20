@@ -125,10 +125,34 @@
           <DataField>FLATNEES</DataField>
           <rd:TypeName>System.Double</rd:TypeName>
         </Field>
+        <Field Name="ASymHeadFlatness">
+          <DataField>ASymHeadFlatness</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ASymBodyFlatness">
+          <DataField>ASymBodyFlatness</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ASymTailFlatness">
+          <DataField>ASymTailFlatness</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="SymHeadFlatness">
+          <DataField>SymHeadFlatness</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="SymBodyFlatness">
+          <DataField>SymBodyFlatness</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="SymTailFlatness">
+          <DataField>SymTailFlatness</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>RDLCReportDataSet</rd:DataSetName>
-        <rd:SchemaPath>F:\HOME\Project\ASP\ReportAPI\ReportAPI\Views\ReportDataSet\RDLCReportDataSet.xsd</rd:SchemaPath>
+        <rd:SchemaPath>F:\WORK\PROJECT\Web Report\asp.net-web-report\server\ReportAPI\Views\ReportDataSet\RDLCReportDataSet.xsd</rd:SchemaPath>
         <rd:TableName>BaoCaoSanXuat</rd:TableName>
         <rd:TableAdapterFillMethod />
         <rd:TableAdapterGetDataMethod />
@@ -147,16 +171,16 @@
                   <Width>0.34956in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>0.9829in</Width>
+                  <Width>0.92751in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.01623in</Width>
+                  <Width>0.96329in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>0.77546in</Width>
+                  <Width>0.67653in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>0.71745in</Width>
+                  <Width>0.63305in</Width>
                 </TablixColumn>
                 <TablixColumn>
                   <Width>0.73167in</Width>
@@ -165,34 +189,52 @@
                   <Width>0.66745in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>0.72669in</Width>
+                  <Width>0.64055in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>0.66639in</Width>
+                  <Width>0.61639in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>0.70667in</Width>
+                  <Width>0.59in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>0.56729in</Width>
+                  <Width>0.51729in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>0.67456in</Width>
+                  <Width>0.65789in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>0.80789in</Width>
+                  <Width>0.70279in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>0.71623in</Width>
+                  <Width>0.66084in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>0.54123in</Width>
+                  <Width>0.5252in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>0.5579in</Width>
+                  <Width>0.47099in</Width>
                 </TablixColumn>
                 <TablixColumn>
                   <Width>0.61153in</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>0.50779in</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>0.51878in</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>0.44784in</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>0.51647in</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>0.46667in</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>0.475in</Width>
                 </TablixColumn>
                 <TablixColumn>
                   <Width>0.6079in</Width>
@@ -204,7 +246,7 @@
                   <Width>0.7329in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>0.57456in</Width>
+                  <Width>0.425in</Width>
                 </TablixColumn>
                 <TablixColumn>
                   <Width>1.34956in</Width>
@@ -243,10 +285,10 @@
                             </Border>
                             <BackgroundColor>#7f7f7f</BackgroundColor>
                             <VerticalAlign>Middle</VerticalAlign>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
+                            <PaddingLeft>2.5pt</PaddingLeft>
+                            <PaddingRight>2.5pt</PaddingRight>
+                            <PaddingTop>2.5pt</PaddingTop>
+                            <PaddingBottom>2.5pt</PaddingBottom>
                           </Style>
                         </Textbox>
                       </CellContents>
@@ -260,7 +302,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>L3 Piece Id</Value>
+                                  <Value>L3 Piece ID</Value>
                                   <Style>
                                     <FontSize>8pt</FontSize>
                                     <Color>White</Color>
@@ -280,10 +322,10 @@
                             </Border>
                             <BackgroundColor>#7f7f7f</BackgroundColor>
                             <VerticalAlign>Middle</VerticalAlign>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
+                            <PaddingLeft>2.5pt</PaddingLeft>
+                            <PaddingRight>2.5pt</PaddingRight>
+                            <PaddingTop>2.5pt</PaddingTop>
+                            <PaddingBottom>2.5pt</PaddingBottom>
                           </Style>
                         </Textbox>
                       </CellContents>
@@ -297,7 +339,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Slab Id</Value>
+                                  <Value>Slab ID</Value>
                                   <Style>
                                     <FontSize>8pt</FontSize>
                                     <Color>White</Color>
@@ -317,10 +359,10 @@
                             </Border>
                             <BackgroundColor>#7f7f7f</BackgroundColor>
                             <VerticalAlign>Middle</VerticalAlign>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
+                            <PaddingLeft>2.5pt</PaddingLeft>
+                            <PaddingRight>2.5pt</PaddingRight>
+                            <PaddingTop>2.5pt</PaddingTop>
+                            <PaddingBottom>2.5pt</PaddingBottom>
                           </Style>
                         </Textbox>
                       </CellContents>
@@ -354,10 +396,10 @@
                             </Border>
                             <BackgroundColor>#7f7f7f</BackgroundColor>
                             <VerticalAlign>Middle</VerticalAlign>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
+                            <PaddingLeft>2.5pt</PaddingLeft>
+                            <PaddingRight>2.5pt</PaddingRight>
+                            <PaddingTop>2.5pt</PaddingTop>
+                            <PaddingBottom>2.5pt</PaddingBottom>
                           </Style>
                         </Textbox>
                       </CellContents>
@@ -392,10 +434,10 @@
                             </Border>
                             <BackgroundColor>#7f7f7f</BackgroundColor>
                             <VerticalAlign>Middle</VerticalAlign>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
+                            <PaddingLeft>2.5pt</PaddingLeft>
+                            <PaddingRight>2.5pt</PaddingRight>
+                            <PaddingTop>2.5pt</PaddingTop>
+                            <PaddingBottom>2.5pt</PaddingBottom>
                           </Style>
                         </Textbox>
                       </CellContents>
@@ -430,10 +472,10 @@
                             </Border>
                             <BackgroundColor>#7f7f7f</BackgroundColor>
                             <VerticalAlign>Middle</VerticalAlign>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
+                            <PaddingLeft>2.5pt</PaddingLeft>
+                            <PaddingRight>2.5pt</PaddingRight>
+                            <PaddingTop>2.5pt</PaddingTop>
+                            <PaddingBottom>2.5pt</PaddingBottom>
                           </Style>
                         </Textbox>
                       </CellContents>
@@ -468,10 +510,10 @@
                             </Border>
                             <BackgroundColor>#7f7f7f</BackgroundColor>
                             <VerticalAlign>Middle</VerticalAlign>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
+                            <PaddingLeft>2.5pt</PaddingLeft>
+                            <PaddingRight>2.5pt</PaddingRight>
+                            <PaddingTop>2.5pt</PaddingTop>
+                            <PaddingBottom>2.5pt</PaddingBottom>
                           </Style>
                         </Textbox>
                       </CellContents>
@@ -506,10 +548,10 @@
                             </Border>
                             <BackgroundColor>#7f7f7f</BackgroundColor>
                             <VerticalAlign>Middle</VerticalAlign>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
+                            <PaddingLeft>2.5pt</PaddingLeft>
+                            <PaddingRight>2.5pt</PaddingRight>
+                            <PaddingTop>2.5pt</PaddingTop>
+                            <PaddingBottom>2.5pt</PaddingBottom>
                           </Style>
                         </Textbox>
                       </CellContents>
@@ -544,10 +586,10 @@
                             </Border>
                             <BackgroundColor>#7f7f7f</BackgroundColor>
                             <VerticalAlign>Middle</VerticalAlign>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
+                            <PaddingLeft>2.5pt</PaddingLeft>
+                            <PaddingRight>2.5pt</PaddingRight>
+                            <PaddingTop>2.5pt</PaddingTop>
+                            <PaddingBottom>2.5pt</PaddingBottom>
                           </Style>
                         </Textbox>
                       </CellContents>
@@ -582,10 +624,10 @@
                             </Border>
                             <BackgroundColor>#7f7f7f</BackgroundColor>
                             <VerticalAlign>Middle</VerticalAlign>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
+                            <PaddingLeft>2.5pt</PaddingLeft>
+                            <PaddingRight>2.5pt</PaddingRight>
+                            <PaddingTop>2.5pt</PaddingTop>
+                            <PaddingBottom>2.5pt</PaddingBottom>
                           </Style>
                         </Textbox>
                       </CellContents>
@@ -620,10 +662,10 @@
                             </Border>
                             <BackgroundColor>#7f7f7f</BackgroundColor>
                             <VerticalAlign>Middle</VerticalAlign>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
+                            <PaddingLeft>2.5pt</PaddingLeft>
+                            <PaddingRight>2.5pt</PaddingRight>
+                            <PaddingTop>2.5pt</PaddingTop>
+                            <PaddingBottom>2.5pt</PaddingBottom>
                           </Style>
                         </Textbox>
                       </CellContents>
@@ -658,10 +700,10 @@
                             </Border>
                             <BackgroundColor>#7f7f7f</BackgroundColor>
                             <VerticalAlign>Middle</VerticalAlign>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
+                            <PaddingLeft>2.5pt</PaddingLeft>
+                            <PaddingRight>2.5pt</PaddingRight>
+                            <PaddingTop>2.5pt</PaddingTop>
+                            <PaddingBottom>2.5pt</PaddingBottom>
                           </Style>
                         </Textbox>
                       </CellContents>
@@ -696,10 +738,10 @@
                             </Border>
                             <BackgroundColor>#7f7f7f</BackgroundColor>
                             <VerticalAlign>Middle</VerticalAlign>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
+                            <PaddingLeft>2.5pt</PaddingLeft>
+                            <PaddingRight>2.5pt</PaddingRight>
+                            <PaddingTop>2.5pt</PaddingTop>
+                            <PaddingBottom>2.5pt</PaddingBottom>
                           </Style>
                         </Textbox>
                       </CellContents>
@@ -734,10 +776,10 @@
                             </Border>
                             <BackgroundColor>#7f7f7f</BackgroundColor>
                             <VerticalAlign>Middle</VerticalAlign>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
+                            <PaddingLeft>2.5pt</PaddingLeft>
+                            <PaddingRight>2.5pt</PaddingRight>
+                            <PaddingTop>2.5pt</PaddingTop>
+                            <PaddingBottom>2.5pt</PaddingBottom>
                           </Style>
                         </Textbox>
                       </CellContents>
@@ -771,10 +813,10 @@
                             </Border>
                             <BackgroundColor>#7f7f7f</BackgroundColor>
                             <VerticalAlign>Middle</VerticalAlign>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
+                            <PaddingLeft>2.5pt</PaddingLeft>
+                            <PaddingRight>2.5pt</PaddingRight>
+                            <PaddingTop>2.5pt</PaddingTop>
+                            <PaddingBottom>2.5pt</PaddingBottom>
                           </Style>
                         </Textbox>
                       </CellContents>
@@ -808,10 +850,10 @@
                             </Border>
                             <BackgroundColor>#7f7f7f</BackgroundColor>
                             <VerticalAlign>Middle</VerticalAlign>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
+                            <PaddingLeft>2.5pt</PaddingLeft>
+                            <PaddingRight>2.5pt</PaddingRight>
+                            <PaddingTop>2.5pt</PaddingTop>
+                            <PaddingBottom>2.5pt</PaddingBottom>
                           </Style>
                         </Textbox>
                       </CellContents>
@@ -845,10 +887,249 @@
                             </Border>
                             <BackgroundColor>#7f7f7f</BackgroundColor>
                             <VerticalAlign>Middle</VerticalAlign>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
+                            <PaddingLeft>2.5pt</PaddingLeft>
+                            <PaddingRight>2.5pt</PaddingRight>
+                            <PaddingTop>2.5pt</PaddingTop>
+                            <PaddingBottom>2.5pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox13">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>ASym Head</Value>
+                                  <Style>
+                                    <FontSize>8pt</FontSize>
+                                    <Color>White</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox13</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>#7f7f7f</BackgroundColor>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2.5pt</PaddingLeft>
+                            <PaddingRight>2.5pt</PaddingRight>
+                            <PaddingTop>2.5pt</PaddingTop>
+                            <PaddingBottom>2.5pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox17">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>ASym Body</Value>
+                                  <Style>
+                                    <FontSize>8pt</FontSize>
+                                    <Color>White</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox17</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>#7f7f7f</BackgroundColor>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2.5pt</PaddingLeft>
+                            <PaddingRight>2.5pt</PaddingRight>
+                            <PaddingTop>2.5pt</PaddingTop>
+                            <PaddingBottom>2.5pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox21">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>ASym
+Tail</Value>
+                                  <Style>
+                                    <FontSize>8pt</FontSize>
+                                    <Color>White</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox21</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>#7f7f7f</BackgroundColor>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2.5pt</PaddingLeft>
+                            <PaddingRight>2.5pt</PaddingRight>
+                            <PaddingTop>2.5pt</PaddingTop>
+                            <PaddingBottom>2.5pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox25">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Sym </Value>
+                                  <Style>
+                                    <FontSize>8pt</FontSize>
+                                    <Color>White</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Head</Value>
+                                  <Style>
+                                    <FontSize>8pt</FontSize>
+                                    <Color>White</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox25</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>#7f7f7f</BackgroundColor>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2.5pt</PaddingLeft>
+                            <PaddingRight>2.5pt</PaddingRight>
+                            <PaddingTop>2.5pt</PaddingTop>
+                            <PaddingBottom>2.5pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox29">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Sym 
+Body</Value>
+                                  <Style>
+                                    <FontSize>8pt</FontSize>
+                                    <Color>White</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox29</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>#7f7f7f</BackgroundColor>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2.5pt</PaddingLeft>
+                            <PaddingRight>2.5pt</PaddingRight>
+                            <PaddingTop>2.5pt</PaddingTop>
+                            <PaddingBottom>2.5pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox33">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Sym
+Tail</Value>
+                                  <Style>
+                                    <FontSize>8pt</FontSize>
+                                    <Color>White</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox33</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>#7f7f7f</BackgroundColor>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2.5pt</PaddingLeft>
+                            <PaddingRight>2.5pt</PaddingRight>
+                            <PaddingTop>2.5pt</PaddingTop>
+                            <PaddingBottom>2.5pt</PaddingBottom>
                           </Style>
                         </Textbox>
                       </CellContents>
@@ -863,7 +1144,7 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>DSC1
-(Bar)</Value>
+(bar)</Value>
                                   <Style>
                                     <FontSize>8pt</FontSize>
                                     <Color>White</Color>
@@ -883,10 +1164,10 @@
                             </Border>
                             <BackgroundColor>#7f7f7f</BackgroundColor>
                             <VerticalAlign>Middle</VerticalAlign>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
+                            <PaddingLeft>2.5pt</PaddingLeft>
+                            <PaddingRight>2.5pt</PaddingRight>
+                            <PaddingTop>2.5pt</PaddingTop>
+                            <PaddingBottom>2.5pt</PaddingBottom>
                           </Style>
                         </Textbox>
                       </CellContents>
@@ -901,7 +1182,7 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>DSC2
-(Bar)</Value>
+(bar)</Value>
                                   <Style>
                                     <FontSize>8pt</FontSize>
                                     <Color>White</Color>
@@ -921,10 +1202,10 @@
                             </Border>
                             <BackgroundColor>#7f7f7f</BackgroundColor>
                             <VerticalAlign>Middle</VerticalAlign>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
+                            <PaddingLeft>2.5pt</PaddingLeft>
+                            <PaddingRight>2.5pt</PaddingRight>
+                            <PaddingTop>2.5pt</PaddingTop>
+                            <PaddingBottom>2.5pt</PaddingBottom>
                           </Style>
                         </Textbox>
                       </CellContents>
@@ -958,10 +1239,10 @@
                             </Border>
                             <BackgroundColor>#7f7f7f</BackgroundColor>
                             <VerticalAlign>Middle</VerticalAlign>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
+                            <PaddingLeft>2.5pt</PaddingLeft>
+                            <PaddingRight>2.5pt</PaddingRight>
+                            <PaddingTop>2.5pt</PaddingTop>
+                            <PaddingBottom>2.5pt</PaddingBottom>
                           </Style>
                         </Textbox>
                       </CellContents>
@@ -995,10 +1276,10 @@
                             </Border>
                             <BackgroundColor>#7f7f7f</BackgroundColor>
                             <VerticalAlign>Middle</VerticalAlign>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
+                            <PaddingLeft>2.5pt</PaddingLeft>
+                            <PaddingRight>2.5pt</PaddingRight>
+                            <PaddingTop>2.5pt</PaddingTop>
+                            <PaddingBottom>2.5pt</PaddingBottom>
                           </Style>
                         </Textbox>
                       </CellContents>
@@ -1032,10 +1313,10 @@
                             </Border>
                             <BackgroundColor>#7f7f7f</BackgroundColor>
                             <VerticalAlign>Middle</VerticalAlign>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
+                            <PaddingLeft>2.5pt</PaddingLeft>
+                            <PaddingRight>2.5pt</PaddingRight>
+                            <PaddingTop>2.5pt</PaddingTop>
+                            <PaddingBottom>2.5pt</PaddingBottom>
                           </Style>
                         </Textbox>
                       </CellContents>
@@ -1659,6 +1940,222 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
+                        <Textbox Name="ASymHeadFlatness">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!ASymHeadFlatness.Value</Value>
+                                  <Style>
+                                    <FontSize>8pt</FontSize>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>ASymHeadFlatness</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>White</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>=iif(RowNumber(Nothing) Mod 2, "Silver", "White")</BackgroundColor>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="ASymBodyFlatness">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!ASymBodyFlatness.Value</Value>
+                                  <Style>
+                                    <FontSize>8pt</FontSize>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>ASymBodyFlatness</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>White</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>=iif(RowNumber(Nothing) Mod 2, "Silver", "White")</BackgroundColor>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="ASymTailFlatness">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!ASymTailFlatness.Value</Value>
+                                  <Style>
+                                    <FontSize>8pt</FontSize>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>ASymTailFlatness</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>White</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>=iif(RowNumber(Nothing) Mod 2, "Silver", "White")</BackgroundColor>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="SymHeadFlatness">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!SymHeadFlatness.Value</Value>
+                                  <Style>
+                                    <FontSize>8pt</FontSize>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>SymHeadFlatness</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>White</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>=iif(RowNumber(Nothing) Mod 2, "Silver", "White")</BackgroundColor>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="SymBodyFlatness">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!SymBodyFlatness.Value</Value>
+                                  <Style>
+                                    <FontSize>8pt</FontSize>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>SymBodyFlatness</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>White</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>=iif(RowNumber(Nothing) Mod 2, "Silver", "White")</BackgroundColor>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="SymTailFlatness">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!SymTailFlatness.Value</Value>
+                                  <Style>
+                                    <FontSize>8pt</FontSize>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>SymTailFlatness</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>White</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>=iif(RowNumber(Nothing) Mod 2, "Silver", "White")</BackgroundColor>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
                         <Textbox Name="DSC1_RAMP1">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
@@ -1810,7 +2307,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!ARCHIVE_DATE.Value</Value>
+                                  <Value>=format(Fields!ARCHIVE_DATE.Value, "dd/MM/yyyy HH:mm:ss")</Value>
                                   <Style>
                                     <FontSize>8pt</FontSize>
                                   </Style>
@@ -1835,6 +2332,7 @@
                             <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
+                        <rd:Selected>true</rd:Selected>
                       </CellContents>
                     </TablixCell>
                   </TablixCells>
@@ -1843,6 +2341,12 @@
             </TablixBody>
             <TablixColumnHierarchy>
               <TablixMembers>
+                <TablixMember />
+                <TablixMember />
+                <TablixMember />
+                <TablixMember />
+                <TablixMember />
+                <TablixMember />
                 <TablixMember />
                 <TablixMember />
                 <TablixMember />
@@ -1878,15 +2382,22 @@
                 </TablixMember>
               </TablixMembers>
             </TablixRowHierarchy>
+            <NoRowsMessage>Không có dữ liệu</NoRowsMessage>
             <DataSetName>BaoCaoSanXuatDataset</DataSetName>
-            <Top>0.09722in</Top>
             <Left>0.09364in</Left>
             <Height>0.5in</Height>
-            <Width>15.68992in</Width>
+            <Width>17.59834in</Width>
             <Style>
               <Border>
                 <Style>None</Style>
               </Border>
+              <FontSize>12pt</FontSize>
+              <TextAlign>Center</TextAlign>
+              <Color>Red</Color>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>10pt</PaddingTop>
+              <PaddingBottom>10pt</PaddingBottom>
             </Style>
           </Tablix>
         </ReportItems>
@@ -1898,10 +2409,10 @@
           <BackgroundColor>White</BackgroundColor>
         </Style>
       </Body>
-      <Width>15.96679in</Width>
+      <Width>17.86698in</Width>
       <Page>
         <PageHeader>
-          <Height>0.95in</Height>
+          <Height>0.80833in</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
@@ -1912,9 +2423,10 @@
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>Từ ngày :   </Value>
+                      <Value>Từ ngày:   </Value>
                       <Style>
                         <FontStyle>Italic</FontStyle>
+                        <FontSize>9.75pt</FontSize>
                       </Style>
                     </TextRun>
                   </TextRuns>
@@ -1922,7 +2434,7 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox3</rd:DefaultName>
-              <Top>0.14722in</Top>
+              <Top>0.14332in</Top>
               <Left>0.09364in</Left>
               <Height>0.18945in</Height>
               <Width>0.69133in</Width>
@@ -1946,7 +2458,7 @@
                       <Value>BÁO CÁO SẢN XUẤT</Value>
                       <Style>
                         <FontFamily>Times New Roman</FontFamily>
-                        <FontSize>24pt</FontSize>
+                        <FontSize>18pt</FontSize>
                         <FontWeight>Bold</FontWeight>
                       </Style>
                     </TextRun>
@@ -1955,27 +2467,23 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox7</rd:DefaultName>
-              <Top>0.14166in</Top>
-              <Left>5.94513in</Left>
-              <Height>0.38056in</Height>
+              <Top>0.26832in</Top>
+              <Left>7.55285in</Left>
+              <Height>0.3789in</Height>
               <Width>3.48333in</Width>
               <ZIndex>1</ZIndex>
               <Style>
                 <Border>
                   <Style>None</Style>
                 </Border>
-                <PaddingLeft>2pt</PaddingLeft>
-                <PaddingRight>2pt</PaddingRight>
-                <PaddingTop>2pt</PaddingTop>
-                <PaddingBottom>2pt</PaddingBottom>
               </Style>
             </Textbox>
             <Image Name="logo">
               <Source>Embedded</Source>
               <Value>logo</Value>
               <Sizing>FitProportional</Sizing>
-              <Top>0.14166in</Top>
-              <Left>13.96148in</Left>
+              <Top>0.08889in</Top>
+              <Left>15.86999in</Left>
               <Height>0.5in</Height>
               <Width>1.82198in</Width>
               <ZIndex>2</ZIndex>
@@ -1997,6 +2505,7 @@ System.TimeZone.CurrentTimeZone.
 ToLocalTime(Parameters!fromDate.Value), "dd.MM.yyyy HH:mm tt")</Value>
                       <Style>
                         <FontStyle>Italic</FontStyle>
+                        <FontSize>9.75pt</FontSize>
                         <FontWeight>Bold</FontWeight>
                       </Style>
                     </TextRun>
@@ -2005,7 +2514,7 @@ ToLocalTime(Parameters!fromDate.Value), "dd.MM.yyyy HH:mm tt")</Value>
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox48</rd:DefaultName>
-              <Top>0.14722in</Top>
+              <Top>0.14332in</Top>
               <Left>0.78497in</Left>
               <Height>0.18945in</Height>
               <Width>1.99167in</Width>
@@ -2032,6 +2541,7 @@ System.TimeZone.CurrentTimeZone.
 ToLocalTime(Parameters!toDate.Value), "dd.MM.yyyy HH:mm tt")</Value>
                       <Style>
                         <FontStyle>Italic</FontStyle>
+                        <FontSize>9.75pt</FontSize>
                         <FontWeight>Bold</FontWeight>
                       </Style>
                     </TextRun>
@@ -2040,9 +2550,9 @@ ToLocalTime(Parameters!toDate.Value), "dd.MM.yyyy HH:mm tt")</Value>
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox48</rd:DefaultName>
-              <Top>0.33667in</Top>
+              <Top>0.33277in</Top>
               <Left>0.78497in</Left>
-              <Height>0.18945in</Height>
+              <Height>0.25612in</Height>
               <Width>1.99167in</Width>
               <ZIndex>4</ZIndex>
               <Style>
@@ -2072,9 +2582,9 @@ ToLocalTime(Parameters!toDate.Value), "dd.MM.yyyy HH:mm tt")</Value>
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox3</rd:DefaultName>
-              <Top>0.33667in</Top>
+              <Top>0.33277in</Top>
               <Left>0.09364in</Left>
-              <Height>0.18945in</Height>
+              <Height>0.25612in</Height>
               <Width>0.69133in</Width>
               <ZIndex>5</ZIndex>
               <Style>
@@ -2095,7 +2605,7 @@ ToLocalTime(Parameters!toDate.Value), "dd.MM.yyyy HH:mm tt")</Value>
           </Style>
         </PageHeader>
         <PageFooter>
-          <Height>1in</Height>
+          <Height>1.31667in</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
@@ -2109,6 +2619,7 @@ ToLocalTime(Parameters!toDate.Value), "dd.MM.yyyy HH:mm tt")</Value>
                       <Value>Ngày xuất báo cáo: </Value>
                       <Style>
                         <FontStyle>Italic</FontStyle>
+                        <FontSize>9.75pt</FontSize>
                       </Style>
                     </TextRun>
                   </TextRuns>
@@ -2116,10 +2627,10 @@ ToLocalTime(Parameters!toDate.Value), "dd.MM.yyyy HH:mm tt")</Value>
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox1</rd:DefaultName>
-              <Top>0.355in</Top>
-              <Left>13.23816in</Left>
+              <Top>0.48in</Top>
+              <Left>15.28897in</Left>
               <Height>0.25in</Height>
-              <Width>1.31303in</Width>
+              <Width>1.27136in</Width>
               <Style>
                 <Border>
                   <Style>None</Style>
@@ -2131,13 +2642,14 @@ ToLocalTime(Parameters!toDate.Value), "dd.MM.yyyy HH:mm tt")</Value>
               </Style>
             </Textbox>
             <Line Name="Line1">
-              <Top>0.105in</Top>
+              <Top>0.28556in</Top>
               <Left>0.09364in</Left>
               <Height>0in</Height>
-              <Width>15.68982in</Width>
+              <Width>17.59493in</Width>
               <ZIndex>1</ZIndex>
               <Style>
                 <Border>
+                  <Color>Silver</Color>
                   <Style>Solid</Style>
                 </Border>
               </Style>
@@ -2150,17 +2662,19 @@ ToLocalTime(Parameters!toDate.Value), "dd.MM.yyyy HH:mm tt")</Value>
                   <TextRuns>
                     <TextRun>
                       <Value>=format(Globals!ExecutionTime, "dd/MM/yyyy HH:mm")</Value>
-                      <Style />
+                      <Style>
+                        <FontSize>9.75pt</FontSize>
+                      </Style>
                     </TextRun>
                   </TextRuns>
                   <Style />
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox9</rd:DefaultName>
-              <Top>0.355in</Top>
-              <Left>14.62063in</Left>
+              <Top>0.48in</Top>
+              <Left>16.62978in</Left>
               <Height>0.25in</Height>
-              <Width>1.34616in</Width>
+              <Width>1.2372in</Width>
               <ZIndex>2</ZIndex>
               <Style>
                 <Border>
@@ -2179,7 +2693,7 @@ ToLocalTime(Parameters!toDate.Value), "dd.MM.yyyy HH:mm tt")</Value>
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>="Page " + Globals!PageNumber.ToString() + " of " + Globals!TotalPages.ToString()</Value>
+                      <Value>="Trang " + Globals!PageNumber.ToString() + " / " + Globals!TotalPages.ToString()</Value>
                       <Style />
                     </TextRun>
                   </TextRuns>
@@ -2187,8 +2701,8 @@ ToLocalTime(Parameters!toDate.Value), "dd.MM.yyyy HH:mm tt")</Value>
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox11</rd:DefaultName>
-              <Top>0.355in</Top>
-              <Left>7.29816in</Left>
+              <Top>0.48in</Top>
+              <Left>8.51762in</Left>
               <Height>0.25in</Height>
               <Width>1in</Width>
               <ZIndex>3</ZIndex>
@@ -2210,13 +2724,13 @@ ToLocalTime(Parameters!toDate.Value), "dd.MM.yyyy HH:mm tt")</Value>
           </Style>
         </PageFooter>
         <PageHeight>10in</PageHeight>
-        <PageWidth>17in</PageWidth>
+        <PageWidth>18.5in</PageWidth>
         <InteractiveHeight>10in</InteractiveHeight>
-        <InteractiveWidth>17in</InteractiveWidth>
-        <LeftMargin>0.5in</LeftMargin>
-        <RightMargin>0.5in</RightMargin>
-        <TopMargin>0.5in</TopMargin>
-        <BottomMargin>0.5in</BottomMargin>
+        <InteractiveWidth>18.5in</InteractiveWidth>
+        <LeftMargin>0.35in</LeftMargin>
+        <RightMargin>0.25in</RightMargin>
+        <TopMargin>0.25in</TopMargin>
+        <BottomMargin>0.25in</BottomMargin>
         <Style />
       </Page>
     </ReportSection>

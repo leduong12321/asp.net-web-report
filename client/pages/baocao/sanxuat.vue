@@ -1,16 +1,14 @@
 <template>
-    <div class="container">
-      <SanXuatComponent />
-    </div>
-  
-  </template>
-  
-  <script>
-import SanXuatComponent from '../../components/baocao/SanXuatComponent.vue';
+  <div class="container">
+    <SanXuatComponent />
+  </div>
+</template>
 
-  export default {
-    name: "homepage",
-    components: { SanXuatComponent }
-}
-  </script>
-  
+<script>
+import SanXuatComponent from "../../components/baocao/SanXuatComponent.vue";
+
+export default {
+  name: "homepage",
+  components: { SanXuatComponent },
+};
+</script>

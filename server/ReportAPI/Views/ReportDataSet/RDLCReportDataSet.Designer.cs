@@ -333,6 +333,18 @@ namespace ReportAPI.Views.ReportDataSet {
             
             private global::System.Data.DataColumn columnFLATNEES;
             
+            private global::System.Data.DataColumn columnASymHeadFlatness;
+            
+            private global::System.Data.DataColumn columnASymBodyFlatness;
+            
+            private global::System.Data.DataColumn columnASymTailFlatness;
+            
+            private global::System.Data.DataColumn columnSymHeadFlatness;
+            
+            private global::System.Data.DataColumn columnSymBodyFlatness;
+            
+            private global::System.Data.DataColumn columnSymTailFlatness;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public BaoCaoSanXuatDataTable() {
@@ -584,6 +596,54 @@ namespace ReportAPI.Views.ReportDataSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn ASymHeadFlatnessColumn {
+                get {
+                    return this.columnASymHeadFlatness;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn ASymBodyFlatnessColumn {
+                get {
+                    return this.columnASymBodyFlatness;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn ASymTailFlatnessColumn {
+                get {
+                    return this.columnASymTailFlatness;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn SymHeadFlatnessColumn {
+                get {
+                    return this.columnSymHeadFlatness;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn SymBodyFlatnessColumn {
+                get {
+                    return this.columnSymBodyFlatness;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn SymTailFlatnessColumn {
+                get {
+                    return this.columnSymTailFlatness;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -646,7 +706,13 @@ namespace ReportAPI.Views.ReportDataSet {
                         double MIN_VALUE, 
                         double AVG_CROWN, 
                         double AVG_WEDGE, 
-                        double FLATNEES) {
+                        double FLATNEES, 
+                        string ASymHeadFlatness, 
+                        string ASymBodyFlatness, 
+                        string ASymTailFlatness, 
+                        string SymHeadFlatness, 
+                        string SymBodyFlatness, 
+                        string SymTailFlatness) {
                 BaoCaoSanXuatRow rowBaoCaoSanXuatRow = ((BaoCaoSanXuatRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         ARCHIVE_DATE,
@@ -675,7 +741,13 @@ namespace ReportAPI.Views.ReportDataSet {
                         MIN_VALUE,
                         AVG_CROWN,
                         AVG_WEDGE,
-                        FLATNEES};
+                        FLATNEES,
+                        ASymHeadFlatness,
+                        ASymBodyFlatness,
+                        ASymTailFlatness,
+                        SymHeadFlatness,
+                        SymBodyFlatness,
+                        SymTailFlatness};
                 rowBaoCaoSanXuatRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowBaoCaoSanXuatRow);
                 return rowBaoCaoSanXuatRow;
@@ -725,6 +797,12 @@ namespace ReportAPI.Views.ReportDataSet {
                 this.columnAVG_CROWN = base.Columns["AVG_CROWN"];
                 this.columnAVG_WEDGE = base.Columns["AVG_WEDGE"];
                 this.columnFLATNEES = base.Columns["FLATNEES"];
+                this.columnASymHeadFlatness = base.Columns["ASymHeadFlatness"];
+                this.columnASymBodyFlatness = base.Columns["ASymBodyFlatness"];
+                this.columnASymTailFlatness = base.Columns["ASymTailFlatness"];
+                this.columnSymHeadFlatness = base.Columns["SymHeadFlatness"];
+                this.columnSymBodyFlatness = base.Columns["SymBodyFlatness"];
+                this.columnSymTailFlatness = base.Columns["SymTailFlatness"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -784,6 +862,18 @@ namespace ReportAPI.Views.ReportDataSet {
                 base.Columns.Add(this.columnAVG_WEDGE);
                 this.columnFLATNEES = new global::System.Data.DataColumn("FLATNEES", typeof(double), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnFLATNEES);
+                this.columnASymHeadFlatness = new global::System.Data.DataColumn("ASymHeadFlatness", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnASymHeadFlatness);
+                this.columnASymBodyFlatness = new global::System.Data.DataColumn("ASymBodyFlatness", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnASymBodyFlatness);
+                this.columnASymTailFlatness = new global::System.Data.DataColumn("ASymTailFlatness", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnASymTailFlatness);
+                this.columnSymHeadFlatness = new global::System.Data.DataColumn("SymHeadFlatness", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSymHeadFlatness);
+                this.columnSymBodyFlatness = new global::System.Data.DataColumn("SymBodyFlatness", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSymBodyFlatness);
+                this.columnSymTailFlatness = new global::System.Data.DataColumn("SymTailFlatness", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSymTailFlatness);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1358,6 +1448,102 @@ namespace ReportAPI.Views.ReportDataSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string ASymHeadFlatness {
+                get {
+                    try {
+                        return ((string)(this[this.tableBaoCaoSanXuat.ASymHeadFlatnessColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ASymHeadFlatness\' in table \'BaoCaoSanXuat\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableBaoCaoSanXuat.ASymHeadFlatnessColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string ASymBodyFlatness {
+                get {
+                    try {
+                        return ((string)(this[this.tableBaoCaoSanXuat.ASymBodyFlatnessColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ASymBodyFlatness\' in table \'BaoCaoSanXuat\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableBaoCaoSanXuat.ASymBodyFlatnessColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string ASymTailFlatness {
+                get {
+                    try {
+                        return ((string)(this[this.tableBaoCaoSanXuat.ASymTailFlatnessColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ASymTailFlatness\' in table \'BaoCaoSanXuat\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableBaoCaoSanXuat.ASymTailFlatnessColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string SymHeadFlatness {
+                get {
+                    try {
+                        return ((string)(this[this.tableBaoCaoSanXuat.SymHeadFlatnessColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'SymHeadFlatness\' in table \'BaoCaoSanXuat\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableBaoCaoSanXuat.SymHeadFlatnessColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string SymBodyFlatness {
+                get {
+                    try {
+                        return ((string)(this[this.tableBaoCaoSanXuat.SymBodyFlatnessColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'SymBodyFlatness\' in table \'BaoCaoSanXuat\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableBaoCaoSanXuat.SymBodyFlatnessColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string SymTailFlatness {
+                get {
+                    try {
+                        return ((string)(this[this.tableBaoCaoSanXuat.SymTailFlatnessColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'SymTailFlatness\' in table \'BaoCaoSanXuat\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableBaoCaoSanXuat.SymTailFlatnessColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool IsARCHIVE_DATENull() {
                 return this.IsNull(this.tableBaoCaoSanXuat.ARCHIVE_DATEColumn);
             }
@@ -1678,6 +1864,78 @@ namespace ReportAPI.Views.ReportDataSet {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void SetFLATNEESNull() {
                 this[this.tableBaoCaoSanXuat.FLATNEESColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsASymHeadFlatnessNull() {
+                return this.IsNull(this.tableBaoCaoSanXuat.ASymHeadFlatnessColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetASymHeadFlatnessNull() {
+                this[this.tableBaoCaoSanXuat.ASymHeadFlatnessColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsASymBodyFlatnessNull() {
+                return this.IsNull(this.tableBaoCaoSanXuat.ASymBodyFlatnessColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetASymBodyFlatnessNull() {
+                this[this.tableBaoCaoSanXuat.ASymBodyFlatnessColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsASymTailFlatnessNull() {
+                return this.IsNull(this.tableBaoCaoSanXuat.ASymTailFlatnessColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetASymTailFlatnessNull() {
+                this[this.tableBaoCaoSanXuat.ASymTailFlatnessColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsSymHeadFlatnessNull() {
+                return this.IsNull(this.tableBaoCaoSanXuat.SymHeadFlatnessColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetSymHeadFlatnessNull() {
+                this[this.tableBaoCaoSanXuat.SymHeadFlatnessColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsSymBodyFlatnessNull() {
+                return this.IsNull(this.tableBaoCaoSanXuat.SymBodyFlatnessColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetSymBodyFlatnessNull() {
+                this[this.tableBaoCaoSanXuat.SymBodyFlatnessColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsSymTailFlatnessNull() {
+                return this.IsNull(this.tableBaoCaoSanXuat.SymTailFlatnessColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetSymTailFlatnessNull() {
+                this[this.tableBaoCaoSanXuat.SymTailFlatnessColumn] = global::System.Convert.DBNull;
             }
         }
         

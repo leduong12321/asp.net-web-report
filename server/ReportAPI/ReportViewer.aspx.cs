@@ -95,6 +95,7 @@ namespace ReportAPI
                     sqlDataAdapter.Fill(dataSet);
                     RdlcReportViewer.LocalReport.ReportPath = Server.MapPath("~/Views/Reports/ReportBaoCaoSanXuat.rdlc");
                     RdlcReportViewer.LocalReport.DataSources.Clear();
+                    
                     RdlcReportViewer.LocalReport.DataSources.Add(new ReportDataSource("BaoCaoSanXuatDataset", dataSet.Tables[0]));
                     RdlcReportViewer.LocalReport.Refresh();
 

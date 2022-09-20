@@ -125,6 +125,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="ChatLuongThanhPhamHRC.aspx" />
     <Content Include="Global.asax" />
     <Content Include="ReportViewer.aspx" />
     <Content Include="SqlServerTypes\readme.htm" />
@@ -140,14 +141,22 @@
     <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="TongHopSanLuongHRC.aspx" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="ChatLuongThanhPhamHRC.aspx.cs">
+      <DependentUpon>ChatLuongThanhPhamHRC.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ChatLuongThanhPhamHRC.aspx.designer.cs">
+      <DependentUpon>ChatLuongThanhPhamHRC.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Controllers\BaoCaoSanXuatController.cs" />
-    <Compile Include="Controllers\BaoCaoTongHopSanXuatHSMController.cs" />
+    <Compile Include="Controllers\TongHopSanLuongHRCController.cs" />
     <Compile Include="Controllers\ChatLuongThanhPhamHRCController.cs" />
     <Compile Include="Controllers\ProductsController.cs" />
     <Compile Include="Global.asax.cs">
@@ -178,6 +187,13 @@
       <DependentUpon>Site.Mobile.Master</DependentUpon>
     </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
+    <Compile Include="TongHopSanLuongHRC.aspx.cs">
+      <DependentUpon>TongHopSanLuongHRC.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TongHopSanLuongHRC.aspx.designer.cs">
+      <DependentUpon>TongHopSanLuongHRC.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ViewSwitcher.ascx.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -185,10 +201,20 @@
     <Compile Include="ViewSwitcher.ascx.designer.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Views\ReportDataSet\ChatLuongThanhPhamHRCDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ChatLuongThanhPhamHRCDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Views\ReportDataSet\RDLCReportDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>RDLCReportDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ReportDataSet\TongHopSanLuongHRCDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TongHopSanLuongHRCDataSet.xsd</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -202,6 +228,17 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <Content Include="Site.Mobile.Master" />
+    <Content Include="Views\ReportDataSet\ChatLuongThanhPhamHRCDataSet.xsc">
+      <DependentUpon>ChatLuongThanhPhamHRCDataSet.xsd</DependentUpon>
+    </Content>
+    <None Include="Views\ReportDataSet\ChatLuongThanhPhamHRCDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ChatLuongThanhPhamHRCDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="Views\ReportDataSet\ChatLuongThanhPhamHRCDataSet.xss">
+      <DependentUpon>ChatLuongThanhPhamHRCDataSet.xsd</DependentUpon>
+    </Content>
     <None Include="Views\ReportDataSet\RDLCReportDataSet.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
@@ -209,6 +246,17 @@
     </None>
     <Content Include="Views\ReportDataSet\RDLCReportDataSet.xss">
       <DependentUpon>RDLCReportDataSet.xsd</DependentUpon>
+    </Content>
+    <Content Include="Views\ReportDataSet\TongHopSanLuongHRCDataSet.xsc">
+      <DependentUpon>TongHopSanLuongHRCDataSet.xsd</DependentUpon>
+    </Content>
+    <None Include="Views\ReportDataSet\TongHopSanLuongHRCDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>TongHopSanLuongHRCDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="Views\ReportDataSet\TongHopSanLuongHRCDataSet.xss">
+      <DependentUpon>TongHopSanLuongHRCDataSet.xsd</DependentUpon>
     </Content>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -220,13 +268,13 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Views\BaoCaoSanXuat\" />
-    <Folder Include="Views\BaoCaoTongHopSanXuatHSM\" />
     <Folder Include="Views\ChatLuongThanhPhamHRC\" />
-    <Folder Include="Views\Products\" />
+    <Folder Include="Views\TongHopSanLuongHRC\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Views\Reports\ProductHSMReport.rdlc" />
+    <EmbeddedResource Include="Views\Reports\ChatLuongThanhPhamHRC.rdlc" />
     <EmbeddedResource Include="Views\Reports\ReportBaoCaoSanXuat.rdlc" />
+    <EmbeddedResource Include="Views\Reports\TongHopSanLuongHRC.rdlc" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
