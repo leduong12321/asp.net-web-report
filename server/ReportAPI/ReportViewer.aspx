@@ -15,6 +15,9 @@
             overflow-y: hidden !important;
             height: 100% !important;
         }
+/*        .Css-Report .aspNetHidden::before {
+            content: 'Không có dữ liệu';
+        }*/
         @media only screen and (min-width: 1601px) {
             .Css-Report #RdlcReportViewer {
             min-height: 100vh !important;

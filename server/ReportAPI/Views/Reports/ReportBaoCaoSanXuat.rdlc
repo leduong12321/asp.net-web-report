@@ -302,7 +302,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>L3 Piece Id</Value>
+                                  <Value>L3 Piece ID</Value>
                                   <Style>
                                     <FontSize>8pt</FontSize>
                                     <Color>White</Color>
@@ -339,7 +339,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Slab Id</Value>
+                                  <Value>Slab ID</Value>
                                   <Style>
                                     <FontSize>8pt</FontSize>
                                     <Color>White</Color>
@@ -1144,7 +1144,7 @@ Tail</Value>
                               <TextRuns>
                                 <TextRun>
                                   <Value>DSC1
-(Bar)</Value>
+(bar)</Value>
                                   <Style>
                                     <FontSize>8pt</FontSize>
                                     <Color>White</Color>
@@ -1182,7 +1182,7 @@ Tail</Value>
                               <TextRuns>
                                 <TextRun>
                                   <Value>DSC2
-(Bar)</Value>
+(bar)</Value>
                                   <Style>
                                     <FontSize>8pt</FontSize>
                                     <Color>White</Color>
@@ -2307,7 +2307,7 @@ Tail</Value>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!ARCHIVE_DATE.Value</Value>
+                                  <Value>=format(Fields!ARCHIVE_DATE.Value, "dd/MM/yyyy HH:mm:ss")</Value>
                                   <Style>
                                     <FontSize>8pt</FontSize>
                                   </Style>
@@ -2332,6 +2332,7 @@ Tail</Value>
                             <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
+                        <rd:Selected>true</rd:Selected>
                       </CellContents>
                     </TablixCell>
                   </TablixCells>
@@ -2381,8 +2382,8 @@ Tail</Value>
                 </TablixMember>
               </TablixMembers>
             </TablixRowHierarchy>
+            <NoRowsMessage>Không có dữ liệu</NoRowsMessage>
             <DataSetName>BaoCaoSanXuatDataset</DataSetName>
-            <Top>0.09722in</Top>
             <Left>0.09364in</Left>
             <Height>0.5in</Height>
             <Width>17.59834in</Width>
@@ -2390,6 +2391,13 @@ Tail</Value>
               <Border>
                 <Style>None</Style>
               </Border>
+              <FontSize>12pt</FontSize>
+              <TextAlign>Center</TextAlign>
+              <Color>Red</Color>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>10pt</PaddingTop>
+              <PaddingBottom>10pt</PaddingBottom>
             </Style>
           </Tablix>
         </ReportItems>
@@ -2404,7 +2412,7 @@ Tail</Value>
       <Width>17.86698in</Width>
       <Page>
         <PageHeader>
-          <Height>0.65833in</Height>
+          <Height>0.80833in</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
@@ -2415,9 +2423,10 @@ Tail</Value>
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>Từ ngày :   </Value>
+                      <Value>Từ ngày:   </Value>
                       <Style>
                         <FontStyle>Italic</FontStyle>
+                        <FontSize>9.75pt</FontSize>
                       </Style>
                     </TextRun>
                   </TextRuns>
@@ -2449,7 +2458,7 @@ Tail</Value>
                       <Value>BÁO CÁO SẢN XUẤT</Value>
                       <Style>
                         <FontFamily>Times New Roman</FontFamily>
-                        <FontSize>24pt</FontSize>
+                        <FontSize>18pt</FontSize>
                         <FontWeight>Bold</FontWeight>
                       </Style>
                     </TextRun>
@@ -2458,19 +2467,15 @@ Tail</Value>
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox7</rd:DefaultName>
-              <Top>0.14166in</Top>
+              <Top>0.26832in</Top>
               <Left>7.55285in</Left>
-              <Height>0.38056in</Height>
+              <Height>0.3789in</Height>
               <Width>3.48333in</Width>
               <ZIndex>1</ZIndex>
               <Style>
                 <Border>
                   <Style>None</Style>
                 </Border>
-                <PaddingLeft>2pt</PaddingLeft>
-                <PaddingRight>2pt</PaddingRight>
-                <PaddingTop>2pt</PaddingTop>
-                <PaddingBottom>2pt</PaddingBottom>
               </Style>
             </Textbox>
             <Image Name="logo">
@@ -2500,6 +2505,7 @@ System.TimeZone.CurrentTimeZone.
 ToLocalTime(Parameters!fromDate.Value), "dd.MM.yyyy HH:mm tt")</Value>
                       <Style>
                         <FontStyle>Italic</FontStyle>
+                        <FontSize>9.75pt</FontSize>
                         <FontWeight>Bold</FontWeight>
                       </Style>
                     </TextRun>
@@ -2535,6 +2541,7 @@ System.TimeZone.CurrentTimeZone.
 ToLocalTime(Parameters!toDate.Value), "dd.MM.yyyy HH:mm tt")</Value>
                       <Style>
                         <FontStyle>Italic</FontStyle>
+                        <FontSize>9.75pt</FontSize>
                         <FontWeight>Bold</FontWeight>
                       </Style>
                     </TextRun>
@@ -2612,6 +2619,7 @@ ToLocalTime(Parameters!toDate.Value), "dd.MM.yyyy HH:mm tt")</Value>
                       <Value>Ngày xuất báo cáo: </Value>
                       <Style>
                         <FontStyle>Italic</FontStyle>
+                        <FontSize>9.75pt</FontSize>
                       </Style>
                     </TextRun>
                   </TextRuns>
@@ -2620,9 +2628,9 @@ ToLocalTime(Parameters!toDate.Value), "dd.MM.yyyy HH:mm tt")</Value>
               </Paragraphs>
               <rd:DefaultName>Textbox1</rd:DefaultName>
               <Top>0.48in</Top>
-              <Left>15.13835in</Left>
+              <Left>15.28897in</Left>
               <Height>0.25in</Height>
-              <Width>1.31303in</Width>
+              <Width>1.27136in</Width>
               <Style>
                 <Border>
                   <Style>None</Style>
@@ -2654,7 +2662,9 @@ ToLocalTime(Parameters!toDate.Value), "dd.MM.yyyy HH:mm tt")</Value>
                   <TextRuns>
                     <TextRun>
                       <Value>=format(Globals!ExecutionTime, "dd/MM/yyyy HH:mm")</Value>
-                      <Style />
+                      <Style>
+                        <FontSize>9.75pt</FontSize>
+                      </Style>
                     </TextRun>
                   </TextRuns>
                   <Style />
@@ -2662,9 +2672,9 @@ ToLocalTime(Parameters!toDate.Value), "dd.MM.yyyy HH:mm tt")</Value>
               </Paragraphs>
               <rd:DefaultName>Textbox9</rd:DefaultName>
               <Top>0.48in</Top>
-              <Left>16.52082in</Left>
+              <Left>16.62978in</Left>
               <Height>0.25in</Height>
-              <Width>1.34616in</Width>
+              <Width>1.2372in</Width>
               <ZIndex>2</ZIndex>
               <Style>
                 <Border>
@@ -2692,7 +2702,7 @@ ToLocalTime(Parameters!toDate.Value), "dd.MM.yyyy HH:mm tt")</Value>
               </Paragraphs>
               <rd:DefaultName>Textbox11</rd:DefaultName>
               <Top>0.48in</Top>
-              <Left>8.76762in</Left>
+              <Left>8.51762in</Left>
               <Height>0.25in</Height>
               <Width>1in</Width>
               <ZIndex>3</ZIndex>

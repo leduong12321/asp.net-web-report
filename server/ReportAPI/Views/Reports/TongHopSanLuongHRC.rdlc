@@ -60,7 +60,7 @@
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>1.725in</Width>
+                  <Width>0.95833in</Width>
                 </TablixColumn>
                 <TablixColumn>
                   <Width>1.725in</Width>
@@ -533,59 +533,36 @@
                 </TablixMember>
               </TablixMembers>
             </TablixRowHierarchy>
+            <NoRowsMessage>Không có dữ liệu</NoRowsMessage>
             <DataSetName>TongHopSanLuongDataSet</DataSetName>
-            <Top>0.13in</Top>
+            <Top>0.005in</Top>
             <Left>0.22166in</Left>
             <Height>0.5in</Height>
-            <Width>12.06665in</Width>
+            <Width>11.29998in</Width>
             <Style>
               <Border>
                 <Style>None</Style>
               </Border>
+              <FontSize>12pt</FontSize>
+              <TextAlign>Center</TextAlign>
+              <Color>Red</Color>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>10pt</PaddingTop>
+              <PaddingBottom>10pt</PaddingBottom>
             </Style>
           </Tablix>
         </ReportItems>
-        <Height>0.93333in</Height>
+        <Height>0.525in</Height>
         <Style />
       </Body>
-      <Width>12.465in</Width>
+      <Width>11.79in</Width>
       <Page>
         <PageHeader>
-          <Height>1in</Height>
+          <Height>0.775in</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
-            <Textbox Name="Textbox3">
-              <CanGrow>true</CanGrow>
-              <KeepTogether>true</KeepTogether>
-              <Paragraphs>
-                <Paragraph>
-                  <TextRuns>
-                    <TextRun>
-                      <Value>Từ ngày :   </Value>
-                      <Style>
-                        <FontStyle>Italic</FontStyle>
-                      </Style>
-                    </TextRun>
-                  </TextRuns>
-                  <Style />
-                </Paragraph>
-              </Paragraphs>
-              <rd:DefaultName>Textbox3</rd:DefaultName>
-              <Top>0.24722in</Top>
-              <Left>0.21333in</Left>
-              <Height>0.18945in</Height>
-              <Width>0.69133in</Width>
-              <Style>
-                <Border>
-                  <Style>None</Style>
-                </Border>
-                <PaddingLeft>2pt</PaddingLeft>
-                <PaddingRight>2pt</PaddingRight>
-                <PaddingTop>2pt</PaddingTop>
-                <PaddingBottom>2pt</PaddingBottom>
-              </Style>
-            </Textbox>
             <Textbox Name="Textbox7">
               <CanGrow>true</CanGrow>
               <KeepTogether>true</KeepTogether>
@@ -596,20 +573,21 @@
                       <Value>TỔNG HỢP SẢN LƯỢNG HRC</Value>
                       <Style>
                         <FontFamily>Times New Roman</FontFamily>
-                        <FontSize>24pt</FontSize>
+                        <FontSize>18pt</FontSize>
                         <FontWeight>Bold</FontWeight>
                       </Style>
                     </TextRun>
                   </TextRuns>
-                  <Style />
+                  <Style>
+                    <TextAlign>Center</TextAlign>
+                  </Style>
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox7</rd:DefaultName>
               <Top>0.25444in</Top>
-              <Left>4.29333in</Left>
+              <Left>3.54333in</Left>
               <Height>0.49834in</Height>
               <Width>4.80833in</Width>
-              <ZIndex>1</ZIndex>
               <Style>
                 <Border>
                   <Style>None</Style>
@@ -624,17 +602,50 @@
               <Source>Embedded</Source>
               <Value>logo</Value>
               <Sizing>FitProportional</Sizing>
-              <Top>0.24722in</Top>
-              <Left>10.46636in</Left>
+              <Top>0.12222in</Top>
+              <Left>9.71636in</Left>
               <Height>0.5in</Height>
               <Width>1.82198in</Width>
-              <ZIndex>2</ZIndex>
+              <ZIndex>1</ZIndex>
               <Style>
                 <Border>
                   <Style>None</Style>
                 </Border>
               </Style>
             </Image>
+            <Textbox Name="Textbox3">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>Từ ngày:   </Value>
+                      <Style>
+                        <FontStyle>Italic</FontStyle>
+                        <FontSize>9.75pt</FontSize>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style />
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox3</rd:DefaultName>
+              <Top>0.16472in</Top>
+              <Left>0.22166in</Left>
+              <Height>0.18945in</Height>
+              <Width>0.69133in</Width>
+              <ZIndex>2</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
             <Textbox Name="Textbox48">
               <CanGrow>true</CanGrow>
               <KeepTogether>true</KeepTogether>
@@ -647,6 +658,7 @@ System.TimeZone.CurrentTimeZone.
 ToLocalTime(Parameters!fromDate.Value), "dd.MM.yyyy HH:mm tt")</Value>
                       <Style>
                         <FontStyle>Italic</FontStyle>
+                        <FontSize>9.75pt</FontSize>
                         <FontWeight>Bold</FontWeight>
                       </Style>
                     </TextRun>
@@ -655,10 +667,10 @@ ToLocalTime(Parameters!fromDate.Value), "dd.MM.yyyy HH:mm tt")</Value>
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox48</rd:DefaultName>
-              <Top>0.24722in</Top>
-              <Left>0.90466in</Left>
+              <Top>0.16472in</Top>
+              <Left>0.91299in</Left>
               <Height>0.18945in</Height>
-              <Width>1.572in</Width>
+              <Width>1.99167in</Width>
               <ZIndex>3</ZIndex>
               <Style>
                 <Border>
@@ -682,6 +694,7 @@ System.TimeZone.CurrentTimeZone.
 ToLocalTime(Parameters!toDate.Value), "dd.MM.yyyy HH:mm tt")</Value>
                       <Style>
                         <FontStyle>Italic</FontStyle>
+                        <FontSize>9.75pt</FontSize>
                         <FontWeight>Bold</FontWeight>
                       </Style>
                     </TextRun>
@@ -690,10 +703,10 @@ ToLocalTime(Parameters!toDate.Value), "dd.MM.yyyy HH:mm tt")</Value>
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox48</rd:DefaultName>
-              <Top>0.43667in</Top>
-              <Left>0.90466in</Left>
-              <Height>0.18945in</Height>
-              <Width>1.572in</Width>
+              <Top>0.35417in</Top>
+              <Left>0.91299in</Left>
+              <Height>0.25612in</Height>
+              <Width>1.99167in</Width>
               <ZIndex>4</ZIndex>
               <Style>
                 <Border>
@@ -722,9 +735,9 @@ ToLocalTime(Parameters!toDate.Value), "dd.MM.yyyy HH:mm tt")</Value>
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox3</rd:DefaultName>
-              <Top>0.43667in</Top>
-              <Left>0.21333in</Left>
-              <Height>0.18945in</Height>
+              <Top>0.35417in</Top>
+              <Left>0.22166in</Left>
+              <Height>0.25612in</Height>
               <Width>0.69133in</Width>
               <ZIndex>5</ZIndex>
               <Style>
@@ -745,7 +758,7 @@ ToLocalTime(Parameters!toDate.Value), "dd.MM.yyyy HH:mm tt")</Value>
           </Style>
         </PageHeader>
         <PageFooter>
-          <Height>1in</Height>
+          <Height>0.725in</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
@@ -766,8 +779,8 @@ ToLocalTime(Parameters!toDate.Value), "dd.MM.yyyy HH:mm tt")</Value>
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox1</rd:DefaultName>
-              <Top>0.375in</Top>
-              <Left>9.73637in</Left>
+              <Top>0.25in</Top>
+              <Left>8.9947in</Left>
               <Height>0.25in</Height>
               <Width>1.31303in</Width>
               <Style>
@@ -788,15 +801,17 @@ ToLocalTime(Parameters!toDate.Value), "dd.MM.yyyy HH:mm tt")</Value>
                   <TextRuns>
                     <TextRun>
                       <Value>=format(Globals!ExecutionTime, "dd/MM/yyyy HH:mm")</Value>
-                      <Style />
+                      <Style>
+                        <FontSize>9.75pt</FontSize>
+                      </Style>
                     </TextRun>
                   </TextRuns>
                   <Style />
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox9</rd:DefaultName>
-              <Top>0.375in</Top>
-              <Left>11.11884in</Left>
+              <Top>0.25in</Top>
+              <Left>10.37717in</Left>
               <Height>0.25in</Height>
               <Width>1.34616in</Width>
               <ZIndex>1</ZIndex>
@@ -818,15 +833,19 @@ ToLocalTime(Parameters!toDate.Value), "dd.MM.yyyy HH:mm tt")</Value>
                   <TextRuns>
                     <TextRun>
                       <Value>="Trang " + Globals!PageNumber.ToString() + " / " + Globals!TotalPages.ToString()</Value>
-                      <Style />
+                      <Style>
+                        <FontSize>9.75pt</FontSize>
+                      </Style>
                     </TextRun>
                   </TextRuns>
-                  <Style />
+                  <Style>
+                    <TextAlign>Center</TextAlign>
+                  </Style>
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox11</rd:DefaultName>
-              <Top>0.375in</Top>
-              <Left>6.22722in</Left>
+              <Top>0.25in</Top>
+              <Left>5.14665in</Left>
               <Height>0.25in</Height>
               <Width>1.3in</Width>
               <ZIndex>2</ZIndex>
@@ -841,10 +860,10 @@ ToLocalTime(Parameters!toDate.Value), "dd.MM.yyyy HH:mm tt")</Value>
               </Style>
             </Textbox>
             <Line Name="Line1">
-              <Top>0.21334in</Top>
+              <Top>0.08834in</Top>
               <Left>0.22166in</Left>
               <Height>0in</Height>
-              <Width>12.06668in</Width>
+              <Width>11.29998in</Width>
               <ZIndex>3</ZIndex>
               <Style>
                 <Border>
@@ -864,8 +883,8 @@ ToLocalTime(Parameters!toDate.Value), "dd.MM.yyyy HH:mm tt")</Value>
         <PageWidth>16.54in</PageWidth>
         <InteractiveHeight>11.69in</InteractiveHeight>
         <InteractiveWidth>16.54in</InteractiveWidth>
-        <LeftMargin>2in</LeftMargin>
-        <RightMargin>2in</RightMargin>
+        <LeftMargin>2.3in</LeftMargin>
+        <RightMargin>2.2in</RightMargin>
         <TopMargin>1in</TopMargin>
         <BottomMargin>1in</BottomMargin>
         <Style>

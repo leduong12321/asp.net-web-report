@@ -80,37 +80,37 @@
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>0.69133in</Width>
+                  <Width>0.46631in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>0.74723in</Width>
+                  <Width>0.57223in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>2.03411in</Width>
+                  <Width>1.64446in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.40366in</Width>
+                  <Width>1.24533in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.38094in</Width>
+                  <Width>1.25594in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.21806in</Width>
+                  <Width>1.16806in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.61667in</Width>
+                  <Width>1.525in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.5944in</Width>
+                  <Width>1.46107in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.43502in</Width>
+                  <Width>1.32671in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.46664in</Width>
+                  <Width>1.28331in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1in</Width>
+                  <Width>0.86667in</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
@@ -413,7 +413,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Áp tẩy rỉ thô (Bar)</Value>
+                                  <Value>Áp tẩy rỉ thô (bar)</Value>
                                   <Style>
                                     <Color>White</Color>
                                   </Style>
@@ -449,7 +449,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Áp tẩy rỉ tinh (Bar)</Value>
+                                  <Value>Áp tẩy rỉ tinh (bar)</Value>
                                   <Style>
                                     <Color>White</Color>
                                   </Style>
@@ -594,7 +594,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!ARCHIVE_DATE.Value</Value>
+                                  <Value>=format(Fields!ARCHIVE_DATE.Value, "dd/MM/yyyy HH:mm:ss")</Value>
                                   <Style />
                                 </TextRun>
                               </TextRuns>
@@ -922,57 +922,33 @@
                 </TablixMember>
               </TablixMembers>
             </TablixRowHierarchy>
+            <NoRowsMessage>Không có dữ liệu</NoRowsMessage>
             <DataSetName>ChatLuongThanhPhamHRCDataSet</DataSetName>
-            <Top>0.2in</Top>
             <Left>0.125in</Left>
             <Height>0.5in</Height>
-            <Width>14.58806in</Width>
+            <Width>12.81508in</Width>
             <Style>
               <Border />
+              <FontSize>12pt</FontSize>
+              <TextAlign>Center</TextAlign>
+              <Color>Red</Color>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>10pt</PaddingTop>
+              <PaddingBottom>10pt</PaddingBottom>
             </Style>
           </Tablix>
         </ReportItems>
-        <Height>1.45in</Height>
+        <Height>0.9in</Height>
         <Style />
       </Body>
-      <Width>14.96306in</Width>
+      <Width>13.13806in</Width>
       <Page>
         <PageHeader>
           <Height>1in</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
-            <Textbox Name="Textbox3">
-              <CanGrow>true</CanGrow>
-              <KeepTogether>true</KeepTogether>
-              <Paragraphs>
-                <Paragraph>
-                  <TextRuns>
-                    <TextRun>
-                      <Value>Từ ngày :   </Value>
-                      <Style>
-                        <FontStyle>Italic</FontStyle>
-                      </Style>
-                    </TextRun>
-                  </TextRuns>
-                  <Style />
-                </Paragraph>
-              </Paragraphs>
-              <rd:DefaultName>Textbox3</rd:DefaultName>
-              <Top>0.24722in</Top>
-              <Left>0.125in</Left>
-              <Height>0.18945in</Height>
-              <Width>0.69133in</Width>
-              <Style>
-                <Border>
-                  <Style>None</Style>
-                </Border>
-                <PaddingLeft>2pt</PaddingLeft>
-                <PaddingRight>2pt</PaddingRight>
-                <PaddingTop>2pt</PaddingTop>
-                <PaddingBottom>2pt</PaddingBottom>
-              </Style>
-            </Textbox>
             <Textbox Name="Textbox7">
               <CanGrow>true</CanGrow>
               <KeepTogether>true</KeepTogether>
@@ -980,10 +956,10 @@
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>CHẤT LƯỢNG THÀNH PHẨM HRC</Value>
+                      <Value>TỔNG HỢP SẢN LƯỢNG HRC</Value>
                       <Style>
                         <FontFamily>Times New Roman</FontFamily>
-                        <FontSize>24pt</FontSize>
+                        <FontSize>18pt</FontSize>
                         <FontWeight>Bold</FontWeight>
                       </Style>
                     </TextRun>
@@ -993,10 +969,9 @@
               </Paragraphs>
               <rd:DefaultName>Textbox7</rd:DefaultName>
               <Top>0.24722in</Top>
-              <Left>4.78833in</Left>
+              <Left>4.91333in</Left>
               <Height>0.49834in</Height>
-              <Width>5.79805in</Width>
-              <ZIndex>1</ZIndex>
+              <Width>3.68138in</Width>
               <Style>
                 <Border>
                   <Style>None</Style>
@@ -1011,17 +986,50 @@
               <Source>Embedded</Source>
               <Value>logo</Value>
               <Sizing>FitProportional</Sizing>
-              <Top>0.25444in</Top>
-              <Left>12.89108in</Left>
+              <Top>0.24722in</Top>
+              <Left>11.1181in</Left>
               <Height>0.5in</Height>
               <Width>1.82198in</Width>
-              <ZIndex>2</ZIndex>
+              <ZIndex>1</ZIndex>
               <Style>
                 <Border>
                   <Style>None</Style>
                 </Border>
               </Style>
             </Image>
+            <Textbox Name="Textbox3">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>Từ ngày:   </Value>
+                      <Style>
+                        <FontStyle>Italic</FontStyle>
+                        <FontSize>9.75pt</FontSize>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style />
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox3</rd:DefaultName>
+              <Top>0.24722in</Top>
+              <Left>0.125in</Left>
+              <Height>0.18945in</Height>
+              <Width>0.69133in</Width>
+              <ZIndex>2</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
             <Textbox Name="Textbox48">
               <CanGrow>true</CanGrow>
               <KeepTogether>true</KeepTogether>
@@ -1034,6 +1042,7 @@ System.TimeZone.CurrentTimeZone.
 ToLocalTime(Parameters!fromDate.Value), "dd.MM.yyyy HH:mm tt")</Value>
                       <Style>
                         <FontStyle>Italic</FontStyle>
+                        <FontSize>9.75pt</FontSize>
                         <FontWeight>Bold</FontWeight>
                       </Style>
                     </TextRun>
@@ -1045,7 +1054,7 @@ ToLocalTime(Parameters!fromDate.Value), "dd.MM.yyyy HH:mm tt")</Value>
               <Top>0.24722in</Top>
               <Left>0.81633in</Left>
               <Height>0.18945in</Height>
-              <Width>1.572in</Width>
+              <Width>1.99167in</Width>
               <ZIndex>3</ZIndex>
               <Style>
                 <Border>
@@ -1069,6 +1078,7 @@ System.TimeZone.CurrentTimeZone.
 ToLocalTime(Parameters!toDate.Value), "dd.MM.yyyy HH:mm tt")</Value>
                       <Style>
                         <FontStyle>Italic</FontStyle>
+                        <FontSize>9.75pt</FontSize>
                         <FontWeight>Bold</FontWeight>
                       </Style>
                     </TextRun>
@@ -1079,8 +1089,8 @@ ToLocalTime(Parameters!toDate.Value), "dd.MM.yyyy HH:mm tt")</Value>
               <rd:DefaultName>Textbox48</rd:DefaultName>
               <Top>0.43667in</Top>
               <Left>0.81633in</Left>
-              <Height>0.18945in</Height>
-              <Width>1.572in</Width>
+              <Height>0.25612in</Height>
+              <Width>1.99167in</Width>
               <ZIndex>4</ZIndex>
               <Style>
                 <Border>
@@ -1111,7 +1121,7 @@ ToLocalTime(Parameters!toDate.Value), "dd.MM.yyyy HH:mm tt")</Value>
               <rd:DefaultName>Textbox3</rd:DefaultName>
               <Top>0.43667in</Top>
               <Left>0.125in</Left>
-              <Height>0.18945in</Height>
+              <Height>0.25612in</Height>
               <Width>0.69133in</Width>
               <ZIndex>5</ZIndex>
               <Style>
@@ -1154,7 +1164,7 @@ ToLocalTime(Parameters!toDate.Value), "dd.MM.yyyy HH:mm tt")</Value>
               </Paragraphs>
               <rd:DefaultName>Textbox1</rd:DefaultName>
               <Top>0.375in</Top>
-              <Left>12.15942in</Left>
+              <Left>10.40942in</Left>
               <Height>0.25in</Height>
               <Width>1.31303in</Width>
               <Style>
@@ -1183,7 +1193,7 @@ ToLocalTime(Parameters!toDate.Value), "dd.MM.yyyy HH:mm tt")</Value>
               </Paragraphs>
               <rd:DefaultName>Textbox9</rd:DefaultName>
               <Top>0.375in</Top>
-              <Left>13.5419in</Left>
+              <Left>11.7919in</Left>
               <Height>0.25in</Height>
               <Width>1.34616in</Width>
               <ZIndex>1</ZIndex>
@@ -1213,7 +1223,7 @@ ToLocalTime(Parameters!toDate.Value), "dd.MM.yyyy HH:mm tt")</Value>
               </Paragraphs>
               <rd:DefaultName>Textbox11</rd:DefaultName>
               <Top>0.375in</Top>
-              <Left>7.43638in</Left>
+              <Left>6.20305in</Left>
               <Height>0.25in</Height>
               <Width>1.26667in</Width>
               <ZIndex>2</ZIndex>
@@ -1231,7 +1241,7 @@ ToLocalTime(Parameters!toDate.Value), "dd.MM.yyyy HH:mm tt")</Value>
               <Top>0.19444in</Top>
               <Left>0.125in</Left>
               <Height>0in</Height>
-              <Width>14.58806in</Width>
+              <Width>12.81508in</Width>
               <ZIndex>3</ZIndex>
               <Style>
                 <Border>
@@ -1251,7 +1261,7 @@ ToLocalTime(Parameters!toDate.Value), "dd.MM.yyyy HH:mm tt")</Value>
         <PageWidth>16.54in</PageWidth>
         <InteractiveHeight>11.69in</InteractiveHeight>
         <InteractiveWidth>16.54in</InteractiveWidth>
-        <LeftMargin>0.75in</LeftMargin>
+        <LeftMargin>1.6in</LeftMargin>
         <RightMargin>0.75in</RightMargin>
         <TopMargin>0.75in</TopMargin>
         <BottomMargin>0.75in</BottomMargin>
