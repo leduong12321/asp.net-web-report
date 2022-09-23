@@ -11,7 +11,7 @@ export default {
   components: { CommonReportComponent },
   data() {
     return {
-      API_URL: "https://localhost:44315/TongHopSanLuongHRC",
+      API_URL: process.env.baseRPUrl + "/TongHopSanLuongHRC",
       title: "Báo cáo tổng hợp sản lượng HRC",
     };
   },

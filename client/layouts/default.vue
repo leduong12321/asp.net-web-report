@@ -183,6 +183,9 @@ export default {
     },
     handLogout() {
       alert("Do you want logout the website!");
+      this.$store.dispatch('setUser', null);
+      console.log('store -user', this.$store.getters.user);
+      this.$router.push({ path: '/'} );
     },
   },
 };

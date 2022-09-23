@@ -6,7 +6,6 @@
 </template>
 
 <script>
-const API_URL = 'https://localhost:44315/api/';
 export default {
   name: 'homepage-component',
   data() {
@@ -20,7 +19,7 @@ export default {
   },
   methods: {
     async refreshData() {
-      const result = await this.$axios.get(API_URL+'baocaosanxuat');
+      const result = await this.$axios.get(process.env.baseApiUrl + 'baocaosanxuat');
       this.text = result.data;
     }
   }
