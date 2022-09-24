@@ -15,18 +15,30 @@
           <form @submit.prevent="handleSubmit">
             <div class="form-group">
               <label>Tài khoản</label>
-              <input type="text" v-model="username" class="form-control" placeholder="Tài khoản" />
+              <input
+                type="text"
+                :class="{ 'input-error': errorMessage?.length > 0 }"
+                v-model="username"
+                @focus="removeError()"
+                class="form-control"
+                placeholder="Tài khoản"
+              />
             </div>
-            <div class="form-group">
+            <div class="form-group mb-2">
               <label>Mật khẩu</label>
               <input
                 type="password"
                 v-model="password"
                 class="form-control"
+                @focus="removeError()"
+                :class="{ 'input-error': errorMessage?.length > 0 }"
                 placeholder="Mật khẩu"
               />
             </div>
-            <button class="btn btn-secondary" >Đăng nhập</button>
+            <span class="text-error" v-if="errorMessage?.length > 0">{{
+              errorMessage
+            }}</span>
+            <button class="btn btn-secondary mt-2">Đăng nhập</button>
           </form>
         </div>
       </div>
@@ -39,41 +51,39 @@ export default {
   name: "login",
   data() {
     return {
-        username: null,
-        password: null
-    }
+      username: null,
+      password: null,
+      errorMessage: "",
+    };
   },
-  mounted() {
-    // this.getUser();
-  },
+  mounted() {},
   methods: {
-    // async getUser() {
-    //   const result = await this.$axios.get(process.env.baseApiUrl +'user').then((res) => {
-    //     if(res.data) {
-    //         console.log('2', res);
-    //     }
-    //   });
-    // },
     async handleSubmit() {
-        let info = {
-            Username: this.username,
-            Password: this.password
+      let info = {
+        Username: this.username,
+        Password: this.password,
+      };
+      try {
+        // const user = await this.$axios.get('/api/user');
+        const user = await this.$axios.post("/api/user", info);
+        this.$store.dispatch("setUser", user.data);
+        if (user.data) {
+          this.$store.dispatch("setToast", true);
+          this.errorMessage = null;
+          this.$router.push({ path: "/" });
+        } else {
+          this.errorMessage = "Tài khoản hoặc mật khẩu không đúng.";
         }
-        try {
-          // const user = await this.$axios.get('/api/user');
-          const user = await this.$axios.post('/api/user', info);
-          this.$store.dispatch('setUser', user.data);
-          console.log(user);
-          if(user.data) {
-            this.$router.push({ path: '/'} );
-          }
-        } catch (error) {
-          console.log('error', error);
-        }
-        
-        console.log('store -user', this.$store.getters.user);
-    }
-  }
+      } catch (error) {
+        console.log("error", error);
+      }
+
+      console.log("store -user", this.$store.getters.user);
+    },
+    removeError() {
+      this.errorMessage = '';
+    },
+  },
 };
 </script>
 <style lang="scss">

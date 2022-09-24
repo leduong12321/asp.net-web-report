@@ -78,12 +78,11 @@ module.exports = {
       secure: false,
     },
   },
-
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
   },
   env: {
-    baseRPUrl : process.env.BASE_RP_URL || 'http://192.168.103.89:44315',
+    baseUrl : process.env.BASE_URL || 'http://192.168.103.89:44315',
     baseApiUrl: process.env.BASE_API_URL || 'http://192.168.103.89:44315/api/',
   },
   // router: {
