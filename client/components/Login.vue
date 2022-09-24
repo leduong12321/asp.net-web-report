@@ -59,11 +59,18 @@ export default {
             Username: this.username,
             Password: this.password
         }
-        const user = await this.$axios.post(process.env.baseApiUrl +'user', info);
-        this.$store.dispatch('setUser', user.data);
-        if(user.data) {
-          this.$router.push({ path: '/'} );
+        try {
+          // const user = await this.$axios.get('/api/user');
+          const user = await this.$axios.post('/api/user', info);
+          this.$store.dispatch('setUser', user.data);
+          console.log(user);
+          if(user.data) {
+            this.$router.push({ path: '/'} );
+          }
+        } catch (error) {
+          console.log('error', error);
         }
+        
         console.log('store -user', this.$store.getters.user);
     }
   }

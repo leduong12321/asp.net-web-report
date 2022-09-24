@@ -182,10 +182,10 @@ export default {
       // }, 1);
     },
     handLogout() {
-      alert("Do you want logout the website!");
-      this.$store.dispatch('setUser', null);
-      console.log('store -user', this.$store.getters.user);
-      this.$router.push({ path: '/'} );
+      if(confirm("Bạn có muốn đăng xuất không?") == true) {
+        this.$store.dispatch('setUser', null);
+        this.$router.push({ path: '/login'} );
+      }
     },
   },
 };
