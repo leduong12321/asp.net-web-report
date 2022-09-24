@@ -11,7 +11,7 @@ using System.Web.Http.Cors;
 
 namespace ReportAPI.Controllers
 {
-    [EnableCors(origins: "https://localhost:44315", headers: "*", methods: "*")]
+    [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class UserController : ApiController
     {
         User[] user = new User[]
@@ -24,9 +24,8 @@ namespace ReportAPI.Controllers
         {
             return user;
         }
-        [HttpPost]
         public dynamic Post([FromBody] Dictionary<string, string> value)
-        { 
+        {
             try
             {
                 dynamic people = null;
