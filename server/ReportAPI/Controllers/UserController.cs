@@ -11,13 +11,13 @@ using System.Web.Http.Cors;
 
 namespace ReportAPI.Controllers
 {
-    [EnableCors(origins: "*", headers: "*", methods: "*")]
+    //[EnableCors(origins: "*", headers: "*", methods: "*")]
     public class UserController : ApiController
     {
         User[] user = new User[]
         {
-            new User { Id = 1, Name = "Admin", UserName = "admin", Password = "admin", Description = "Full access control", Role = 0 },
-            new User { Id = 2, Name = "KTV", UserName = "ktv", Password = "ktv", Description = "Limited access", Role = 1 },
+            new User { Id = 1, Name = "Admin", UserName = "admin", Password = "admin", Description = "Truy cập đầy đủ", Role = 0 },
+            new User { Id = 2, Name = "KTV", UserName = "ktv", Password = "ktv", Description = "Truy cập giới hạn", Role = 1 },
         };
 
         public dynamic Get()
