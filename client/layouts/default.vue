@@ -48,11 +48,11 @@
         </li>
         <li>
           <div class="profile-details">
-            <div class="profile-content">
+            <div class="profile-content" :class="{'pl-4' : !isClose}">
               <img :src="userImage" alt="profileImg" />
             </div>
             <div class="name-job">
-              <div class="profile_name">Tài khoản {{ $store.getters.user.Name }}</div>
+              <div class="profile_name">{{ $store.getters.user.Name }}</div>
               <div class="job">{{ $store.getters.user.Description }}</div>
             </div>
             <i class="bx bx-log-out" @click="handLogout()"></i>
@@ -68,30 +68,39 @@
       <div class="right-header">
         <img :src="vnFlag" alt="viet-nam-flag" class="mr-3" />
         <i class="bx bxs-bell-ring mr-3"></i>
-        <div class="user">
+        <div class="user d-flex">
           <span class="mr-2 mt-1"
             >Xin chào, {{ $store.getters.user.Name }}</span
           >
           <img :src="userImage" alt="user" class="user-image" />
         </div>
+        <i class="bx bx-log-out logout-icon pr-3" v-b-tooltip.hover.bottomleft="{ customClass: 'my-tooltip-class' }" title="Đăng xuất"  @click="handLogout()"></i>
       </div>
     </div>
     <section class="home-section">
       <Nuxt class="nuxt-body" style="max-width: 100%; padding: 4px" />
     </section>
+    <PopupLogout
+      v-if="isPopupLogout"
+      :isPopupLogout="isPopupLogout"
+      @close-popup="isPopupLogout = false"
+    />
   </div>
 </template>
 
 <script>
 import userImage from "../assets/images/user.png";
 import vnFlag from "../assets/images/vn-flag.png";
+import PopupLogout from "../components/common/PopupLogout.vue";
 export default {
+  components: { PopupLogout },
   data() {
     return {
       isClose: true,
       userImage,
       vnFlag,
       windowWidth: window.innerWidth,
+      isPopupLogout: false,
       menus: [
         {
           icon: "bx bx-home",
@@ -157,7 +166,7 @@ export default {
           name: "Hỗ trợ",
           url: "/",
           subMenus: [],
-          role: [0, 1],
+          role: [0],
         },
       ],
     };
@@ -197,10 +206,11 @@ export default {
       // }, 1);
     },
     handLogout() {
-      if (confirm("Bạn có muốn đăng xuất không?") == true) {
-        this.$store.dispatch("setUser", null);
-        this.$router.push({ path: "/login" });
-      }
+      this.isPopupLogout = true;
+      // if (confirm("Bạn có muốn đăng xuất không?") == true) {
+      //     this.$store.dispatch("setUser", null);
+      //     this.$router.push({ path: "/login" });
+      // }
     },
   },
 };
@@ -446,6 +456,17 @@ body {
   i {
     font-size: 20px;
     margin-top: 3px;
+    &.logout-icon {
+      font-size: 26px;
+      margin-top: 0px;
+      cursor: pointer;
+    }
+    &.my-tooltip-class {
+      .tooltip-inner {
+        padding: 0.25rem 0.75rem;
+        font-size: 13px;
+      }
+    }
   }
   img {
     width: 18px;
@@ -457,7 +478,7 @@ body {
     }
   }
   .user {
-    margin-right: 46px;
+    margin-right: 30px;
     font-size: 13px;
   }
 }
