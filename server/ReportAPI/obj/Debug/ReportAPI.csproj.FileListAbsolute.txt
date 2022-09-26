@@ -466,3 +466,6 @@ F:\WORK\PROJECT\Web Report\asp.net-web-report\server\ReportAPI\obj\Debug\ReportA
 F:\WORK\PROJECT\Web Report\asp.net-web-report\server\ReportAPI\obj\Debug\ReportAPI.csproj.CopyComplete
 F:\WORK\PROJECT\Web Report\asp.net-web-report\server\ReportAPI\obj\Debug\ReportAPI.dll
 F:\WORK\PROJECT\Web Report\asp.net-web-report\server\ReportAPI\obj\Debug\ReportAPI.pdb
+F:\WORK\PROJECT\Web Report\asp.net-web-report\server\ReportAPI\bin\System.Web.Cors.dll
+F:\WORK\PROJECT\Web Report\asp.net-web-report\server\ReportAPI\bin\System.Web.Http.Cors.dll
+F:\WORK\PROJECT\Web Report\asp.net-web-report\server\ReportAPI\bin\System.Web.Http.Cors.xml

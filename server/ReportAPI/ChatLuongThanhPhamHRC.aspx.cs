@@ -70,6 +70,7 @@ namespace ReportAPI
                     ChatLuongThanhPhamViewer.LocalReport.DataSources.Add(new ReportDataSource("ChatLuongThanhPhamHRCDataSet", dataSet.Tables[0]));
                     ChatLuongThanhPhamViewer.LocalReport.Refresh();
 
+                    ChatLuongThanhPhamViewer.LocalReport.DisplayName = "Chatluongsanpham " + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
                     ReportParameter fromDateValue = new ReportParameter("fromDate", time[0].Value.ToString());
                     ReportParameter toDateValue = new ReportParameter("toDate", time[1].Value.ToString());
                     ChatLuongThanhPhamViewer.LocalReport.SetParameters(fromDateValue);

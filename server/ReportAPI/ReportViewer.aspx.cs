@@ -99,6 +99,7 @@ namespace ReportAPI
                     RdlcReportViewer.LocalReport.DataSources.Add(new ReportDataSource("BaoCaoSanXuatDataset", dataSet.Tables[0]));
                     RdlcReportViewer.LocalReport.Refresh();
 
+                    RdlcReportViewer.LocalReport.DisplayName = "Baocaosanxuat " + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
                     ReportParameter fromDateValue = new ReportParameter("fromDate", time[0].Value.ToString());
                     ReportParameter toDateValue = new ReportParameter("toDate", time[1].Value.ToString());
                     RdlcReportViewer.LocalReport.SetParameters(fromDateValue);

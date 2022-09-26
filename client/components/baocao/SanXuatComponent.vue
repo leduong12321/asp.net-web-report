@@ -10,7 +10,7 @@ export default {
     components: { CommonReportComponent },
     data() {
       return {
-        API_URL: "https://localhost:44315/ReportViewer",
+        API_URL: process.env.baseUrl + "/ReportViewer",
         title: 'Báo cáo sản xuất'
       }
     }
