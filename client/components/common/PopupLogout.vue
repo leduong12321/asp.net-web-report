@@ -48,6 +48,11 @@ export default {
 </script>
 <style scoped lang="scss">
 :deep() {
+  .custom-popup {
+    .modal-dialog {
+      justify-content: center;
+    }
+  }
   .content-class {
     max-width: 450px;
     padding: 1rem 1.7rem;
