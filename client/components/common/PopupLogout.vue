@@ -57,6 +57,7 @@ export default {
     max-width: 450px;
     padding: 1rem 1.7rem;
     font-size: 18px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   }
   .body-class {
     padding-left: 0px;
@@ -72,6 +73,7 @@ export default {
     border-top: 0px;
     button {
         width: 130px;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     }
   }
 }
