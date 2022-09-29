@@ -10,7 +10,7 @@ export default {
     components: { CommonReportComponent },
     data() {
       return {
-        API_URL: "https://localhost:44315/ChatLuongThanhPhamHRC",
+        API_URL: process.env.baseUrl + "/ChatLuongThanhPhamHRC",
         title: 'Báo cáo chất lượng thành phẩm HRC'
       }
     }

@@ -10,6 +10,8 @@
   },
   "dependencies": {
     "@nuxtjs/axios": "^5.13.6",
+    "@nuxtjs/proxy": "^2.1.0",
+    "@nuxtjs/router": "^1.7.0",
     "@nuxtjs/style-resources": "^1.2.1",
     "bootstrap": "^4.6.1",
     "bootstrap-vue": "^2.21.2",

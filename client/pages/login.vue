@@ -1,13 +1,17 @@
 <template>
     <div class="container">
+      <Login />
     </div>
   
   </template>
   
   <script>
+import Login from '../components/Login.vue';
   
   export default {
-    layout: 'login',
-}
+      name: "homepage",
+      layout: 'login',
+      components: { Login }
+  }
   </script>
   

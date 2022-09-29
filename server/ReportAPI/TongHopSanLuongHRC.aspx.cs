@@ -70,6 +70,7 @@ namespace ReportAPI
                     TongHopSanLuongHRCViewer.LocalReport.DataSources.Add(new ReportDataSource("TongHopSanLuongDataSet", dataSet.Tables[0]));
                     TongHopSanLuongHRCViewer.LocalReport.Refresh();
 
+                    TongHopSanLuongHRCViewer.LocalReport.DisplayName = "Tonghopsanluong " + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
                     ReportParameter fromDateValue = new ReportParameter("fromDate", time[0].Value.ToString());
                     ReportParameter toDateValue = new ReportParameter("toDate", time[1].Value.ToString());
                     TongHopSanLuongHRCViewer.LocalReport.SetParameters(fromDateValue);

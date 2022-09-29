@@ -64,14 +64,31 @@ module.exports = {
     // https://go.nuxtjs.dev/bootstrap
     'bootstrap-vue/nuxt',
     '@nuxtjs/axios',
+    '@nuxtjs/proxy',
   ],
 
   axios: {
-    // Workaround to avoid enforcing hard-coded localhost:3000: https://github.com/nuxt-community/axios-module/issues/308
-    baseURL: process.env.BASE_URL || 'http://localhost:5101',
+    proxy: true,
   },
-
+  proxy: {
+    '/api/': {
+      target: 'https://localhost:44315',
+      //target: 'http://192.168.103.89:9000',
+      pathRewrite: { '^/api/': '/api/' },
+      changeOrigin: true,
+      secure: false,
+    },
+  },
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
-  }
+  },
+  env: {
+    baseUrl : process.env.BASE_URL || 'https://localhost:44315',
+    baseApiUrl: process.env.BASE_API_URL || 'https://localhost:44315/api/',
+    // baseUrl : process.env.BASE_URL || 'http://192.168.103.89:9000',
+    // baseApiUrl: process.env.BASE_API_URL || 'http://192.168.103.89:9000/api/',
+  },
+  // router: {
+  //   middleware: 'auth',
+  // }
 }
