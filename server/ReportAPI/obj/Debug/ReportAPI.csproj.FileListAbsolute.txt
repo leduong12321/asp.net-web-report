@@ -497,3 +497,16 @@ F:\WORK\PROJECT\Web Report\asp.net-web-report\server\ReportAPI\bin\System.Text.E
 F:\WORK\PROJECT\Web Report\asp.net-web-report\server\ReportAPI\bin\System.Text.Json.xml
 F:\WORK\PROJECT\Web Report\asp.net-web-report\server\ReportAPI\bin\System.Threading.Tasks.Extensions.xml
 F:\WORK\PROJECT\Web Report\asp.net-web-report\server\ReportAPI\bin\System.ValueTuple.xml
+F:\WORK\PROJECT\Web Report\asp.net-web-report\server\ReportAPI\bin\Microsoft.Owin.dll
+F:\WORK\PROJECT\Web Report\asp.net-web-report\server\ReportAPI\bin\Microsoft.Owin.Host.SystemWeb.dll
+F:\WORK\PROJECT\Web Report\asp.net-web-report\server\ReportAPI\bin\Microsoft.Owin.Security.dll
+F:\WORK\PROJECT\Web Report\asp.net-web-report\server\ReportAPI\bin\Microsoft.Owin.Security.Jwt.dll
+F:\WORK\PROJECT\Web Report\asp.net-web-report\server\ReportAPI\bin\Microsoft.Owin.Security.OAuth.dll
+F:\WORK\PROJECT\Web Report\asp.net-web-report\server\ReportAPI\bin\Owin.dll
+F:\WORK\PROJECT\Web Report\asp.net-web-report\server\ReportAPI\bin\System.Web.Http.Owin.dll
+F:\WORK\PROJECT\Web Report\asp.net-web-report\server\ReportAPI\bin\Microsoft.Owin.xml
+F:\WORK\PROJECT\Web Report\asp.net-web-report\server\ReportAPI\bin\Microsoft.Owin.Host.SystemWeb.xml
+F:\WORK\PROJECT\Web Report\asp.net-web-report\server\ReportAPI\bin\Microsoft.Owin.Security.xml
+F:\WORK\PROJECT\Web Report\asp.net-web-report\server\ReportAPI\bin\Microsoft.Owin.Security.Jwt.xml
+F:\WORK\PROJECT\Web Report\asp.net-web-report\server\ReportAPI\bin\Microsoft.Owin.Security.OAuth.xml
+F:\WORK\PROJECT\Web Report\asp.net-web-report\server\ReportAPI\bin\System.Web.Http.Owin.xml
