@@ -53,7 +53,9 @@ namespace ReportAPI
                                     TARGET_WIDTH,
                                     B.DSC2_RAMP1 AS DSC2_RAMP1,
 
-                                (SELECT DSC1_RAMP1
+
+
+                               (SELECT DSC1_RAMP1
                                 FROM SC_MEASURE_MILL
                                 WHERE PIECE_ID = A.PIECE_ID
                                     AND STAND_ID = 'H1') AS DSC1_RAMP1
