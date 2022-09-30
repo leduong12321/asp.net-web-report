@@ -655,7 +655,7 @@
                     <TextRun>
                       <Value>=Format(
 System.TimeZone.CurrentTimeZone.
-ToLocalTime(Parameters!fromDate.Value), "dd.MM.yyyy HH:mm tt")</Value>
+ToLocalTime(Parameters!fromDate.Value), "dd.MM.yyyy HH:mm")</Value>
                       <Style>
                         <FontStyle>Italic</FontStyle>
                         <FontSize>9.75pt</FontSize>
@@ -691,7 +691,7 @@ ToLocalTime(Parameters!fromDate.Value), "dd.MM.yyyy HH:mm tt")</Value>
                     <TextRun>
                       <Value>=Format(
 System.TimeZone.CurrentTimeZone.
-ToLocalTime(Parameters!toDate.Value), "dd.MM.yyyy HH:mm tt")</Value>
+ToLocalTime(Parameters!toDate.Value), "dd.MM.yyyy HH:mm")</Value>
                       <Style>
                         <FontStyle>Italic</FontStyle>
                         <FontSize>9.75pt</FontSize>

@@ -2,70 +2,74 @@
 <Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
-    <DataSource Name="ChatLuongThanhPhamHRCDataSet">
+    <DataSource Name="WRDataSet">
       <ConnectionProperties>
         <DataProvider>System.Data.DataSet</DataProvider>
         <ConnectString>/* Local Connection */</ConnectString>
       </ConnectionProperties>
-      <rd:DataSourceID>4c0cafe6-3c6c-4d5b-b1d7-6e19c5b67018</rd:DataSourceID>
+      <rd:DataSourceID>d28c00f1-3879-4e97-b786-c323f0c70c10</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
-    <DataSet Name="ChatLuongThanhPhamHRCDataSet">
+    <DataSet Name="WRDataSet">
       <Query>
-        <DataSourceName>ChatLuongThanhPhamHRCDataSet</DataSourceName>
+        <DataSourceName>WRDataSet</DataSourceName>
         <CommandText>/* Local Query */</CommandText>
       </Query>
       <Fields>
-        <Field Name="ARCHIVE_DATE">
-          <DataField>ARCHIVE_DATE</DataField>
+        <Field Name="STAND_ID">
+          <DataField>STAND_ID</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="CA">
-          <DataField>CA</DataField>
+        <Field Name="MOUNT_DATE">
+          <DataField>MOUNT_DATE</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="SanPham">
-          <DataField>SanPham</DataField>
+        <Field Name="mount_shift">
+          <DataField>mount_shift</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="Sothutu">
-          <DataField>Sothutu</DataField>
-          <rd:TypeName>System.Int64</rd:TypeName>
+        <Field Name="DISMOUNT_DATE">
+          <DataField>DISMOUNT_DATE</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="TARGET_THICK">
-          <DataField>TARGET_THICK</DataField>
+        <Field Name="dismount_shift">
+          <DataField>dismount_shift</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="POSITION">
+          <DataField>POSITION</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ROLL_ID">
+          <DataField>ROLL_ID</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="MOUNT_NUM">
+          <DataField>MOUNT_NUM</DataField>
           <rd:TypeName>System.Double</rd:TypeName>
         </Field>
-        <Field Name="TASK_SLAB">
-          <DataField>TASK_SLAB</DataField>
-          <rd:TypeName>System.Decimal</rd:TypeName>
-        </Field>
-        <Field Name="SLAB_ID">
-          <DataField>SLAB_ID</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="STEEL_GRADE">
-          <DataField>STEEL_GRADE</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="TARGET_WIDTH">
-          <DataField>TARGET_WIDTH</DataField>
+        <Field Name="DIAMETER">
+          <DataField>DIAMETER</DataField>
           <rd:TypeName>System.Double</rd:TypeName>
         </Field>
-        <Field Name="DSC2_RAMP1">
-          <DataField>DSC2_RAMP1</DataField>
+        <Field Name="crown">
+          <DataField>crown</DataField>
           <rd:TypeName>System.Double</rd:TypeName>
         </Field>
-        <Field Name="DSC1_RAMP1">
-          <DataField>DSC1_RAMP1</DataField>
+        <Field Name="ROLLED_WEIGHT">
+          <DataField>ROLLED_WEIGHT</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="ROLLED_LENGTH">
+          <DataField>ROLLED_LENGTH</DataField>
           <rd:TypeName>System.Double</rd:TypeName>
         </Field>
       </Fields>
       <rd:DataSetInfo>
-        <rd:DataSetName>ChatLuongThanhPhamHRCDataSet</rd:DataSetName>
-        <rd:SchemaPath>F:\WORK\PROJECT\Web Report\asp.net-web-report\server\ReportAPI\Views\ReportDataSet\ChatLuongThanhPhamHRCDataSet.xsd</rd:SchemaPath>
-        <rd:TableName>ChatLuongThanhPhamHRCDataTable</rd:TableName>
+        <rd:DataSetName>WRDataSet</rd:DataSetName>
+        <rd:SchemaPath>F:\WORK\PROJECT\Web Report\asp.net-web-report\server\ReportAPI\Views\ReportDataSet\WRDataSet.xsd</rd:SchemaPath>
+        <rd:TableName>WRDataTable</rd:TableName>
         <rd:TableAdapterFillMethod />
         <rd:TableAdapterGetDataMethod />
         <rd:TableAdapterName />
@@ -80,37 +84,40 @@
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>0.46631in</Width>
+                  <Width>1.01623in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>0.57223in</Width>
+                  <Width>1.86489in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.64446in</Width>
+                  <Width>0.86487in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.24533in</Width>
+                  <Width>1.79619in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.25594in</Width>
+                  <Width>0.82647in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.16806in</Width>
+                  <Width>0.67258in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.525in</Width>
+                  <Width>0.85619in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.46107in</Width>
+                  <Width>0.72496in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.32671in</Width>
+                  <Width>1.16397in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.28331in</Width>
+                  <Width>1.02597in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>0.86667in</Width>
+                  <Width>0.95555in</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>1.04722in</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
@@ -125,7 +132,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>STT</Value>
+                                  <Value>Stand Id</Value>
                                   <Style>
                                     <Color>White</Color>
                                   </Style>
@@ -142,12 +149,14 @@
                               <Color>White</Color>
                               <Style>Solid</Style>
                             </Border>
+                            <BottomBorder>
+                              <Color>DimGray</Color>
+                            </BottomBorder>
                             <BackgroundColor>#7f7f7f</BackgroundColor>
-                            <VerticalAlign>Middle</VerticalAlign>
+                            <VerticalAlign>Bottom</VerticalAlign>
                             <PaddingLeft>2.5pt</PaddingLeft>
                             <PaddingRight>2.5pt</PaddingRight>
                             <PaddingTop>2.5pt</PaddingTop>
-                            <PaddingBottom>2.5pt</PaddingBottom>
                           </Style>
                         </Textbox>
                       </CellContents>
@@ -161,7 +170,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Ca</Value>
+                                  <Value>Mount Date</Value>
                                   <Style>
                                     <Color>White</Color>
                                   </Style>
@@ -186,44 +195,10 @@
                             <PaddingBottom>2.5pt</PaddingBottom>
                           </Style>
                         </Textbox>
+                        <ColSpan>2</ColSpan>
                       </CellContents>
                     </TablixCell>
-                    <TablixCell>
-                      <CellContents>
-                        <Textbox Name="Textbox12">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value>Ngày sản xuất</Value>
-                                  <Style>
-                                    <Color>White</Color>
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style>
-                                <TextAlign>Center</TextAlign>
-                              </Style>
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>Textbox12</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Color>White</Color>
-                              <Style>Solid</Style>
-                            </Border>
-                            <BackgroundColor>#7f7f7f</BackgroundColor>
-                            <VerticalAlign>Middle</VerticalAlign>
-                            <PaddingLeft>2.5pt</PaddingLeft>
-                            <PaddingRight>2.5pt</PaddingRight>
-                            <PaddingTop>2.5pt</PaddingTop>
-                            <PaddingBottom>2.5pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
+                    <TablixCell />
                     <TablixCell>
                       <CellContents>
                         <Textbox Name="Textbox14">
@@ -233,7 +208,8 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>ID cuộn</Value>
+                                  <Value>Dismount Date
+Thời gian ra</Value>
                                   <Style>
                                     <Color>White</Color>
                                   </Style>
@@ -258,44 +234,10 @@
                             <PaddingBottom>2.5pt</PaddingBottom>
                           </Style>
                         </Textbox>
+                        <ColSpan>2</ColSpan>
                       </CellContents>
                     </TablixCell>
-                    <TablixCell>
-                      <CellContents>
-                        <Textbox Name="Textbox16">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value>Sản phẩm</Value>
-                                  <Style>
-                                    <Color>White</Color>
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style>
-                                <TextAlign>Center</TextAlign>
-                              </Style>
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>Textbox16</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Color>White</Color>
-                              <Style>Solid</Style>
-                            </Border>
-                            <BackgroundColor>#7f7f7f</BackgroundColor>
-                            <VerticalAlign>Middle</VerticalAlign>
-                            <PaddingLeft>2.5pt</PaddingLeft>
-                            <PaddingRight>2.5pt</PaddingRight>
-                            <PaddingTop>2.5pt</PaddingTop>
-                            <PaddingBottom>2.5pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
+                    <TablixCell />
                     <TablixCell>
                       <CellContents>
                         <Textbox Name="Textbox18">
@@ -305,7 +247,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Mác thép</Value>
+                                  <Value>Position</Value>
                                   <Style>
                                     <Color>White</Color>
                                   </Style>
@@ -322,12 +264,14 @@
                               <Color>White</Color>
                               <Style>Solid</Style>
                             </Border>
+                            <BottomBorder>
+                              <Color>#7f7f7f</Color>
+                            </BottomBorder>
                             <BackgroundColor>#7f7f7f</BackgroundColor>
-                            <VerticalAlign>Middle</VerticalAlign>
+                            <VerticalAlign>Bottom</VerticalAlign>
                             <PaddingLeft>2.5pt</PaddingLeft>
                             <PaddingRight>2.5pt</PaddingRight>
                             <PaddingTop>2.5pt</PaddingTop>
-                            <PaddingBottom>2.5pt</PaddingBottom>
                           </Style>
                         </Textbox>
                       </CellContents>
@@ -341,7 +285,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Số tấn trục WR (RM)</Value>
+                                  <Value>Roll Id</Value>
                                   <Style>
                                     <Color>White</Color>
                                   </Style>
@@ -358,12 +302,14 @@
                               <Color>White</Color>
                               <Style>Solid</Style>
                             </Border>
+                            <BottomBorder>
+                              <Color>#7f7f7f</Color>
+                            </BottomBorder>
                             <BackgroundColor>#7f7f7f</BackgroundColor>
-                            <VerticalAlign>Middle</VerticalAlign>
+                            <VerticalAlign>Bottom</VerticalAlign>
                             <PaddingLeft>2.5pt</PaddingLeft>
                             <PaddingRight>2.5pt</PaddingRight>
                             <PaddingTop>2.5pt</PaddingTop>
-                            <PaddingBottom>2.5pt</PaddingBottom>
                           </Style>
                         </Textbox>
                       </CellContents>
@@ -377,7 +323,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Số tấn trục WR (FM)</Value>
+                                  <Value>Mount</Value>
                                   <Style>
                                     <Color>White</Color>
                                   </Style>
@@ -394,12 +340,15 @@
                               <Color>White</Color>
                               <Style>Solid</Style>
                             </Border>
+                            <BottomBorder>
+                              <Color>#7f7f7f</Color>
+                              <Style>None</Style>
+                            </BottomBorder>
                             <BackgroundColor>#7f7f7f</BackgroundColor>
-                            <VerticalAlign>Middle</VerticalAlign>
+                            <VerticalAlign>Bottom</VerticalAlign>
                             <PaddingLeft>2.5pt</PaddingLeft>
                             <PaddingRight>2.5pt</PaddingRight>
                             <PaddingTop>2.5pt</PaddingTop>
-                            <PaddingBottom>2.5pt</PaddingBottom>
                           </Style>
                         </Textbox>
                       </CellContents>
@@ -413,7 +362,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Áp tẩy rỉ thô (bar)</Value>
+                                  <Value> Diameter (mm)</Value>
                                   <Style>
                                     <Color>White</Color>
                                   </Style>
@@ -430,12 +379,14 @@
                               <Color>White</Color>
                               <Style>Solid</Style>
                             </Border>
+                            <BottomBorder>
+                              <Color>#7f7f7f</Color>
+                            </BottomBorder>
                             <BackgroundColor>#7f7f7f</BackgroundColor>
-                            <VerticalAlign>Middle</VerticalAlign>
+                            <VerticalAlign>Bottom</VerticalAlign>
                             <PaddingLeft>2.5pt</PaddingLeft>
                             <PaddingRight>2.5pt</PaddingRight>
                             <PaddingTop>2.5pt</PaddingTop>
-                            <PaddingBottom>2.5pt</PaddingBottom>
                           </Style>
                         </Textbox>
                       </CellContents>
@@ -449,7 +400,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Áp tẩy rỉ tinh (bar)</Value>
+                                  <Value>Crown (um)</Value>
                                   <Style>
                                     <Color>White</Color>
                                   </Style>
@@ -466,12 +417,14 @@
                               <Color>White</Color>
                               <Style>Solid</Style>
                             </Border>
+                            <BottomBorder>
+                              <Color>#7f7f7f</Color>
+                            </BottomBorder>
                             <BackgroundColor>#7f7f7f</BackgroundColor>
-                            <VerticalAlign>Middle</VerticalAlign>
+                            <VerticalAlign>Bottom</VerticalAlign>
                             <PaddingLeft>2.5pt</PaddingLeft>
                             <PaddingRight>2.5pt</PaddingRight>
                             <PaddingTop>2.5pt</PaddingTop>
-                            <PaddingBottom>2.5pt</PaddingBottom>
                           </Style>
                         </Textbox>
                       </CellContents>
@@ -485,7 +438,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Bề mặt trục</Value>
+                                  <Value>Weight (T)</Value>
                                   <Style>
                                     <Color>White</Color>
                                   </Style>
@@ -502,11 +455,504 @@
                               <Color>White</Color>
                               <Style>Solid</Style>
                             </Border>
+                            <BottomBorder>
+                              <Color>#7f7f7f</Color>
+                            </BottomBorder>
+                            <BackgroundColor>#7f7f7f</BackgroundColor>
+                            <VerticalAlign>Bottom</VerticalAlign>
+                            <PaddingLeft>2.5pt</PaddingLeft>
+                            <PaddingRight>2.5pt</PaddingRight>
+                            <PaddingTop>2.5pt</PaddingTop>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox93">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Length (T)</Value>
+                                  <Style>
+                                    <Color>White</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox93</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>White</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BottomBorder>
+                              <Color>#7f7f7f</Color>
+                            </BottomBorder>
+                            <BackgroundColor>#7f7f7f</BackgroundColor>
+                            <VerticalAlign>Bottom</VerticalAlign>
+                            <PaddingLeft>2.5pt</PaddingLeft>
+                            <PaddingRight>2.5pt</PaddingRight>
+                            <PaddingTop>2.5pt</PaddingTop>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                  </TablixCells>
+                </TablixRow>
+                <TablixRow>
+                  <Height>0.25in</Height>
+                  <TablixCells>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox82">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Giá Cán</Value>
+                                  <Style>
+                                    <Color>White</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox82</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>White</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <TopBorder>
+                              <Color>Gray</Color>
+                            </TopBorder>
+                            <BackgroundColor>#7f7f7f</BackgroundColor>
+                            <VerticalAlign>Top</VerticalAlign>
+                            <PaddingLeft>2.5pt</PaddingLeft>
+                            <PaddingRight>2.5pt</PaddingRight>
+                            <PaddingBottom>2.5pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox83">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Date Time Ngày Giờ</Value>
+                                  <Style>
+                                    <Color>White</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox83</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>White</Color>
+                              <Style>Solid</Style>
+                            </Border>
                             <BackgroundColor>#7f7f7f</BackgroundColor>
                             <VerticalAlign>Middle</VerticalAlign>
                             <PaddingLeft>2.5pt</PaddingLeft>
                             <PaddingRight>2.5pt</PaddingRight>
                             <PaddingTop>2.5pt</PaddingTop>
+                            <PaddingBottom>2.5pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox84">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Shift Ca</Value>
+                                  <Style>
+                                    <Color>White</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox84</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>White</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>#7f7f7f</BackgroundColor>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2.5pt</PaddingLeft>
+                            <PaddingRight>2.5pt</PaddingRight>
+                            <PaddingTop>2.5pt</PaddingTop>
+                            <PaddingBottom>2.5pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox85">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Date Time Ngày giờ</Value>
+                                  <Style>
+                                    <Color>White</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox85</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>White</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>#7f7f7f</BackgroundColor>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2.5pt</PaddingLeft>
+                            <PaddingRight>2.5pt</PaddingRight>
+                            <PaddingTop>2.5pt</PaddingTop>
+                            <PaddingBottom>2.5pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox86">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Shift Ca</Value>
+                                  <Style>
+                                    <Color>White</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox86</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>White</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>#7f7f7f</BackgroundColor>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2.5pt</PaddingLeft>
+                            <PaddingRight>2.5pt</PaddingRight>
+                            <PaddingTop>2.5pt</PaddingTop>
+                            <PaddingBottom>2.5pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox87">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Vị trí</Value>
+                                  <Style>
+                                    <Color>White</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox87</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>White</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <TopBorder>
+                              <Color>#7f7f7f</Color>
+                            </TopBorder>
+                            <BackgroundColor>#7f7f7f</BackgroundColor>
+                            <VerticalAlign>Top</VerticalAlign>
+                            <PaddingLeft>2.5pt</PaddingLeft>
+                            <PaddingRight>2.5pt</PaddingRight>
+                            <PaddingBottom>2.5pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox88">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Mã Trục</Value>
+                                  <Style>
+                                    <Color>White</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox88</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>White</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <TopBorder>
+                              <Color>#7f7f7f</Color>
+                            </TopBorder>
+                            <BackgroundColor>#7f7f7f</BackgroundColor>
+                            <VerticalAlign>Top</VerticalAlign>
+                            <PaddingLeft>2.5pt</PaddingLeft>
+                            <PaddingRight>2.5pt</PaddingRight>
+                            <PaddingBottom>2.5pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox89">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>num</Value>
+                                  <Style>
+                                    <Color>White</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox89</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>White</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <TopBorder>
+                              <Color>#7f7f7f</Color>
+                            </TopBorder>
+                            <BackgroundColor>#7f7f7f</BackgroundColor>
+                            <VerticalAlign>Top</VerticalAlign>
+                            <PaddingLeft>2.5pt</PaddingLeft>
+                            <PaddingRight>2.5pt</PaddingRight>
+                            <PaddingBottom>2.5pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox90">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Đường kính</Value>
+                                  <Style>
+                                    <Color>White</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox90</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>White</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <TopBorder>
+                              <Color>#7f7f7f</Color>
+                            </TopBorder>
+                            <BackgroundColor>#7f7f7f</BackgroundColor>
+                            <VerticalAlign>Top</VerticalAlign>
+                            <PaddingLeft>2.5pt</PaddingLeft>
+                            <PaddingRight>2.5pt</PaddingRight>
+                            <PaddingBottom>2.5pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox91">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Độ crow</Value>
+                                  <Style>
+                                    <Color>White</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox91</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>White</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <TopBorder>
+                              <Color>#7f7f7f</Color>
+                            </TopBorder>
+                            <BackgroundColor>#7f7f7f</BackgroundColor>
+                            <VerticalAlign>Top</VerticalAlign>
+                            <PaddingLeft>2.5pt</PaddingLeft>
+                            <PaddingRight>2.5pt</PaddingRight>
+                            <PaddingBottom>2.5pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox92">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Khối lượng</Value>
+                                  <Style>
+                                    <Color>White</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox92</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>White</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <TopBorder>
+                              <Color>#7f7f7f</Color>
+                            </TopBorder>
+                            <BackgroundColor>#7f7f7f</BackgroundColor>
+                            <VerticalAlign>Top</VerticalAlign>
+                            <PaddingLeft>2.5pt</PaddingLeft>
+                            <PaddingRight>2.5pt</PaddingRight>
+                            <PaddingBottom>2.5pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox94">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Chiều dài</Value>
+                                  <Style>
+                                    <Color>White</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox94</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>White</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <TopBorder>
+                              <Color>#7f7f7f</Color>
+                            </TopBorder>
+                            <BackgroundColor>#7f7f7f</BackgroundColor>
+                            <VerticalAlign>Top</VerticalAlign>
+                            <PaddingLeft>2.5pt</PaddingLeft>
+                            <PaddingRight>2.5pt</PaddingRight>
                             <PaddingBottom>2.5pt</PaddingBottom>
                           </Style>
                         </Textbox>
@@ -519,14 +965,14 @@
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox9">
+                        <Textbox Name="STAND_ID">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=RowNumber(Nothing)</Value>
+                                  <Value>=Fields!STAND_ID.Value</Value>
                                   <Style />
                                 </TextRun>
                               </TextRuns>
@@ -535,7 +981,7 @@
                               </Style>
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Textbox9</rd:DefaultName>
+                          <rd:DefaultName>STAND_ID</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>White</Color>
@@ -553,14 +999,14 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="CA">
+                        <Textbox Name="MOUNT_DATE">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!CA.Value</Value>
+                                  <Value>=Fields!MOUNT_DATE.Value</Value>
                                   <Style />
                                 </TextRun>
                               </TextRuns>
@@ -569,7 +1015,7 @@
                               </Style>
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>CA</rd:DefaultName>
+                          <rd:DefaultName>MOUNT_DATE</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>White</Color>
@@ -587,14 +1033,14 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="ARCHIVE_DATE">
+                        <Textbox Name="mount_shift">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=format(Fields!ARCHIVE_DATE.Value, "dd/MM/yyyy HH:mm:ss")</Value>
+                                  <Value>=Fields!mount_shift.Value</Value>
                                   <Style />
                                 </TextRun>
                               </TextRuns>
@@ -603,7 +1049,7 @@
                               </Style>
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>ARCHIVE_DATE</rd:DefaultName>
+                          <rd:DefaultName>mount_shift</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>White</Color>
@@ -621,14 +1067,14 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="SLAB_ID">
+                        <Textbox Name="DISMOUNT_DATE">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!SLAB_ID.Value</Value>
+                                  <Value>=Fields!DISMOUNT_DATE.Value</Value>
                                   <Style />
                                 </TextRun>
                               </TextRuns>
@@ -637,7 +1083,7 @@
                               </Style>
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>SLAB_ID</rd:DefaultName>
+                          <rd:DefaultName>DISMOUNT_DATE</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>White</Color>
@@ -655,14 +1101,14 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="SanPham">
+                        <Textbox Name="dismount_shift">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!SanPham.Value</Value>
+                                  <Value>=Fields!dismount_shift.Value</Value>
                                   <Style />
                                 </TextRun>
                               </TextRuns>
@@ -671,7 +1117,7 @@
                               </Style>
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>SanPham</rd:DefaultName>
+                          <rd:DefaultName>dismount_shift</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>White</Color>
@@ -689,14 +1135,14 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="STEEL_GRADE">
+                        <Textbox Name="POSITION">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!STEEL_GRADE.Value</Value>
+                                  <Value>=Fields!POSITION.Value</Value>
                                   <Style />
                                 </TextRun>
                               </TextRuns>
@@ -705,7 +1151,7 @@
                               </Style>
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>STEEL_GRADE</rd:DefaultName>
+                          <rd:DefaultName>POSITION</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>White</Color>
@@ -723,14 +1169,14 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox4">
+                        <Textbox Name="ROLL_ID">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value />
+                                  <Value>=Fields!ROLL_ID.Value</Value>
                                   <Style />
                                 </TextRun>
                               </TextRuns>
@@ -739,7 +1185,7 @@
                               </Style>
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Textbox4</rd:DefaultName>
+                          <rd:DefaultName>ROLL_ID</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>White</Color>
@@ -757,14 +1203,14 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox2">
+                        <Textbox Name="MOUNT_NUM">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value />
+                                  <Value>=Fields!MOUNT_NUM.Value</Value>
                                   <Style />
                                 </TextRun>
                               </TextRuns>
@@ -773,7 +1219,7 @@
                               </Style>
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Textbox2</rd:DefaultName>
+                          <rd:DefaultName>MOUNT_NUM</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>White</Color>
@@ -791,14 +1237,14 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="DSC2_RAMP1">
+                        <Textbox Name="DIAMETER">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!DSC2_RAMP1.Value</Value>
+                                  <Value>=Fields!DIAMETER.Value</Value>
                                   <Style />
                                 </TextRun>
                               </TextRuns>
@@ -807,7 +1253,7 @@
                               </Style>
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>DSC2_RAMP1</rd:DefaultName>
+                          <rd:DefaultName>DIAMETER</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>White</Color>
@@ -825,14 +1271,14 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="DSC1_RAMP11">
+                        <Textbox Name="crown">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!DSC1_RAMP1.Value</Value>
+                                  <Value>=Fields!crown.Value</Value>
                                   <Style />
                                 </TextRun>
                               </TextRuns>
@@ -841,7 +1287,7 @@
                               </Style>
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>DSC1_RAMP11</rd:DefaultName>
+                          <rd:DefaultName>crown</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>White</Color>
@@ -859,14 +1305,14 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="TASK_SLAB">
+                        <Textbox Name="ROLLED_WEIGHT">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value />
+                                  <Value>=Fields!ROLLED_WEIGHT.Value</Value>
                                   <Style />
                                 </TextRun>
                               </TextRuns>
@@ -875,7 +1321,41 @@
                               </Style>
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>TASK_SLAB</rd:DefaultName>
+                          <rd:DefaultName>ROLLED_WEIGHT</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>White</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>=iif(RowNumber(Nothing) Mod 2, "Silver", "White")</BackgroundColor>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="ROLLED_LENGTH">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!ROLLED_LENGTH.Value</Value>
+                                  <Style />
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>ROLLED_LENGTH</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>White</Color>
@@ -908,10 +1388,15 @@
                 <TablixMember />
                 <TablixMember />
                 <TablixMember />
+                <TablixMember />
               </TablixMembers>
             </TablixColumnHierarchy>
             <TablixRowHierarchy>
               <TablixMembers>
+                <TablixMember>
+                  <KeepWithGroup>After</KeepWithGroup>
+                  <RepeatOnNewPage>true</RepeatOnNewPage>
+                </TablixMember>
                 <TablixMember>
                   <KeepWithGroup>After</KeepWithGroup>
                   <RepeatOnNewPage>true</RepeatOnNewPage>
@@ -923,9 +1408,9 @@
               </TablixMembers>
             </TablixRowHierarchy>
             <NoRowsMessage>Không có dữ liệu</NoRowsMessage>
-            <DataSetName>ChatLuongThanhPhamHRCDataSet</DataSetName>
-            <Left>0.125in</Left>
-            <Height>0.5in</Height>
+            <DataSetName>WRDataSet</DataSetName>
+            <Left>0.07947in</Left>
+            <Height>0.75in</Height>
             <Width>12.81509in</Width>
             <Style>
               <Border />
@@ -939,10 +1424,10 @@
             </Style>
           </Tablix>
         </ReportItems>
-        <Height>0.9in</Height>
+        <Height>0.825in</Height>
         <Style />
       </Body>
-      <Width>13.13806in</Width>
+      <Width>12.97403in</Width>
       <Page>
         <PageHeader>
           <Height>1in</Height>
@@ -956,7 +1441,7 @@
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>TỔNG HỢP SẢN LƯỢNG HRC</Value>
+                      <Value>DỮ LIỆU THAY TRỤC WR</Value>
                       <Style>
                         <FontFamily>Times New Roman</FontFamily>
                         <FontSize>18pt</FontSize>
@@ -964,12 +1449,14 @@
                       </Style>
                     </TextRun>
                   </TextRuns>
-                  <Style />
+                  <Style>
+                    <TextAlign>Center</TextAlign>
+                  </Style>
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox7</rd:DefaultName>
-              <Top>0.24722in</Top>
-              <Left>4.91333in</Left>
+              <Top>0.25in</Top>
+              <Left>4.8678in</Left>
               <Height>0.49834in</Height>
               <Width>3.68138in</Width>
               <Style>
@@ -986,8 +1473,8 @@
               <Source>Embedded</Source>
               <Value>logo</Value>
               <Sizing>FitProportional</Sizing>
-              <Top>0.24722in</Top>
-              <Left>11.1181in</Left>
+              <Top>0.25in</Top>
+              <Left>11.07258in</Left>
               <Height>0.5in</Height>
               <Width>1.82198in</Width>
               <ZIndex>1</ZIndex>
@@ -1015,8 +1502,8 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox3</rd:DefaultName>
-              <Top>0.24722in</Top>
-              <Left>0.125in</Left>
+              <Top>0.25in</Top>
+              <Left>0.07947in</Left>
               <Height>0.18945in</Height>
               <Width>0.69133in</Width>
               <ZIndex>2</ZIndex>
@@ -1051,8 +1538,8 @@ ToLocalTime(Parameters!fromDate.Value), "dd.MM.yyyy HH:mm")</Value>
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox48</rd:DefaultName>
-              <Top>0.24722in</Top>
-              <Left>0.81633in</Left>
+              <Top>0.25in</Top>
+              <Left>0.7708in</Left>
               <Height>0.18945in</Height>
               <Width>1.99167in</Width>
               <ZIndex>3</ZIndex>
@@ -1087,8 +1574,8 @@ ToLocalTime(Parameters!toDate.Value), "dd.MM.yyyy HH:mm")</Value>
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox48</rd:DefaultName>
-              <Top>0.43667in</Top>
-              <Left>0.81633in</Left>
+              <Top>0.43945in</Top>
+              <Left>0.7708in</Left>
               <Height>0.25612in</Height>
               <Width>1.99167in</Width>
               <ZIndex>4</ZIndex>
@@ -1119,8 +1606,8 @@ ToLocalTime(Parameters!toDate.Value), "dd.MM.yyyy HH:mm")</Value>
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox3</rd:DefaultName>
-              <Top>0.43667in</Top>
-              <Left>0.125in</Left>
+              <Top>0.43945in</Top>
+              <Left>0.07947in</Left>
               <Height>0.25612in</Height>
               <Width>0.69133in</Width>
               <ZIndex>5</ZIndex>
@@ -1146,6 +1633,17 @@ ToLocalTime(Parameters!toDate.Value), "dd.MM.yyyy HH:mm")</Value>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
+            <Line Name="Line2">
+              <Top>0.32986in</Top>
+              <Height>0in</Height>
+              <Width>12.78907in</Width>
+              <Style>
+                <Border>
+                  <Color>Silver</Color>
+                  <Style>Solid</Style>
+                </Border>
+              </Style>
+            </Line>
             <Textbox Name="Textbox1">
               <CanGrow>true</CanGrow>
               <KeepTogether>true</KeepTogether>
@@ -1163,10 +1661,11 @@ ToLocalTime(Parameters!toDate.Value), "dd.MM.yyyy HH:mm")</Value>
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox1</rd:DefaultName>
-              <Top>0.375in</Top>
-              <Left>10.40942in</Left>
+              <Top>0.42014in</Top>
+              <Left>10.24539in</Left>
               <Height>0.25in</Height>
               <Width>1.31303in</Width>
+              <ZIndex>1</ZIndex>
               <Style>
                 <Border>
                   <Style>None</Style>
@@ -1192,11 +1691,11 @@ ToLocalTime(Parameters!toDate.Value), "dd.MM.yyyy HH:mm")</Value>
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox9</rd:DefaultName>
-              <Top>0.375in</Top>
-              <Left>11.7919in</Left>
+              <Top>0.42014in</Top>
+              <Left>11.62787in</Left>
               <Height>0.25in</Height>
               <Width>1.34616in</Width>
-              <ZIndex>1</ZIndex>
+              <ZIndex>2</ZIndex>
               <Style>
                 <Border>
                   <Style>None</Style>
@@ -1222,11 +1721,11 @@ ToLocalTime(Parameters!toDate.Value), "dd.MM.yyyy HH:mm")</Value>
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox11</rd:DefaultName>
-              <Top>0.375in</Top>
-              <Left>6.20305in</Left>
+              <Top>0.42014in</Top>
+              <Left>5.91402in</Left>
               <Height>0.25in</Height>
               <Width>1.26667in</Width>
-              <ZIndex>2</ZIndex>
+              <ZIndex>3</ZIndex>
               <Style>
                 <Border>
                   <Style>None</Style>
@@ -1237,19 +1736,6 @@ ToLocalTime(Parameters!toDate.Value), "dd.MM.yyyy HH:mm")</Value>
                 <PaddingBottom>2pt</PaddingBottom>
               </Style>
             </Textbox>
-            <Line Name="Line2">
-              <Top>0.19444in</Top>
-              <Left>0.125in</Left>
-              <Height>0in</Height>
-              <Width>12.81508in</Width>
-              <ZIndex>3</ZIndex>
-              <Style>
-                <Border>
-                  <Color>Silver</Color>
-                  <Style>Solid</Style>
-                </Border>
-              </Style>
-            </Line>
           </ReportItems>
           <Style>
             <Border>
@@ -1257,25 +1743,21 @@ ToLocalTime(Parameters!toDate.Value), "dd.MM.yyyy HH:mm")</Value>
             </Border>
           </Style>
         </PageFooter>
-        <PageHeight>11.69in</PageHeight>
-        <PageWidth>16.54in</PageWidth>
-        <InteractiveHeight>11.69in</InteractiveHeight>
-        <InteractiveWidth>16.54in</InteractiveWidth>
-        <LeftMargin>1.6in</LeftMargin>
-        <RightMargin>0.75in</RightMargin>
-        <TopMargin>0.75in</TopMargin>
-        <BottomMargin>0.75in</BottomMargin>
+        <LeftMargin>1in</LeftMargin>
+        <RightMargin>1in</RightMargin>
+        <TopMargin>1in</TopMargin>
+        <BottomMargin>1in</BottomMargin>
         <Style />
       </Page>
     </ReportSection>
   </ReportSections>
   <ReportParameters>
-    <ReportParameter Name="fromDate">
+    <ReportParameter Name="toDate">
       <DataType>DateTime</DataType>
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
-    <ReportParameter Name="toDate">
-      <DataType>DateTime</DataType>
+    <ReportParameter Name="fromDate">
+      <DataType>String</DataType>
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
   </ReportParameters>
@@ -1287,12 +1769,12 @@ ToLocalTime(Parameters!toDate.Value), "dd.MM.yyyy HH:mm")</Value>
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
           <RowIndex>0</RowIndex>
-          <ParameterName>fromDate</ParameterName>
+          <ParameterName>toDate</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>1</ColumnIndex>
           <RowIndex>0</RowIndex>
-          <ParameterName>toDate</ParameterName>
+          <ParameterName>fromDate</ParameterName>
         </CellDefinition>
       </CellDefinitions>
     </GridLayoutDefinition>
@@ -1318,5 +1800,5 @@ f87chKqiRZjvU85E6zLoQZgQoDTN0jGg/npSnxx8ZOZgloIgoR5A6AbvuUnnYvWxUNB3aIw0i8K5RFaM
     </EmbeddedImage>
   </EmbeddedImages>
   <rd:ReportUnitType>Inch</rd:ReportUnitType>
-  <rd:ReportID>e98c0070-6003-4ad1-a657-95858fe95f4c</rd:ReportID>
+  <rd:ReportID>c147a691-213e-476a-949f-8ec54fd05dc9</rd:ReportID>
 </Report>

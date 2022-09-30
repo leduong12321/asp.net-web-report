@@ -61,8 +61,8 @@
           <DataField>ROLLED_WEIGHT</DataField>
           <rd:TypeName>System.Double</rd:TypeName>
         </Field>
-        <Field Name="ROLLED_HEIGHT">
-          <DataField>ROLLED_HEIGHT</DataField>
+        <Field Name="ROLLED_LENGTH">
+          <DataField>ROLLED_LENGTH</DataField>
           <rd:TypeName>System.Double</rd:TypeName>
         </Field>
       </Fields>
@@ -1339,14 +1339,14 @@ Thời gian ra</Value>
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="ROLLED_HEIGHT">
+                        <Textbox Name="ROLLED_LENGTH">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!ROLLED_HEIGHT.Value</Value>
+                                  <Value>=Fields!ROLLED_LENGTH.Value</Value>
                                   <Style />
                                 </TextRun>
                               </TextRuns>
@@ -1355,7 +1355,7 @@ Thời gian ra</Value>
                               </Style>
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>ROLLED_HEIGHT</rd:DefaultName>
+                          <rd:DefaultName>ROLLED_LENGTH</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>White</Color>
@@ -1424,7 +1424,7 @@ Thời gian ra</Value>
             </Style>
           </Tablix>
         </ReportItems>
-        <Height>0.86667in</Height>
+        <Height>1in</Height>
         <Style />
       </Body>
       <Width>13.09903in</Width>
