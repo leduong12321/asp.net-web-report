@@ -194,6 +194,7 @@
     <Content Include="TongHopSanLuongHRC.aspx" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config" />
+    <Content Include="WRReport.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
@@ -280,6 +281,18 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>TongHopSanLuongHRCDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Views\ReportDataSet\WRDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WRDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="WRReport.aspx.cs">
+      <DependentUpon>WRReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WRReport.aspx.designer.cs">
+      <DependentUpon>WRReport.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
@@ -333,6 +346,17 @@
     <Content Include="Views\ReportDataSet\TongHopSanLuongHRCDataSet.xss">
       <DependentUpon>TongHopSanLuongHRCDataSet.xsd</DependentUpon>
     </Content>
+    <Content Include="Views\ReportDataSet\WRDataSet.xsc">
+      <DependentUpon>WRDataSet.xsd</DependentUpon>
+    </Content>
+    <None Include="Views\ReportDataSet\WRDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>WRDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="Views\ReportDataSet\WRDataSet.xss">
+      <DependentUpon>WRDataSet.xsd</DependentUpon>
+    </Content>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -352,6 +376,7 @@
     <EmbeddedResource Include="Views\Reports\ChatLuongThanhPhamHRC.rdlc" />
     <EmbeddedResource Include="Views\Reports\ReportBaoCaoSanXuat.rdlc" />
     <EmbeddedResource Include="Views\Reports\TongHopSanLuongHRC.rdlc" />
+    <EmbeddedResource Include="Views\Reports\WR.rdlc" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
