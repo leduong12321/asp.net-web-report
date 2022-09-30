@@ -20,17 +20,17 @@ namespace ReportAPI.Views.ReportDataSet {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("BurRollDataSet")]
+    [global::System.Xml.Serialization.XmlRootAttribute("WRDataSet")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class BurRollDataSet : global::System.Data.DataSet {
+    public partial class WRDataSet : global::System.Data.DataSet {
         
-        private BurRollDataTableDataTable tableBurRollDataTable;
+        private WRDataTableDataTable tableWRDataTable;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public BurRollDataSet() {
+        public WRDataSet() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -41,7 +41,7 @@ namespace ReportAPI.Views.ReportDataSet {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        protected BurRollDataSet(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected WRDataSet(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -54,8 +54,8 @@ namespace ReportAPI.Views.ReportDataSet {
             if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.IncludeSchema)) {
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
-                if ((ds.Tables["BurRollDataTable"] != null)) {
-                    base.Tables.Add(new BurRollDataTableDataTable(ds.Tables["BurRollDataTable"]));
+                if ((ds.Tables["WRDataTable"] != null)) {
+                    base.Tables.Add(new WRDataTableDataTable(ds.Tables["WRDataTable"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -79,9 +79,9 @@ namespace ReportAPI.Views.ReportDataSet {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public BurRollDataTableDataTable BurRollDataTable {
+        public WRDataTableDataTable WRDataTable {
             get {
-                return this.tableBurRollDataTable;
+                return this.tableWRDataTable;
             }
         }
         
@@ -127,7 +127,7 @@ namespace ReportAPI.Views.ReportDataSet {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            BurRollDataSet cln = ((BurRollDataSet)(base.Clone()));
+            WRDataSet cln = ((WRDataSet)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -152,8 +152,8 @@ namespace ReportAPI.Views.ReportDataSet {
                 this.Reset();
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXml(reader);
-                if ((ds.Tables["BurRollDataTable"] != null)) {
-                    base.Tables.Add(new BurRollDataTableDataTable(ds.Tables["BurRollDataTable"]));
+                if ((ds.Tables["WRDataTable"] != null)) {
+                    base.Tables.Add(new WRDataTableDataTable(ds.Tables["WRDataTable"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -188,10 +188,10 @@ namespace ReportAPI.Views.ReportDataSet {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         internal void InitVars(bool initTable) {
-            this.tableBurRollDataTable = ((BurRollDataTableDataTable)(base.Tables["BurRollDataTable"]));
+            this.tableWRDataTable = ((WRDataTableDataTable)(base.Tables["WRDataTable"]));
             if ((initTable == true)) {
-                if ((this.tableBurRollDataTable != null)) {
-                    this.tableBurRollDataTable.InitVars();
+                if ((this.tableWRDataTable != null)) {
+                    this.tableWRDataTable.InitVars();
                 }
             }
         }
@@ -199,18 +199,18 @@ namespace ReportAPI.Views.ReportDataSet {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "BurRollDataSet";
+            this.DataSetName = "WRDataSet";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/BurRollDataSet.xsd";
+            this.Namespace = "http://tempuri.org/WRDataSet.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
-            this.tableBurRollDataTable = new BurRollDataTableDataTable();
-            base.Tables.Add(this.tableBurRollDataTable);
+            this.tableWRDataTable = new WRDataTableDataTable();
+            base.Tables.Add(this.tableWRDataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private bool ShouldSerializeBurRollDataTable() {
+        private bool ShouldSerializeWRDataTable() {
             return false;
         }
         
@@ -225,7 +225,7 @@ namespace ReportAPI.Views.ReportDataSet {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            BurRollDataSet ds = new BurRollDataSet();
+            WRDataSet ds = new WRDataSet();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -270,14 +270,14 @@ namespace ReportAPI.Views.ReportDataSet {
         }
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public delegate void BurRollDataTableRowChangeEventHandler(object sender, BurRollDataTableRowChangeEvent e);
+        public delegate void WRDataTableRowChangeEventHandler(object sender, WRDataTableRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class BurRollDataTableDataTable : global::System.Data.TypedTableBase<BurRollDataTableRow> {
+        public partial class WRDataTableDataTable : global::System.Data.TypedTableBase<WRDataTableRow> {
             
             private global::System.Data.DataColumn columnSTAND_ID;
             
@@ -305,8 +305,8 @@ namespace ReportAPI.Views.ReportDataSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public BurRollDataTableDataTable() {
-                this.TableName = "BurRollDataTable";
+            public WRDataTableDataTable() {
+                this.TableName = "WRDataTable";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -314,7 +314,7 @@ namespace ReportAPI.Views.ReportDataSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            internal BurRollDataTableDataTable(global::System.Data.DataTable table) {
+            internal WRDataTableDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -331,7 +331,7 @@ namespace ReportAPI.Views.ReportDataSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected BurRollDataTableDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected WRDataTableDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
@@ -443,34 +443,34 @@ namespace ReportAPI.Views.ReportDataSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public BurRollDataTableRow this[int index] {
+            public WRDataTableRow this[int index] {
                 get {
-                    return ((BurRollDataTableRow)(this.Rows[index]));
+                    return ((WRDataTableRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event BurRollDataTableRowChangeEventHandler BurRollDataTableRowChanging;
+            public event WRDataTableRowChangeEventHandler WRDataTableRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event BurRollDataTableRowChangeEventHandler BurRollDataTableRowChanged;
+            public event WRDataTableRowChangeEventHandler WRDataTableRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event BurRollDataTableRowChangeEventHandler BurRollDataTableRowDeleting;
+            public event WRDataTableRowChangeEventHandler WRDataTableRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event BurRollDataTableRowChangeEventHandler BurRollDataTableRowDeleted;
+            public event WRDataTableRowChangeEventHandler WRDataTableRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void AddBurRollDataTableRow(BurRollDataTableRow row) {
+            public void AddWRDataTableRow(WRDataTableRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public BurRollDataTableRow AddBurRollDataTableRow(string STAND_ID, string MOUNT_DATE, string mount_shift, string DISMOUNT_DATE, string dismount_shift, string POSITION, string ROLL_ID, double MOUNT_NUM, double DIAMETER, double crown, double ROLLED_WEIGHT, double ROLLED_LENGTH) {
-                BurRollDataTableRow rowBurRollDataTableRow = ((BurRollDataTableRow)(this.NewRow()));
+            public WRDataTableRow AddWRDataTableRow(string STAND_ID, string MOUNT_DATE, string mount_shift, string DISMOUNT_DATE, string dismount_shift, string POSITION, string ROLL_ID, double MOUNT_NUM, double DIAMETER, double crown, double ROLLED_WEIGHT, double ROLLED_LENGTH) {
+                WRDataTableRow rowWRDataTableRow = ((WRDataTableRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         STAND_ID,
                         MOUNT_DATE,
@@ -484,15 +484,15 @@ namespace ReportAPI.Views.ReportDataSet {
                         crown,
                         ROLLED_WEIGHT,
                         ROLLED_LENGTH};
-                rowBurRollDataTableRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowBurRollDataTableRow);
-                return rowBurRollDataTableRow;
+                rowWRDataTableRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowWRDataTableRow);
+                return rowWRDataTableRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                BurRollDataTableDataTable cln = ((BurRollDataTableDataTable)(base.Clone()));
+                WRDataTableDataTable cln = ((WRDataTableDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -500,7 +500,7 @@ namespace ReportAPI.Views.ReportDataSet {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new BurRollDataTableDataTable();
+                return new WRDataTableDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -551,28 +551,28 @@ namespace ReportAPI.Views.ReportDataSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public BurRollDataTableRow NewBurRollDataTableRow() {
-                return ((BurRollDataTableRow)(this.NewRow()));
+            public WRDataTableRow NewWRDataTableRow() {
+                return ((WRDataTableRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new BurRollDataTableRow(builder);
+                return new WRDataTableRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(BurRollDataTableRow);
+                return typeof(WRDataTableRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.BurRollDataTableRowChanged != null)) {
-                    this.BurRollDataTableRowChanged(this, new BurRollDataTableRowChangeEvent(((BurRollDataTableRow)(e.Row)), e.Action));
+                if ((this.WRDataTableRowChanged != null)) {
+                    this.WRDataTableRowChanged(this, new WRDataTableRowChangeEvent(((WRDataTableRow)(e.Row)), e.Action));
                 }
             }
             
@@ -580,8 +580,8 @@ namespace ReportAPI.Views.ReportDataSet {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.BurRollDataTableRowChanging != null)) {
-                    this.BurRollDataTableRowChanging(this, new BurRollDataTableRowChangeEvent(((BurRollDataTableRow)(e.Row)), e.Action));
+                if ((this.WRDataTableRowChanging != null)) {
+                    this.WRDataTableRowChanging(this, new WRDataTableRowChangeEvent(((WRDataTableRow)(e.Row)), e.Action));
                 }
             }
             
@@ -589,8 +589,8 @@ namespace ReportAPI.Views.ReportDataSet {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.BurRollDataTableRowDeleted != null)) {
-                    this.BurRollDataTableRowDeleted(this, new BurRollDataTableRowChangeEvent(((BurRollDataTableRow)(e.Row)), e.Action));
+                if ((this.WRDataTableRowDeleted != null)) {
+                    this.WRDataTableRowDeleted(this, new WRDataTableRowChangeEvent(((WRDataTableRow)(e.Row)), e.Action));
                 }
             }
             
@@ -598,14 +598,14 @@ namespace ReportAPI.Views.ReportDataSet {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.BurRollDataTableRowDeleting != null)) {
-                    this.BurRollDataTableRowDeleting(this, new BurRollDataTableRowChangeEvent(((BurRollDataTableRow)(e.Row)), e.Action));
+                if ((this.WRDataTableRowDeleting != null)) {
+                    this.WRDataTableRowDeleting(this, new WRDataTableRowChangeEvent(((WRDataTableRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void RemoveBurRollDataTableRow(BurRollDataTableRow row) {
+            public void RemoveWRDataTableRow(WRDataTableRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -614,7 +614,7 @@ namespace ReportAPI.Views.ReportDataSet {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                BurRollDataSet ds = new BurRollDataSet();
+                WRDataSet ds = new WRDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -632,7 +632,7 @@ namespace ReportAPI.Views.ReportDataSet {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "BurRollDataTableDataTable";
+                attribute2.FixedValue = "WRDataTableDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -676,15 +676,15 @@ namespace ReportAPI.Views.ReportDataSet {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class BurRollDataTableRow : global::System.Data.DataRow {
+        public partial class WRDataTableRow : global::System.Data.DataRow {
             
-            private BurRollDataTableDataTable tableBurRollDataTable;
+            private WRDataTableDataTable tableWRDataTable;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            internal BurRollDataTableRow(global::System.Data.DataRowBuilder rb) : 
+            internal WRDataTableRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tableBurRollDataTable = ((BurRollDataTableDataTable)(this.Table));
+                this.tableWRDataTable = ((WRDataTableDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -692,14 +692,14 @@ namespace ReportAPI.Views.ReportDataSet {
             public string STAND_ID {
                 get {
                     try {
-                        return ((string)(this[this.tableBurRollDataTable.STAND_IDColumn]));
+                        return ((string)(this[this.tableWRDataTable.STAND_IDColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'STAND_ID\' in table \'BurRollDataTable\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'STAND_ID\' in table \'WRDataTable\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableBurRollDataTable.STAND_IDColumn] = value;
+                    this[this.tableWRDataTable.STAND_IDColumn] = value;
                 }
             }
             
@@ -708,14 +708,14 @@ namespace ReportAPI.Views.ReportDataSet {
             public string MOUNT_DATE {
                 get {
                     try {
-                        return ((string)(this[this.tableBurRollDataTable.MOUNT_DATEColumn]));
+                        return ((string)(this[this.tableWRDataTable.MOUNT_DATEColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'MOUNT_DATE\' in table \'BurRollDataTable\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'MOUNT_DATE\' in table \'WRDataTable\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableBurRollDataTable.MOUNT_DATEColumn] = value;
+                    this[this.tableWRDataTable.MOUNT_DATEColumn] = value;
                 }
             }
             
@@ -724,14 +724,14 @@ namespace ReportAPI.Views.ReportDataSet {
             public string mount_shift {
                 get {
                     try {
-                        return ((string)(this[this.tableBurRollDataTable.mount_shiftColumn]));
+                        return ((string)(this[this.tableWRDataTable.mount_shiftColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'mount_shift\' in table \'BurRollDataTable\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'mount_shift\' in table \'WRDataTable\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableBurRollDataTable.mount_shiftColumn] = value;
+                    this[this.tableWRDataTable.mount_shiftColumn] = value;
                 }
             }
             
@@ -740,14 +740,14 @@ namespace ReportAPI.Views.ReportDataSet {
             public string DISMOUNT_DATE {
                 get {
                     try {
-                        return ((string)(this[this.tableBurRollDataTable.DISMOUNT_DATEColumn]));
+                        return ((string)(this[this.tableWRDataTable.DISMOUNT_DATEColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'DISMOUNT_DATE\' in table \'BurRollDataTable\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'DISMOUNT_DATE\' in table \'WRDataTable\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableBurRollDataTable.DISMOUNT_DATEColumn] = value;
+                    this[this.tableWRDataTable.DISMOUNT_DATEColumn] = value;
                 }
             }
             
@@ -756,14 +756,14 @@ namespace ReportAPI.Views.ReportDataSet {
             public string dismount_shift {
                 get {
                     try {
-                        return ((string)(this[this.tableBurRollDataTable.dismount_shiftColumn]));
+                        return ((string)(this[this.tableWRDataTable.dismount_shiftColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'dismount_shift\' in table \'BurRollDataTable\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'dismount_shift\' in table \'WRDataTable\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableBurRollDataTable.dismount_shiftColumn] = value;
+                    this[this.tableWRDataTable.dismount_shiftColumn] = value;
                 }
             }
             
@@ -772,14 +772,14 @@ namespace ReportAPI.Views.ReportDataSet {
             public string POSITION {
                 get {
                     try {
-                        return ((string)(this[this.tableBurRollDataTable.POSITIONColumn]));
+                        return ((string)(this[this.tableWRDataTable.POSITIONColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'POSITION\' in table \'BurRollDataTable\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'POSITION\' in table \'WRDataTable\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableBurRollDataTable.POSITIONColumn] = value;
+                    this[this.tableWRDataTable.POSITIONColumn] = value;
                 }
             }
             
@@ -788,14 +788,14 @@ namespace ReportAPI.Views.ReportDataSet {
             public string ROLL_ID {
                 get {
                     try {
-                        return ((string)(this[this.tableBurRollDataTable.ROLL_IDColumn]));
+                        return ((string)(this[this.tableWRDataTable.ROLL_IDColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'ROLL_ID\' in table \'BurRollDataTable\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'ROLL_ID\' in table \'WRDataTable\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableBurRollDataTable.ROLL_IDColumn] = value;
+                    this[this.tableWRDataTable.ROLL_IDColumn] = value;
                 }
             }
             
@@ -804,14 +804,14 @@ namespace ReportAPI.Views.ReportDataSet {
             public double MOUNT_NUM {
                 get {
                     try {
-                        return ((double)(this[this.tableBurRollDataTable.MOUNT_NUMColumn]));
+                        return ((double)(this[this.tableWRDataTable.MOUNT_NUMColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'MOUNT_NUM\' in table \'BurRollDataTable\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'MOUNT_NUM\' in table \'WRDataTable\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableBurRollDataTable.MOUNT_NUMColumn] = value;
+                    this[this.tableWRDataTable.MOUNT_NUMColumn] = value;
                 }
             }
             
@@ -820,14 +820,14 @@ namespace ReportAPI.Views.ReportDataSet {
             public double DIAMETER {
                 get {
                     try {
-                        return ((double)(this[this.tableBurRollDataTable.DIAMETERColumn]));
+                        return ((double)(this[this.tableWRDataTable.DIAMETERColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'DIAMETER\' in table \'BurRollDataTable\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'DIAMETER\' in table \'WRDataTable\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableBurRollDataTable.DIAMETERColumn] = value;
+                    this[this.tableWRDataTable.DIAMETERColumn] = value;
                 }
             }
             
@@ -836,14 +836,14 @@ namespace ReportAPI.Views.ReportDataSet {
             public double crown {
                 get {
                     try {
-                        return ((double)(this[this.tableBurRollDataTable.crownColumn]));
+                        return ((double)(this[this.tableWRDataTable.crownColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'crown\' in table \'BurRollDataTable\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'crown\' in table \'WRDataTable\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableBurRollDataTable.crownColumn] = value;
+                    this[this.tableWRDataTable.crownColumn] = value;
                 }
             }
             
@@ -852,14 +852,14 @@ namespace ReportAPI.Views.ReportDataSet {
             public double ROLLED_WEIGHT {
                 get {
                     try {
-                        return ((double)(this[this.tableBurRollDataTable.ROLLED_WEIGHTColumn]));
+                        return ((double)(this[this.tableWRDataTable.ROLLED_WEIGHTColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'ROLLED_WEIGHT\' in table \'BurRollDataTable\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'ROLLED_WEIGHT\' in table \'WRDataTable\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableBurRollDataTable.ROLLED_WEIGHTColumn] = value;
+                    this[this.tableWRDataTable.ROLLED_WEIGHTColumn] = value;
                 }
             }
             
@@ -868,159 +868,159 @@ namespace ReportAPI.Views.ReportDataSet {
             public double ROLLED_LENGTH {
                 get {
                     try {
-                        return ((double)(this[this.tableBurRollDataTable.ROLLED_LENGTHColumn]));
+                        return ((double)(this[this.tableWRDataTable.ROLLED_LENGTHColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'ROLLED_LENGTH\' in table \'BurRollDataTable\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'ROLLED_LENGTH\' in table \'WRDataTable\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableBurRollDataTable.ROLLED_LENGTHColumn] = value;
+                    this[this.tableWRDataTable.ROLLED_LENGTHColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool IsSTAND_IDNull() {
-                return this.IsNull(this.tableBurRollDataTable.STAND_IDColumn);
+                return this.IsNull(this.tableWRDataTable.STAND_IDColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void SetSTAND_IDNull() {
-                this[this.tableBurRollDataTable.STAND_IDColumn] = global::System.Convert.DBNull;
+                this[this.tableWRDataTable.STAND_IDColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool IsMOUNT_DATENull() {
-                return this.IsNull(this.tableBurRollDataTable.MOUNT_DATEColumn);
+                return this.IsNull(this.tableWRDataTable.MOUNT_DATEColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void SetMOUNT_DATENull() {
-                this[this.tableBurRollDataTable.MOUNT_DATEColumn] = global::System.Convert.DBNull;
+                this[this.tableWRDataTable.MOUNT_DATEColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool Ismount_shiftNull() {
-                return this.IsNull(this.tableBurRollDataTable.mount_shiftColumn);
+                return this.IsNull(this.tableWRDataTable.mount_shiftColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void Setmount_shiftNull() {
-                this[this.tableBurRollDataTable.mount_shiftColumn] = global::System.Convert.DBNull;
+                this[this.tableWRDataTable.mount_shiftColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool IsDISMOUNT_DATENull() {
-                return this.IsNull(this.tableBurRollDataTable.DISMOUNT_DATEColumn);
+                return this.IsNull(this.tableWRDataTable.DISMOUNT_DATEColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void SetDISMOUNT_DATENull() {
-                this[this.tableBurRollDataTable.DISMOUNT_DATEColumn] = global::System.Convert.DBNull;
+                this[this.tableWRDataTable.DISMOUNT_DATEColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool Isdismount_shiftNull() {
-                return this.IsNull(this.tableBurRollDataTable.dismount_shiftColumn);
+                return this.IsNull(this.tableWRDataTable.dismount_shiftColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void Setdismount_shiftNull() {
-                this[this.tableBurRollDataTable.dismount_shiftColumn] = global::System.Convert.DBNull;
+                this[this.tableWRDataTable.dismount_shiftColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool IsPOSITIONNull() {
-                return this.IsNull(this.tableBurRollDataTable.POSITIONColumn);
+                return this.IsNull(this.tableWRDataTable.POSITIONColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void SetPOSITIONNull() {
-                this[this.tableBurRollDataTable.POSITIONColumn] = global::System.Convert.DBNull;
+                this[this.tableWRDataTable.POSITIONColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool IsROLL_IDNull() {
-                return this.IsNull(this.tableBurRollDataTable.ROLL_IDColumn);
+                return this.IsNull(this.tableWRDataTable.ROLL_IDColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void SetROLL_IDNull() {
-                this[this.tableBurRollDataTable.ROLL_IDColumn] = global::System.Convert.DBNull;
+                this[this.tableWRDataTable.ROLL_IDColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool IsMOUNT_NUMNull() {
-                return this.IsNull(this.tableBurRollDataTable.MOUNT_NUMColumn);
+                return this.IsNull(this.tableWRDataTable.MOUNT_NUMColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void SetMOUNT_NUMNull() {
-                this[this.tableBurRollDataTable.MOUNT_NUMColumn] = global::System.Convert.DBNull;
+                this[this.tableWRDataTable.MOUNT_NUMColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool IsDIAMETERNull() {
-                return this.IsNull(this.tableBurRollDataTable.DIAMETERColumn);
+                return this.IsNull(this.tableWRDataTable.DIAMETERColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void SetDIAMETERNull() {
-                this[this.tableBurRollDataTable.DIAMETERColumn] = global::System.Convert.DBNull;
+                this[this.tableWRDataTable.DIAMETERColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool IscrownNull() {
-                return this.IsNull(this.tableBurRollDataTable.crownColumn);
+                return this.IsNull(this.tableWRDataTable.crownColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void SetcrownNull() {
-                this[this.tableBurRollDataTable.crownColumn] = global::System.Convert.DBNull;
+                this[this.tableWRDataTable.crownColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool IsROLLED_WEIGHTNull() {
-                return this.IsNull(this.tableBurRollDataTable.ROLLED_WEIGHTColumn);
+                return this.IsNull(this.tableWRDataTable.ROLLED_WEIGHTColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void SetROLLED_WEIGHTNull() {
-                this[this.tableBurRollDataTable.ROLLED_WEIGHTColumn] = global::System.Convert.DBNull;
+                this[this.tableWRDataTable.ROLLED_WEIGHTColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool IsROLLED_LENGTHNull() {
-                return this.IsNull(this.tableBurRollDataTable.ROLLED_LENGTHColumn);
+                return this.IsNull(this.tableWRDataTable.ROLLED_LENGTHColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void SetROLLED_LENGTHNull() {
-                this[this.tableBurRollDataTable.ROLLED_LENGTHColumn] = global::System.Convert.DBNull;
+                this[this.tableWRDataTable.ROLLED_LENGTHColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -1028,22 +1028,22 @@ namespace ReportAPI.Views.ReportDataSet {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public class BurRollDataTableRowChangeEvent : global::System.EventArgs {
+        public class WRDataTableRowChangeEvent : global::System.EventArgs {
             
-            private BurRollDataTableRow eventRow;
+            private WRDataTableRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public BurRollDataTableRowChangeEvent(BurRollDataTableRow row, global::System.Data.DataRowAction action) {
+            public WRDataTableRowChangeEvent(WRDataTableRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public BurRollDataTableRow Row {
+            public WRDataTableRow Row {
                 get {
                     return this.eventRow;
                 }
