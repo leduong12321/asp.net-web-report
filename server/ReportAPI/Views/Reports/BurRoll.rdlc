@@ -84,31 +84,31 @@
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>1.3579in</Width>
+                  <Width>1.01623in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.55552in</Width>
+                  <Width>1.86489in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.0483in</Width>
+                  <Width>0.86487in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.58046in</Width>
+                  <Width>1.79619in</Width>
                 </TablixColumn>
                 <TablixColumn>
                   <Width>0.82647in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>0.64028in</Width>
+                  <Width>0.67258in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>0.70353in</Width>
+                  <Width>0.85619in</Width>
                 </TablixColumn>
                 <TablixColumn>
                   <Width>0.72496in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.34893in</Width>
+                  <Width>1.16397in</Width>
                 </TablixColumn>
                 <TablixColumn>
                   <Width>1.02597in</Width>
@@ -1409,7 +1409,6 @@ Thời gian ra</Value>
             </TablixRowHierarchy>
             <NoRowsMessage>Không có dữ liệu</NoRowsMessage>
             <DataSetName>BurRollDataSet</DataSetName>
-            <Top>0.125in</Top>
             <Left>0.09898in</Left>
             <Height>0.75in</Height>
             <Width>12.81509in</Width>
@@ -1425,10 +1424,10 @@ Thời gian ra</Value>
             </Style>
           </Tablix>
         </ReportItems>
-        <Height>1.09167in</Height>
+        <Height>0.86667in</Height>
         <Style />
       </Body>
-      <Width>13.01306in</Width>
+      <Width>13.09903in</Width>
       <Page>
         <PageHeader>
           <Height>1in</Height>
@@ -1630,14 +1629,15 @@ ToLocalTime(Parameters!toDate.Value), "dd.MM.yyyy HH:mm tt")</Value>
           </Style>
         </PageHeader>
         <PageFooter>
-          <Height>1in</Height>
+          <Height>1.34666in</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
             <Line Name="Line2">
               <Top>0.28472in</Top>
+              <Left>0.125in</Left>
               <Height>0in</Height>
-              <Width>12.81508in</Width>
+              <Width>12.78907in</Width>
               <Style>
                 <Border>
                   <Color>Silver</Color>
@@ -1663,7 +1663,7 @@ ToLocalTime(Parameters!toDate.Value), "dd.MM.yyyy HH:mm tt")</Value>
               </Paragraphs>
               <rd:DefaultName>Textbox1</rd:DefaultName>
               <Top>0.375in</Top>
-              <Left>10.24539in</Left>
+              <Left>10.37039in</Left>
               <Height>0.25in</Height>
               <Width>1.31303in</Width>
               <ZIndex>1</ZIndex>
@@ -1693,7 +1693,7 @@ ToLocalTime(Parameters!toDate.Value), "dd.MM.yyyy HH:mm tt")</Value>
               </Paragraphs>
               <rd:DefaultName>Textbox9</rd:DefaultName>
               <Top>0.375in</Top>
-              <Left>11.62787in</Left>
+              <Left>11.75287in</Left>
               <Height>0.25in</Height>
               <Width>1.34616in</Width>
               <ZIndex>2</ZIndex>
@@ -1744,10 +1744,14 @@ ToLocalTime(Parameters!toDate.Value), "dd.MM.yyyy HH:mm tt")</Value>
             </Border>
           </Style>
         </PageFooter>
-        <LeftMargin>1in</LeftMargin>
-        <RightMargin>1in</RightMargin>
-        <TopMargin>1in</TopMargin>
-        <BottomMargin>1in</BottomMargin>
+        <PageHeight>11.69in</PageHeight>
+        <PageWidth>16.54in</PageWidth>
+        <InteractiveHeight>11.69in</InteractiveHeight>
+        <InteractiveWidth>16.54in</InteractiveWidth>
+        <LeftMargin>1.6in</LeftMargin>
+        <RightMargin>0.75in</RightMargin>
+        <TopMargin>0.75in</TopMargin>
+        <BottomMargin>0.75in</BottomMargin>
         <Style />
       </Page>
     </ReportSection>
