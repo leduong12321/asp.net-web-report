@@ -171,7 +171,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Mount Date Thời gian vào</Value>
+                                  <Value>Mount Date/Thời gian vào</Value>
                                   <Style>
                                     <FontWeight>Medium</FontWeight>
                                     <Color>White</Color>
@@ -210,7 +210,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Dismount Date Thời gian ra</Value>
+                                  <Value>Dismount Date/Thời gian ra</Value>
                                   <Style>
                                     <FontWeight>Medium</FontWeight>
                                     <Color>White</Color>
@@ -406,7 +406,25 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Crown (um)</Value>
+                                  <Value>Crown (</Value>
+                                  <Style>
+                                    <FontWeight>Medium</FontWeight>
+                                    <Color>White</Color>
+                                  </Style>
+                                </TextRun>
+                                <TextRun>
+                                  <Value>µ</Value>
+                                  <Style>
+                                    <FontStyle>Normal</FontStyle>
+                                    <FontFamily>Times New Roman</FontFamily>
+                                    <FontSize>12pt</FontSize>
+                                    <FontWeight>Normal</FontWeight>
+                                    <TextDecoration>None</TextDecoration>
+                                    <Color>White</Color>
+                                  </Style>
+                                </TextRun>
+                                <TextRun>
+                                  <Value>m)</Value>
                                   <Style>
                                     <FontWeight>Medium</FontWeight>
                                     <Color>White</Color>
@@ -567,7 +585,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Date Time Ngày Giờ</Value>
+                                  <Value>Date Time/Ngày Giờ</Value>
                                   <Style>
                                     <FontWeight>Medium</FontWeight>
                                     <Color>White</Color>
@@ -604,7 +622,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Shift Ca</Value>
+                                  <Value>Shift/Ca</Value>
                                   <Style>
                                     <FontWeight>Medium</FontWeight>
                                     <Color>White</Color>
@@ -641,7 +659,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Date Time Ngày giờ</Value>
+                                  <Value>Date Time/Ngày giờ</Value>
                                   <Style>
                                     <FontWeight>Medium</FontWeight>
                                     <Color>White</Color>
@@ -678,7 +696,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Shift Ca</Value>
+                                  <Value>Shift/Ca</Value>
                                   <Style>
                                     <FontWeight>Medium</FontWeight>
                                     <Color>White</Color>
@@ -1027,7 +1045,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!MOUNT_DATE.Value</Value>
+                                  <Value>=format(Fields!MOUNT_DATE.Value, "dd/MM/yyyy HH:mm:ss")</Value>
                                   <Style />
                                 </TextRun>
                               </TextRuns>
@@ -1095,7 +1113,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!DISMOUNT_DATE.Value</Value>
+                                  <Value>=format(Fields!DISMOUNT_DATE.Value, "dd/MM/yyyy HH:mm:ss")</Value>
                                   <Style />
                                 </TextRun>
                               </TextRuns>
@@ -1333,7 +1351,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!ROLLED_WEIGHT.Value</Value>
+                                  <Value>=Math.Round(Fields!ROLLED_WEIGHT.Value, 2)</Value>
                                   <Style />
                                 </TextRun>
                               </TextRuns>
@@ -1367,7 +1385,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!ROLLED_LENGTH.Value</Value>
+                                  <Value>=Math.Round(Fields!ROLLED_LENGTH.Value, 2)</Value>
                                   <Style />
                                 </TextRun>
                               </TextRuns>

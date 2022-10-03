@@ -107,7 +107,8 @@ namespace ReportAPI
                             WHERE A.archive_date >= @FromDay
                                 AND A.archive_date <= @ToDay
                                 AND (A.PIECE_ID not like 'GHOST%'
-                                    OR A.PIECE_ID = 'GHOST82')";
+                                    OR A.PIECE_ID = 'GHOST82')
+                            ORDER BY Sothutu";
             string connectionString = ConfigurationManager.ConnectionStrings["HSM_HOAPHATConnectionString"].ConnectionString;
             dataSet = new DataSet();
             using (SqlConnection con = new SqlConnection(connectionString))

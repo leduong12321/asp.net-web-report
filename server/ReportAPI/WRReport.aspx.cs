@@ -84,8 +84,8 @@ namespace ReportAPI
 					                          ,[ROLL_ID]
 					                          ,[CROWN]
 				                          FROM [HSM_HOAPHAT].[dbo].[PM_USED_WR_DATA]
-				                          where LAST_UPD >= '2022/09/13 00:00' and LAST_UPD <= '2022/09/13 23:59') b on a.ROLL_ID = b.ROLL_ID and a.MOUNT_DATE = b.MOUNT_DATE
-	                        where a.LAST_UPD >= '2022/09/13 00:00' and a.LAST_UPD <= '2022/09/13 23:59')
+				                          where LAST_UPD >= @FromDay and LAST_UPD <= @ToDay) b on a.ROLL_ID = b.ROLL_ID and a.MOUNT_DATE = b.MOUNT_DATE
+	                        where a.LAST_UPD >= @FromDay and a.LAST_UPD <= @ToDay)
 
                         select * from data order by DISMOUNT_DATE desc, STAND_ID, POSITION;
                         ";
