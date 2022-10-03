@@ -406,7 +406,25 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Crown (um)</Value>
+                                  <Value>Crown (</Value>
+                                  <Style>
+                                    <FontWeight>Medium</FontWeight>
+                                    <Color>White</Color>
+                                  </Style>
+                                </TextRun>
+                                <TextRun>
+                                  <Value>µ</Value>
+                                  <Style>
+                                    <FontStyle>Normal</FontStyle>
+                                    <FontFamily>Times New Roman</FontFamily>
+                                    <FontSize>12pt</FontSize>
+                                    <FontWeight>Normal</FontWeight>
+                                    <TextDecoration>None</TextDecoration>
+                                    <Color>White</Color>
+                                  </Style>
+                                </TextRun>
+                                <TextRun>
+                                  <Value>m)</Value>
                                   <Style>
                                     <FontWeight>Medium</FontWeight>
                                     <Color>White</Color>
@@ -1333,7 +1351,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!ROLLED_WEIGHT.Value</Value>
+                                  <Value>=Math.Round(Fields!ROLLED_WEIGHT.Value, 2)</Value>
                                   <Style />
                                 </TextRun>
                               </TextRuns>
@@ -1367,7 +1385,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!ROLLED_LENGTH.Value</Value>
+                                  <Value>=Math.Round(Fields!ROLLED_LENGTH.Value, 2)</Value>
                                   <Style />
                                 </TextRun>
                               </TextRuns>
