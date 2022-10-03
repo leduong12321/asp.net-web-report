@@ -73,7 +73,7 @@ module.exports = {
   proxy: {
     '/api/': {
       target: 'https://localhost:44315',
-      //target: 'http://192.168.103.89:9000',
+      // target: 'http://192.168.103.210:9000',
       pathRewrite: { '^/api/': '/api/' },
       changeOrigin: true,
       secure: false,
@@ -85,8 +85,8 @@ module.exports = {
   env: {
     baseUrl : process.env.BASE_URL || 'https://localhost:44315',
     baseApiUrl: process.env.BASE_API_URL || 'https://localhost:44315/api/',
-    // baseUrl : process.env.BASE_URL || 'http://192.168.103.89:9000',
-    // baseApiUrl: process.env.BASE_API_URL || 'http://192.168.103.89:9000/api/',
+    // baseUrl : process.env.BASE_URL || 'http://192.168.103.210:9000',
+    // baseApiUrl: process.env.BASE_API_URL || 'http://192.168.103.210:9000/api/',
   },
   // router: {
   //   middleware: 'auth',
