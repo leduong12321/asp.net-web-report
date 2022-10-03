@@ -127,6 +127,7 @@
                                 <TextRun>
                                   <Value>STT</Value>
                                   <Style>
+                                    <FontWeight>Medium</FontWeight>
                                     <Color>White</Color>
                                   </Style>
                                 </TextRun>
@@ -139,15 +140,15 @@
                           <rd:DefaultName>Textbox8</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>White</Color>
+                              <Color>Gray</Color>
                               <Style>Solid</Style>
                             </Border>
-                            <BackgroundColor>#7f7f7f</BackgroundColor>
+                            <BackgroundColor>DimGray</BackgroundColor>
                             <VerticalAlign>Middle</VerticalAlign>
-                            <PaddingLeft>2.5pt</PaddingLeft>
-                            <PaddingRight>2.5pt</PaddingRight>
-                            <PaddingTop>2.5pt</PaddingTop>
-                            <PaddingBottom>2.5pt</PaddingBottom>
+                            <PaddingLeft>5pt</PaddingLeft>
+                            <PaddingRight>5pt</PaddingRight>
+                            <PaddingTop>5pt</PaddingTop>
+                            <PaddingBottom>5pt</PaddingBottom>
                           </Style>
                         </Textbox>
                       </CellContents>
@@ -163,6 +164,7 @@
                                 <TextRun>
                                   <Value>Ca</Value>
                                   <Style>
+                                    <FontWeight>Medium</FontWeight>
                                     <Color>White</Color>
                                   </Style>
                                 </TextRun>
@@ -175,15 +177,15 @@
                           <rd:DefaultName>Textbox10</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>White</Color>
+                              <Color>Gray</Color>
                               <Style>Solid</Style>
                             </Border>
-                            <BackgroundColor>#7f7f7f</BackgroundColor>
+                            <BackgroundColor>DimGray</BackgroundColor>
                             <VerticalAlign>Middle</VerticalAlign>
-                            <PaddingLeft>2.5pt</PaddingLeft>
-                            <PaddingRight>2.5pt</PaddingRight>
-                            <PaddingTop>2.5pt</PaddingTop>
-                            <PaddingBottom>2.5pt</PaddingBottom>
+                            <PaddingLeft>5pt</PaddingLeft>
+                            <PaddingRight>5pt</PaddingRight>
+                            <PaddingTop>5pt</PaddingTop>
+                            <PaddingBottom>5pt</PaddingBottom>
                           </Style>
                         </Textbox>
                       </CellContents>
@@ -199,6 +201,7 @@
                                 <TextRun>
                                   <Value>Ngày sản xuất</Value>
                                   <Style>
+                                    <FontWeight>Medium</FontWeight>
                                     <Color>White</Color>
                                   </Style>
                                 </TextRun>
@@ -211,15 +214,15 @@
                           <rd:DefaultName>Textbox12</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>White</Color>
+                              <Color>Gray</Color>
                               <Style>Solid</Style>
                             </Border>
-                            <BackgroundColor>#7f7f7f</BackgroundColor>
+                            <BackgroundColor>DimGray</BackgroundColor>
                             <VerticalAlign>Middle</VerticalAlign>
-                            <PaddingLeft>2.5pt</PaddingLeft>
-                            <PaddingRight>2.5pt</PaddingRight>
-                            <PaddingTop>2.5pt</PaddingTop>
-                            <PaddingBottom>2.5pt</PaddingBottom>
+                            <PaddingLeft>5pt</PaddingLeft>
+                            <PaddingRight>5pt</PaddingRight>
+                            <PaddingTop>5pt</PaddingTop>
+                            <PaddingBottom>5pt</PaddingBottom>
                           </Style>
                         </Textbox>
                       </CellContents>
@@ -235,6 +238,7 @@
                                 <TextRun>
                                   <Value>ID cuộn</Value>
                                   <Style>
+                                    <FontWeight>Medium</FontWeight>
                                     <Color>White</Color>
                                   </Style>
                                 </TextRun>
@@ -247,15 +251,15 @@
                           <rd:DefaultName>Textbox14</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>White</Color>
+                              <Color>Gray</Color>
                               <Style>Solid</Style>
                             </Border>
-                            <BackgroundColor>#7f7f7f</BackgroundColor>
+                            <BackgroundColor>DimGray</BackgroundColor>
                             <VerticalAlign>Middle</VerticalAlign>
-                            <PaddingLeft>2.5pt</PaddingLeft>
-                            <PaddingRight>2.5pt</PaddingRight>
-                            <PaddingTop>2.5pt</PaddingTop>
-                            <PaddingBottom>2.5pt</PaddingBottom>
+                            <PaddingLeft>5pt</PaddingLeft>
+                            <PaddingRight>5pt</PaddingRight>
+                            <PaddingTop>5pt</PaddingTop>
+                            <PaddingBottom>5pt</PaddingBottom>
                           </Style>
                         </Textbox>
                       </CellContents>
@@ -271,6 +275,7 @@
                                 <TextRun>
                                   <Value>Sản phẩm</Value>
                                   <Style>
+                                    <FontWeight>Medium</FontWeight>
                                     <Color>White</Color>
                                   </Style>
                                 </TextRun>
@@ -283,15 +288,15 @@
                           <rd:DefaultName>Textbox16</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>White</Color>
+                              <Color>Gray</Color>
                               <Style>Solid</Style>
                             </Border>
-                            <BackgroundColor>#7f7f7f</BackgroundColor>
+                            <BackgroundColor>DimGray</BackgroundColor>
                             <VerticalAlign>Middle</VerticalAlign>
-                            <PaddingLeft>2.5pt</PaddingLeft>
-                            <PaddingRight>2.5pt</PaddingRight>
-                            <PaddingTop>2.5pt</PaddingTop>
-                            <PaddingBottom>2.5pt</PaddingBottom>
+                            <PaddingLeft>5pt</PaddingLeft>
+                            <PaddingRight>5pt</PaddingRight>
+                            <PaddingTop>5pt</PaddingTop>
+                            <PaddingBottom>5pt</PaddingBottom>
                           </Style>
                         </Textbox>
                       </CellContents>
@@ -307,6 +312,7 @@
                                 <TextRun>
                                   <Value>Mác thép</Value>
                                   <Style>
+                                    <FontWeight>Medium</FontWeight>
                                     <Color>White</Color>
                                   </Style>
                                 </TextRun>
@@ -319,15 +325,15 @@
                           <rd:DefaultName>Textbox18</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>White</Color>
+                              <Color>Gray</Color>
                               <Style>Solid</Style>
                             </Border>
-                            <BackgroundColor>#7f7f7f</BackgroundColor>
+                            <BackgroundColor>DimGray</BackgroundColor>
                             <VerticalAlign>Middle</VerticalAlign>
-                            <PaddingLeft>2.5pt</PaddingLeft>
-                            <PaddingRight>2.5pt</PaddingRight>
-                            <PaddingTop>2.5pt</PaddingTop>
-                            <PaddingBottom>2.5pt</PaddingBottom>
+                            <PaddingLeft>5pt</PaddingLeft>
+                            <PaddingRight>5pt</PaddingRight>
+                            <PaddingTop>5pt</PaddingTop>
+                            <PaddingBottom>5pt</PaddingBottom>
                           </Style>
                         </Textbox>
                       </CellContents>
@@ -343,6 +349,7 @@
                                 <TextRun>
                                   <Value>Số tấn trục WR (RM)</Value>
                                   <Style>
+                                    <FontWeight>Medium</FontWeight>
                                     <Color>White</Color>
                                   </Style>
                                 </TextRun>
@@ -355,15 +362,15 @@
                           <rd:DefaultName>Textbox23</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>White</Color>
+                              <Color>Gray</Color>
                               <Style>Solid</Style>
                             </Border>
-                            <BackgroundColor>#7f7f7f</BackgroundColor>
+                            <BackgroundColor>DimGray</BackgroundColor>
                             <VerticalAlign>Middle</VerticalAlign>
-                            <PaddingLeft>2.5pt</PaddingLeft>
-                            <PaddingRight>2.5pt</PaddingRight>
-                            <PaddingTop>2.5pt</PaddingTop>
-                            <PaddingBottom>2.5pt</PaddingBottom>
+                            <PaddingLeft>5pt</PaddingLeft>
+                            <PaddingRight>5pt</PaddingRight>
+                            <PaddingTop>5pt</PaddingTop>
+                            <PaddingBottom>5pt</PaddingBottom>
                           </Style>
                         </Textbox>
                       </CellContents>
@@ -379,6 +386,7 @@
                                 <TextRun>
                                   <Value>Số tấn trục WR (FM)</Value>
                                   <Style>
+                                    <FontWeight>Medium</FontWeight>
                                     <Color>White</Color>
                                   </Style>
                                 </TextRun>
@@ -391,15 +399,15 @@
                           <rd:DefaultName>Textbox25</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>White</Color>
+                              <Color>Gray</Color>
                               <Style>Solid</Style>
                             </Border>
-                            <BackgroundColor>#7f7f7f</BackgroundColor>
+                            <BackgroundColor>DimGray</BackgroundColor>
                             <VerticalAlign>Middle</VerticalAlign>
-                            <PaddingLeft>2.5pt</PaddingLeft>
-                            <PaddingRight>2.5pt</PaddingRight>
-                            <PaddingTop>2.5pt</PaddingTop>
-                            <PaddingBottom>2.5pt</PaddingBottom>
+                            <PaddingLeft>5pt</PaddingLeft>
+                            <PaddingRight>5pt</PaddingRight>
+                            <PaddingTop>5pt</PaddingTop>
+                            <PaddingBottom>5pt</PaddingBottom>
                           </Style>
                         </Textbox>
                       </CellContents>
@@ -415,6 +423,7 @@
                                 <TextRun>
                                   <Value>Áp tẩy rỉ thô (bar)</Value>
                                   <Style>
+                                    <FontWeight>Medium</FontWeight>
                                     <Color>White</Color>
                                   </Style>
                                 </TextRun>
@@ -427,15 +436,15 @@
                           <rd:DefaultName>Textbox27</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>White</Color>
+                              <Color>Gray</Color>
                               <Style>Solid</Style>
                             </Border>
-                            <BackgroundColor>#7f7f7f</BackgroundColor>
+                            <BackgroundColor>DimGray</BackgroundColor>
                             <VerticalAlign>Middle</VerticalAlign>
-                            <PaddingLeft>2.5pt</PaddingLeft>
-                            <PaddingRight>2.5pt</PaddingRight>
-                            <PaddingTop>2.5pt</PaddingTop>
-                            <PaddingBottom>2.5pt</PaddingBottom>
+                            <PaddingLeft>5pt</PaddingLeft>
+                            <PaddingRight>5pt</PaddingRight>
+                            <PaddingTop>5pt</PaddingTop>
+                            <PaddingBottom>5pt</PaddingBottom>
                           </Style>
                         </Textbox>
                       </CellContents>
@@ -451,6 +460,7 @@
                                 <TextRun>
                                   <Value>Áp tẩy rỉ tinh (bar)</Value>
                                   <Style>
+                                    <FontWeight>Medium</FontWeight>
                                     <Color>White</Color>
                                   </Style>
                                 </TextRun>
@@ -463,15 +473,15 @@
                           <rd:DefaultName>Textbox29</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>White</Color>
+                              <Color>Gray</Color>
                               <Style>Solid</Style>
                             </Border>
-                            <BackgroundColor>#7f7f7f</BackgroundColor>
+                            <BackgroundColor>DimGray</BackgroundColor>
                             <VerticalAlign>Middle</VerticalAlign>
-                            <PaddingLeft>2.5pt</PaddingLeft>
-                            <PaddingRight>2.5pt</PaddingRight>
-                            <PaddingTop>2.5pt</PaddingTop>
-                            <PaddingBottom>2.5pt</PaddingBottom>
+                            <PaddingLeft>5pt</PaddingLeft>
+                            <PaddingRight>5pt</PaddingRight>
+                            <PaddingTop>5pt</PaddingTop>
+                            <PaddingBottom>5pt</PaddingBottom>
                           </Style>
                         </Textbox>
                       </CellContents>
@@ -487,6 +497,7 @@
                                 <TextRun>
                                   <Value>Bề mặt trục</Value>
                                   <Style>
+                                    <FontWeight>Medium</FontWeight>
                                     <Color>White</Color>
                                   </Style>
                                 </TextRun>
@@ -499,15 +510,15 @@
                           <rd:DefaultName>Textbox31</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>White</Color>
+                              <Color>Gray</Color>
                               <Style>Solid</Style>
                             </Border>
-                            <BackgroundColor>#7f7f7f</BackgroundColor>
+                            <BackgroundColor>DimGray</BackgroundColor>
                             <VerticalAlign>Middle</VerticalAlign>
-                            <PaddingLeft>2.5pt</PaddingLeft>
-                            <PaddingRight>2.5pt</PaddingRight>
-                            <PaddingTop>2.5pt</PaddingTop>
-                            <PaddingBottom>2.5pt</PaddingBottom>
+                            <PaddingLeft>5pt</PaddingLeft>
+                            <PaddingRight>5pt</PaddingRight>
+                            <PaddingTop>5pt</PaddingTop>
+                            <PaddingBottom>5pt</PaddingBottom>
                           </Style>
                         </Textbox>
                       </CellContents>
@@ -541,7 +552,7 @@
                               <Color>White</Color>
                               <Style>Solid</Style>
                             </Border>
-                            <BackgroundColor>=iif(RowNumber(Nothing) Mod 2, "Silver", "White")</BackgroundColor>
+                            <BackgroundColor>=iif(RowNumber(Nothing) Mod 2, "LightGrey", "White")</BackgroundColor>
                             <VerticalAlign>Middle</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
@@ -575,7 +586,7 @@
                               <Color>White</Color>
                               <Style>Solid</Style>
                             </Border>
-                            <BackgroundColor>=iif(RowNumber(Nothing) Mod 2, "Silver", "White")</BackgroundColor>
+                            <BackgroundColor>=iif(RowNumber(Nothing) Mod 2, "LightGrey", "White")</BackgroundColor>
                             <VerticalAlign>Middle</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
@@ -609,7 +620,7 @@
                               <Color>White</Color>
                               <Style>Solid</Style>
                             </Border>
-                            <BackgroundColor>=iif(RowNumber(Nothing) Mod 2, "Silver", "White")</BackgroundColor>
+                            <BackgroundColor>=iif(RowNumber(Nothing) Mod 2, "LightGrey", "White")</BackgroundColor>
                             <VerticalAlign>Middle</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
@@ -643,7 +654,7 @@
                               <Color>White</Color>
                               <Style>Solid</Style>
                             </Border>
-                            <BackgroundColor>=iif(RowNumber(Nothing) Mod 2, "Silver", "White")</BackgroundColor>
+                            <BackgroundColor>=iif(RowNumber(Nothing) Mod 2, "LightGrey", "White")</BackgroundColor>
                             <VerticalAlign>Middle</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
@@ -677,7 +688,7 @@
                               <Color>White</Color>
                               <Style>Solid</Style>
                             </Border>
-                            <BackgroundColor>=iif(RowNumber(Nothing) Mod 2, "Silver", "White")</BackgroundColor>
+                            <BackgroundColor>=iif(RowNumber(Nothing) Mod 2, "LightGrey", "White")</BackgroundColor>
                             <VerticalAlign>Middle</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
@@ -711,7 +722,7 @@
                               <Color>White</Color>
                               <Style>Solid</Style>
                             </Border>
-                            <BackgroundColor>=iif(RowNumber(Nothing) Mod 2, "Silver", "White")</BackgroundColor>
+                            <BackgroundColor>=iif(RowNumber(Nothing) Mod 2, "LightGrey", "White")</BackgroundColor>
                             <VerticalAlign>Middle</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
@@ -745,7 +756,7 @@
                               <Color>White</Color>
                               <Style>Solid</Style>
                             </Border>
-                            <BackgroundColor>=iif(RowNumber(Nothing) Mod 2, "Silver", "White")</BackgroundColor>
+                            <BackgroundColor>=iif(RowNumber(Nothing) Mod 2, "LightGrey", "White")</BackgroundColor>
                             <VerticalAlign>Middle</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
@@ -779,7 +790,7 @@
                               <Color>White</Color>
                               <Style>Solid</Style>
                             </Border>
-                            <BackgroundColor>=iif(RowNumber(Nothing) Mod 2, "Silver", "White")</BackgroundColor>
+                            <BackgroundColor>=iif(RowNumber(Nothing) Mod 2, "LightGrey", "White")</BackgroundColor>
                             <VerticalAlign>Middle</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
@@ -813,7 +824,7 @@
                               <Color>White</Color>
                               <Style>Solid</Style>
                             </Border>
-                            <BackgroundColor>=iif(RowNumber(Nothing) Mod 2, "Silver", "White")</BackgroundColor>
+                            <BackgroundColor>=iif(RowNumber(Nothing) Mod 2, "LightGrey", "White")</BackgroundColor>
                             <VerticalAlign>Middle</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
@@ -847,7 +858,7 @@
                               <Color>White</Color>
                               <Style>Solid</Style>
                             </Border>
-                            <BackgroundColor>=iif(RowNumber(Nothing) Mod 2, "Silver", "White")</BackgroundColor>
+                            <BackgroundColor>=iif(RowNumber(Nothing) Mod 2, "LightGrey", "White")</BackgroundColor>
                             <VerticalAlign>Middle</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
@@ -881,7 +892,7 @@
                               <Color>White</Color>
                               <Style>Solid</Style>
                             </Border>
-                            <BackgroundColor>=iif(RowNumber(Nothing) Mod 2, "Silver", "White")</BackgroundColor>
+                            <BackgroundColor>=iif(RowNumber(Nothing) Mod 2, "LightGrey", "White")</BackgroundColor>
                             <VerticalAlign>Middle</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
@@ -926,7 +937,7 @@
             <DataSetName>ChatLuongThanhPhamHRCDataSet</DataSetName>
             <Left>0.125in</Left>
             <Height>0.5in</Height>
-            <Width>12.81508in</Width>
+            <Width>12.81509in</Width>
             <Style>
               <Border />
               <FontSize>12pt</FontSize>
@@ -1039,7 +1050,7 @@
                     <TextRun>
                       <Value>=Format(
 System.TimeZone.CurrentTimeZone.
-ToLocalTime(Parameters!fromDate.Value), "dd.MM.yyyy HH:mm tt")</Value>
+ToLocalTime(Parameters!fromDate.Value), "dd.MM.yyyy HH:mm")</Value>
                       <Style>
                         <FontStyle>Italic</FontStyle>
                         <FontSize>9.75pt</FontSize>
@@ -1075,7 +1086,7 @@ ToLocalTime(Parameters!fromDate.Value), "dd.MM.yyyy HH:mm tt")</Value>
                     <TextRun>
                       <Value>=Format(
 System.TimeZone.CurrentTimeZone.
-ToLocalTime(Parameters!toDate.Value), "dd.MM.yyyy HH:mm tt")</Value>
+ToLocalTime(Parameters!toDate.Value), "dd.MM.yyyy HH:mm")</Value>
                       <Style>
                         <FontStyle>Italic</FontStyle>
                         <FontSize>9.75pt</FontSize>
