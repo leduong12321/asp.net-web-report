@@ -7,7 +7,7 @@ module.exports = {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'client',
+    title: 'Báo cáo sản xuất QSP',
     htmlAttrs: {
       lang: 'en'
     },
@@ -18,7 +18,7 @@ module.exports = {
       { name: 'format-detection', content: 'telephone=no' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'icon', type: 'image/x-icon', href: '/logo-hp.ico' },
       { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
       { rel: 'preconnect', href: 'https://fonts.gstatic.com' },
       { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap'},
@@ -72,8 +72,8 @@ module.exports = {
   },
   proxy: {
     '/api/': {
-      target: 'https://localhost:44315',
-      // target: 'http://192.168.103.210:9000',
+      // target: 'https://localhost:44315',
+      target: 'http://192.168.103.210:9000',
       pathRewrite: { '^/api/': '/api/' },
       changeOrigin: true,
       secure: false,

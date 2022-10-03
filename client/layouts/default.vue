@@ -2,7 +2,7 @@
   <div class="slidebar-container">
     <div class="sidebar" :class="{ 'close-sidebar': isClose }">
       <div class="logo-details">
-        <i class="bx bx-color"></i>
+        <img :src="logo" alt="logo-main" />
         <span class="logo_name">NM.CT QSP</span>
       </div>
       <ul class="nav-links">
@@ -90,6 +90,7 @@
 
 <script>
 import userImage from "../assets/images/user.png";
+import logo from "../assets/images/logo.png";
 import vnFlag from "../assets/images/vn-flag.png";
 import PopupLogout from "../components/common/PopupLogout.vue";
 export default {
@@ -99,6 +100,7 @@ export default {
       isClose: true,
       userImage,
       vnFlag,
+      logo,
       windowWidth: window.innerWidth,
       isPopupLogout: false,
       menus: [
@@ -147,32 +149,32 @@ export default {
             },
           ],
         },
-        {
-          icon: "bx bx-bar-chart-alt",
-          name: "Phân tích",
-          url: "/",
-          role: [0],
-          subMenus: [
-            {
-              icon: "",
-              name: "TSC",
-              url: "tsc",
-              role: [0],
-            },
-            {
-              icon: "",
-              name: "TF",
-              url: "tf",
-              role: [0],
-            },
-            {
-              icon: "",
-              name: "HSM",
-              url: "hsm",
-              role: [0],
-            },
-          ],
-        },
+        // {
+        //   icon: "bx bx-bar-chart-alt",
+        //   name: "Phân tích",
+        //   url: "/",
+        //   role: [0],
+        //   subMenus: [
+        //     {
+        //       icon: "",
+        //       name: "TSC",
+        //       url: "tsc",
+        //       role: [0],
+        //     },
+        //     {
+        //       icon: "",
+        //       name: "TF",
+        //       url: "tf",
+        //       role: [0],
+        //     },
+        //     {
+        //       icon: "",
+        //       name: "HSM",
+        //       url: "hsm",
+        //       role: [0],
+        //     },
+        //   ],
+        // },
         {
           icon: "bx bx-help-circle",
           name: "Hỗ trợ",
@@ -258,6 +260,11 @@ body {
   width: 100%;
   display: flex;
   align-items: center;
+  img {
+    width: 100%;
+    padding: 6px;
+    max-width: 60px;
+  }
 }
 .sidebar .logo-details i {
   font-size: 30px;

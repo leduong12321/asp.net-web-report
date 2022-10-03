@@ -101,8 +101,8 @@
         this.showTimePanel = false;
       },
       loadDataCurent() {
-        this.fromDay = new Date().setHours(0, 0, 0).valueOf();
-        this.toDay = new Date().setHours(23, 59, 59).valueOf();
+        this.fromDay = new Date().setHours(0, 0, 0).valueOf() + 25200000;
+        this.toDay = new Date().setHours(23, 59, 59).valueOf() + 25200000;
         this.url = this.API_URL + '?from='+ this.fromDay + '&to=' + this.toDay;
       },
       handSubmit() {
