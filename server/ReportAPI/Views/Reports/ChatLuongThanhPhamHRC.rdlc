@@ -967,7 +967,7 @@
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>TỔNG HỢP SẢN LƯỢNG HRC</Value>
+                      <Value>TỔNG HỢP CHẤT LƯỢNG THÀNH PHẨM HRC</Value>
                       <Style>
                         <FontFamily>Times New Roman</FontFamily>
                         <FontSize>18pt</FontSize>
@@ -980,9 +980,9 @@
               </Paragraphs>
               <rd:DefaultName>Textbox7</rd:DefaultName>
               <Top>0.24722in</Top>
-              <Left>4.91333in</Left>
+              <Left>3.92833in</Left>
               <Height>0.49834in</Height>
-              <Width>3.68138in</Width>
+              <Width>5.76007in</Width>
               <Style>
                 <Border>
                   <Style>None</Style>

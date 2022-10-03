@@ -171,7 +171,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Mount Date Thời gian vào</Value>
+                                  <Value>Mount Date/Thời gian vào</Value>
                                   <Style>
                                     <FontWeight>Medium</FontWeight>
                                     <Color>White</Color>
@@ -210,7 +210,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Dismount Date Thời gian ra</Value>
+                                  <Value>Dismount Date/Thời gian ra</Value>
                                   <Style>
                                     <FontWeight>Medium</FontWeight>
                                     <Color>White</Color>
@@ -585,7 +585,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Date Time Ngày Giờ</Value>
+                                  <Value>Date Time/Ngày Giờ</Value>
                                   <Style>
                                     <FontWeight>Medium</FontWeight>
                                     <Color>White</Color>
@@ -622,7 +622,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Shift Ca</Value>
+                                  <Value>Shift/Ca</Value>
                                   <Style>
                                     <FontWeight>Medium</FontWeight>
                                     <Color>White</Color>
@@ -659,7 +659,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Date Time Ngày giờ</Value>
+                                  <Value>Date Time/Ngày giờ</Value>
                                   <Style>
                                     <FontWeight>Medium</FontWeight>
                                     <Color>White</Color>
@@ -696,7 +696,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Shift Ca</Value>
+                                  <Value>Shift/Ca</Value>
                                   <Style>
                                     <FontWeight>Medium</FontWeight>
                                     <Color>White</Color>
@@ -1045,7 +1045,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!MOUNT_DATE.Value</Value>
+                                  <Value>=format(Fields!MOUNT_DATE.Value, "dd/MM/yyyy HH:mm:ss")</Value>
                                   <Style />
                                 </TextRun>
                               </TextRuns>
@@ -1113,7 +1113,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!DISMOUNT_DATE.Value</Value>
+                                  <Value>=format(Fields!DISMOUNT_DATE.Value, "dd/MM/yyyy HH:mm:ss")</Value>
                                   <Style />
                                 </TextRun>
                               </TextRuns>
