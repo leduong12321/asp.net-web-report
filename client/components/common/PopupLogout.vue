@@ -33,6 +33,9 @@ export default {
         })
         .then((value) => {
           if (value) {
+            localStorage.removeItem('token');
+            localStorage.removeItem('tokenExpiration');
+            this.$store.dispatch("setLogoutTimer", 0);
             this.$store.dispatch("setUser", null);
             this.$router.push({ path: "/login" });
           } else {

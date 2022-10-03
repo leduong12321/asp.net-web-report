@@ -3,7 +3,8 @@ const createStore = () => {
     return new Vuex.Store({
         state: {
             user: {},
-            isToast: false
+            isToast: false,
+            token: null,
         },
         mutations: {
             setUser(state, user) {
@@ -11,7 +12,13 @@ const createStore = () => {
             },
             setToast(state, isToast) {
                 state.isToast = isToast;
-            }
+            }, 
+            setToken(state, token) {
+                state.token = token;
+            },
+            clearToken(state) {
+                state.token = null;
+            },
         },
         actions: {
             setUser(vuexContext, user) {
@@ -19,6 +26,20 @@ const createStore = () => {
             },
             setToast(vuexContext, isToast) {
                 vuexContext.commit('setToast', isToast)
+            },
+            authenticateUser(vuexContext, token) {
+                vuexContext.commit('setToken', token)
+            },
+            setLogoutTimer(vuexContext, duration) {
+                setTimeout(() => {
+                    vuexContext.commit('clearToken')
+                }, duration)
+            },
+            initAuth(vuexContext) {
+                const token = localStorage.getItem('token');
+                const tokenExpiration = localStorage.getItem('tokenExpiration');
+                if(new Date().getTime() > tokenExpiration || !token) return false;
+                vuexContext.commit('setToken', token);
             }
         },
         getters: {
@@ -26,12 +47,16 @@ const createStore = () => {
                 return state.user
             },
             isAuthenticated(state) {
-                // return state.token != null;
-                state.user != null;
+                console.log('auth', state.token);
+                return state.token != null;
             },
             isToast(state) {
                 return state.isToast
             },
+            getToken(state) {
+                console.log('get token', state.token.data.data);
+                return state.token.data.data
+            }
         },
     })
 }

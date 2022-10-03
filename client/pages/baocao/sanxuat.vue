@@ -9,7 +9,7 @@ import SanXuatComponent from "../../components/baocao/SanXuatComponent.vue";
 
 export default {
   name: "homepage",
-  middleware: 'auth',
+  middleware: ['check-auth', 'auth'],
   components: { SanXuatComponent },
 };
 </script>

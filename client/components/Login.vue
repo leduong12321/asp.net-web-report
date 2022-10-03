@@ -64,21 +64,27 @@ export default {
         Password: this.password,
       };
       try {
-        // const user = await this.$axios.get('/api/user');
-        const user = await this.$axios.post("/api/user", info);
-        this.$store.dispatch("setUser", user.data);
-        if (user.data) {
-          this.$store.dispatch("setToast", true);
-          this.errorMessage = null;
-          this.$router.push({ path: "/" });
-        } else {
-          this.errorMessage = "Tài khoản hoặc mật khẩu không đúng.";
+        const token = await this.$axios.get("/api/user/gettoken");
+        if(token.data) {
+          localStorage.setItem('token', token.data.data);
+          localStorage.setItem('tokenExpiration', new Date().getTime() + 86400000);
+          this.$axios.defaults.headers.common = { Authorization: `Bearer ${token.data.data}` };
+          this.$store.dispatch("authenticateUser", token.data);
+          this.$store.dispatch("setLogoutTimer", 86400000);
+          const user = await this.$axios.post("/api/user/post", info);
+          if (user.data) {
+            this.$store.dispatch("setUser", user.data);
+            this.$store.dispatch("setToast", true);
+            this.errorMessage = null;
+            this.$router.push({ path: "/" });
+          } else {
+            this.errorMessage = "Tài khoản hoặc mật khẩu không đúng.";
+          }
         }
+        
       } catch (error) {
         console.log("error", error);
       }
-
-      console.log("store -user", this.$store.getters.user);
     },
     removeError() {
       this.errorMessage = '';
