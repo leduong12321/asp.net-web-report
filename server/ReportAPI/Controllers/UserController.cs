@@ -57,15 +57,8 @@ namespace ReportAPI.Controllers
             var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(key));
             var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
 
-            var permClaims = new List<Claim>();
-            permClaims.Add(new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()));
-            permClaims.Add(new Claim("valid", "1"));
-            permClaims.Add(new Claim("userid", "1"));
-            permClaims.Add(new Claim("name", "bilal"));
-
             var token = new JwtSecurityToken(issuer,
                             issuer,
-                            permClaims,
                             expires: DateTime.Now.AddDays(1),
                             signingCredentials: credentials);
             var jwt_token = new JwtSecurityTokenHandler().WriteToken(token);
@@ -101,10 +94,10 @@ namespace ReportAPI.Controllers
             if (identity != null)
             {
                 IEnumerable<Claim> claims = identity.Claims;
-                var name = claims.Where(p => p.Type == "name").FirstOrDefault()?.Value;
+                //var name = claims.Where(p => p.Type == "name").FirstOrDefault()?.Value;
                 return new
                 {
-                    data = name
+                    data = claims
                 };
 
             }
