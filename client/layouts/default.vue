@@ -107,19 +107,19 @@ export default {
           name: "Trang chủ",
           url: "/",
           subMenus: [],
-          role: [0, 1],
+          role: [0, 1, 2],
         },
         {
           icon: "bx bxs-report",
           name: "Báo cáo",
           url: "",
-          role: [0, 1],
+          role: [0, 1, 2],
           subMenus: [
             {
               icon: "",
               name: "Sản xuất",
               url: "/baocao/sanxuat",
-              role: [0],
+              role: [0, 1],
             },
             {
               icon: "",
@@ -137,13 +137,13 @@ export default {
               icon: "",
               name: "Thay trục BUR",
               url: "/baocao/thay-truc-bur",
-              role: [0, 1],
+              role: [0, 2],
             },
             {
               icon: "",
               name: "Thay trục WR",
               url: "/baocao/thay-truc-wr",
-              role: [0, 1],
+              role: [0, 2],
             },
           ],
         },
