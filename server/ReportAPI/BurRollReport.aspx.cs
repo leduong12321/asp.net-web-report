@@ -16,6 +16,8 @@ namespace ReportAPI
     {
         private List<SqlParameter> sqlParameters;
         private DataSet dataSet;
+        private dynamic fromValue = null;
+        private dynamic toValue = null;
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -109,8 +111,10 @@ namespace ReportAPI
                     {
                         long from = long.Parse(time[0].Value);
                         long to = long.Parse(time[1].Value);
-                        time[0].Value = new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc).AddMilliseconds(from);
-                        time[1].Value = new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc).AddMilliseconds(to);
+                        time[0].Value = new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc).AddMilliseconds(from + 25200000);
+                        time[1].Value = new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc).AddMilliseconds(to + 25200000);
+                        fromValue = new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc).AddMilliseconds( from);
+                        toValue = new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc).AddMilliseconds(to);
                     }
                     else
                     {
@@ -128,8 +132,10 @@ namespace ReportAPI
                     RdlcBurRollReportViewer.LocalReport.Refresh();
 
                     RdlcBurRollReportViewer.LocalReport.DisplayName = "Baocaothaytruc " + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
-                    ReportParameter fromDateValue = new ReportParameter("fromDate", time[0].Value.ToString());
-                    ReportParameter toDateValue = new ReportParameter("toDate", time[1].Value.ToString());
+                    ReportParameter fromDateValue = new ReportParameter("fromDate", fromValue.ToString());
+                    ReportParameter toDateValue = new ReportParameter("toDate", toValue.ToString());
+                    fromValue = null;
+                    toValue = null;
                     RdlcBurRollReportViewer.LocalReport.SetParameters(fromDateValue);
                     RdlcBurRollReportViewer.LocalReport.SetParameters(toDateValue);
                 }
