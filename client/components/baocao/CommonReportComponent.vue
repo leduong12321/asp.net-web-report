@@ -111,7 +111,8 @@
         }
         console.log("start", new Date(this.fromDay) );
         console.log("to", new Date(this.toDay) );
-        this.url = this.API_URL + '?from='+ (this.fromDay + 25200000) + '&to=' + (this.toDay + 25200000);
+        // this.url = this.API_URL + '?from='+ (this.fromDay + 25200000) + '&to=' + (this.toDay + 25200000);
+        this.url = this.API_URL + '?from='+ this.fromDay + '&to=' + this.toDay;
         // document.getElementById("iframe").src =
         //   document.getElementById("iframe").src;
       },
