@@ -4,7 +4,7 @@
       <div class="login-main-text">
         <h2>Đăng nhập</h2>
         <p>
-          Liên hệ với chung tôi nếu không đăng nhập được thông qua địa chỉ:
+          Liên hệ với chúng tôi nếu không đăng nhập được thông qua địa chỉ:
           cntt.qsp@gmail.com
         </p>
       </div>
