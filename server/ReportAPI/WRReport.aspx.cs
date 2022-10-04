@@ -47,7 +47,7 @@ namespace ReportAPI
             string query = @"	with data as (select 
 		                        a.STAND_ID,
 		                        a.MOUNT_DATE,
-		                        case (datediff(hour, '2014-06-27 08:00:00', a.MOUNT_DATE) / 12) % 6
+		                        case (datediff(hour, '2014-07-17 08:00:00', a.MOUNT_DATE) / 12) % 6
 			                        when 0 then '1A'
 			                        when 1 then '2B'
 			                        when 2 then '1C'
@@ -56,7 +56,7 @@ namespace ReportAPI
 		                        else '2C'
 		                        end as mount_shift,
 		                        DISMOUNT_DATE,
-		                        case (datediff(hour, '2014-06-27 08:00:00', a.DISMOUNT_DATE) / 12) % 6
+		                        case (datediff(hour, '2014-07-17 08:00:00', a.DISMOUNT_DATE) / 12) % 6
 			                        when 0 then '1A'
 			                        when 1 then '2B'
 			                        when 2 then '1C'

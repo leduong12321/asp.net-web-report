@@ -51,7 +51,7 @@ namespace ReportAPI
                             WITH DATA AS
                                 (SELECT a.STAND_ID,
                                         a.MOUNT_DATE,
-                                        CASE (datediff(HOUR, '2014-06-27 08:00:00', a.MOUNT_DATE) / 12) % 6
+                                        CASE (datediff(HOUR, '2014-07-17 08:00:00', a.MOUNT_DATE) / 12) % 6
                                             WHEN 0 THEN '1A'
                                             WHEN 1 THEN '2B'
                                             WHEN 2 THEN '1C'
@@ -60,7 +60,7 @@ namespace ReportAPI
                                             ELSE '2C'
                                         END AS mount_shift,
                                         DISMOUNT_DATE,
-                                        CASE (datediff(HOUR, '2014-06-27 08:00:00', a.DISMOUNT_DATE) / 12) % 6
+                                        CASE (datediff(HOUR, '2014-07-17 08:00:00', a.DISMOUNT_DATE) / 12) % 6
                                             WHEN 0 THEN '1A'
                                             WHEN 1 THEN '2B'
                                             WHEN 2 THEN '1C'
