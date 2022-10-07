@@ -1,70 +1,75 @@
 <template>
-  <div class="slidebar-container">
-    <div class="sidebar" :class="{ 'close-sidebar': isClose }">
-      <div class="logo-details">
-        <img :src="logo" alt="logo-main" />
-        <span class="logo_name">NM.CT QSP</span>
+  <div class="wrapper">
+    <nav
+      id="sidebar" :class="[ isCollapse ? 'active' : 'none-active' ]"
+      v-click-outside="externalClick"
+    >
+      <div class="sidebar-header d-flex">
+        <img :src="logo" alt="logo-main" class="logo-main" />
+        <span class="logo_name" v-if="!isCollapse">NM.CT QSP</span>
       </div>
-      <ul class="nav-links">
-        <li v-for="(menu, index) in menus" :key="index" class="li">
-          <div
-            class="iocn-link"
-            v-if="menu.role.includes($store.getters.user?.Role)"
-          >
-            <nuxt-link
+      <ul class="list-unstyled list-parent components">
+        <li v-for="(parent, index) in menu" :key="index">
+          <nuxt-link
               class="link_name"
-              :to="menu.url.length > 0 ? menu.url : ''"
+              :to="`${parent.url}`"
+              v-if="parent.subMenus?.length == 0"
             >
-              <i :class="menu.icon"></i>
-              <span class="link_name">{{ menu.name }}</span>
+            <i :class="parent.icon"></i>
+              <span class="link_name" v-if="!isCollapse">{{ parent.name }}</span>
             </nuxt-link>
-            <ul class="sub-menu blank" v-if="menu.subMenus.length == 0">
-              <li>
-                <nuxt-link class="link_name" :to="menu.url">{{
-                  menu.name
-                }}</nuxt-link>
-              </li>
+            <a
+            v-else
+              @click="isCollapse = false"
+              :href="`#${parent.url}`"
+              data-toggle="collapse"
+              aria-expanded="false"
+              :class="[parent.subMenus?.length > 0 && isCollapse ? 'dropdown-toggle' : null , isCollapse == false ? 'parent' :'child' ]"
+            >
+              <i :class="parent.icon"></i>
+              <span v-if="!isCollapse">{{ parent.name }}</span>
+            </a>
+            <ul class="collapse list-unstyled list-child1" :id="parent.url" :class="{'hide': isCollapse}">
+              <div>
+                <li v-for="(child1, index) in parent?.subMenus" :key="index" >
+                  <span v-if="child1.subChildMenu?.length == 0 || !child1.url.includes('ID-')" @click="handleCollapse()">
+                    <nuxt-link
+                      class="link_name"
+                      :to="`${child1.url}`"
+                    >
+                    <i class="fas fa-tachometer-alt"></i>
+                      <span class="link_name">{{ child1.name }}</span>
+                    </nuxt-link>
+                  </span>
+                  <a
+                    v-else
+                    :href="`#${child1.url}`"
+                    data-toggle="collapse"
+                    aria-expanded="false"
+                    :class="[child1.subChildMenu?.length > 0 && isCollapse ? 'dropdown-toggle' : null , isCollapse == false ? 'parent' :'child' ]"
+                  >
+                    <i class="fas fa-tachometer-alt"></i>
+                    {{child1.name}}
+                  </a>
+                  <ul class="collapse list-unstyled list-child2" :id="child1.url" :class="{'hide': isCollapse}">
+                    <li v-for="(child2, index) in child1?.subChildMenu" :key="index">
+                      <nuxt-link
+                        class="link_name last-of-child"
+                        :to="`${child2.url}`"
+                        @click="isCollapse = false"
+                      >
+                      <i class="fas fa-tachometer-alt"></i>
+                        <span class="link_name">{{ child2.name }}</span>
+                      </nuxt-link>
+                    </li>
+                  </ul>
+                </li>
+              </div>
             </ul>
-            <div v-else>
-              <i class="bx bxs-chevron-down arrow"></i>
-            </div>
-          </div>
-          <div v-if="menu.subMenus.length > 0">
-            <ul class="sub-menu">
-              <li>
-                <nuxt-link class="link_name" :to="menu.url">{{
-                  menu.name
-                }}</nuxt-link>
-              </li>
-              <li v-for="(subMenu, index) in menu.subMenus" :key="index">
-                <nuxt-link
-                  v-if="subMenu.role.includes($store.getters.user?.Role)"
-                  :to="subMenu.url"
-                  >{{ subMenu.name }}</nuxt-link
-                >
-              </li>
-            </ul>
-          </div>
-        </li>
-        <li>
-          <div class="profile-details">
-            <div class="profile-content" :class="{'pl-4' : !isClose}">
-              <img :src="userImage" alt="profileImg" />
-            </div>
-            <div class="name-job">
-              <div class="profile_name">{{ $store.getters.user.Name }}</div>
-              <div class="job">{{ $store.getters.user.Description }}</div>
-            </div>
-            <i class="bx bx-log-out" @click="handLogout()"></i>
-          </div>
         </li>
       </ul>
-    </div>
+    </nav>
     <div class="header-section">
-      <div class="home-content">
-        <i class="bx bx-menu" v-if="isClose" @click="closeSideBar()"></i>
-        <i class="bx bx-x" v-else @click="closeSideBar()"></i>
-      </div>
       <div class="right-header">
         <img :src="vnFlag" alt="viet-nam-flag" class="mr-3" />
         <i class="bx bxs-bell-ring mr-3"></i>
@@ -74,7 +79,7 @@
           >
           <img :src="userImage" alt="user" class="user-image" />
         </div>
-        <i class="bx bx-log-out logout-icon pr-3" v-b-tooltip.hover.bottomleft="{ customClass: 'my-tooltip-class' }" title="Đăng xuất"  @click="handLogout()"></i>
+        <i class="bx bx-log-out logout-icon pr-3" v-b-tooltip.hover.bottomleft="{ 'customClass': 'my-tooltip-class' }" title="Đăng xuất"  @click="handLogout()"></i>
       </div>
     </div>
     <section class="home-section">
@@ -89,21 +94,29 @@
 </template>
 
 <script>
+import DatePicker from "vue2-datepicker";
+import vClickOutside from "v-click-outside";
 import userImage from "../assets/images/user.png";
 import logo from "../assets/images/logo.png";
 import vnFlag from "../assets/images/vn-flag.png";
 import PopupLogout from "../components/common/PopupLogout.vue";
+import "vue2-datepicker/index.css";
+
 export default {
-  components: { PopupLogout },
+  components: { DatePicker, PopupLogout },
+  directives: {
+    clickOutside: vClickOutside.directive,
+  },
   data() {
     return {
+      isCollapse: true,
       isClose: true,
       userImage,
       vnFlag,
       logo,
       windowWidth: window.innerWidth,
       isPopupLogout: false,
-      menus: [
+      menu: [
         {
           icon: "bx bx-home",
           name: "Trang chủ",
@@ -114,7 +127,7 @@ export default {
         {
           icon: "bx bxs-report",
           name: "Báo cáo",
-          url: "",
+          url: "ID-01-BaoCao",
           role: [0, 1, 2],
           subMenus: [
             {
@@ -125,13 +138,13 @@ export default {
             },
             {
               icon: "",
-              name: "Sản lượng HRC",
+              name: "Tổng hợp sản lượng HRC",
               url: "/baocao/sanluong-hrc",
               role: [0],
             },
             {
               icon: "",
-              name: "Chất lượng HRC",
+              name: "Chất lượng thành phẩm HRC",
               url: "/baocao/chatluong-hrc",
               role: [0],
             },
@@ -150,99 +163,104 @@ export default {
           ],
         },
         // {
-        //   icon: "bx bx-bar-chart-alt",
-        //   name: "Phân tích",
-        //   url: "/",
-        //   role: [0],
+        //   icon: "bx bxs-report",
+        //   name: "TSC",
+        //   url: "ID-01-TSC",
+        //   role: [3],
         //   subMenus: [
         //     {
         //       icon: "",
-        //       name: "TSC",
-        //       url: "tsc",
-        //       role: [0],
+        //       name: "TSC 1",
+        //       url: "ID-02-TSC",
+        //       role: [3],
+        //       subChildMenu: [
+        //         {
+        //           icon: "",
+        //           name: "TSC 1 Bao cao 1",
+        //           url: "/baocao/TSC1-baocao1",
+        //           role: [3],
+        //         },
+        //         {
+        //           icon: "",
+        //           name: "TSC 1 Bao cao 2",
+        //           url: "/baocao/TSC1-baocao2",
+        //           role: [3],
+        //         },
+        //       ]
         //     },
         //     {
         //       icon: "",
-        //       name: "TF",
-        //       url: "tf",
-        //       role: [0],
-        //     },
-        //     {
-        //       icon: "",
-        //       name: "HSM",
-        //       url: "hsm",
-        //       role: [0],
-        //     },
+        //       name: "TSC 2",
+        //       url: "/baocao/TSC2",
+        //       role: [3],
+        //     }
         //   ],
         // },
         {
           icon: "bx bx-help-circle",
           name: "Hỗ trợ",
-          url: "/",
+          url: "/ho-tro",
           subMenus: [],
           role: [0],
         },
       ],
     };
   },
-  mounted() {
-    // if(this.windowWidth > 1900) {
-    //   this.isClose = false;
-    // }
-    this.handleShowSubMenu();
-  },
-  // watch: {
-  //   'isClose'() {
-  //     let element = document.getElementsByClassName("nuxt-body");
-  //     element[0].classList.remove('container');
-  //     debugger;
-  //     console.log('e');
-  //   }
-  // },
+  mounted() {},
   methods: {
-    handleShowSubMenu() {
-      let arrow = document.querySelectorAll(".li");
-      for (var i = 0; i < arrow.length; i++) {
-        arrow[i].addEventListener("click", (e) => {
-          let arrowParent = e.target.parentElement.parentElement.parentElement; //selecting main parent of arrow
-          if (e.target.parentElement.parentElement.classList[0] == "li") {
-            arrowParent = e.target.parentElement.parentElement;
-          }
-          arrowParent.classList.toggle("showMenu");
-        });
-      }
+    externalClick() {
+      this.isCollapse = true;
     },
-    closeSideBar() {
-      this.isClose = !this.isClose;
-      // setTimeout(() => {
-      //   let element = document.getElementsByClassName("nuxt-body");
-      //   element[0].classList.remove('container');
-      // }, 1);
+    handleCollapse() {
+      this.isCollapse = true;
     },
     handLogout() {
       this.isPopupLogout = true;
-      // if (confirm("Bạn có muốn đăng xuất không?") == true) {
-      //     this.$store.dispatch("setUser", null);
-      //     this.$router.push({ path: "/login" });
-      // }
     },
   },
 };
 </script>
 
 <style lang="scss">
-/* Google Fonts Import Link */
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
-}
-body {
+.wrapper {
+  max-height: 100vh;
   overflow: hidden;
 }
-.sidebar {
+.navbar {
+  padding: 15px 10px;
+  background: #fff;
+  border: none;
+  border-radius: 0;
+  margin-bottom: 20px;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-btn {
+  box-shadow: none;
+  outline: none !important;
+  border: none;
+}
+
+.line {
+  width: 100%;
+  height: 1px;
+  border-bottom: 1px dashed #ddd;
+  margin: 40px 0;
+}
+
+i,
+span {
+  display: inline-block;
+}
+
+/* ---------------------------------------------------
+    SIDEBAR STYLE
+----------------------------------------------------- */
+
+#sidebar {
+  min-width: 280px;
+  max-width: 280px;
+  background: $primary;
   position: fixed;
   top: 0;
   left: 0;
@@ -250,226 +268,261 @@ body {
   width: 260px;
   background: #11101d;
   z-index: 100;
-  transition: all 0.5s ease;
-}
-.sidebar.close-sidebar {
-  width: 60px;
-}
-.sidebar .logo-details {
-  height: 60px;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  img {
-    width: 100%;
-    padding: 6px;
-    max-width: 60px;
+   ul li a {
+    color: white;
+  }
+  ul li a:hover {
+    text-decoration: none;
   }
 }
-.sidebar .logo-details i {
-  font-size: 30px;
-  color: #fff;
-  height: 50px;
-  min-width: 60px;
+
+
+#sidebar.active {
+  min-width: 50px;
+  max-width: 50px;
   text-align: center;
-  line-height: 50px;
 }
-.sidebar .logo-details .logo_name {
-  font-size: 22px;
-  color: #fff;
-  font-weight: 600;
-  transition: 0.3s ease;
-  transition-delay: 0.1s;
-}
-.sidebar.close-sidebar .logo-details .logo_name {
-  transition-delay: 0s;
-  opacity: 0;
-  pointer-events: none;
-}
-.sidebar .nav-links {
-  height: 100%;
-  padding: 30px 0 150px 0;
-  overflow: auto;
-}
-.sidebar.close-sidebar .nav-links {
-  overflow: visible;
-}
-.sidebar .nav-links::-webkit-scrollbar {
+
+#sidebar.active .sidebar-header h3,
+#sidebar.active .CTAs {
   display: none;
 }
-.sidebar .nav-links li {
-  position: relative;
-  list-style: none;
-  transition: all 0.4s ease;
-  cursor: pointer;
-}
-.sidebar .nav-links li:hover {
-  background: #1d1b31;
-}
-.sidebar .nav-links li .iocn-link {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-.sidebar .nav-links li .iocn-link a {
-  width: 100%;
-}
-.sidebar.close-sidebar .nav-links li .iocn-link {
+
+#sidebar.active .sidebar-header strong {
   display: block;
 }
-.sidebar .nav-links li i {
-  height: 50px;
-  min-width: 60px;
+
+#sidebar ul li a {
+  text-align: left;
+}
+
+#sidebar.active ul li a {
+  padding: 16px 10px;
   text-align: center;
-  line-height: 50px;
-  color: #fff;
-  font-size: 20px;
-  transition: all 0.3s ease;
+  font-size: 0.6em;
 }
-.sidebar .nav-links li.showMenu i.arrow {
-  transform: rotate(-180deg);
-}
-.sidebar.close-sidebar .nav-links i.arrow {
-  display: none;
-}
-.sidebar .nav-links li a {
-  display: flex;
-  align-items: center;
-  text-decoration: none;
-}
-.sidebar .nav-links li a .link_name {
-  font-size: 16px;
-  font-weight: 400;
-  color: #fff;
-  transition: all 0.4s ease;
-}
-.sidebar.close-sidebar .nav-links li a .link_name {
-  opacity: 0;
-  pointer-events: none;
-}
-.sidebar .nav-links li .sub-menu {
-  padding: 6px 6px 14px 80px;
-  margin-top: -10px;
-  background: #1d1b31;
-  display: none;
-}
-.sidebar .nav-links li.showMenu .sub-menu {
+
+#sidebar.active ul li a i {
+  margin-right: 0;
   display: block;
+  font-size: 2em;
 }
-.sidebar .nav-links li .sub-menu a {
+
+#sidebar.active ul ul a {
+  padding: 10px !important;
   color: #fff;
-  font-size: 14px;
-  padding: 4px 0 0 2px;
-  white-space: nowrap;
-  opacity: 0.6;
-  transition: all 0.3s ease;
-  &.nuxt-link-exact-active {
-    opacity: 1;
+  background: $primary;
+}
+
+#sidebar.active .dropdown-toggle::after {
+  top: auto;
+  bottom: 10px;
+  right: 50%;
+  -webkit-transform: translateX(50%);
+  -ms-transform: translateX(50%);
+  transform: translateX(50%);
+}
+
+#sidebar .sidebar-header {
+  background-color: #11101d;
+  .logo-main {
+    max-height: 34px;
+    padding: 5px;
+    margin-top: 24px;
+    background-color: #11101d;
+  }
+  .logo_name {
+    color: white;
+    margin-top: 24px;
+    font-size: 1.5rem;
+    padding-left: 6px;
     font-weight: bold;
   }
+  i {
+    font-size: 2rem;
+  }
 }
-.sidebar .nav-links li .sub-menu a:hover {
-  opacity: 1;
+
+#sidebar .sidebar-header strong {
+  display: none;
+  font-size: 1.8em;
 }
-.sidebar.close-sidebar .nav-links li .sub-menu {
-  position: absolute;
-  left: 100%;
-  top: -10px;
-  margin-top: 0;
-  padding: 10px 20px;
-  border-radius: 0 6px 6px 0;
-  opacity: 0;
+
+#sidebar ul.components {
+  padding: 20px 0;
+}
+
+#sidebar.active ul.components li a.child,
+#sidebar ul.components li a.parent {
   display: block;
-  pointer-events: none;
-  transition: 0s;
 }
-.sidebar.close-sidebar .nav-links li:hover .sub-menu {
-  top: 0;
-  opacity: 1;
-  pointer-events: auto;
-  transition: all 0.4s ease;
-}
-.sidebar .nav-links li .sub-menu .link_name {
+
+#sidebar ul.components li a.child,
+#sidebar.active ul.components li a.parent {
   display: none;
 }
-.sidebar.close-sidebar .nav-links li .sub-menu .link_name {
-  font-size: 14px;
-  opacity: 1;
+
+#sidebar ul li a {
+  padding: 10px;
+  font-size: 0.9em;
   display: block;
+  &.nuxt-link-exact-active {
+    opacity: 1;
+    color: aqua !important;
+    // font-weight: bold;
+  }
 }
-.sidebar .nav-links li .sub-menu.blank {
-  opacity: 1;
-  pointer-events: auto;
-  padding: 3px 20px 6px 16px;
-  opacity: 0;
-  pointer-events: none;
+
+#sidebar ul li a:hover {
+  color: white;
+  // background: #cdcdcd;
 }
-.sidebar .nav-links li:hover .sub-menu.blank {
+
+#sidebar ul li a i {
+  margin-right: 10px;
+}
+
+#sidebar ul li.active > a,
+a[aria-expanded="true"] {
+  color: #fff;
+  background: $primary;
+}
+
+#sidebar ul li.active > a:hover,
+a[aria-expanded="true"] {
+  color: $primary;
+  background: #fff;
+}
+
+#sidebar ul li.subactive > a,
+a[aria-expanded="true"] {
+  color: $primary;
+  background: #fff;
+}
+
+#sidebar ul li.subactive > a:hover,
+a[aria-expanded="true"] {
+  color: #fff;
+  background: $primary;
+}
+
+a[data-toggle="collapse"] {
+  position: relative;
+}
+
+.dropdown-toggle::after {
+  display: block;
+  position: absolute;
   top: 50%;
+  right: 20px;
   transform: translateY(-50%);
 }
-.sidebar .profile-details {
-  position: fixed;
-  bottom: 0;
-  width: 260px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background: #1d1b31;
-  padding: 12px 0;
-  transition: all 0.5s ease;
+
+ul ul a {
+  font-size: 0.8em !important;
+  padding-left: 30px !important;
+  /*background: #6d7fcc;*/
 }
-.sidebar.close-sidebar .profile-details {
-  background: none;
+
+ul.CTAs {
+  padding: 20px;
 }
-.sidebar.close-sidebar .profile-details {
-  width: 60px;
+
+ul.CTAs a {
+  text-align: center;
+  font-size: 0.8em !important;
+  display: block;
+  border-radius: 5px;
+  margin-bottom: 5px;
 }
-.sidebar .profile-details .profile-content {
-  display: flex;
-  align-items: center;
+
+a.download {
+  background: #fff;
+  color: #7386d5;
 }
-.sidebar .profile-details img {
-  height: 52px;
-  width: 52px;
-  object-fit: cover;
-  border-radius: 16px;
-  margin: 0 4px 0 2px;
-  background: #1d1b31;
-  transition: all 0.5s ease;
+
+a.article,
+a.article:hover {
+  background: #6d7fcc !important;
+  color: #fff !important;
 }
-.sidebar.close-sidebar .profile-details img {
-  padding: 10px;
+.list-unstyled {
+  &.list-parent {
+    li {
+      border-bottom: 1px solid #464a4e;
+      &:first-child {
+        border-top: 1px solid #464a4e;
+      }
+    }
+  }
+  &.list-child1 {
+    background-color: #464a4e;
+    .parent {
+      background-color: #464a4e;
+    }
+  }
+  .last-of-child{
+    padding-left: 60px !important;
+    background-color: rgba(205, 205, 205, 0.1);
+  }
 }
-.sidebar .profile-details .profile_name,
-.sidebar .profile-details .job {
-  color: #fff;
-  font-size: 16px;
-  font-weight: 500;
-  white-space: nowrap;
-}
-.sidebar.close-sidebar .profile-details i,
-.sidebar.close-sidebar .profile-details .profile_name,
-.sidebar.close-sidebar .profile-details .job {
-  display: none;
-}
-.sidebar .profile-details .job {
-  font-size: 12px;
+.active {
+    a[aria-expanded="true"]::after {
+      background: none;
+    }
+    a[aria-expanded="false"]::after {
+      background: none;
+    }
+  }
+  .none-active {
+    a[aria-expanded="true"]::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    display:inline-block;
+    height: 12px;
+    width: 12px;
+    margin-right: 12px;
+    margin-top: 4px;
+    background: url(../assets/images/arrow-down.png) no-repeat 0 0;
+    background-size: 12px 12px;
+    transform: rotate(180deg);
+  }
+  a[aria-expanded="false"]::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    display:inline-block;
+    height: 12px;
+    width: 12px;
+    margin-right: 12px;
+    margin-top: 4px;
+    background: url(../assets/images/arrow-down.png) no-repeat 0 0;
+    background-size: 12px 12px;
+  }
+  }
+
+/* ---------------------------------------------------
+    CONTENT STYLE
+----------------------------------------------------- */
+
+#content {
+  width: 100%;
+  padding: 0px;
+  min-height: 100vh;
+  transition: all 0.3s;
 }
 .header-section {
-  left: 260px;
-  width: calc(100% - 260px);
-  transition: all 0.5s ease;
   position: relative;
   height: 40px;
   box-shadow: 0 10px 30px 0 rgb(47 60 74 / 8%);
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-end;
 }
 .right-header {
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
   font-style: italic;
   i {
@@ -502,44 +555,17 @@ body {
   }
 }
 .home-section {
-  // background: #e4e9f7;
-  left: 260px;
-  width: calc(100% - 260px);
-  transition: all 0.5s ease;
+  margin-left: 50px;
+  margin-right: 16px;
+  width: calc(100% - 50px);
   padding: 12px 24px;
   overflow-y: scroll;
   position: relative;
-  // height: 100vh;
 }
 .sidebar.close-sidebar ~ .home-section,
 .sidebar.close-sidebar ~ .header-section {
   left: 60px;
   width: calc(100% - 60px);
-}
-.home-content {
-  padding-left: 4px;
-  padding-top: 5px;
-  background-color: #11101d;
-  border-radius: 0px 8px 8px 0px;
-  // display: flex;
-  // align-items: center;
-  // flex-wrap: wrap;
-  // position: absolute;
-}
-.header-section .home-content .bx-menu,
-.header-section .home-content .bx-x,
-.header-section .home-content .text {
-  color: white;
-  font-size: 20px;
-}
-.header-section .home-content .bx-menu,
-.header-section .home-content .bx-x {
-  cursor: pointer;
-  margin-right: 8px;
-}
-.header-section .home-content .text {
-  font-size: 26px;
-  font-weight: 600;
 }
 
 @media screen and (max-width: 400px) {
@@ -567,6 +593,59 @@ body {
     width: calc(100% - 60px);
   }
   .nuxt-body {
+  }
+}
+
+/* ---------------------------------------------------
+    MEDIAQUERIES
+----------------------------------------------------- */
+
+@media (max-width: 768px) {
+  #sidebar {
+    min-width: 80px;
+    max-width: 80px;
+    text-align: center;
+    margin-left: -80px !important;
+  }
+  .dropdown-toggle::after {
+    top: auto;
+    bottom: 10px;
+    right: 50%;
+    -webkit-transform: translateX(50%);
+    -ms-transform: translateX(50%);
+    transform: translateX(50%);
+  }
+  #sidebar.active {
+    margin-left: 0 !important;
+  }
+  #sidebar .sidebar-header h3,
+  #sidebar .CTAs {
+    display: none;
+  }
+  #sidebar .sidebar-header strong {
+    display: block;
+  }
+  #sidebar ul li a {
+    padding: 20px 10px;
+  }
+  #sidebar ul li a span {
+    font-size: 0.85em;
+  }
+  #sidebar ul li a i {
+    margin-right: 0;
+    display: block;
+  }
+  #sidebar ul ul a {
+    padding: 10px !important;
+  }
+  #sidebar ul li a i {
+    font-size: 1.3em;
+  }
+  #sidebar {
+    margin-left: 0;
+  }
+  #sidebarCollapse span {
+    display: none;
   }
 }
 </style>

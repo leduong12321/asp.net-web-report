@@ -10,7 +10,7 @@ import ThayTrucWr from '../../components/baocao/ThayTrucWr.vue';
   
   export default {
     name: "homepage",
-    middleware: "auth",
+    // middleware: "auth",
     components: { ThayTrucWr }
 }
   </script>
