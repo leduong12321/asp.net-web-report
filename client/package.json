@@ -27,6 +27,7 @@
     "webpack": "^4.46.0"
   },
   "devDependencies": {
+    "@nuxtjs/moment": "^1.6.1",
     "sass": "^1.54.8",
     "sass-loader": "10"
   }

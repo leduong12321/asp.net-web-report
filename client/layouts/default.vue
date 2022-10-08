@@ -114,7 +114,6 @@ export default {
       userImage,
       vnFlag,
       logo,
-      windowWidth: window.innerWidth,
       isPopupLogout: false,
       menu: [
         {
