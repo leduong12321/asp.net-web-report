@@ -26,8 +26,25 @@ module.exports = {
     ],
     script: [
       {
-        // src: 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'
-      }
+        src:
+          "https://code.jquery.com/jquery-3.3.1.slim.min.js",
+          type: "text/javascript"
+      },
+      {
+        src:
+          "https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js",
+          type: "text/javascript"
+      },
+      {
+        src:
+          "https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js",
+          type: "text/javascript"
+      },
+      {
+        src:
+          "https://kit.fontawesome.com/073b9166e3.js",
+          type: "text/javascript"
+      },
     ],
   },
 
@@ -41,6 +58,7 @@ module.exports = {
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
     { src: '~/plugins/vue2-datepicker', ssr: false },
+    { src: '~/plugins/v-click-outside', ssr: false },
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -49,6 +67,7 @@ module.exports = {
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
     '@nuxtjs/style-resources',
+    '@nuxtjs/moment',
   ],
   styleResources: {
     // your settings here
@@ -72,8 +91,8 @@ module.exports = {
   },
   proxy: {
     '/api/': {
-      // target: 'https://localhost:44315',
-      target: 'http://192.168.103.210:9000',
+      target: 'https://localhost:44315',
+      // target: 'http://192.168.103.210:9000',
       pathRewrite: { '^/api/': '/api/' },
       changeOrigin: true,
       secure: false,

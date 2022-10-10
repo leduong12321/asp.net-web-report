@@ -3,10 +3,10 @@
     <div class="sidenav">
       <div class="login-main-text">
         <h2>Đăng nhập</h2>
-        <p>
+        <!-- <p>
           Liên hệ với chúng tôi nếu không đăng nhập được thông qua địa chỉ:
           cntt.qsp@gmail.com
-        </p>
+        </p> -->
       </div>
     </div>
     <div class="main">
