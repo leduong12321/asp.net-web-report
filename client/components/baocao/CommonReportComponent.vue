@@ -77,7 +77,7 @@
             </div>
 
             <b-button
-              class="mt-3 btn btn-secondary btn-md"
+              class="mt-4 btn btn-secondary btn-sm btn-search"
               :disabled="errorInputDate.length > 0"
               block
               @click="showTime(), (isHide = false)"
@@ -87,7 +87,7 @@
         </template>
         <template #footer="{ hide }">
        <div class="d-flex bg-dark text-light align-items-center px-3 py-2">
-        <strong class="mr-auto">NM.CTQSP</strong>
+        <strong class="mr-auto">NM.CT QSP</strong>
         <b-button size="sm" @click="hide">Đóng</b-button>
        </div>
       </template>
@@ -148,7 +148,7 @@ export default {
         return "error-input-date";
       } else if (this.toDay - this.fromDay > 8208000000) {
         this.errorInputDate =
-          "Để đảm bảo hệ thống hoạt động ổn định, khoảng cách giữa 2 ngày không được quá 90 ngày";
+          "Để đảm bảo hệ thống hoạt động ổn định, khoảng cách giữa 2 khoảng thời gian không được quá 90 ngày";
         return "error-input-date";
       } else {
         this.errorInputDate = "";
@@ -231,8 +231,8 @@ export default {
               this.toDay = moment().endOf("day").valueOf() - 14400000;
             } else {
               this.fromDay =
-                moment().subtract(1, "days").endOf("day").valueOf() - 14400000;
-              this.toDay = moment().startOf("day").valueOf() + 28800000;
+                moment().subtract(1, "days").endOf("day").valueOf() - 14399000;
+              this.toDay = moment().startOf("day").valueOf() + 28799000;
             }
             break;
           case "last-shift":
@@ -241,8 +241,8 @@ export default {
                 moment().subtract(1, "days").endOf("day").valueOf() - 14399000;
               this.toDay = moment().startOf("day").valueOf() + 28799000;
             } else {
-              this.fromDay = moment().startOf("day").valueOf() + 28800000;
-              this.toDay = moment().endOf("day").valueOf() - 14400000;
+              this.fromDay = moment().subtract(1, "days").startOf("day").valueOf() + 28800000;
+              this.toDay = moment().subtract(1, "days").endOf("day").valueOf() - 14400000;
             }
             break;
           default:
@@ -314,7 +314,7 @@ export default {
 .sidebar-right {
   header {
     background-color: #343a40 ;
-    height: 70px;
+    height: 60px;
     color: white;
     box-shadow: 0 10px 30px 0 rgb(47 60 74 / 15%);
     button {
@@ -330,7 +330,7 @@ export default {
     }
   }
   .b-sidebar-body {
-    margin-top: 30px;
+    margin-top: 10px;
     .body-head {
       legend {
         font-size: 14px;
@@ -350,6 +350,10 @@ export default {
     color: #fff !important;
     background-color: #28a745 !important;
     border-color: #28a745 !important;
+  }
+  .btn-search {
+    width: 50%;
+    font-size: 14px;
   }
 }
 </style>

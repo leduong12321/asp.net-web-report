@@ -11,7 +11,7 @@
       return {
       };
     },
-    // middleware: "auth",
+    middleware: "auth",
     components: {  },
     mounted() {
     },

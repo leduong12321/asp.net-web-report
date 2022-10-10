@@ -10,7 +10,7 @@ import ThayTrucBurComponent from '../../components/baocao/ThayTrucBurComponent.v
   
   export default {
     name: "homepage",
-    // middleware: "auth",
+    middleware: "auth",
     components: { ThayTrucBurComponent }
 }
   </script>

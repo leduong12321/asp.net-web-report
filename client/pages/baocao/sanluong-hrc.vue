@@ -9,7 +9,7 @@
 import TongHopSanLuongComponent from '../../components/baocao/TongHopSanLuongComponent.vue';
 export default {
     name: "homepage",
-    // middleware: 'auth',
+    middleware: 'auth',
     components: { TongHopSanLuongComponent }
 }
 </script>

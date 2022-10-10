@@ -9,8 +9,9 @@
         <span class="logo_name" v-if="!isCollapse">NM.CT QSP</span>
       </div>
       <ul class="list-unstyled list-parent components">
-        <li v-for="(parent, index) in menu" :key="index">
-          <nuxt-link
+        <li v-for="(parent, index) in menu" :key="index" >
+          <div v-if="parent.role.includes($store.getters.user?.Role)">
+            <nuxt-link
               class="link_name"
               :to="`${parent.url}`"
               v-if="parent.subMenus?.length == 0"
@@ -29,10 +30,12 @@
               <i :class="parent.icon"></i>
               <span v-if="!isCollapse">{{ parent.name }}</span>
             </a>
+          </div>
             <ul class="collapse list-unstyled list-child1" :id="parent.url" :class="{'hide': isCollapse}">
               <div>
                 <li v-for="(child1, index) in parent?.subMenus" :key="index" >
-                  <span v-if="child1.subChildMenu?.length == 0 || !child1.url.includes('ID-')" @click="handleCollapse()">
+                  <div v-if="child1.role.includes($store.getters.user?.Role)">
+                    <span v-if="child1.subChildMenu?.length == 0 || !child1.url.includes('ID-')" @click="handleCollapse()">
                     <nuxt-link
                       class="link_name"
                       :to="`${child1.url}`"
@@ -51,9 +54,11 @@
                     <i class="fas fa-tachometer-alt"></i>
                     {{child1.name}}
                   </a>
+                  </div>
                   <ul class="collapse list-unstyled list-child2" :id="child1.url" :class="{'hide': isCollapse}">
                     <li v-for="(child2, index) in child1?.subChildMenu" :key="index">
-                      <nuxt-link
+                      <div v-if="child2.role.includes($store.getters.user?.Role)">
+                        <nuxt-link
                         class="link_name last-of-child"
                         :to="`${child2.url}`"
                         @click="isCollapse = false"
@@ -61,6 +66,7 @@
                       <i class="fas fa-tachometer-alt"></i>
                         <span class="link_name">{{ child2.name }}</span>
                       </nuxt-link>
+                      </div>
                     </li>
                   </ul>
                 </li>
@@ -200,7 +206,7 @@ export default {
           name: "Hỗ trợ",
           url: "/ho-tro",
           subMenus: [],
-          role: [0],
+          role: [0, 1, 2],
         },
       ],
     };

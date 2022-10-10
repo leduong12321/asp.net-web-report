@@ -14,7 +14,7 @@ export default {
       count: 0,
     };
   },
-  // middleware: "auth",
+  middleware: "auth",
   components: { HomePageComponent },
   mounted() {
     if (this.$store.getters.isToast) {
