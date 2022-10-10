@@ -1,7 +1,8 @@
 <template>
   <div class="wrapper">
     <nav
-      id="sidebar" :class="[ isCollapse ? 'active' : 'none-active' ]"
+      id="sidebar"
+      :class="[isCollapse ? 'active' : 'none-active']"
       v-click-outside="externalClick"
     >
       <div class="sidebar-header d-flex">
@@ -9,38 +10,52 @@
         <span class="logo_name" v-if="!isCollapse">NM.CT QSP</span>
       </div>
       <ul class="list-unstyled list-parent components">
-        <li v-for="(parent, index) in menu" :key="index" >
+        <li v-for="(parent, index) in menu" :key="index">
           <div v-if="parent.role.includes($store.getters.user?.Role)">
             <nuxt-link
               class="link_name"
               :to="`${parent.url}`"
               v-if="parent.subMenus?.length == 0"
             >
-            <i :class="parent.icon"></i>
-              <span class="link_name" v-if="!isCollapse">{{ parent.name }}</span>
+              <i :class="parent.icon"></i>
+              <span class="link_name" v-if="!isCollapse">{{
+                parent.name
+              }}</span>
             </nuxt-link>
             <a
-            v-else
+              v-else
               @click="isCollapse = false"
               :href="`#${parent.url}`"
               data-toggle="collapse"
               aria-expanded="false"
-              :class="[parent.subMenus?.length > 0 && isCollapse ? 'dropdown-toggle' : null , isCollapse == false ? 'parent' :'child' ]"
+              :class="[
+                parent.subMenus?.length > 0 && isCollapse
+                  ? 'dropdown-toggle'
+                  : null,
+                isCollapse == false ? 'parent' : 'child',
+              ]"
             >
               <i :class="parent.icon"></i>
               <span v-if="!isCollapse">{{ parent.name }}</span>
             </a>
           </div>
-            <ul class="collapse list-unstyled list-child1" :id="parent.url" :class="{'hide': isCollapse}">
-              <div>
-                <li v-for="(child1, index) in parent?.subMenus" :key="index" >
-                  <div v-if="child1.role.includes($store.getters.user?.Role)">
-                    <span v-if="child1.subChildMenu?.length == 0 || !child1.url.includes('ID-')" @click="handleCollapse()">
-                    <nuxt-link
-                      class="link_name"
-                      :to="`${child1.url}`"
-                    >
-                    <i class="fas fa-tachometer-alt"></i>
+          <ul
+            class="collapse list-unstyled list-child1"
+            :id="parent.url"
+            :class="{ hide: isCollapse }"
+          >
+            <div>
+              <li v-for="(child1, index) in parent?.subMenus" :key="index">
+                <div v-if="child1.role.includes($store.getters.user?.Role)">
+                  <span
+                    v-if="
+                      child1.subChildMenu?.length == 0 ||
+                      !child1.url.includes('ID-')
+                    "
+                    @click="handleCollapse()"
+                  >
+                    <nuxt-link class="link_name" :to="`${child1.url}`">
+                      <i class="fas fa-tachometer-alt"></i>
                       <span class="link_name">{{ child1.name }}</span>
                     </nuxt-link>
                   </span>
@@ -49,29 +64,41 @@
                     :href="`#${child1.url}`"
                     data-toggle="collapse"
                     aria-expanded="false"
-                    :class="[child1.subChildMenu?.length > 0 && isCollapse ? 'dropdown-toggle' : null , isCollapse == false ? 'parent' :'child' ]"
+                    :class="[
+                      child1.subChildMenu?.length > 0 && isCollapse
+                        ? 'dropdown-toggle'
+                        : null,
+                      isCollapse == false ? 'parent' : 'child',
+                    ]"
                   >
                     <i class="fas fa-tachometer-alt"></i>
-                    {{child1.name}}
+                    {{ child1.name }}
                   </a>
-                  </div>
-                  <ul class="collapse list-unstyled list-child2" :id="child1.url" :class="{'hide': isCollapse}">
-                    <li v-for="(child2, index) in child1?.subChildMenu" :key="index">
-                      <div v-if="child2.role.includes($store.getters.user?.Role)">
-                        <nuxt-link
+                </div>
+                <ul
+                  class="collapse list-unstyled list-child2"
+                  :id="child1.url"
+                  :class="{ hide: isCollapse }"
+                >
+                  <li
+                    v-for="(child2, index) in child1?.subChildMenu"
+                    :key="index"
+                  >
+                    <div v-if="child2.role.includes($store.getters.user?.Role)">
+                      <nuxt-link
                         class="link_name last-of-child"
                         :to="`${child2.url}`"
                         @click="isCollapse = false"
                       >
-                      <i class="fas fa-tachometer-alt"></i>
+                        <i class="fas fa-tachometer-alt"></i>
                         <span class="link_name">{{ child2.name }}</span>
                       </nuxt-link>
-                      </div>
-                    </li>
-                  </ul>
-                </li>
-              </div>
-            </ul>
+                    </div>
+                  </li>
+                </ul>
+              </li>
+            </div>
+          </ul>
         </li>
       </ul>
     </nav>
@@ -85,7 +112,12 @@
           >
           <img :src="userImage" alt="user" class="user-image" />
         </div>
-        <i class="bx bx-log-out logout-icon pr-3" v-b-tooltip.hover.bottomleft="{ 'customClass': 'my-tooltip-class' }" title="Đăng xuất"  @click="handLogout()"></i>
+        <i
+          class="bx bx-log-out logout-icon pr-3"
+          v-b-tooltip.hover.bottomleft="{ customClass: 'my-tooltip-class' }"
+          title="Đăng xuất"
+          @click="handLogout()"
+        ></i>
       </div>
     </div>
     <section class="home-section">
@@ -137,34 +169,54 @@ export default {
           subMenus: [
             {
               icon: "",
-              name: "Sản xuất",
-              url: "/baocao/sanxuat",
-              role: [0, 1],
+              name: "Cán",
+              url: "ID-02-HSM",
+              role: [0, 3],
+              subChildMenu: [
+                {
+                  icon: "",
+                  name: "Sản xuất",
+                  url: "/baocao/sanxuat",
+                  role: [0, 1],
+                },
+                {
+                  icon: "",
+                  name: "Tổng hợp sản lượng HRC",
+                  url: "/baocao/sanluong-hrc",
+                  role: [0],
+                },
+                {
+                  icon: "",
+                  name: "Chất lượng thành phẩm HRC",
+                  url: "/baocao/chatluong-hrc",
+                  role: [0],
+                },
+                {
+                  icon: "",
+                  name: "Thay trục BUR",
+                  url: "/baocao/thay-truc-bur",
+                  role: [0, 2],
+                },
+                {
+                  icon: "",
+                  name: "Thay trục WR",
+                  url: "/baocao/thay-truc-wr",
+                  role: [0, 2],
+                },
+              ],
             },
             {
               icon: "",
-              name: "Tổng hợp sản lượng HRC",
-              url: "/baocao/sanluong-hrc",
-              role: [0],
+              name: "Đúc 1",
+              url: "ID-02-TSC1",
+              role: [0, 3],
             },
             {
               icon: "",
-              name: "Chất lượng thành phẩm HRC",
-              url: "/baocao/chatluong-hrc",
-              role: [0],
-            },
-            {
-              icon: "",
-              name: "Thay trục BUR",
-              url: "/baocao/thay-truc-bur",
-              role: [0, 2],
-            },
-            {
-              icon: "",
-              name: "Thay trục WR",
-              url: "/baocao/thay-truc-wr",
-              role: [0, 2],
-            },
+              name: "Đúc 2",
+              url: "ID-02-TSC2",
+              role: [0, 3],
+            }
           ],
         },
         // {
@@ -273,14 +325,13 @@ span {
   width: 260px;
   background: #11101d;
   z-index: 100;
-   ul li a {
+  ul li a {
     color: white;
   }
   ul li a:hover {
     text-decoration: none;
   }
 }
-
 
 #sidebar.active {
   min-width: 50px;
@@ -466,25 +517,25 @@ a.article:hover {
       background-color: #464a4e;
     }
   }
-  .last-of-child{
+  .last-of-child {
     padding-left: 60px !important;
     background-color: rgba(205, 205, 205, 0.1);
   }
 }
 .active {
-    a[aria-expanded="true"]::after {
-      background: none;
-    }
-    a[aria-expanded="false"]::after {
-      background: none;
-    }
+  a[aria-expanded="true"]::after {
+    background: none;
   }
-  .none-active {
-    a[aria-expanded="true"]::after {
-    content: '';
+  a[aria-expanded="false"]::after {
+    background: none;
+  }
+}
+.none-active {
+  a[aria-expanded="true"]::after {
+    content: "";
     position: absolute;
     right: 0;
-    display:inline-block;
+    display: inline-block;
     height: 12px;
     width: 12px;
     margin-right: 12px;
@@ -494,10 +545,10 @@ a.article:hover {
     transform: rotate(180deg);
   }
   a[aria-expanded="false"]::after {
-    content: '';
+    content: "";
     position: absolute;
     right: 0;
-    display:inline-block;
+    display: inline-block;
     height: 12px;
     width: 12px;
     margin-right: 12px;
@@ -505,7 +556,7 @@ a.article:hover {
     background: url(../assets/images/arrow-down.png) no-repeat 0 0;
     background-size: 12px 12px;
   }
-  }
+}
 
 /* ---------------------------------------------------
     CONTENT STYLE

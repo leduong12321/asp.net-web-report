@@ -226,7 +226,7 @@ export default {
             this.toDay = moment().subtract(1, "month").endOf("month").valueOf();
             break;
           case "this-shift":
-            if (currentHour >= 8 && currentHour <= 20) {
+            if (currentHour >= 8 && currentHour < 20) {
               this.fromDay = moment().startOf("day").valueOf() + 28800000;
               this.toDay = moment().endOf("day").valueOf() - 14400000;
             } else {
@@ -236,7 +236,7 @@ export default {
             }
             break;
           case "last-shift":
-            if (currentHour >= 8 && currentHour <= 20) {
+            if (currentHour >= 8 && currentHour < 20) {
               this.fromDay =
                 moment().subtract(1, "days").endOf("day").valueOf() - 14399000;
               this.toDay = moment().startOf("day").valueOf() + 28799000;
