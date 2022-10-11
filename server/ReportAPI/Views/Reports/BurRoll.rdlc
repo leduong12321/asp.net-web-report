@@ -1351,7 +1351,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Math.Round(Fields!ROLLED_WEIGHT.Value, 2)</Value>
+                                  <Value>=String.Format("{0:N}", Fields!ROLLED_WEIGHT.Value)</Value>
                                   <Style />
                                 </TextRun>
                               </TextRuns>
@@ -1385,7 +1385,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Math.Round(Fields!ROLLED_LENGTH.Value, 2)</Value>
+                                  <Value>=String.Format("{0:N}", Fields!ROLLED_LENGTH.Value)</Value>
                                   <Style />
                                 </TextRun>
                               </TextRuns>

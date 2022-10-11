@@ -279,7 +279,7 @@ namespace ReportAPI.Views.ReportDataSet {
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class BaoCaoSanXuatDataTable : global::System.Data.TypedTableBase<BaoCaoSanXuatRow> {
             
-            private global::System.Data.DataColumn columnARCHIVE_DATE;
+            private global::System.Data.DataColumn columnROLLING_STOP;
             
             private global::System.Data.DataColumn columnSHIFT;
             
@@ -380,9 +380,9 @@ namespace ReportAPI.Views.ReportDataSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn ARCHIVE_DATEColumn {
+            public global::System.Data.DataColumn ROLLING_STOPColumn {
                 get {
-                    return this.columnARCHIVE_DATE;
+                    return this.columnROLLING_STOP;
                 }
             }
             
@@ -680,7 +680,7 @@ namespace ReportAPI.Views.ReportDataSet {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public BaoCaoSanXuatRow AddBaoCaoSanXuatRow(
-                        string ARCHIVE_DATE, 
+                        string ROLLING_STOP, 
                         int SHIFT, 
                         string CREW_ID, 
                         int Sothutu, 
@@ -715,7 +715,7 @@ namespace ReportAPI.Views.ReportDataSet {
                         string SymTailFlatness) {
                 BaoCaoSanXuatRow rowBaoCaoSanXuatRow = ((BaoCaoSanXuatRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        ARCHIVE_DATE,
+                        ROLLING_STOP,
                         SHIFT,
                         CREW_ID,
                         Sothutu,
@@ -770,7 +770,7 @@ namespace ReportAPI.Views.ReportDataSet {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             internal void InitVars() {
-                this.columnARCHIVE_DATE = base.Columns["ARCHIVE_DATE"];
+                this.columnROLLING_STOP = base.Columns["ROLLING_STOP"];
                 this.columnSHIFT = base.Columns["SHIFT"];
                 this.columnCREW_ID = base.Columns["CREW_ID"];
                 this.columnSothutu = base.Columns["Sothutu"];
@@ -808,8 +808,8 @@ namespace ReportAPI.Views.ReportDataSet {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             private void InitClass() {
-                this.columnARCHIVE_DATE = new global::System.Data.DataColumn("ARCHIVE_DATE", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnARCHIVE_DATE);
+                this.columnROLLING_STOP = new global::System.Data.DataColumn("ROLLING_STOP", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnROLLING_STOP);
                 this.columnSHIFT = new global::System.Data.DataColumn("SHIFT", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnSHIFT);
                 this.columnCREW_ID = new global::System.Data.DataColumn("CREW_ID", typeof(string), null, global::System.Data.MappingType.Element);
@@ -1016,17 +1016,17 @@ namespace ReportAPI.Views.ReportDataSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string ARCHIVE_DATE {
+            public string ROLLING_STOP {
                 get {
                     try {
-                        return ((string)(this[this.tableBaoCaoSanXuat.ARCHIVE_DATEColumn]));
+                        return ((string)(this[this.tableBaoCaoSanXuat.ROLLING_STOPColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'ARCHIVE_DATE\' in table \'BaoCaoSanXuat\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'ROLLING_STOP\' in table \'BaoCaoSanXuat\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableBaoCaoSanXuat.ARCHIVE_DATEColumn] = value;
+                    this[this.tableBaoCaoSanXuat.ROLLING_STOPColumn] = value;
                 }
             }
             
@@ -1544,14 +1544,14 @@ namespace ReportAPI.Views.ReportDataSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsARCHIVE_DATENull() {
-                return this.IsNull(this.tableBaoCaoSanXuat.ARCHIVE_DATEColumn);
+            public bool IsROLLING_STOPNull() {
+                return this.IsNull(this.tableBaoCaoSanXuat.ROLLING_STOPColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetARCHIVE_DATENull() {
-                this[this.tableBaoCaoSanXuat.ARCHIVE_DATEColumn] = global::System.Convert.DBNull;
+            public void SetROLLING_STOPNull() {
+                this[this.tableBaoCaoSanXuat.ROLLING_STOPColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

@@ -17,8 +17,8 @@
         <CommandText>/* Local Query */</CommandText>
       </Query>
       <Fields>
-        <Field Name="ARCHIVE_DATE">
-          <DataField>ARCHIVE_DATE</DataField>
+        <Field Name="ROLLING_STOP">
+          <DataField>ROLLING_STOP</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="SHIFT">
@@ -152,7 +152,7 @@
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>RDLCReportDataSet</rd:DataSetName>
-        <rd:SchemaPath>F:\WORK\PROJECT\Web Report\asp.net-web-report\server\ReportAPI\Views\ReportDataSet\RDLCReportDataSet.xsd</rd:SchemaPath>
+        <rd:SchemaPath>D:\Source_Code\server\ReportAPI\Views\ReportDataSet\RDLCReportDataSet.xsd</rd:SchemaPath>
         <rd:TableName>BaoCaoSanXuat</rd:TableName>
         <rd:TableAdapterFillMethod />
         <rd:TableAdapterGetDataMethod />
@@ -1933,14 +1933,14 @@ Tail</Value>
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="ENTRY_THICK1">
+                        <Textbox Name="FLATNEES">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!ENTRY_THICK.Value</Value>
+                                  <Value>=Fields!FLATNEES.Value</Value>
                                   <Style>
                                     <FontSize>8pt</FontSize>
                                   </Style>
@@ -1951,7 +1951,7 @@ Tail</Value>
                               </Style>
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>ENTRY_THICK1</rd:DefaultName>
+                          <rd:DefaultName>FLATNEES</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>White</Color>
@@ -2336,7 +2336,7 @@ Tail</Value>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=format(Fields!ARCHIVE_DATE.Value, "dd/MM/yyyy HH:mm:ss")</Value>
+                                  <Value>=format(Fields!ROLLING_STOP.Value, "dd/MM/yyyy HH:mm:ss")</Value>
                                   <Style>
                                     <FontSize>8pt</FontSize>
                                   </Style>
@@ -2429,7 +2429,7 @@ Tail</Value>
             </Style>
           </Tablix>
         </ReportItems>
-        <Height>0.625in</Height>
+        <Height>1.5875cm</Height>
         <Style>
           <Border>
             <Style>None</Style>
@@ -2437,10 +2437,10 @@ Tail</Value>
           <BackgroundColor>White</BackgroundColor>
         </Style>
       </Body>
-      <Width>17.86698in</Width>
+      <Width>45.38213cm</Width>
       <Page>
         <PageHeader>
-          <Height>0.80833in</Height>
+          <Height>2.05316cm</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
@@ -2633,7 +2633,7 @@ ToLocalTime(Parameters!toDate.Value), "dd.MM.yyyy HH:mm")</Value>
           </Style>
         </PageHeader>
         <PageFooter>
-          <Height>1.31667in</Height>
+          <Height>3.34434cm</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
@@ -2751,14 +2751,15 @@ ToLocalTime(Parameters!toDate.Value), "dd.MM.yyyy HH:mm")</Value>
             </Border>
           </Style>
         </PageFooter>
-        <PageHeight>10in</PageHeight>
-        <PageWidth>18.5in</PageWidth>
+        <PageHeight>25.4cm</PageHeight>
+        <PageWidth>46.99cm</PageWidth>
         <InteractiveHeight>10in</InteractiveHeight>
         <InteractiveWidth>18.5in</InteractiveWidth>
-        <LeftMargin>0.35in</LeftMargin>
-        <RightMargin>0.25in</RightMargin>
-        <TopMargin>0.25in</TopMargin>
-        <BottomMargin>0.25in</BottomMargin>
+        <LeftMargin>0.889cm</LeftMargin>
+        <RightMargin>0.635cm</RightMargin>
+        <TopMargin>0.635cm</TopMargin>
+        <BottomMargin>0.635cm</BottomMargin>
+        <ColumnSpacing>1.27cm</ColumnSpacing>
         <Style />
       </Page>
     </ReportSection>
@@ -2811,6 +2812,6 @@ K1P5Oe/NBiofSeCYvURD9lk/H8kK73mB/SgdVwSOw6ZDfzgTlKktSmkeiABmm18fvs3dVraITkpjQnJT
 f87chKqiRZjvU85E6zLoQZgQoDTN0jGg/npSnxx8ZOZgloIgoR5A6AbvuUnnYvWxUNB3aIw0i8K5RFaMHucUsaFu5fPnSBokb7nOrtnx6Id0nonk1cQUKpPXh4oyES/CBtk2JQOpeYk8PDBvizpLz1NYfBph3t4lJA8taFvW6gwHqdKNmCVxOSGVMtkA3bGkP/3Vsbz07JNghr755n1mDHjRyFoF6LM6RaRnHoOiwmH/RtDKqwkU8zCFvNl96WPwpMje6qwHxEvmXoyl/bcf8FbrsHoCvA1UPp8PhbKtRcm8fJZfPdj+yY1S+u+6QX9eiGNibqCuIQHczasGR1km+Fn8jhIQrI+VsUxCF52jy3HJFOjvS589U4C75QXOQ1TACwQCgUAzitxcAoFAIBDYQoiJQCAQCDQjxEQgEAgEmhFiIhAIBALNCDERCAQCgWaEmAgEAoFAM0JMBAKBQKARov8HkjkCyvP1sYEAAAAASUVORK5CYII=</ImageData>
     </EmbeddedImage>
   </EmbeddedImages>
-  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportUnitType>Cm</rd:ReportUnitType>
   <rd:ReportID>cc3a3404-b20d-4fce-8071-05ab65038585</rd:ReportID>
 </Report>

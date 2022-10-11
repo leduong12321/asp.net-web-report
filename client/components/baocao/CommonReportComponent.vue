@@ -25,7 +25,6 @@
             <b-form-group label="Chọn thời gian" v-slot="{ ariaDescribedby }">
               <b-form-radio-group
                 v-model="selected"
-                :button-variant="danger"
                 :options="options"
                 :aria-describedby="ariaDescribedby"
                 name="plain-stacked"
