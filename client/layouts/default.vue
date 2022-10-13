@@ -1,5 +1,5 @@
 <template>
-  <div class="wrapper">
+  <div class="wrapper" v-if="isData">
     <nav
       id="sidebar"
       :class="[isCollapse ? 'active' : 'none-active']"
@@ -11,7 +11,7 @@
       </div>
       <ul class="list-unstyled list-parent components">
         <li v-for="(parent, index) in menu" :key="index">
-          <div v-if="parent.role.includes($store.getters.user?.Role)">
+          <div v-if="parent.role.includes(userLocal?.Role)">
             <nuxt-link
               class="link_name"
               :to="`${parent.url}`"
@@ -42,11 +42,11 @@
           <ul
             class="collapse list-unstyled list-child1"
             :id="parent.url"
-            :class="{ hide: isCollapse }"
+            :class="{ 'hide': isCollapse }"
           >
             <div>
               <li v-for="(child1, index) in parent?.subMenus" :key="index">
-                <div v-if="child1.role.includes($store.getters.user?.Role)">
+                <div v-if="child1.role.includes(userLocal?.Role)">
                   <span
                     v-if="
                       child1.subChildMenu?.length == 0 ||
@@ -78,13 +78,13 @@
                 <ul
                   class="collapse list-unstyled list-child2"
                   :id="child1.url"
-                  :class="{ hide: isCollapse }"
+                  :class="{ 'hide': isCollapse }"
                 >
                   <li
                     v-for="(child2, index) in child1?.subChildMenu"
                     :key="index"
                   >
-                    <div v-if="child2.role.includes($store.getters.user?.Role)">
+                    <div v-if="child2.role.includes(userLocal?.Role)">
                       <nuxt-link
                         class="link_name last-of-child"
                         :to="`${child2.url}`"
@@ -108,7 +108,7 @@
         <i class="bx bxs-bell-ring mr-3"></i>
         <div class="user d-flex">
           <span class="mr-2 mt-1"
-            >Xin chào, {{ $store.getters.user.Name }}</span
+            >Xin chào, {{ userLocal.Name }}</span
           >
           <img :src="userImage" alt="user" class="user-image" />
         </div>
@@ -147,6 +147,8 @@ export default {
   },
   data() {
     return {
+      isData: false,
+      userLocal: null,
       isCollapse: true,
       isClose: true,
       userImage,
@@ -171,7 +173,7 @@ export default {
               icon: "",
               name: "Cán",
               url: "ID-02-HSM",
-              role: [0, 3],
+              role: [0, 1, 2],
               subChildMenu: [
                 {
                   icon: "",
@@ -263,7 +265,14 @@ export default {
       ],
     };
   },
-  mounted() {},
+  mounted() {
+    this.userLocal = JSON.parse(localStorage.getItem('user'));
+    this.$store.dispatch("refreshToken");
+    if(!this.userLocal) {
+      this.$router.push({ path: "/login" });
+    }
+    this.isData = true;
+  },
   methods: {
     externalClick() {
       this.isCollapse = true;

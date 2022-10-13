@@ -33,7 +33,7 @@ export default {
         })
         .then((value) => {
           if (value) {
-            this.$store.dispatch("setUser", null);
+            this.$store.dispatch('clearToken');
             this.$router.push({ path: "/login" });
           } else {
             this.$emit("close-popup", false);

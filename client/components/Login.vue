@@ -63,22 +63,26 @@ export default {
         Username: this.username,
         Password: this.password,
       };
-      try {
-        // const user = await this.$axios.get('/api/user');
-        const user = await this.$axios.post("/api/user", info);
-        this.$store.dispatch("setUser", user.data);
+      const token = await this.$axios.get("/api/user/gettoken");
+      if(token.data) {
+        localStorage.setItem('token', token.data.data);
+        this.$store.dispatch("authenticateUser", token.data);
+        this.$axios.defaults.headers.common = { Authorization: `Bearer ${token.data.data}` };
+
+        const user = await this.$axios.post("/api/user/post", info);
+        // this.$store.dispatch("setUser", user.data);
         if (user.data) {
+          delete user.data.UserName;
+          delete user.data.Password;
+
+          localStorage.setItem('user', JSON.stringify(user.data));
           this.$store.dispatch("setToast", true);
           this.errorMessage = null;
           this.$router.push({ path: "/" });
         } else {
           this.errorMessage = "Tài khoản hoặc mật khẩu không đúng.";
         }
-      } catch (error) {
-        console.log("error", error);
       }
-
-      console.log("store -user", this.$store.getters.user);
     },
     removeError() {
       this.errorMessage = '';
