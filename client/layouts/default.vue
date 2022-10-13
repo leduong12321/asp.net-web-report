@@ -171,7 +171,7 @@ export default {
           subMenus: [
             {
               icon: "",
-              name: "Cán",
+              name: "Khu vực Cán",
               url: "ID-02-HSM",
               role: [0, 1, 2],
               subChildMenu: [
@@ -207,18 +207,18 @@ export default {
                 },
               ],
             },
-            {
-              icon: "",
-              name: "Đúc 1",
-              url: "ID-02-TSC1",
-              role: [0, 3],
-            },
-            {
-              icon: "",
-              name: "Đúc 2",
-              url: "ID-02-TSC2",
-              role: [0, 3],
-            }
+            // {
+            //   icon: "",
+            //   name: "Đúc 1",
+            //   url: "ID-02-TSC1",
+            //   role: [0, 3],
+            // },
+            // {
+            //   icon: "",
+            //   name: "Đúc 2",
+            //   url: "ID-02-TSC2",
+            //   role: [0, 3],
+            // }
           ],
         },
         // {
