@@ -66,7 +66,7 @@ namespace ReportAPI.Controllers
 
             var token = new JwtSecurityToken(issuer,
                             issuer,
-                            expires: DateTime.Now.AddMinutes(1),
+                            expires: DateTime.Now.AddMinutes(7200000),
                             signingCredentials: credentials);
             var jwt_token = new JwtSecurityTokenHandler().WriteToken(token);
             return new { data = jwt_token };

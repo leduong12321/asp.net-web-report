@@ -55,7 +55,7 @@
                     @click="handleCollapse()"
                   >
                     <nuxt-link class="link_name" :to="`${child1.url}`">
-                      <i class="fas fa-tachometer-alt"></i>
+                      <i :class="child1.icon"></i>
                       <span class="link_name">{{ child1.name }}</span>
                     </nuxt-link>
                   </span>
@@ -63,7 +63,7 @@
                     v-else
                     :href="`#${child1.url}`"
                     data-toggle="collapse"
-                    aria-expanded="false"
+                    :aria-expanded="isCollapse ? 'true' : 'false',  "
                     :class="[
                       child1.subChildMenu?.length > 0 && isCollapse
                         ? 'dropdown-toggle'
@@ -71,7 +71,7 @@
                       isCollapse == false ? 'parent' : 'child',
                     ]"
                   >
-                    <i class="fas fa-tachometer-alt"></i>
+                  <i :class="child1.icon"></i>
                     {{ child1.name }}
                   </a>
                 </div>
@@ -88,10 +88,9 @@
                       <nuxt-link
                         class="link_name last-of-child"
                         :to="`${child2.url}`"
-                        @click="isCollapse = false"
                       >
                         <i class="fas fa-tachometer-alt"></i>
-                        <span class="link_name">{{ child2.name }}</span>
+                        <span class="link_name" @click="handleCollapse('3')">{{ child2.name }}</span>
                       </nuxt-link>
                     </div>
                   </li>
@@ -170,7 +169,7 @@ export default {
           role: [0, 1, 2],
           subMenus: [
             {
-              icon: "",
+              icon: "bx bx-folder-plus",
               name: "Khu vực Cán",
               url: "ID-02-HSM",
               role: [0, 1, 2],
@@ -207,17 +206,47 @@ export default {
                 },
               ],
             },
-            // {
-            //   icon: "",
-            //   name: "Đúc 1",
-            //   url: "ID-02-TSC1",
-            //   role: [0, 3],
-            // },
+            {
+              icon: "bx bx-folder-plus",
+              name: "Khu vực Đúc",
+              url: "ID-02-TSC1",
+              role: [0, 3],
+              subChildMenu: [
+                {
+                  icon: "",
+                  name: "Báo cáo TSC",
+                  url: "/baocao/tsc",
+                  role: [0, 1],
+                },
+              ],
+            },
+            {
+              icon: "bx bx-folder-plus",
+              name: "Khu vực Lò",
+              url: "ID-02-LF",
+              role: [0, 3],
+              subChildMenu: [
+                {
+                  icon: "",
+                  name: "Báo cáo LF",
+                  url: "/baocao/lf",
+                  role: [0, 1],
+                },
+              ],
+            },
             // {
             //   icon: "",
             //   name: "Đúc 2",
             //   url: "ID-02-TSC2",
             //   role: [0, 3],
+            //   subChildMenu: [
+            //     {
+            //       icon: "",
+            //       name: "Báo cáo TSC2",
+            //       url: "/baocao/tsc2",
+            //       role: [0, 1],
+            //     },
+            //   ],
             // }
           ],
         },
@@ -277,7 +306,7 @@ export default {
     externalClick() {
       this.isCollapse = true;
     },
-    handleCollapse() {
+    handleCollapse(key) {
       this.isCollapse = true;
     },
     handLogout() {
@@ -324,14 +353,14 @@ span {
 ----------------------------------------------------- */
 
 #sidebar {
-  min-width: 280px;
-  max-width: 280px;
+  min-width: 300px;
+  max-width: 300px;
   background: $primary;
   position: fixed;
   top: 0;
   left: 0;
   height: 100%;
-  width: 260px;
+  width: 280px;
   background: #11101d;
   z-index: 100;
   ul li a {

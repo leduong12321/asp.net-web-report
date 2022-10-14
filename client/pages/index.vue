@@ -12,11 +12,13 @@ export default {
   data() {
     return {
       count: 0,
+      userLocal: null,
     };
   },
   middleware: "auth",
   components: { HomePageComponent },
   mounted() {
+    this.userLocal = JSON.parse(localStorage.getItem('user'));
     if (this.$store.getters.isToast) {
       this.showToast();
       this.$store.dispatch("setToast", false);
@@ -30,7 +32,7 @@ export default {
       this.count++;
       // Create the message
       const vNodesMsg = h("p", { class: ["mb-0"] }, [
-        ` Bạn đang đăng nhập dưới tài khoản ${this.$store.getters.user.Name} `,
+        ` Bạn đang đăng nhập dưới tài khoản ${this.userLocal.Name} `,
       ]);
       // Create the title
       const vNodesTitle = h(
