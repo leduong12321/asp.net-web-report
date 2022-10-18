@@ -30,7 +30,7 @@ const createStore = () => {
             authenticateUser(vuexContext, token) {
                 if(!localStorage.getItem('refreshToken')) {
                     let timeGetToken = new Date().valueOf();
-                    let expiresRefresh = timeGetToken + 3600000;
+                    let expiresRefresh = timeGetToken + 300000;
                     localStorage.setItem('refreshToken', expiresRefresh);
                 }
                 vuexContext.commit('setToken', token)

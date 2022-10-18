@@ -4,10 +4,12 @@
       <div class="align-items-center pl-0 pt-1 fs-13 mb-3">
         Báo cáo > {{ title }}
       </div>
-      <div v-if="selected == 'set-manually' && this.toDay - this.fromDay > 2678400000"></div>
-      <b-form-checkbox v-model="checked" class="fs-13" name="check-button" switch v-else>
-        <span class="view-chart-txt">Xem biểu đồ</span>
-      </b-form-checkbox>
+      <div v-if="isHideTextShowChart">
+        <div v-if="selected == 'set-manually' && this.toDay - this.fromDay > 2678400000"></div>
+        <b-form-checkbox v-model="checked" class="fs-13" name="check-button" switch v-else>
+          <span class="view-chart-txt">Xem biểu đồ</span>
+        </b-form-checkbox>
+      </div>
       <div
         v-b-toggle.sidebar-right
         class="align-items-center pl-0 pt-1 fs-13 mb-3 search-text"
@@ -138,6 +140,7 @@ export default {
   },
   data() {
     return {
+      isHideTextShowChart: false,
       checked: false,
       isHide: true,
       showTimePanel: false,
@@ -242,15 +245,19 @@ export default {
         this.getDataChart();
       }
     },
-    watch: {
-      '$router'(from, to) {
-        console.log('from', from);
-        console.log('to', to);
-      }
-    },
+    // watch: {
+    //   '$route'(to, from) {
+    //     console.log('to', to);
+    //     console.log('from', from);
+    //   }
+    // },
   },
   mounted() {
     this.selected = "this-shift";
+    console.log('abc', this.title);
+    if(this.title == 'Báo cáo sản xuất') {
+      this.isHideTextShowChart = true;
+    }
     this.showTime();
   },
   methods: {
