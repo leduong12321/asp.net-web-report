@@ -1,5 +1,5 @@
 <template>
-  <div class="wrapper">
+  <div class="wrapper" v-if="isData">
     <nav
       id="sidebar"
       :class="[isCollapse ? 'active' : 'none-active']"
@@ -11,7 +11,7 @@
       </div>
       <ul class="list-unstyled list-parent components">
         <li v-for="(parent, index) in menu" :key="index">
-          <div v-if="parent.role.includes($store.getters.user?.Role)">
+          <div v-if="parent.role.includes(userLocal?.Role)">
             <nuxt-link
               class="link_name"
               :to="`${parent.url}`"
@@ -42,11 +42,11 @@
           <ul
             class="collapse list-unstyled list-child1"
             :id="parent.url"
-            :class="{ hide: isCollapse }"
+            :class="{ 'hide': isCollapse }"
           >
             <div>
               <li v-for="(child1, index) in parent?.subMenus" :key="index">
-                <div v-if="child1.role.includes($store.getters.user?.Role)">
+                <div v-if="child1.role.includes(userLocal?.Role)">
                   <span
                     v-if="
                       child1.subChildMenu?.length == 0 ||
@@ -55,7 +55,7 @@
                     @click="handleCollapse()"
                   >
                     <nuxt-link class="link_name" :to="`${child1.url}`">
-                      <i class="fas fa-tachometer-alt"></i>
+                      <i :class="child1.icon"></i>
                       <span class="link_name">{{ child1.name }}</span>
                     </nuxt-link>
                   </span>
@@ -63,7 +63,7 @@
                     v-else
                     :href="`#${child1.url}`"
                     data-toggle="collapse"
-                    aria-expanded="false"
+                    :aria-expanded="isCollapse ? 'true' : 'false',  "
                     :class="[
                       child1.subChildMenu?.length > 0 && isCollapse
                         ? 'dropdown-toggle'
@@ -71,27 +71,26 @@
                       isCollapse == false ? 'parent' : 'child',
                     ]"
                   >
-                    <i class="fas fa-tachometer-alt"></i>
+                  <i :class="child1.icon"></i>
                     {{ child1.name }}
                   </a>
                 </div>
                 <ul
                   class="collapse list-unstyled list-child2"
                   :id="child1.url"
-                  :class="{ hide: isCollapse }"
+                  :class="{ 'hide': isCollapse }"
                 >
                   <li
                     v-for="(child2, index) in child1?.subChildMenu"
                     :key="index"
                   >
-                    <div v-if="child2.role.includes($store.getters.user?.Role)">
+                    <div v-if="child2.role.includes(userLocal?.Role)">
                       <nuxt-link
                         class="link_name last-of-child"
                         :to="`${child2.url}`"
-                        @click="isCollapse = false"
                       >
                         <i class="fas fa-tachometer-alt"></i>
-                        <span class="link_name">{{ child2.name }}</span>
+                        <span class="link_name" @click="handleCollapse('3')">{{ child2.name }}</span>
                       </nuxt-link>
                     </div>
                   </li>
@@ -108,7 +107,7 @@
         <i class="bx bxs-bell-ring mr-3"></i>
         <div class="user d-flex">
           <span class="mr-2 mt-1"
-            >Xin chào, {{ $store.getters.user.Name }}</span
+            >Xin chào, {{ userLocal.Name }}</span
           >
           <img :src="userImage" alt="user" class="user-image" />
         </div>
@@ -147,6 +146,8 @@ export default {
   },
   data() {
     return {
+      isData: false,
+      userLocal: null,
       isCollapse: true,
       isClose: true,
       userImage,
@@ -168,10 +169,10 @@ export default {
           role: [0, 1, 2],
           subMenus: [
             {
-              icon: "",
-              name: "Cán",
+              icon: "bx bx-folder-plus",
+              name: "Khu vực Cán",
               url: "ID-02-HSM",
-              role: [0, 3],
+              role: [0, 1, 2],
               subChildMenu: [
                 {
                   icon: "",
@@ -206,53 +207,35 @@ export default {
               ],
             },
             {
-              icon: "",
-              name: "Đúc 1",
+              icon: "bx bx-folder-plus",
+              name: "Khu vực Đúc",
               url: "ID-02-TSC1",
               role: [0, 3],
+              subChildMenu: [
+                {
+                  icon: "",
+                  name: "Báo cáo TSC",
+                  url: "/baocao/tsc",
+                  role: [0, 1],
+                },
+              ],
             },
             {
-              icon: "",
-              name: "Đúc 2",
-              url: "ID-02-TSC2",
+              icon: "bx bx-folder-plus",
+              name: "Khu vực Lò",
+              url: "ID-02-LF",
               role: [0, 3],
-            }
+              subChildMenu: [
+                {
+                  icon: "",
+                  name: "Báo cáo LF",
+                  url: "/baocao/lf",
+                  role: [0, 1],
+                },
+              ],
+            },
           ],
         },
-        // {
-        //   icon: "bx bxs-report",
-        //   name: "TSC",
-        //   url: "ID-01-TSC",
-        //   role: [3],
-        //   subMenus: [
-        //     {
-        //       icon: "",
-        //       name: "TSC 1",
-        //       url: "ID-02-TSC",
-        //       role: [3],
-        //       subChildMenu: [
-        //         {
-        //           icon: "",
-        //           name: "TSC 1 Bao cao 1",
-        //           url: "/baocao/TSC1-baocao1",
-        //           role: [3],
-        //         },
-        //         {
-        //           icon: "",
-        //           name: "TSC 1 Bao cao 2",
-        //           url: "/baocao/TSC1-baocao2",
-        //           role: [3],
-        //         },
-        //       ]
-        //     },
-        //     {
-        //       icon: "",
-        //       name: "TSC 2",
-        //       url: "/baocao/TSC2",
-        //       role: [3],
-        //     }
-        //   ],
-        // },
         {
           icon: "bx bx-help-circle",
           name: "Hỗ trợ",
@@ -263,12 +246,27 @@ export default {
       ],
     };
   },
-  mounted() {},
+  watch: {
+    'userLocal'(value) {
+      console.log('value', value);
+    }
+  },
+  mounted() {
+    this.$store.dispatch("refreshToken");
+    if(localStorage.getItem('user')) {
+      this.userLocal = JSON.parse(localStorage.getItem('user'));
+    }
+    console.log('userLocal', this.userLocal);
+    if(!this.userLocal) {
+      this.$router.push({ path: "/login" });
+    }
+    this.isData = true;
+  },
   methods: {
     externalClick() {
       this.isCollapse = true;
     },
-    handleCollapse() {
+    handleCollapse(key) {
       this.isCollapse = true;
     },
     handLogout() {
@@ -315,14 +313,14 @@ span {
 ----------------------------------------------------- */
 
 #sidebar {
-  min-width: 280px;
-  max-width: 280px;
+  min-width: 300px;
+  max-width: 300px;
   background: $primary;
   position: fixed;
   top: 0;
   left: 0;
   height: 100%;
-  width: 260px;
+  width: 280px;
   background: #11101d;
   z-index: 100;
   ul li a {
