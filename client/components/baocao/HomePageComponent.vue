@@ -14,13 +14,10 @@ export default {
     }
   },
   mounted() {
-    this.getData();
+
   },
   methods: {
-    async getData() {
-      const results = await this.$axios.get("/api/department/get");
-      console.log('result', results);
-    }
+
   }
 }
 </script>

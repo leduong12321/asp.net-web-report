@@ -234,56 +234,8 @@ export default {
                 },
               ],
             },
-            // {
-            //   icon: "",
-            //   name: "Đúc 2",
-            //   url: "ID-02-TSC2",
-            //   role: [0, 3],
-            //   subChildMenu: [
-            //     {
-            //       icon: "",
-            //       name: "Báo cáo TSC2",
-            //       url: "/baocao/tsc2",
-            //       role: [0, 1],
-            //     },
-            //   ],
-            // }
           ],
         },
-        // {
-        //   icon: "bx bxs-report",
-        //   name: "TSC",
-        //   url: "ID-01-TSC",
-        //   role: [3],
-        //   subMenus: [
-        //     {
-        //       icon: "",
-        //       name: "TSC 1",
-        //       url: "ID-02-TSC",
-        //       role: [3],
-        //       subChildMenu: [
-        //         {
-        //           icon: "",
-        //           name: "TSC 1 Bao cao 1",
-        //           url: "/baocao/TSC1-baocao1",
-        //           role: [3],
-        //         },
-        //         {
-        //           icon: "",
-        //           name: "TSC 1 Bao cao 2",
-        //           url: "/baocao/TSC1-baocao2",
-        //           role: [3],
-        //         },
-        //       ]
-        //     },
-        //     {
-        //       icon: "",
-        //       name: "TSC 2",
-        //       url: "/baocao/TSC2",
-        //       role: [3],
-        //     }
-        //   ],
-        // },
         {
           icon: "bx bx-help-circle",
           name: "Hỗ trợ",
@@ -294,9 +246,15 @@ export default {
       ],
     };
   },
+  // watch: {
+  //   '$route'(value) {
+      
+  //   }
+  // },
   mounted() {
     this.userLocal = JSON.parse(localStorage.getItem('user'));
     this.$store.dispatch("refreshToken");
+    console.log('userLocal', this.userLocal);
     if(!this.userLocal) {
       this.$router.push({ path: "/login" });
     }

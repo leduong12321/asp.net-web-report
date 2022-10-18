@@ -4,9 +4,10 @@
       <div class="align-items-center pl-0 pt-1 fs-13 mb-3">
         Báo cáo > {{ title }}
       </div>
-      <b-form-checkbox v-model="checked" name="check-button" switch>
-      Xem biểu đồ
-    </b-form-checkbox>
+      <div v-if="selected == 'set-manually' && this.toDay - this.fromDay > 2678400000"></div>
+      <b-form-checkbox v-model="checked" class="fs-13" name="check-button" switch v-else>
+        <span class="view-chart-txt">Xem biểu đồ</span>
+      </b-form-checkbox>
       <div
         v-b-toggle.sidebar-right
         class="align-items-center pl-0 pt-1 fs-13 mb-3 search-text"
@@ -95,7 +96,7 @@
       </template>
       </b-sidebar>
     </div>
-    <div v-if="!checked">
+    <div :class="{'hidden' : checked}">
       <iframe
       id="iframe"
       v-if="url"
@@ -107,7 +108,17 @@
       class="mb-5 iframe"
     ></iframe>
     </div>
-    <div class="chart-div" v-else>
+    <div class="chart-div" v-if="checked">
+      <div class="time-chart d-flex">
+        <div class="txt-date">
+          <div>Từ ngày:</div>
+          <div>Đến ngày:</div>
+        </div>
+        <div class="txt-time">
+          <div>{{formatDate(this.fromDay)}}</div>
+          <div>{{formatDate(this.toDay)}}</div>
+        </div>
+      </div>
       <Chart v-if="load" :chartData="chartData" :options="chartOptions" />
     </div>
   </div>
@@ -156,9 +167,6 @@ export default {
       chartDataAPI: [],
       load: false,
       chartData: {
-        "label": "Température",
-        "borderColor": "red",
-        "backgroundColor": "red",
         datasets: []
       },
       chartOptions: {
@@ -178,7 +186,20 @@ export default {
                     beginAtZero: true
                 }
             }]
-        }
+        },
+        legend: {
+          labels: {
+            usePointStyle: true,
+            boxWidth: 6
+          }
+        },
+        plugins: [{
+          beforeInit: function(chart, options) {
+            chart.legend.afterFit = function() {
+              this.height = this.height + 50;
+            };
+          }
+        }]
       }
     };
   },
@@ -194,6 +215,11 @@ export default {
       } else {
         this.errorInputDate = "";
         return "";
+      }
+    },
+    formatDate() {
+      return (value) => {
+        return moment(value).format('DD.MM.YYYY   HH:mm')
       }
     },
   },
@@ -302,6 +328,8 @@ export default {
         return;
       }
       this.url = this.API_URL + "?from=" + this.fromDay + "&to=" + this.toDay;
+      this.checked = false;
+      this.countChecked = 0;
     },
     async getDataChart() {
       const {data} = await this.$axios.get("/api/baocaosanxuat/get?from=" + this.fromDay + "&to=" + this.toDay);
@@ -332,11 +360,10 @@ export default {
         )),
         borderColor: "#11538C",
         backgroundColor: "#11538C",
-        hidden: true,
       };
 
       let chartFlatness = {
-        label: 'FLATNEES',
+        label: 'Flatnees',
         data: value.map(res  => (
           {
             x: res.ROLLING_STOP,
@@ -349,7 +376,7 @@ export default {
       };
 
       let chartSymHeadFlatness = {
-        label: 'SymHeadFlatness',
+        label: 'Sym Head Flatness',
         data: value.map(res  => (
           {
             x: res.ROLLING_STOP,
@@ -362,7 +389,7 @@ export default {
       };
 
       let chartSymBodyFlatness = {
-        label: 'SymBodyFlatness',
+        label: 'Sym Body Flatness',
         data: value.map(res  => (
           {
             x: res.ROLLING_STOP,
@@ -375,20 +402,20 @@ export default {
       };
 
       let chartSymTailFlatness = {
-        label: 'SymTailFlatness',
+        label: 'Sym Tail Flatness',
         data: value.map(res  => (
           {
             x: res.ROLLING_STOP,
             y: res.SymTailFlatness
           }
         )),
-        borderColor: "#5E484B",
-        backgroundColor: "#5E484B",
+        borderColor: "#117191",
+        backgroundColor: "#117191",
         hidden: true,
       };
 
       let chartASymHeadFlatness = {
-        label: 'ASymHeadFlatness',
+        label: 'ASym Head Flatness',
         data: value.map(res  => (
           {
             x: res.ROLLING_STOP,
@@ -401,7 +428,7 @@ export default {
       };
 
       let chartASymBodyFlatness = {
-        label: 'ASymBodyFlatness',
+        label: 'ASym Body Flatness',
         data: value.map(res  => (
           {
             x: res.ROLLING_STOP,
@@ -414,7 +441,7 @@ export default {
       };
 
       let chartASymTailFlatness = {
-        label: 'ASymTailFlatness',
+        label: 'ASym Tail Flatness',
         data: value.map(res  => (
           {
             x: res.ROLLING_STOP,
@@ -426,8 +453,34 @@ export default {
         hidden: true,
       };
 
+      let chartDSC1 = {
+        label: 'DSC1 (bar)',
+        data: value.map(res  => (
+          {
+            x: res.ROLLING_STOP,
+            y: res.DSC1_RAMP1
+          }
+        )),
+        borderColor: "#19FA3A",
+        backgroundColor: "#19FA3A",
+        hidden: true,
+      };
+
+      let chartDSC2 = {
+        label: 'DSC2 (bar)',
+        data: value.map(res  => (
+          {
+            x: res.ROLLING_STOP,
+            y: res.DSC2_RAMP1
+          }
+        )),
+        borderColor: "#EB7B07",
+        backgroundColor: "#EB7B07",
+        hidden: true,
+      };
+
       this.chartData.datasets = [];
-      this.chartData.datasets.push(chartCrown, chartWedge, chartFlatness, chartSymHeadFlatness, chartSymBodyFlatness, chartSymTailFlatness, chartASymHeadFlatness, chartASymBodyFlatness, chartASymTailFlatness);
+      this.chartData.datasets.push(chartCrown, chartWedge, chartFlatness, chartSymHeadFlatness, chartSymBodyFlatness, chartSymTailFlatness, chartASymHeadFlatness, chartASymBodyFlatness, chartASymTailFlatness, chartDSC1, chartDSC2);
       this.load = true;
       console.log('dada', this.chartData.datasets);
     },
@@ -526,7 +579,24 @@ export default {
   }
 }
 .chart-div {
-  margin-top: 100px;
+  padding-bottom: 100px;
   background-color: white;
+}
+.hidden {
+  display: none;
+}
+.time-chart {
+  font-size: 11px;
+  padding: 20px;
+  font-style: italic;
+  .txt-date {
+    width: 70px;
+  }
+  .txt-time {
+    font-weight: bold;
+  }
+}
+.view-chart-txt {
+  padding-top: 3px;
 }
 </style>
