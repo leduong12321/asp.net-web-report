@@ -4,6 +4,9 @@
       <div class="align-items-center pl-0 pt-1 fs-13 mb-3">
         Báo cáo > {{ title }}
       </div>
+      <b-form-checkbox v-model="checked" name="check-button" switch>
+      Xem biểu đồ
+    </b-form-checkbox>
       <div
         v-b-toggle.sidebar-right
         class="align-items-center pl-0 pt-1 fs-13 mb-3 search-text"
@@ -92,7 +95,8 @@
       </template>
       </b-sidebar>
     </div>
-    <iframe
+    <div v-if="!checked">
+      <iframe
       id="iframe"
       v-if="url"
       :src="url"
@@ -102,25 +106,34 @@
       style="background-color: white"
       class="mb-5 iframe"
     ></iframe>
+    </div>
+    <div class="chart-div" v-else>
+      <Chart v-if="load" :chartData="chartData" :options="chartOptions" />
+    </div>
   </div>
 </template>
 
 <script>
 import moment from "moment";
+import Chart from "../chart/Chart.vue";
+import { FAKE_DATA} from "../../js/fakeData";
 
 export default {
   name: "common-report-component",
+  components: { Chart },
   props: {
     API_URL: String,
     title: String,
   },
   data() {
     return {
+      checked: false,
       isHide: true,
       showTimePanel: false,
       isManually: false,
       keySubmit: "",
       count: 0,
+      countChecked: 0,
       fromDay: null,
       toDay: null,
       date: new Date(),
@@ -138,6 +151,35 @@ export default {
         { text: "Ca trước", value: "last-shift" },
         { text: "Tuỳ chỉnh", value: "set-manually" },
       ],
+
+      fakeData: FAKE_DATA,
+      chartDataAPI: [],
+      load: false,
+      chartData: {
+        "label": "Température",
+        "borderColor": "red",
+        "backgroundColor": "red",
+        datasets: []
+      },
+      chartOptions: {
+        responsive: true,
+        maintainAspectRatio: false,
+        scales: {
+            xAxes: [{
+                type: 'time',
+                position: 'bottom',
+                ticks: {
+                    autoSkip: true,
+                    maxTicksLimit: 10
+                }
+            }],
+            yAxes: [{
+                ticks: {
+                    beginAtZero: true
+                }
+            }]
+        }
+      }
     };
   },
   computed: {
@@ -165,12 +207,19 @@ export default {
       if (this.keySubmit != "") {
         this.selected = this.keySubmit;
       } else {
-        this.selected = "today";
+        this.selected = "this-shift";
+      }
+    },
+    checked() {
+      this.countChecked++;
+      if(this.countChecked == 1) {
+        this.getDataChart();
       }
     },
   },
   mounted() {
-    this.loadDataCurent();
+    this.selected = "this-shift";
+    this.showTime();
   },
   methods: {
     toggleTimePanel() {
@@ -178,11 +227,6 @@ export default {
     },
     handleOpenChange() {
       this.showTimePanel = false;
-    },
-    loadDataCurent() {
-      this.fromDay = new Date().setHours(0, 0, 0).valueOf();
-      this.toDay = new Date().setHours(23, 59, 59).valueOf();
-      this.url = this.API_URL + "?from=" + this.fromDay + "&to=" + this.toDay;
     },
     showTime() {
       let currentHour = moment().hour();
@@ -254,12 +298,138 @@ export default {
     },
     handSubmit() {
       this.keySubmit = this.selected;
-      // console.log("start", new Date(this.fromDay));
-      // console.log("to", new Date(this.toDay));
       if (this.fromDay > this.toDay) {
         return;
       }
       this.url = this.API_URL + "?from=" + this.fromDay + "&to=" + this.toDay;
+    },
+    async getDataChart() {
+      const {data} = await this.$axios.get("/api/baocaosanxuat/get?from=" + this.fromDay + "&to=" + this.toDay);
+      if(data) {
+        this.changeDataChart(data);
+      }
+    },
+    changeDataChart(value) {
+      let chartCrown = {
+        label: 'Crown',
+        data: value.map(res  => (
+          {
+            x: res.ROLLING_STOP,
+            y: res.AVG_CROWN
+          }
+        )),
+        borderColor: "#FF0000",
+        backgroundColor: "#FF0000",
+      };
+
+      let chartWedge = {
+        label: 'Wedge',
+        data: value.map(res  => (
+          {
+            x: res.ROLLING_STOP,
+            y: res.AVG_WEDGE
+          }
+        )),
+        borderColor: "#11538C",
+        backgroundColor: "#11538C",
+        hidden: true,
+      };
+
+      let chartFlatness = {
+        label: 'FLATNEES',
+        data: value.map(res  => (
+          {
+            x: res.ROLLING_STOP,
+            y: res.FLATNEES
+          }
+        )),
+        borderColor: "#00FFFF",
+        backgroundColor: "#00FFFF",
+        hidden: true,
+      };
+
+      let chartSymHeadFlatness = {
+        label: 'SymHeadFlatness',
+        data: value.map(res  => (
+          {
+            x: res.ROLLING_STOP,
+            y: res.SymHeadFlatness
+          }
+        )),
+        borderColor: "#454B1B",
+        backgroundColor: "#454B1B",
+        hidden: true,
+      };
+
+      let chartSymBodyFlatness = {
+        label: 'SymBodyFlatness',
+        data: value.map(res  => (
+          {
+            x: res.ROLLING_STOP,
+            y: res.SymBodyFlatness
+          }
+        )),
+        borderColor: "#DF60EB",
+        backgroundColor: "#DF60EB",
+        hidden: true,
+      };
+
+      let chartSymTailFlatness = {
+        label: 'SymTailFlatness',
+        data: value.map(res  => (
+          {
+            x: res.ROLLING_STOP,
+            y: res.SymTailFlatness
+          }
+        )),
+        borderColor: "#5E484B",
+        backgroundColor: "#5E484B",
+        hidden: true,
+      };
+
+      let chartASymHeadFlatness = {
+        label: 'ASymHeadFlatness',
+        data: value.map(res  => (
+          {
+            x: res.ROLLING_STOP,
+            y: res.ASymHeadFlatness
+          }
+        )),
+        borderColor: "#E0C837",
+        backgroundColor: "#E0C837",
+        hidden: true,
+      };
+
+      let chartASymBodyFlatness = {
+        label: 'ASymBodyFlatness',
+        data: value.map(res  => (
+          {
+            x: res.ROLLING_STOP,
+            y: res.ASymBodyFlatness
+          }
+        )),
+        borderColor: "#CADE71",
+        backgroundColor: "#CADE71",
+        hidden: true,
+      };
+
+      let chartASymTailFlatness = {
+        label: 'ASymTailFlatness',
+        data: value.map(res  => (
+          {
+            x: res.ROLLING_STOP,
+            y: res.ASymTailFlatness
+          }
+        )),
+        borderColor: "#AB483E",
+        backgroundColor: "#AB483E",
+        hidden: true,
+      };
+
+      this.chartData.datasets = [];
+      this.chartData.datasets.push(chartCrown, chartWedge, chartFlatness, chartSymHeadFlatness, chartSymBodyFlatness, chartSymTailFlatness, chartASymHeadFlatness, chartASymBodyFlatness, chartASymTailFlatness);
+      this.load = true;
+      console.log('dada', this.chartData.datasets);
     },
   },
 };
@@ -354,5 +524,9 @@ export default {
     width: 50%;
     font-size: 14px;
   }
+}
+.chart-div {
+  margin-top: 100px;
+  background-color: white;
 }
 </style>
