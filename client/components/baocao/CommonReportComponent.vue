@@ -242,6 +242,12 @@ export default {
         this.getDataChart();
       }
     },
+    watch: {
+      '$router'(from, to) {
+        console.log('from', from);
+        console.log('to', to);
+      }
+    },
   },
   mounted() {
     this.selected = "this-shift";
@@ -300,18 +306,18 @@ export default {
               this.toDay = moment().endOf("day").valueOf() - 14400000;
             } else {
               this.fromDay =
-                moment().subtract(1, "days").endOf("day").valueOf() - 14399000;
-              this.toDay = moment().startOf("day").valueOf() + 28799000;
+                moment().endOf("day").valueOf() - 14399999;
+              this.toDay = moment().add(1, "days").startOf("day").valueOf() + 28799999;
             }
             break;
           case "last-shift":
             if (currentHour >= 8 && currentHour < 20) {
               this.fromDay =
-                moment().subtract(1, "days").endOf("day").valueOf() - 14399000;
-              this.toDay = moment().startOf("day").valueOf() + 28799000;
+                moment().subtract(1, "days").endOf("day").valueOf() - 14399999;
+              this.toDay = moment().startOf("day").valueOf() + 28799999;
             } else {
-              this.fromDay = moment().subtract(1, "days").startOf("day").valueOf() + 28800000;
-              this.toDay = moment().subtract(1, "days").endOf("day").valueOf() - 14400000;
+              this.fromDay = moment().startOf("day").valueOf() + 28800000;
+              this.toDay = moment().endOf("day").valueOf() - 14400000;
             }
             break;
           default:
