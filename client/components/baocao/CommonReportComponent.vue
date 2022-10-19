@@ -196,13 +196,6 @@ export default {
             boxWidth: 6
           }
         },
-        plugins: [{
-          beforeInit: function(chart, options) {
-            chart.legend.afterFit = function() {
-              this.height = this.height + 50;
-            };
-          }
-        }]
       }
     };
   },
@@ -228,9 +221,12 @@ export default {
   },
   watch: {
     selected(value) {
-      value == "set-manually"
-        ? (this.isManually = true)
-        : (this.isManually = false);
+      if(value == "set-manually") {
+        this.isManually = true;
+        this.isHideTextShowChart = false;
+      } else {
+        this.isManually = false
+      }
     },
     count() {
       if (this.keySubmit != "") {
@@ -342,6 +338,7 @@ export default {
       }
       this.url = this.API_URL + "?from=" + this.fromDay + "&to=" + this.toDay;
       this.checked = false;
+      this.isHideTextShowChart = true;
       this.countChecked = 0;
     },
     async getDataChart() {

@@ -145,7 +145,7 @@ body {
 }
 
 .login-main-text {
-  margin-top: 20%;
+  margin-top: 37%;
   padding: 60px;
   color: #fff;
 }
