@@ -28,6 +28,7 @@ namespace ProductsApp.Controllers
             sqlParameters.Add(new SqlParameter("ToDay", to));
 
             string query = @"SELECT F.ROLLING_STOP,
+                                    A.TARGET_THICK,
                                     B.DSC2_RAMP1,
 
                                 (SELECT DSC1_RAMP1

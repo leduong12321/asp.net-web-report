@@ -90,6 +90,12 @@ namespace ReportAPI
                                 FROM [dbo].[SC_MEASURE_DEVICE]
                                 WHERE PIECE_ID = A.PIECE_ID
                                     AND DEVICE_ID = 'WEDGE') AS AVG_WEDGE,
+
+                                (SELECT [AVG_VALUE]
+								 FROM [HSM_HOAPHAT].[dbo].[SC_MEASURE_DEVICE]
+								 WHERE PIECE_ID = A.PIECE_ID
+									AND DEVICE_ID = 'PYR5') AS TEMP_DWC,
+
                                 CAST(ROUND(E.AVG_VALUE, 2) AS FLOAT) AS FLATNEES,
                                 CAST(ROUND(E.AVG_HEAD, 2) AS FLOAT) AS SymHeadFlatness,
                                 CAST(ROUND(E.AVG_BODY, 2) AS FLOAT) AS SymBodyFlatness,

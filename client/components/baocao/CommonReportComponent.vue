@@ -223,9 +223,9 @@ export default {
     selected(value) {
       if(value == "set-manually") {
         this.isManually = true;
-        this.isHideTextShowChart = false;
+        // this.isHideTextShowChart = false;
       } else {
-        this.isHideTextShowChart = true;
+        // this.isHideTextShowChart = true;
         this.isManually = false
       }
     },
@@ -251,9 +251,11 @@ export default {
   },
   mounted() {
     this.selected = "this-shift";
-    console.log('abc', this.title);
+    
     if(this.title == 'Báo cáo sản xuất') {
       this.isHideTextShowChart = true;
+    } else {
+      this.isHideTextShowChart = false;
     }
     this.showTime();
   },
@@ -339,16 +341,30 @@ export default {
       }
       this.url = this.API_URL + "?from=" + this.fromDay + "&to=" + this.toDay;
       this.checked = false;
-      this.isHideTextShowChart = true;
+      // this.isHideTextShowChart = true;
       this.countChecked = 0;
     },
     async getDataChart() {
       const {data} = await this.$axios.get("/api/baocaosanxuat/get?from=" + this.fromDay + "&to=" + this.toDay);
+      
       if(data) {
+        console.log('data', data);
         this.changeDataChart(data);
       }
     },
     changeDataChart(value) {
+      let chartTargThk = {
+        label: 'Target Thick',
+        data: value.map(res  => (
+          {
+            x: res.ROLLING_STOP,
+            y: res.TARGET_THICK
+          }
+        )),
+        borderColor: "#FF0000",
+        backgroundColor: "#FF0000",
+      };
+
       let chartCrown = {
         label: 'Crown',
         data: value.map(res  => (
@@ -357,8 +373,8 @@ export default {
             y: res.AVG_CROWN
           }
         )),
-        borderColor: "#FF0000",
-        backgroundColor: "#FF0000",
+        borderColor: "#11538C",
+        backgroundColor: "#11538C",
       };
 
       let chartWedge = {
@@ -369,8 +385,8 @@ export default {
             y: res.AVG_WEDGE
           }
         )),
-        borderColor: "#11538C",
-        backgroundColor: "#11538C",
+        borderColor: "#BCA8EF",
+        backgroundColor: "#BCA8EF",
       };
 
       let chartFlatness = {
@@ -491,7 +507,7 @@ export default {
       };
 
       this.chartData.datasets = [];
-      this.chartData.datasets.push(chartCrown, chartWedge, chartFlatness, chartSymHeadFlatness, chartSymBodyFlatness, chartSymTailFlatness, chartASymHeadFlatness, chartASymBodyFlatness, chartASymTailFlatness, chartDSC1, chartDSC2);
+      this.chartData.datasets.push(chartTargThk, chartCrown, chartWedge, chartFlatness, chartSymHeadFlatness, chartSymBodyFlatness, chartSymTailFlatness, chartASymHeadFlatness, chartASymBodyFlatness, chartASymTailFlatness, chartDSC1, chartDSC2);
       this.load = true;
       console.log('dada', this.chartData.datasets);
     },

@@ -246,17 +246,16 @@ export default {
       ],
     };
   },
-  watch: {
-    'userLocal'(value) {
-      console.log('value', value);
-    }
-  },
+  // watch: {
+  //   'userLocal'(value) {
+  //     console.log('value', value);
+  //   }
+  // },
   mounted() {
     this.$store.dispatch("refreshToken");
     if(localStorage.getItem('user')) {
       this.userLocal = JSON.parse(localStorage.getItem('user'));
     }
-    console.log('userLocal', this.userLocal);
     if(!this.userLocal) {
       this.$router.push({ path: "/login" });
     }

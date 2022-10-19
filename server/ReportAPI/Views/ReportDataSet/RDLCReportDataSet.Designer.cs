@@ -345,6 +345,8 @@ namespace ReportAPI.Views.ReportDataSet {
             
             private global::System.Data.DataColumn columnSymTailFlatness;
             
+            private global::System.Data.DataColumn columnTEMP_DWC;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public BaoCaoSanXuatDataTable() {
@@ -644,6 +646,14 @@ namespace ReportAPI.Views.ReportDataSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn TEMP_DWCColumn {
+                get {
+                    return this.columnTEMP_DWC;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -712,7 +722,8 @@ namespace ReportAPI.Views.ReportDataSet {
                         string ASymTailFlatness, 
                         string SymHeadFlatness, 
                         string SymBodyFlatness, 
-                        string SymTailFlatness) {
+                        string SymTailFlatness, 
+                        string TEMP_DWC) {
                 BaoCaoSanXuatRow rowBaoCaoSanXuatRow = ((BaoCaoSanXuatRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         ROLLING_STOP,
@@ -747,7 +758,8 @@ namespace ReportAPI.Views.ReportDataSet {
                         ASymTailFlatness,
                         SymHeadFlatness,
                         SymBodyFlatness,
-                        SymTailFlatness};
+                        SymTailFlatness,
+                        TEMP_DWC};
                 rowBaoCaoSanXuatRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowBaoCaoSanXuatRow);
                 return rowBaoCaoSanXuatRow;
@@ -803,6 +815,7 @@ namespace ReportAPI.Views.ReportDataSet {
                 this.columnSymHeadFlatness = base.Columns["SymHeadFlatness"];
                 this.columnSymBodyFlatness = base.Columns["SymBodyFlatness"];
                 this.columnSymTailFlatness = base.Columns["SymTailFlatness"];
+                this.columnTEMP_DWC = base.Columns["TEMP_DWC"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -874,6 +887,8 @@ namespace ReportAPI.Views.ReportDataSet {
                 base.Columns.Add(this.columnSymBodyFlatness);
                 this.columnSymTailFlatness = new global::System.Data.DataColumn("SymTailFlatness", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnSymTailFlatness);
+                this.columnTEMP_DWC = new global::System.Data.DataColumn("TEMP_DWC", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTEMP_DWC);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1544,6 +1559,22 @@ namespace ReportAPI.Views.ReportDataSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string TEMP_DWC {
+                get {
+                    try {
+                        return ((string)(this[this.tableBaoCaoSanXuat.TEMP_DWCColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'TEMP_DWC\' in table \'BaoCaoSanXuat\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableBaoCaoSanXuat.TEMP_DWCColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool IsROLLING_STOPNull() {
                 return this.IsNull(this.tableBaoCaoSanXuat.ROLLING_STOPColumn);
             }
@@ -1936,6 +1967,18 @@ namespace ReportAPI.Views.ReportDataSet {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void SetSymTailFlatnessNull() {
                 this[this.tableBaoCaoSanXuat.SymTailFlatnessColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsTEMP_DWCNull() {
+                return this.IsNull(this.tableBaoCaoSanXuat.TEMP_DWCColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetTEMP_DWCNull() {
+                this[this.tableBaoCaoSanXuat.TEMP_DWCColumn] = global::System.Convert.DBNull;
             }
         }
         

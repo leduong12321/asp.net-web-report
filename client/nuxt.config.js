@@ -91,8 +91,8 @@ module.exports = {
   },
   proxy: {
     '/api/': {
-      target: 'https://localhost:44315',
-      // target: 'http://192.168.103.210:9000',
+      // target: 'https://localhost:44315',
+      target: 'http://192.168.103.210:9000',
       pathRewrite: { '^/api/': '/api/' },
       changeOrigin: true,
       secure: false,
