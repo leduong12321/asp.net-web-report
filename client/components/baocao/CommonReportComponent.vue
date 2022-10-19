@@ -348,7 +348,6 @@ export default {
       const {data} = await this.$axios.get("/api/baocaosanxuat/get?from=" + this.fromDay + "&to=" + this.toDay);
       
       if(data) {
-        console.log('data', data);
         this.changeDataChart(data);
       }
     },
@@ -375,6 +374,7 @@ export default {
         )),
         borderColor: "#11538C",
         backgroundColor: "#11538C",
+        hidden: true,
       };
 
       let chartWedge = {
@@ -387,6 +387,7 @@ export default {
         )),
         borderColor: "#BCA8EF",
         backgroundColor: "#BCA8EF",
+        hidden: true,
       };
 
       let chartFlatness = {
@@ -509,7 +510,6 @@ export default {
       this.chartData.datasets = [];
       this.chartData.datasets.push(chartTargThk, chartCrown, chartWedge, chartFlatness, chartSymHeadFlatness, chartSymBodyFlatness, chartSymTailFlatness, chartASymHeadFlatness, chartASymBodyFlatness, chartASymTailFlatness, chartDSC1, chartDSC2);
       this.load = true;
-      console.log('dada', this.chartData.datasets);
     },
   },
 };
