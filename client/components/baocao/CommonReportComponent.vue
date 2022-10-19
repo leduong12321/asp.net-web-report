@@ -225,6 +225,7 @@ export default {
         this.isManually = true;
         this.isHideTextShowChart = false;
       } else {
+        this.isHideTextShowChart = true;
         this.isManually = false
       }
     },
