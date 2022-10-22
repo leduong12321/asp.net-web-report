@@ -251,7 +251,6 @@ export default {
   },
   mounted() {
     this.selected = "this-shift";
-    
     if(this.title == 'Báo cáo sản xuất') {
       this.isHideTextShowChart = true;
     } else {
@@ -266,8 +265,10 @@ export default {
     handleOpenChange() {
       this.showTimePanel = false;
     },
+    
     showTime() {
-      let currentHour = moment().hour();
+      let curentDate = parseInt((Date.now() - 3600000)/12/3600000)*12*3600000 + 3600000;
+      console.log('curentDate', curentDate);
       if (this.selected != "set-manually") {
         switch (this.selected) {
           case "today":
@@ -307,24 +308,12 @@ export default {
             this.toDay = moment().subtract(1, "month").endOf("month").valueOf();
             break;
           case "this-shift":
-            if (currentHour >= 8 && currentHour < 20) {
-              this.fromDay = moment().startOf("day").valueOf() + 28800000;
-              this.toDay = moment().endOf("day").valueOf() - 14400000;
-            } else {
-              this.fromDay =
-                moment().endOf("day").valueOf() - 14399999;
-              this.toDay = moment().add(1, "days").startOf("day").valueOf() + 28799999;
-            }
+            this.fromDay = curentDate;
+            this.toDay = curentDate + 12*3600*1000 - 1;
             break;
           case "last-shift":
-            if (currentHour >= 8 && currentHour < 20) {
-              this.fromDay =
-                moment().subtract(1, "days").endOf("day").valueOf() - 14399999;
-              this.toDay = moment().startOf("day").valueOf() + 28799999;
-            } else {
-              this.fromDay = moment().startOf("day").valueOf() + 28800000;
-              this.toDay = moment().endOf("day").valueOf() - 14400000;
-            }
+            this.fromDay = curentDate - 12*3600*1000;
+            this.toDay = curentDate - 1;
             break;
           default:
             this.fromDay = moment().startOf("day").valueOf();
