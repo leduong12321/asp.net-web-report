@@ -29,6 +29,7 @@ namespace ProductsApp.Controllers
 
             string query = @"SELECT F.ROLLING_STOP,
                                     A.TARGET_THICK,
+                                    A.SLAB_ID,
                                     B.DSC2_RAMP1,
 
                                 (SELECT DSC1_RAMP1
