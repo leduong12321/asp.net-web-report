@@ -279,7 +279,7 @@ namespace ReportAPI.Views.ReportDataSet {
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class BaoCaoSanXuatDataTable : global::System.Data.TypedTableBase<BaoCaoSanXuatRow> {
             
-            private global::System.Data.DataColumn columnARCHIVE_DATE;
+            private global::System.Data.DataColumn columnROLLING_STOP;
             
             private global::System.Data.DataColumn columnSHIFT;
             
@@ -345,6 +345,8 @@ namespace ReportAPI.Views.ReportDataSet {
             
             private global::System.Data.DataColumn columnSymTailFlatness;
             
+            private global::System.Data.DataColumn columnTEMP_DWC;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public BaoCaoSanXuatDataTable() {
@@ -380,9 +382,9 @@ namespace ReportAPI.Views.ReportDataSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn ARCHIVE_DATEColumn {
+            public global::System.Data.DataColumn ROLLING_STOPColumn {
                 get {
-                    return this.columnARCHIVE_DATE;
+                    return this.columnROLLING_STOP;
                 }
             }
             
@@ -644,6 +646,14 @@ namespace ReportAPI.Views.ReportDataSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn TEMP_DWCColumn {
+                get {
+                    return this.columnTEMP_DWC;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -680,7 +690,7 @@ namespace ReportAPI.Views.ReportDataSet {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public BaoCaoSanXuatRow AddBaoCaoSanXuatRow(
-                        string ARCHIVE_DATE, 
+                        string ROLLING_STOP, 
                         int SHIFT, 
                         string CREW_ID, 
                         int Sothutu, 
@@ -712,10 +722,11 @@ namespace ReportAPI.Views.ReportDataSet {
                         string ASymTailFlatness, 
                         string SymHeadFlatness, 
                         string SymBodyFlatness, 
-                        string SymTailFlatness) {
+                        string SymTailFlatness, 
+                        string TEMP_DWC) {
                 BaoCaoSanXuatRow rowBaoCaoSanXuatRow = ((BaoCaoSanXuatRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        ARCHIVE_DATE,
+                        ROLLING_STOP,
                         SHIFT,
                         CREW_ID,
                         Sothutu,
@@ -747,7 +758,8 @@ namespace ReportAPI.Views.ReportDataSet {
                         ASymTailFlatness,
                         SymHeadFlatness,
                         SymBodyFlatness,
-                        SymTailFlatness};
+                        SymTailFlatness,
+                        TEMP_DWC};
                 rowBaoCaoSanXuatRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowBaoCaoSanXuatRow);
                 return rowBaoCaoSanXuatRow;
@@ -770,7 +782,7 @@ namespace ReportAPI.Views.ReportDataSet {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             internal void InitVars() {
-                this.columnARCHIVE_DATE = base.Columns["ARCHIVE_DATE"];
+                this.columnROLLING_STOP = base.Columns["ROLLING_STOP"];
                 this.columnSHIFT = base.Columns["SHIFT"];
                 this.columnCREW_ID = base.Columns["CREW_ID"];
                 this.columnSothutu = base.Columns["Sothutu"];
@@ -803,13 +815,14 @@ namespace ReportAPI.Views.ReportDataSet {
                 this.columnSymHeadFlatness = base.Columns["SymHeadFlatness"];
                 this.columnSymBodyFlatness = base.Columns["SymBodyFlatness"];
                 this.columnSymTailFlatness = base.Columns["SymTailFlatness"];
+                this.columnTEMP_DWC = base.Columns["TEMP_DWC"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             private void InitClass() {
-                this.columnARCHIVE_DATE = new global::System.Data.DataColumn("ARCHIVE_DATE", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnARCHIVE_DATE);
+                this.columnROLLING_STOP = new global::System.Data.DataColumn("ROLLING_STOP", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnROLLING_STOP);
                 this.columnSHIFT = new global::System.Data.DataColumn("SHIFT", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnSHIFT);
                 this.columnCREW_ID = new global::System.Data.DataColumn("CREW_ID", typeof(string), null, global::System.Data.MappingType.Element);
@@ -874,6 +887,8 @@ namespace ReportAPI.Views.ReportDataSet {
                 base.Columns.Add(this.columnSymBodyFlatness);
                 this.columnSymTailFlatness = new global::System.Data.DataColumn("SymTailFlatness", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnSymTailFlatness);
+                this.columnTEMP_DWC = new global::System.Data.DataColumn("TEMP_DWC", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTEMP_DWC);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1016,17 +1031,17 @@ namespace ReportAPI.Views.ReportDataSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string ARCHIVE_DATE {
+            public string ROLLING_STOP {
                 get {
                     try {
-                        return ((string)(this[this.tableBaoCaoSanXuat.ARCHIVE_DATEColumn]));
+                        return ((string)(this[this.tableBaoCaoSanXuat.ROLLING_STOPColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'ARCHIVE_DATE\' in table \'BaoCaoSanXuat\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'ROLLING_STOP\' in table \'BaoCaoSanXuat\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableBaoCaoSanXuat.ARCHIVE_DATEColumn] = value;
+                    this[this.tableBaoCaoSanXuat.ROLLING_STOPColumn] = value;
                 }
             }
             
@@ -1544,14 +1559,30 @@ namespace ReportAPI.Views.ReportDataSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsARCHIVE_DATENull() {
-                return this.IsNull(this.tableBaoCaoSanXuat.ARCHIVE_DATEColumn);
+            public string TEMP_DWC {
+                get {
+                    try {
+                        return ((string)(this[this.tableBaoCaoSanXuat.TEMP_DWCColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'TEMP_DWC\' in table \'BaoCaoSanXuat\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableBaoCaoSanXuat.TEMP_DWCColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetARCHIVE_DATENull() {
-                this[this.tableBaoCaoSanXuat.ARCHIVE_DATEColumn] = global::System.Convert.DBNull;
+            public bool IsROLLING_STOPNull() {
+                return this.IsNull(this.tableBaoCaoSanXuat.ROLLING_STOPColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetROLLING_STOPNull() {
+                this[this.tableBaoCaoSanXuat.ROLLING_STOPColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1936,6 +1967,18 @@ namespace ReportAPI.Views.ReportDataSet {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void SetSymTailFlatnessNull() {
                 this[this.tableBaoCaoSanXuat.SymTailFlatnessColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsTEMP_DWCNull() {
+                return this.IsNull(this.tableBaoCaoSanXuat.TEMP_DWCColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetTEMP_DWCNull() {
+                this[this.tableBaoCaoSanXuat.TEMP_DWCColumn] = global::System.Convert.DBNull;
             }
         }
         

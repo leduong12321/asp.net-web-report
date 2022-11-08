@@ -11,7 +11,7 @@ export default {
     data() {
       return {
         API_URL: process.env.baseUrl + "/ReportViewer",
-        title: 'Báo cáo sản xuất'
+        title: 'Báo cáo sản xuất',
       }
     }
 }

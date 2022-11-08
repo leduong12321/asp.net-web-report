@@ -4,11 +4,7 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Web;
 using System.Web.UI;
-using System.Web.UI.WebControls;
-using System.Xml;
 
 namespace ReportAPI
 {
@@ -38,9 +34,11 @@ namespace ReportAPI
 
         private void SetSqlParameter()
         {
-            sqlParameters = new List<SqlParameter>();
-            sqlParameters.Add(new SqlParameter("FromDay", Request.QueryString["from"]));
-            sqlParameters.Add(new SqlParameter("ToDay", Request.QueryString["to"]));
+            sqlParameters = new List<SqlParameter>
+            {
+                new SqlParameter("FromDay", Request.QueryString["from"]),
+                new SqlParameter("ToDay", Request.QueryString["to"])
+            };
         }
         private void GetDataTable()
         {
@@ -115,7 +113,7 @@ namespace ReportAPI
                     sqlCommand.Parameters.AddRange(sqlParameters.ToArray());
 
                     SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(sqlCommand);
-                    sqlDataAdapter.Fill(dataSet);
+                    _ = sqlDataAdapter.Fill(dataSet);
                     RdlcWRReportViewer.LocalReport.ReportPath = Server.MapPath("~/Views/Reports/WR.rdlc");
                     RdlcWRReportViewer.LocalReport.DataSources.Clear();
 

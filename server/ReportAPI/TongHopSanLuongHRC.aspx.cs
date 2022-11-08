@@ -43,7 +43,59 @@ namespace ReportAPI
         }
         private void GetDataTable()
         {
-            string query = "SELECT (ROW_NUMBER() OVER (ORDER BY STEEL_GRADE)) AS Sothutu, concat(TARGET_THICK,'x', FORMAT(CAST(TARGET_WIDTH AS DECIMAL(18,6)), 'g15')) as SanPham , STEEL_GRADE,COUNT(STEEL_GRADE) as SoCuon,FORMAT(CAST(SUM(WEIGHT_PDI) as DECIMAL(18,6)) , '#,###.###', 'en-US')  as TongKhoiLuongPDI,FORMAT(CAST(SUM(WEIGHT_MEAS) as DECIMAL(18,6)) , '#,###.###', 'en-US') as TongKhoiLuong from [dbo].[PM_PIECE_OUTPUT] where STATUS IN ('PRODUCED')  and (PIECE_ID not like 'GHOST%' or PIECE_ID = 'GHOST82') and ARCHIVE_DATE >=@FromDay and ARCHIVE_DATE <=@ToDay group by TARGET_THICK,TARGET_WIDTH,STEEL_GRADE";
+            string query = @"DECLARE @FromDate datetime;
+
+                            DECLARE @ToDate datetime;
+
+
+                            SET @FromDate = @FromDay;
+
+
+                            SET @ToDate = @ToDay;
+
+
+                            SELECT (ROW_NUMBER() OVER (
+                                                       ORDER BY STEEL_GRADE)) AS Sothutu,
+                                   concat(TARGET_THICK, 'x', FORMAT(CAST(TARGET_WIDTH AS DECIMAL(18, 6)), 'g15')) AS SanPham,
+                                   STEEL_GRADE,
+                                   COUNT(STEEL_GRADE) AS SoCuon,
+                                   FORMAT(CAST(SUM(WEIGHT_PDI) AS DECIMAL(18, 6)), '#,###.###', 'en-US') AS TongKhoiLuongPDI,
+                                   FORMAT(CAST(SUM(WEIGHT_MEAS) AS DECIMAL(18, 6)), '#,###.###', 'en-US') AS TongKhoiLuong,
+                                   sum(WEIGHT_MEAS) * 100 /
+                              (SELECT sum(WEIGHT_MEAS)
+                               FROM PM_PIECE_OUTPUT
+                               WHERE STATUS IN ('PRODUCED')
+                                 AND (PIECE_ID not like 'GHOST%'
+                                      OR PIECE_ID = 'GHOST82')
+                                 AND ARCHIVE_DATE >= @FromDate
+                                 AND ARCHIVE_DATE <= @ToDate) AS TiLePhanTram,
+
+                              (SELECT FORMAT(CAST(SUM(WEIGHT_PDI) AS DECIMAL(18, 6)), '#,###.###', 'en-US')
+                               FROM PM_PIECE_OUTPUT
+                               WHERE STATUS IN ('PRODUCED')
+                                 AND (PIECE_ID not like 'GHOST%'
+                                      OR PIECE_ID = 'GHOST82')
+                                 AND ARCHIVE_DATE >= @FromDate
+                                 AND ARCHIVE_DATE <= @ToDate) AS TongKhoiLuongSanXuatPDI,
+
+                              (SELECT FORMAT(CAST(SUM(WEIGHT_MEAS) AS DECIMAL(18, 6)), '#,###.###', 'en-US')
+                               FROM PM_PIECE_OUTPUT
+                               WHERE STATUS IN ('PRODUCED')
+                                 AND (PIECE_ID not like 'GHOST%'
+                                      OR PIECE_ID = 'GHOST82')
+                                 AND ARCHIVE_DATE >= @FromDate
+                                 AND ARCHIVE_DATE <= @ToDate) AS TongKhoiLuongSanXuat
+
+                            FROM [dbo].[PM_PIECE_OUTPUT]
+                            WHERE STATUS IN ('PRODUCED')
+                              AND (PIECE_ID not like 'GHOST%'
+                                   OR PIECE_ID = 'GHOST82')
+                              AND ARCHIVE_DATE >= @FromDate
+                              AND ARCHIVE_DATE <= @ToDate
+                            GROUP BY TARGET_THICK,
+                                     TARGET_WIDTH,
+                                     STEEL_GRADE
+                            ORDER BY STEEL_GRADE, SanPham desc";
             string connectionString = ConfigurationManager.ConnectionStrings["HSM_HOAPHATConnectionString"].ConnectionString;
             dataSet = new DataSet();
             using (SqlConnection con = new SqlConnection(connectionString))

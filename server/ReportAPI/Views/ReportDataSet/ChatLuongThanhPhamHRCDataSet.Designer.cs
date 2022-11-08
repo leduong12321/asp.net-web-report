@@ -295,11 +295,21 @@ namespace ReportAPI.Views.ReportDataSet {
             
             private global::System.Data.DataColumn columnSTEEL_GRADE;
             
-            private global::System.Data.DataColumn columnTARGET_WIDTH;
-            
             private global::System.Data.DataColumn columnDSC2_RAMP1;
             
             private global::System.Data.DataColumn columnDSC1_RAMP1;
+            
+            private global::System.Data.DataColumn columnROLL_WEIGHT_H1;
+            
+            private global::System.Data.DataColumn columnROLL_WEIGHT_H2;
+            
+            private global::System.Data.DataColumn columnROLL_WEIGHT_F1;
+            
+            private global::System.Data.DataColumn columnROLL_WEIGHT_F2;
+            
+            private global::System.Data.DataColumn columnROLL_WEIGHT_F3;
+            
+            private global::System.Data.DataColumn columnROLL_WEIGHT_F4;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
@@ -400,14 +410,6 @@ namespace ReportAPI.Views.ReportDataSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn TARGET_WIDTHColumn {
-                get {
-                    return this.columnTARGET_WIDTH;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public global::System.Data.DataColumn DSC2_RAMP1Column {
                 get {
                     return this.columnDSC2_RAMP1;
@@ -419,6 +421,54 @@ namespace ReportAPI.Views.ReportDataSet {
             public global::System.Data.DataColumn DSC1_RAMP1Column {
                 get {
                     return this.columnDSC1_RAMP1;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn ROLL_WEIGHT_H1Column {
+                get {
+                    return this.columnROLL_WEIGHT_H1;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn ROLL_WEIGHT_H2Column {
+                get {
+                    return this.columnROLL_WEIGHT_H2;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn ROLL_WEIGHT_F1Column {
+                get {
+                    return this.columnROLL_WEIGHT_F1;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn ROLL_WEIGHT_F2Column {
+                get {
+                    return this.columnROLL_WEIGHT_F2;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn ROLL_WEIGHT_F3Column {
+                get {
+                    return this.columnROLL_WEIGHT_F3;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn ROLL_WEIGHT_F4Column {
+                get {
+                    return this.columnROLL_WEIGHT_F4;
                 }
             }
             
@@ -459,7 +509,23 @@ namespace ReportAPI.Views.ReportDataSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public ChatLuongThanhPhamHRCDataTableRow AddChatLuongThanhPhamHRCDataTableRow(string ARCHIVE_DATE, string CA, string SanPham, long Sothutu, double TARGET_THICK, decimal TASK_SLAB, string SLAB_ID, string STEEL_GRADE, double TARGET_WIDTH, double DSC2_RAMP1, double DSC1_RAMP1) {
+            public ChatLuongThanhPhamHRCDataTableRow AddChatLuongThanhPhamHRCDataTableRow(
+                        string ARCHIVE_DATE, 
+                        string CA, 
+                        string SanPham, 
+                        long Sothutu, 
+                        double TARGET_THICK, 
+                        decimal TASK_SLAB, 
+                        string SLAB_ID, 
+                        string STEEL_GRADE, 
+                        double DSC2_RAMP1, 
+                        double DSC1_RAMP1, 
+                        string ROLL_WEIGHT_H1, 
+                        string ROLL_WEIGHT_H2, 
+                        string ROLL_WEIGHT_F1, 
+                        string ROLL_WEIGHT_F2, 
+                        string ROLL_WEIGHT_F3, 
+                        string ROLL_WEIGHT_F4) {
                 ChatLuongThanhPhamHRCDataTableRow rowChatLuongThanhPhamHRCDataTableRow = ((ChatLuongThanhPhamHRCDataTableRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         ARCHIVE_DATE,
@@ -470,9 +536,14 @@ namespace ReportAPI.Views.ReportDataSet {
                         TASK_SLAB,
                         SLAB_ID,
                         STEEL_GRADE,
-                        TARGET_WIDTH,
                         DSC2_RAMP1,
-                        DSC1_RAMP1};
+                        DSC1_RAMP1,
+                        ROLL_WEIGHT_H1,
+                        ROLL_WEIGHT_H2,
+                        ROLL_WEIGHT_F1,
+                        ROLL_WEIGHT_F2,
+                        ROLL_WEIGHT_F3,
+                        ROLL_WEIGHT_F4};
                 rowChatLuongThanhPhamHRCDataTableRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowChatLuongThanhPhamHRCDataTableRow);
                 return rowChatLuongThanhPhamHRCDataTableRow;
@@ -503,9 +574,14 @@ namespace ReportAPI.Views.ReportDataSet {
                 this.columnTASK_SLAB = base.Columns["TASK_SLAB"];
                 this.columnSLAB_ID = base.Columns["SLAB_ID"];
                 this.columnSTEEL_GRADE = base.Columns["STEEL_GRADE"];
-                this.columnTARGET_WIDTH = base.Columns["TARGET_WIDTH"];
                 this.columnDSC2_RAMP1 = base.Columns["DSC2_RAMP1"];
                 this.columnDSC1_RAMP1 = base.Columns["DSC1_RAMP1"];
+                this.columnROLL_WEIGHT_H1 = base.Columns["ROLL_WEIGHT_H1"];
+                this.columnROLL_WEIGHT_H2 = base.Columns["ROLL_WEIGHT_H2"];
+                this.columnROLL_WEIGHT_F1 = base.Columns["ROLL_WEIGHT_F1"];
+                this.columnROLL_WEIGHT_F2 = base.Columns["ROLL_WEIGHT_F2"];
+                this.columnROLL_WEIGHT_F3 = base.Columns["ROLL_WEIGHT_F3"];
+                this.columnROLL_WEIGHT_F4 = base.Columns["ROLL_WEIGHT_F4"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -527,12 +603,22 @@ namespace ReportAPI.Views.ReportDataSet {
                 base.Columns.Add(this.columnSLAB_ID);
                 this.columnSTEEL_GRADE = new global::System.Data.DataColumn("STEEL_GRADE", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnSTEEL_GRADE);
-                this.columnTARGET_WIDTH = new global::System.Data.DataColumn("TARGET_WIDTH", typeof(double), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnTARGET_WIDTH);
                 this.columnDSC2_RAMP1 = new global::System.Data.DataColumn("DSC2_RAMP1", typeof(double), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnDSC2_RAMP1);
                 this.columnDSC1_RAMP1 = new global::System.Data.DataColumn("DSC1_RAMP1", typeof(double), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnDSC1_RAMP1);
+                this.columnROLL_WEIGHT_H1 = new global::System.Data.DataColumn("ROLL_WEIGHT_H1", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnROLL_WEIGHT_H1);
+                this.columnROLL_WEIGHT_H2 = new global::System.Data.DataColumn("ROLL_WEIGHT_H2", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnROLL_WEIGHT_H2);
+                this.columnROLL_WEIGHT_F1 = new global::System.Data.DataColumn("ROLL_WEIGHT_F1", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnROLL_WEIGHT_F1);
+                this.columnROLL_WEIGHT_F2 = new global::System.Data.DataColumn("ROLL_WEIGHT_F2", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnROLL_WEIGHT_F2);
+                this.columnROLL_WEIGHT_F3 = new global::System.Data.DataColumn("ROLL_WEIGHT_F3", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnROLL_WEIGHT_F3);
+                this.columnROLL_WEIGHT_F4 = new global::System.Data.DataColumn("ROLL_WEIGHT_F4", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnROLL_WEIGHT_F4);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -810,23 +896,6 @@ namespace ReportAPI.Views.ReportDataSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public double TARGET_WIDTH {
-                get {
-                    try {
-                        return ((double)(this[this.tableChatLuongThanhPhamHRCDataTable.TARGET_WIDTHColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'TARGET_WIDTH\' in table \'ChatLuongThanhPhamHRCDataTable\' is " +
-                                "DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableChatLuongThanhPhamHRCDataTable.TARGET_WIDTHColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public double DSC2_RAMP1 {
                 get {
                     try {
@@ -856,6 +925,108 @@ namespace ReportAPI.Views.ReportDataSet {
                 }
                 set {
                     this[this.tableChatLuongThanhPhamHRCDataTable.DSC1_RAMP1Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string ROLL_WEIGHT_H1 {
+                get {
+                    try {
+                        return ((string)(this[this.tableChatLuongThanhPhamHRCDataTable.ROLL_WEIGHT_H1Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ROLL_WEIGHT_H1\' in table \'ChatLuongThanhPhamHRCDataTable\' i" +
+                                "s DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableChatLuongThanhPhamHRCDataTable.ROLL_WEIGHT_H1Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string ROLL_WEIGHT_H2 {
+                get {
+                    try {
+                        return ((string)(this[this.tableChatLuongThanhPhamHRCDataTable.ROLL_WEIGHT_H2Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ROLL_WEIGHT_H2\' in table \'ChatLuongThanhPhamHRCDataTable\' i" +
+                                "s DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableChatLuongThanhPhamHRCDataTable.ROLL_WEIGHT_H2Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string ROLL_WEIGHT_F1 {
+                get {
+                    try {
+                        return ((string)(this[this.tableChatLuongThanhPhamHRCDataTable.ROLL_WEIGHT_F1Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ROLL_WEIGHT_F1\' in table \'ChatLuongThanhPhamHRCDataTable\' i" +
+                                "s DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableChatLuongThanhPhamHRCDataTable.ROLL_WEIGHT_F1Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string ROLL_WEIGHT_F2 {
+                get {
+                    try {
+                        return ((string)(this[this.tableChatLuongThanhPhamHRCDataTable.ROLL_WEIGHT_F2Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ROLL_WEIGHT_F2\' in table \'ChatLuongThanhPhamHRCDataTable\' i" +
+                                "s DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableChatLuongThanhPhamHRCDataTable.ROLL_WEIGHT_F2Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string ROLL_WEIGHT_F3 {
+                get {
+                    try {
+                        return ((string)(this[this.tableChatLuongThanhPhamHRCDataTable.ROLL_WEIGHT_F3Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ROLL_WEIGHT_F3\' in table \'ChatLuongThanhPhamHRCDataTable\' i" +
+                                "s DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableChatLuongThanhPhamHRCDataTable.ROLL_WEIGHT_F3Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string ROLL_WEIGHT_F4 {
+                get {
+                    try {
+                        return ((string)(this[this.tableChatLuongThanhPhamHRCDataTable.ROLL_WEIGHT_F4Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ROLL_WEIGHT_F4\' in table \'ChatLuongThanhPhamHRCDataTable\' i" +
+                                "s DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableChatLuongThanhPhamHRCDataTable.ROLL_WEIGHT_F4Column] = value;
                 }
             }
             
@@ -957,18 +1128,6 @@ namespace ReportAPI.Views.ReportDataSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsTARGET_WIDTHNull() {
-                return this.IsNull(this.tableChatLuongThanhPhamHRCDataTable.TARGET_WIDTHColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetTARGET_WIDTHNull() {
-                this[this.tableChatLuongThanhPhamHRCDataTable.TARGET_WIDTHColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool IsDSC2_RAMP1Null() {
                 return this.IsNull(this.tableChatLuongThanhPhamHRCDataTable.DSC2_RAMP1Column);
             }
@@ -989,6 +1148,78 @@ namespace ReportAPI.Views.ReportDataSet {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void SetDSC1_RAMP1Null() {
                 this[this.tableChatLuongThanhPhamHRCDataTable.DSC1_RAMP1Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsROLL_WEIGHT_H1Null() {
+                return this.IsNull(this.tableChatLuongThanhPhamHRCDataTable.ROLL_WEIGHT_H1Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetROLL_WEIGHT_H1Null() {
+                this[this.tableChatLuongThanhPhamHRCDataTable.ROLL_WEIGHT_H1Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsROLL_WEIGHT_H2Null() {
+                return this.IsNull(this.tableChatLuongThanhPhamHRCDataTable.ROLL_WEIGHT_H2Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetROLL_WEIGHT_H2Null() {
+                this[this.tableChatLuongThanhPhamHRCDataTable.ROLL_WEIGHT_H2Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsROLL_WEIGHT_F1Null() {
+                return this.IsNull(this.tableChatLuongThanhPhamHRCDataTable.ROLL_WEIGHT_F1Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetROLL_WEIGHT_F1Null() {
+                this[this.tableChatLuongThanhPhamHRCDataTable.ROLL_WEIGHT_F1Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsROLL_WEIGHT_F2Null() {
+                return this.IsNull(this.tableChatLuongThanhPhamHRCDataTable.ROLL_WEIGHT_F2Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetROLL_WEIGHT_F2Null() {
+                this[this.tableChatLuongThanhPhamHRCDataTable.ROLL_WEIGHT_F2Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsROLL_WEIGHT_F3Null() {
+                return this.IsNull(this.tableChatLuongThanhPhamHRCDataTable.ROLL_WEIGHT_F3Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetROLL_WEIGHT_F3Null() {
+                this[this.tableChatLuongThanhPhamHRCDataTable.ROLL_WEIGHT_F3Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsROLL_WEIGHT_F4Null() {
+                return this.IsNull(this.tableChatLuongThanhPhamHRCDataTable.ROLL_WEIGHT_F4Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetROLL_WEIGHT_F4Null() {
+                this[this.tableChatLuongThanhPhamHRCDataTable.ROLL_WEIGHT_F4Column] = global::System.Convert.DBNull;
             }
         }
         

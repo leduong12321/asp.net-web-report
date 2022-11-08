@@ -291,6 +291,12 @@ namespace ReportAPI.Views.ReportDataSet {
             
             private global::System.Data.DataColumn columnTongKhoiLuong;
             
+            private global::System.Data.DataColumn columnTiLePhanTram;
+            
+            private global::System.Data.DataColumn columnTongKhoiLuongSanXuatPDI;
+            
+            private global::System.Data.DataColumn columnTongKhoiLuongSanXuat;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public TongHopSanLuongHRCDataSetDataTable() {
@@ -374,6 +380,30 @@ namespace ReportAPI.Views.ReportDataSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn TiLePhanTramColumn {
+                get {
+                    return this.columnTiLePhanTram;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn TongKhoiLuongSanXuatPDIColumn {
+                get {
+                    return this.columnTongKhoiLuongSanXuatPDI;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn TongKhoiLuongSanXuatColumn {
+                get {
+                    return this.columnTongKhoiLuongSanXuat;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -409,7 +439,7 @@ namespace ReportAPI.Views.ReportDataSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public TongHopSanLuongHRCDataSetRow AddTongHopSanLuongHRCDataSetRow(int Sothutu, string SanPham, string STEEL_GRADE, int SoCuon, double TongKhoiLuongPDI, double TongKhoiLuong) {
+            public TongHopSanLuongHRCDataSetRow AddTongHopSanLuongHRCDataSetRow(int Sothutu, string SanPham, string STEEL_GRADE, int SoCuon, double TongKhoiLuongPDI, double TongKhoiLuong, string TiLePhanTram, string TongKhoiLuongSanXuatPDI, string TongKhoiLuongSanXuat) {
                 TongHopSanLuongHRCDataSetRow rowTongHopSanLuongHRCDataSetRow = ((TongHopSanLuongHRCDataSetRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         Sothutu,
@@ -417,7 +447,10 @@ namespace ReportAPI.Views.ReportDataSet {
                         STEEL_GRADE,
                         SoCuon,
                         TongKhoiLuongPDI,
-                        TongKhoiLuong};
+                        TongKhoiLuong,
+                        TiLePhanTram,
+                        TongKhoiLuongSanXuatPDI,
+                        TongKhoiLuongSanXuat};
                 rowTongHopSanLuongHRCDataSetRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowTongHopSanLuongHRCDataSetRow);
                 return rowTongHopSanLuongHRCDataSetRow;
@@ -446,6 +479,9 @@ namespace ReportAPI.Views.ReportDataSet {
                 this.columnSoCuon = base.Columns["SoCuon"];
                 this.columnTongKhoiLuongPDI = base.Columns["TongKhoiLuongPDI"];
                 this.columnTongKhoiLuong = base.Columns["TongKhoiLuong"];
+                this.columnTiLePhanTram = base.Columns["TiLePhanTram"];
+                this.columnTongKhoiLuongSanXuatPDI = base.Columns["TongKhoiLuongSanXuatPDI"];
+                this.columnTongKhoiLuongSanXuat = base.Columns["TongKhoiLuongSanXuat"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -463,6 +499,12 @@ namespace ReportAPI.Views.ReportDataSet {
                 base.Columns.Add(this.columnTongKhoiLuongPDI);
                 this.columnTongKhoiLuong = new global::System.Data.DataColumn("TongKhoiLuong", typeof(double), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTongKhoiLuong);
+                this.columnTiLePhanTram = new global::System.Data.DataColumn("TiLePhanTram", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTiLePhanTram);
+                this.columnTongKhoiLuongSanXuatPDI = new global::System.Data.DataColumn("TongKhoiLuongSanXuatPDI", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTongKhoiLuongSanXuatPDI);
+                this.columnTongKhoiLuongSanXuat = new global::System.Data.DataColumn("TongKhoiLuongSanXuat", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTongKhoiLuongSanXuat);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -704,6 +746,57 @@ namespace ReportAPI.Views.ReportDataSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string TiLePhanTram {
+                get {
+                    try {
+                        return ((string)(this[this.tableTongHopSanLuongHRCDataSet.TiLePhanTramColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'TiLePhanTram\' in table \'TongHopSanLuongHRCDataSet\' is DBNul" +
+                                "l.", e);
+                    }
+                }
+                set {
+                    this[this.tableTongHopSanLuongHRCDataSet.TiLePhanTramColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string TongKhoiLuongSanXuatPDI {
+                get {
+                    try {
+                        return ((string)(this[this.tableTongHopSanLuongHRCDataSet.TongKhoiLuongSanXuatPDIColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'TongKhoiLuongSanXuatPDI\' in table \'TongHopSanLuongHRCDataSe" +
+                                "t\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTongHopSanLuongHRCDataSet.TongKhoiLuongSanXuatPDIColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string TongKhoiLuongSanXuat {
+                get {
+                    try {
+                        return ((string)(this[this.tableTongHopSanLuongHRCDataSet.TongKhoiLuongSanXuatColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'TongKhoiLuongSanXuat\' in table \'TongHopSanLuongHRCDataSet\' " +
+                                "is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTongHopSanLuongHRCDataSet.TongKhoiLuongSanXuatColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool IsSothutuNull() {
                 return this.IsNull(this.tableTongHopSanLuongHRCDataSet.SothutuColumn);
             }
@@ -772,6 +865,42 @@ namespace ReportAPI.Views.ReportDataSet {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void SetTongKhoiLuongNull() {
                 this[this.tableTongHopSanLuongHRCDataSet.TongKhoiLuongColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsTiLePhanTramNull() {
+                return this.IsNull(this.tableTongHopSanLuongHRCDataSet.TiLePhanTramColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetTiLePhanTramNull() {
+                this[this.tableTongHopSanLuongHRCDataSet.TiLePhanTramColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsTongKhoiLuongSanXuatPDINull() {
+                return this.IsNull(this.tableTongHopSanLuongHRCDataSet.TongKhoiLuongSanXuatPDIColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetTongKhoiLuongSanXuatPDINull() {
+                this[this.tableTongHopSanLuongHRCDataSet.TongKhoiLuongSanXuatPDIColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsTongKhoiLuongSanXuatNull() {
+                return this.IsNull(this.tableTongHopSanLuongHRCDataSet.TongKhoiLuongSanXuatColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetTongKhoiLuongSanXuatNull() {
+                this[this.tableTongHopSanLuongHRCDataSet.TongKhoiLuongSanXuatColumn] = global::System.Convert.DBNull;
             }
         }
         

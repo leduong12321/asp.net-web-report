@@ -3,7 +3,8 @@ const createStore = () => {
     return new Vuex.Store({
         state: {
             user: {},
-            isToast: false
+            isToast: false,
+            token: null
         },
         mutations: {
             setUser(state, user) {
@@ -11,7 +12,13 @@ const createStore = () => {
             },
             setToast(state, isToast) {
                 state.isToast = isToast;
-            }
+            },
+            setToken(state, token) {
+                state.token = token;
+            },
+            clearToken(state) {
+                state.token = null;
+            },
         },
         actions: {
             setUser(vuexContext, user) {
@@ -19,7 +26,23 @@ const createStore = () => {
             },
             setToast(vuexContext, isToast) {
                 vuexContext.commit('setToast', isToast)
-            }
+            },
+            authenticateUser(vuexContext, token) {
+                if(!localStorage.getItem('refreshToken')) {
+                    let timeGetToken = new Date().valueOf();
+                    let expiresRefresh = timeGetToken + 1800000;
+                    localStorage.setItem('refreshToken', expiresRefresh);
+                }
+                vuexContext.commit('setToken', token)
+            },
+            refreshToken() {
+                if(localStorage.getItem('refreshToken') < new Date().valueOf()) {
+                    localStorage.clear();
+                }
+            },
+            clearToken() {
+                localStorage.clear()
+            },
         },
         getters: {
             user(state) {
@@ -32,6 +55,9 @@ const createStore = () => {
             isToast(state) {
                 return state.isToast
             },
+            getToken(state) {
+                return state.token.data.data
+            }
         },
     })
 }
