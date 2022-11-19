@@ -4,7 +4,7 @@
       <div class="align-items-center pl-0 pt-1 fs-13 mb-3">
         Báo cáo > {{ title }}
       </div>
-      <div v-if="isHideTextShowChart">
+      <div v-if="isHideTextShowChart && userLocal.Name == 'Admin'">
         <div v-if="selected == 'set-manually' && this.toDay - this.fromDay > 2678400000"></div>
         <b-form-checkbox v-model="checked" class="fs-13" name="check-button" switch v-else>
           <span class="view-chart-txt">Xem biểu đồ</span>
@@ -121,7 +121,7 @@
           <div>{{formatDate(this.toDay)}}</div>
         </div>
       </div>
-      <Chart v-if="load" :chartData="chartData" :options="chartOptions" />
+      <Chart class="chart" v-if="load" :chartData="chartData" :options="chartOptions" />
     </div>
   </div>
 </template>
@@ -140,6 +140,7 @@ export default {
   },
   data() {
     return {
+      userLocal: null,
       isHideTextShowChart: false,
       checked: false,
       isHide: true,
@@ -191,9 +192,12 @@ export default {
             }]
         },
         legend: {
+          position: 'bottom',
           labels: {
+            fontSize: 10,
             usePointStyle: true,
-            boxWidth: 6
+            boxWidth: 4,
+            padding: window.innerWidth / 45,
           }
         },
       }
@@ -250,6 +254,7 @@ export default {
     // },
   },
   mounted() {
+    this.userLocal = JSON.parse(localStorage.getItem('user'));
     this.selected = "this-shift";
     if(this.title == 'Báo cáo sản xuất') {
       this.isHideTextShowChart = true;
@@ -337,13 +342,20 @@ export default {
       const {data} = await this.$axios.get("/api/baocaosanxuat/get?from=" + this.fromDay + "&to=" + this.toDay);
       
       if(data) {
-        this.changeDataChart(data);
+        let tsc1 = data.filter(res => res.SLAB_ID.charAt() == '1');
+        let tsc2 = data.filter(res => res.SLAB_ID.charAt() == '2');
+        this.changeDataChart(tsc1, tsc2);
       }
     },
-    changeDataChart(value) {
-      let chartTargThk = {
+    changeDataChart(tsc1, tsc2) {
+      let Name1 = {
+        label: 'TSC1:',
+        borderColor: "#FFFFFF",
+        backgroundColor: "#FFFFFF",
+      };
+      let chartTargThk1 = {
         label: 'Target Thick',
-        data: value.map(res  => (
+        data: tsc1.map(res  => (
           {
             x: res.ROLLING_STOP,
             y: res.TARGET_THICK
@@ -353,9 +365,9 @@ export default {
         backgroundColor: "#FF0000",
       };
 
-      let chartCrown = {
+      let chartCrown1 = {
         label: 'Crown',
-        data: value.map(res  => (
+        data: tsc1.map(res  => (
           {
             x: res.ROLLING_STOP,
             y: res.AVG_CROWN
@@ -366,9 +378,9 @@ export default {
         hidden: true,
       };
 
-      let chartWedge = {
+      let chartWedge1 = {
         label: 'Wedge',
-        data: value.map(res  => (
+        data: tsc1.map(res  => (
           {
             x: res.ROLLING_STOP,
             y: res.AVG_WEDGE
@@ -379,9 +391,9 @@ export default {
         hidden: true,
       };
 
-      let chartFlatness = {
+      let chartFlatness1 = {
         label: 'Flatnees',
-        data: value.map(res  => (
+        data: tsc1.map(res  => (
           {
             x: res.ROLLING_STOP,
             y: res.FLATNEES
@@ -392,9 +404,9 @@ export default {
         hidden: true,
       };
 
-      let chartSymHeadFlatness = {
+      let chartSymHeadFlatness1 = {
         label: 'Sym Head Flatness',
-        data: value.map(res  => (
+        data: tsc1.map(res  => (
           {
             x: res.ROLLING_STOP,
             y: res.SymHeadFlatness
@@ -405,9 +417,9 @@ export default {
         hidden: true,
       };
 
-      let chartSymBodyFlatness = {
+      let chartSymBodyFlatness1 = {
         label: 'Sym Body Flatness',
-        data: value.map(res  => (
+        data: tsc1.map(res  => (
           {
             x: res.ROLLING_STOP,
             y: res.SymBodyFlatness
@@ -418,9 +430,9 @@ export default {
         hidden: true,
       };
 
-      let chartSymTailFlatness = {
+      let chartSymTailFlatness1 = {
         label: 'Sym Tail Flatness',
-        data: value.map(res  => (
+        data: tsc1.map(res  => (
           {
             x: res.ROLLING_STOP,
             y: res.SymTailFlatness
@@ -431,9 +443,9 @@ export default {
         hidden: true,
       };
 
-      let chartASymHeadFlatness = {
+      let chartASymHeadFlatness1 = {
         label: 'ASym Head Flatness',
-        data: value.map(res  => (
+        data: tsc1.map(res  => (
           {
             x: res.ROLLING_STOP,
             y: res.ASymHeadFlatness
@@ -444,9 +456,9 @@ export default {
         hidden: true,
       };
 
-      let chartASymBodyFlatness = {
+      let chartASymBodyFlatness1 = {
         label: 'ASym Body Flatness',
-        data: value.map(res  => (
+        data: tsc1.map(res  => (
           {
             x: res.ROLLING_STOP,
             y: res.ASymBodyFlatness
@@ -457,9 +469,9 @@ export default {
         hidden: true,
       };
 
-      let chartASymTailFlatness = {
+      let chartASymTailFlatness1 = {
         label: 'ASym Tail Flatness',
-        data: value.map(res  => (
+        data: tsc1.map(res  => (
           {
             x: res.ROLLING_STOP,
             y: res.ASymTailFlatness
@@ -472,7 +484,7 @@ export default {
 
       let chartDSC1 = {
         label: 'DSC1 (bar)',
-        data: value.map(res  => (
+        data: tsc1.map(res  => (
           {
             x: res.ROLLING_STOP,
             y: res.DSC1_RAMP1
@@ -482,10 +494,15 @@ export default {
         backgroundColor: "#19FA3A",
         hidden: true,
       };
+      let Name2 = {
+        label: 'TSC2:',
+        borderColor: "#FFFFFF",
+        backgroundColor: "#FFFFFF",
+      };
 
       let chartDSC2 = {
         label: 'DSC2 (bar)',
-        data: value.map(res  => (
+        data: tsc1.map(res  => (
           {
             x: res.ROLLING_STOP,
             y: res.DSC2_RAMP1
@@ -495,9 +512,163 @@ export default {
         backgroundColor: "#EB7B07",
         hidden: true,
       };
+      // TSC 2
+      let chartTargThk2 = {
+        label: 'Target Thick',
+        data: tsc2.map(res  => (
+          {
+            x: res.ROLLING_STOP,
+            y: res.TARGET_THICK
+          }
+        )),
+        borderColor: 'rgba(255, 0, 0, 1)',
+        backgroundColor: 'rgba(255, 255, 255, 1)',
+      };
+
+      let chartCrown2 = {
+        label: 'Crown',
+        data: tsc2.map(res  => (
+          {
+            x: res.ROLLING_STOP,
+            y: res.AVG_CROWN
+          }
+        )),
+        borderColor: "#11538C",
+        backgroundColor: 'rgba(255, 255, 255, 1)',
+        hidden: true,
+      };
+
+      let chartWedge2 = {
+        label: 'Wedge',
+        data: tsc2.map(res  => (
+          {
+            x: res.ROLLING_STOP,
+            y: res.AVG_WEDGE
+          }
+        )),
+        borderColor: "#BCA8EF",
+        backgroundColor: 'rgba(255, 255, 255, 1)',
+        hidden: true,
+      };
+
+      let chartFlatness2 = {
+        label: 'Flatnees',
+        data: tsc2.map(res  => (
+          {
+            x: res.ROLLING_STOP,
+            y: res.FLATNEES
+          }
+        )),
+        borderColor: "#00FFFF",
+        backgroundColor: 'rgba(255, 255, 255, 1)',
+        hidden: true,
+      };
+
+      let chartSymHeadFlatness2 = {
+        label: 'Sym Head Flatness',
+        data: tsc2.map(res  => (
+          {
+            x: res.ROLLING_STOP,
+            y: res.SymHeadFlatness
+          }
+        )),
+        borderColor: "#454B1B",
+        backgroundColor: 'rgba(255, 255, 255, 1)',
+        hidden: true,
+      };
+
+      let chartSymBodyFlatness2 = {
+        label: 'Sym Body Flatness',
+        data: tsc2.map(res  => (
+          {
+            x: res.ROLLING_STOP,
+            y: res.SymBodyFlatness
+          }
+        )),
+        borderColor: "#DF60EB",
+        backgroundColor: 'rgba(255, 255, 255, 1)',
+        hidden: true,
+      };
+
+      let chartSymTailFlatness2 = {
+        label: 'Sym Tail Flatness',
+        data: tsc2.map(res  => (
+          {
+            x: res.ROLLING_STOP,
+            y: res.SymTailFlatness
+          }
+        )),
+        borderColor: "#117191",
+        backgroundColor: 'rgba(255, 255, 255, 1)',
+        hidden: true,
+      };
+
+      let chartASymHeadFlatness2 = {
+        label: 'ASym Head Flatness',
+        data: tsc2.map(res  => (
+          {
+            x: res.ROLLING_STOP,
+            y: res.ASymHeadFlatness
+          }
+        )),
+        borderColor: "#E0C837",
+        backgroundColor: 'rgba(255, 255, 255, 1)',
+        hidden: true,
+      };
+
+      let chartASymBodyFlatness2 = {
+        label: 'ASym Body Flatness',
+        data: tsc2.map(res  => (
+          {
+            x: res.ROLLING_STOP,
+            y: res.ASymBodyFlatness
+          }
+        )),
+        borderColor: "#CADE71",
+        backgroundColor: 'rgba(255, 255, 255, 1)',
+        hidden: true,
+      };
+
+      let chartASymTailFlatness2 = {
+        label: 'ASym Tail Flatness',
+        data: tsc2.map(res  => (
+          {
+            x: res.ROLLING_STOP,
+            y: res.ASymTailFlatness
+          }
+        )),
+        borderColor: "#AB483E",
+        backgroundColor: 'rgba(255, 255, 255, 1)',
+        hidden: true,
+      };
 
       this.chartData.datasets = [];
-      this.chartData.datasets.push(chartTargThk, chartCrown, chartWedge, chartFlatness, chartSymHeadFlatness, chartSymBodyFlatness, chartSymTailFlatness, chartASymHeadFlatness, chartASymBodyFlatness, chartASymTailFlatness, chartDSC1, chartDSC2);
+      this.chartData.datasets.push(
+        Name1,
+        chartTargThk1, 
+        chartCrown1, 
+        chartWedge1, 
+        chartFlatness1, 
+        chartSymHeadFlatness1, 
+        chartSymBodyFlatness1, 
+        chartSymTailFlatness1, 
+        chartASymHeadFlatness1, 
+        chartASymBodyFlatness1, 
+        chartASymTailFlatness1, 
+        chartDSC1, 
+        Name2,
+        chartTargThk2,
+        chartCrown2, 
+        chartWedge2, 
+        chartFlatness2, 
+        chartSymHeadFlatness2, 
+        chartSymBodyFlatness2, 
+        chartSymTailFlatness2, 
+        chartASymHeadFlatness2, 
+        chartASymBodyFlatness2, 
+        chartASymTailFlatness2, 
+        chartDSC2,
+        );
       this.load = true;
     },
   },
@@ -614,5 +785,8 @@ export default {
 }
 .view-chart-txt {
   padding-top: 3px;
+}
+.chart {
+  padding: 20px;
 }
 </style>

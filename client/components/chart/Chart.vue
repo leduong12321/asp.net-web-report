@@ -9,7 +9,6 @@ export default {
   },
   watch: {
     'chartData' (to, from) {
-      console.log('abc');
       this.renderChart(this.chartData, this.options)
     }
   },
