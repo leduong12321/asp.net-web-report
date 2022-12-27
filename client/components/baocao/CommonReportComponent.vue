@@ -12,7 +12,7 @@
       </div>
       
       <div class="pl-0 pt-1 fs-13 mb-3 d-flex ">
-        <b-form-select v-model="selectedEquipment" :options="optionsEquipment"></b-form-select>
+        <b-form-select v-if="API_URL.includes('Equipment')" v-model="selectedEquipment" :options="optionsEquipment"></b-form-select>
         <div
           v-b-toggle.sidebar-right
           class="align-items-center pl-0 pt-1 fs-13 search-text ml-3"
