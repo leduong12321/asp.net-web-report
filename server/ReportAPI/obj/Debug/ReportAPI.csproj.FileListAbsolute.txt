@@ -897,3 +897,16 @@ C:\Users\quanb\Downloads\server\server\ReportAPI\obj\Debug\ReportAPI.csproj.Core
 C:\Users\quanb\Downloads\server\server\ReportAPI\obj\Debug\ReportAPI.csproj.CopyComplete
 C:\Users\quanb\Downloads\server\server\ReportAPI\obj\Debug\ReportAPI.dll
 C:\Users\quanb\Downloads\server\server\ReportAPI\obj\Debug\ReportAPI.pdb
+D:\Source_Code\server\ReportAPI\bin\Microsoft.Owin.dll
+D:\Source_Code\server\ReportAPI\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\Source_Code\server\ReportAPI\bin\Microsoft.Owin.Security.dll
+D:\Source_Code\server\ReportAPI\bin\Microsoft.Owin.Security.Jwt.dll
+D:\Source_Code\server\ReportAPI\bin\Microsoft.Owin.Security.OAuth.dll
+D:\Source_Code\server\ReportAPI\bin\Owin.dll
+D:\Source_Code\server\ReportAPI\bin\System.Web.Http.Owin.dll
+D:\Source_Code\server\ReportAPI\bin\Microsoft.Owin.xml
+D:\Source_Code\server\ReportAPI\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\Source_Code\server\ReportAPI\bin\Microsoft.Owin.Security.xml
+D:\Source_Code\server\ReportAPI\bin\Microsoft.Owin.Security.Jwt.xml
+D:\Source_Code\server\ReportAPI\bin\Microsoft.Owin.Security.OAuth.xml
+D:\Source_Code\server\ReportAPI\bin\System.Web.Http.Owin.xml

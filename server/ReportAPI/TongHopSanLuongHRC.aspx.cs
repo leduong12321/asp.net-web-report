@@ -47,55 +47,65 @@ namespace ReportAPI
 
                             DECLARE @ToDate datetime;
 
-
                             SET @FromDate = @FromDay;
-
 
                             SET @ToDate = @ToDay;
 
-
                             SELECT (ROW_NUMBER() OVER (
-                                                       ORDER BY STEEL_GRADE)) AS Sothutu,
-                                   concat(TARGET_THICK, 'x', FORMAT(CAST(TARGET_WIDTH AS DECIMAL(18, 6)), 'g15')) AS SanPham,
-                                   STEEL_GRADE,
-                                   COUNT(STEEL_GRADE) AS SoCuon,
-                                   FORMAT(CAST(SUM(WEIGHT_PDI) AS DECIMAL(18, 6)), '#,###.###', 'en-US') AS TongKhoiLuongPDI,
-                                   FORMAT(CAST(SUM(WEIGHT_MEAS) AS DECIMAL(18, 6)), '#,###.###', 'en-US') AS TongKhoiLuong,
-                                   sum(WEIGHT_MEAS) * 100 /
-                              (SELECT sum(WEIGHT_MEAS)
-                               FROM PM_PIECE_OUTPUT
-                               WHERE STATUS IN ('PRODUCED')
-                                 AND (PIECE_ID not like 'GHOST%'
-                                      OR PIECE_ID = 'GHOST82')
-                                 AND ARCHIVE_DATE >= @FromDate
-                                 AND ARCHIVE_DATE <= @ToDate) AS TiLePhanTram,
+                                                        ORDER BY STEEL_GRADE)) AS Sothutu,
+                                    concat(TARGET_THICK, 'x', FORMAT(CAST(TARGET_WIDTH AS DECIMAL(18, 6)), 'g15')) AS SanPham,
+                                    STEEL_GRADE,
+                                    COUNT(STEEL_GRADE) AS SoCuon,
+                                    FORMAT(CAST(SUM(CASE
+                                                        WHEN WEIGHT_MEAS = '-1' THEN WEIGHT_PDI - 1200
+                                                        ELSE WEIGHT_MEAS
+                                                    END) AS DECIMAL(18, 6)), '#,###.###', 'en-US') AS TongKhoiLuongPDI,
+                                    FORMAT(CAST(SUM(WEIGHT_MEAS) AS DECIMAL(18, 6)), '#,###.###', 'en-US') AS TongKhoiLuong,
+                                    SUM(CASE
+                                            WHEN WEIGHT_MEAS = '-1' THEN WEIGHT_PDI - 1200
+                                            ELSE WEIGHT_MEAS
+                                        END) * 100 /
+                                (SELECT SUM(CASE
+                                                WHEN WEIGHT_MEAS = '-1' THEN WEIGHT_PDI - 1200
+                                                ELSE WEIGHT_MEAS
+                                            END)
+                                FROM PM_PIECE_OUTPUT
+                                WHERE STATUS IN ('PRODUCED')
+                                    AND (PIECE_ID not like 'GHOST%'
+                                        OR PIECE_ID = 'GHOST82')
+                                    AND ARCHIVE_DATE >= @FromDate
+                                    AND ARCHIVE_DATE <= @ToDate) AS TiLePhanTram,
 
-                              (SELECT FORMAT(CAST(SUM(WEIGHT_PDI) AS DECIMAL(18, 6)), '#,###.###', 'en-US')
-                               FROM PM_PIECE_OUTPUT
-                               WHERE STATUS IN ('PRODUCED')
-                                 AND (PIECE_ID not like 'GHOST%'
-                                      OR PIECE_ID = 'GHOST82')
-                                 AND ARCHIVE_DATE >= @FromDate
-                                 AND ARCHIVE_DATE <= @ToDate) AS TongKhoiLuongSanXuatPDI,
+                                (SELECT FORMAT(CAST(SUM(CASE
+                                                            WHEN WEIGHT_MEAS = '-1' THEN WEIGHT_PDI - 1200
+                                                            ELSE WEIGHT_MEAS
+                                                        END) AS DECIMAL(18, 6)), '#,###.###', 'en-US')
+                                FROM PM_PIECE_OUTPUT
+                                WHERE STATUS IN ('PRODUCED')
+                                    AND (PIECE_ID not like 'GHOST%'
+                                        OR PIECE_ID = 'GHOST82')
+                                    AND ARCHIVE_DATE >= @FromDate
+                                    AND ARCHIVE_DATE <= @ToDate) AS TongKhoiLuongSanXuatPDI,
 
-                              (SELECT FORMAT(CAST(SUM(WEIGHT_MEAS) AS DECIMAL(18, 6)), '#,###.###', 'en-US')
-                               FROM PM_PIECE_OUTPUT
-                               WHERE STATUS IN ('PRODUCED')
-                                 AND (PIECE_ID not like 'GHOST%'
-                                      OR PIECE_ID = 'GHOST82')
-                                 AND ARCHIVE_DATE >= @FromDate
-                                 AND ARCHIVE_DATE <= @ToDate) AS TongKhoiLuongSanXuat
-
+                                (SELECT FORMAT(CAST(SUM(WEIGHT_MEAS) AS DECIMAL(18, 6)), '#,###.###', 'en-US')
+                                FROM PM_PIECE_OUTPUT
+                                WHERE STATUS IN ('PRODUCED')
+                                    AND (PIECE_ID not like 'GHOST%'
+                                        OR PIECE_ID = 'GHOST82')
+                                    AND ARCHIVE_DATE >= @FromDate
+                                    AND ARCHIVE_DATE <= @ToDate) AS TongKhoiLuongSanXuat
                             FROM [dbo].[PM_PIECE_OUTPUT]
                             WHERE STATUS IN ('PRODUCED')
-                              AND (PIECE_ID not like 'GHOST%'
-                                   OR PIECE_ID = 'GHOST82')
-                              AND ARCHIVE_DATE >= @FromDate
-                              AND ARCHIVE_DATE <= @ToDate
+                                AND (PIECE_ID not like 'GHOST%'
+                                    OR PIECE_ID = 'GHOST82')
+                                AND ARCHIVE_DATE >= @FromDate
+                                AND ARCHIVE_DATE <= @ToDate
                             GROUP BY TARGET_THICK,
-                                     TARGET_WIDTH,
-                                     STEEL_GRADE
-                            ORDER BY STEEL_GRADE, SanPham desc";
+                                        TARGET_WIDTH,
+                                        STEEL_GRADE
+                            ORDER BY STEEL_GRADE,
+                                        TARGET_WIDTH DESC,
+                                        TARGET_THICK DESC";
             string connectionString = ConfigurationManager.ConnectionStrings["HSM_HOAPHATConnectionString"].ConnectionString;
             dataSet = new DataSet();
             using (SqlConnection con = new SqlConnection(connectionString))

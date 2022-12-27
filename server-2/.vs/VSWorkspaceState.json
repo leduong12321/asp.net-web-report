@@ -1,0 +1,13 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\ReportAPI",
+    "\\ReportAPI\\Controllers",
+    "\\ReportAPI\\Models",
+    "\\ReportAPI\\Views",
+    "\\ReportAPI\\Views\\ReportDataSet",
+    "\\ReportAPI\\Views\\Reports"
+  ],
+  "SelectedNode": "\\ReportAPI\\Views\\Reports\\Equipment.rdlc",
+  "PreviewInSolutionExplorer": false
+}

@@ -10,13 +10,19 @@
           <span class="view-chart-txt">Xem biểu đồ</span>
         </b-form-checkbox>
       </div>
-      <div
-        v-b-toggle.sidebar-right
-        class="align-items-center pl-0 pt-1 fs-13 mb-3 search-text"
-        @click="(isHide = true), count++"
-      >
-        Tìm kiếm nâng cao
+      
+      <div class="pl-0 pt-1 fs-13 mb-3 d-flex ">
+        <b-form-select v-model="selectedEquipment" :options="optionsEquipment"></b-form-select>
+        <div
+          v-b-toggle.sidebar-right
+          class="align-items-center pl-0 pt-1 fs-13 search-text ml-3"
+          style="min-width: 150px"
+          @click="(isHide = true), count++"
+        >
+          Tìm kiếm nâng cao
+        </div>
       </div>
+      
       <b-sidebar
         v-if="isHide"
         id="sidebar-right"
@@ -129,7 +135,7 @@
 <script>
 import moment from "moment";
 import Chart from "../chart/Chart.vue";
-import { FAKE_DATA} from "../../js/fakeData";
+import { FAKE_DATA } from "../../js/fakeData";
 
 export default {
   name: "common-report-component",
@@ -165,6 +171,24 @@ export default {
         { text: "Tuần trước", value: "last-week" },
         { text: "Ca trước", value: "last-shift" },
         { text: "Tuỳ chỉnh", value: "set-manually" },
+      ],
+      txtType: null,
+      selectedEquipment: 6,
+      optionsEquipment: [
+        // { text: 'All Equipments', value: null },
+        { text: 'BROADPLATES', value: 4 },
+        { text: 'NARROWPLATES', value: 5 },
+        { text: 'MOULDS', value: 6 },
+        { text: 'TUNDISHES', value: 7 },
+        { text: 'SEN', value: 8 },
+        { text: 'SHEARKNIFE', value: 9 },
+        { text: 'SEG0', value: 10 },
+        { text: 'SEGA', value: 11 },
+        { text: 'SEGB', value: 12 },
+        { text: 'SEGC', value: 13 },
+        { text: 'SEGD', value: 14 },
+        { text: 'SEGE', value: 15 },
+        { text: 'VUHZ', value: 16 },
       ],
 
       fakeData: FAKE_DATA,
@@ -246,6 +270,9 @@ export default {
         this.getDataChart();
       }
     },
+    selectedEquipment() {
+      this.handSubmit();
+    }
     // watch: {
     //   '$route'(to, from) {
     //     console.log('to', to);
@@ -333,14 +360,14 @@ export default {
       if (this.fromDay > this.toDay) {
         return;
       }
-      this.url = this.API_URL + "?from=" + this.fromDay + "&to=" + this.toDay;
+      this.txtType = this.API_URL.includes('Equipment') ? "&type=" + this.selectedEquipment : '';
+      this.url = this.API_URL + "?from=" + this.fromDay + "&to=" + this.toDay + this.txtType;
       this.checked = false;
       // this.isHideTextShowChart = true;
       this.countChecked = 0;
     },
     async getDataChart() {
       const {data} = await this.$axios.get("/api/baocaosanxuat/get?from=" + this.fromDay + "&to=" + this.toDay);
-      
       if(data) {
         let tsc1 = data.filter(res => res.SLAB_ID.charAt() == '1');
         let tsc2 = data.filter(res => res.SLAB_ID.charAt() == '2');

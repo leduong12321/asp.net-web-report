@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="ChatLuongThanhPhamHRCDataSet" targetNamespace="http://tempuri.org/ChatLuongThanhPhamHRCDataSet.xsd" xmlns:mstns="http://tempuri.org/ChatLuongThanhPhamHRCDataSet.xsd" xmlns="http://tempuri.org/ChatLuongThanhPhamHRCDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="ChatLuongThanhPhamHRCDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="ChatLuongThanhPhamHRCDataSet" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="ChatLuongThanhPhamHRCDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="ChatLuongThanhPhamHRCDataTable" msprop:Generator_RowClassName="ChatLuongThanhPhamHRCDataTableRow" msprop:Generator_RowEvHandlerName="ChatLuongThanhPhamHRCDataTableRowChangeEventHandler" msprop:Generator_RowDeletedName="ChatLuongThanhPhamHRCDataTableRowDeleted" msprop:Generator_RowDeletingName="ChatLuongThanhPhamHRCDataTableRowDeleting" msprop:Generator_RowEvArgName="ChatLuongThanhPhamHRCDataTableRowChangeEvent" msprop:Generator_TablePropName="ChatLuongThanhPhamHRCDataTable" msprop:Generator_RowChangedName="ChatLuongThanhPhamHRCDataTableRowChanged" msprop:Generator_UserTableName="ChatLuongThanhPhamHRCDataTable" msprop:Generator_RowChangingName="ChatLuongThanhPhamHRCDataTableRowChanging" msprop:Generator_TableClassName="ChatLuongThanhPhamHRCDataTableDataTable" msprop:Generator_TableVarName="tableChatLuongThanhPhamHRCDataTable">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ARCHIVE_DATE" msprop:Generator_UserColumnName="ARCHIVE_DATE" msprop:Generator_ColumnPropNameInTable="ARCHIVE_DATEColumn" msprop:Generator_ColumnPropNameInRow="ARCHIVE_DATE" msprop:Generator_ColumnVarNameInTable="columnARCHIVE_DATE" type="xs:string" minOccurs="0" />
+              <xs:element name="CA" msprop:Generator_UserColumnName="CA" msprop:Generator_ColumnPropNameInTable="CAColumn" msprop:Generator_ColumnPropNameInRow="CA" msprop:Generator_ColumnVarNameInTable="columnCA" type="xs:string" minOccurs="0" />
+              <xs:element name="SanPham" msprop:Generator_UserColumnName="SanPham" msprop:Generator_ColumnPropNameInTable="SanPhamColumn" msprop:Generator_ColumnPropNameInRow="SanPham" msprop:Generator_ColumnVarNameInTable="columnSanPham" type="xs:string" minOccurs="0" />
+              <xs:element name="Sothutu" msprop:Generator_UserColumnName="Sothutu" msprop:Generator_ColumnPropNameInTable="SothutuColumn" msprop:Generator_ColumnPropNameInRow="Sothutu" msprop:Generator_ColumnVarNameInTable="columnSothutu" type="xs:long" minOccurs="0" />
+              <xs:element name="TARGET_THICK" msprop:Generator_UserColumnName="TARGET_THICK" msprop:Generator_ColumnPropNameInTable="TARGET_THICKColumn" msprop:Generator_ColumnPropNameInRow="TARGET_THICK" msprop:Generator_ColumnVarNameInTable="columnTARGET_THICK" type="xs:double" minOccurs="0" />
+              <xs:element name="TASK_SLAB" msprop:Generator_UserColumnName="TASK_SLAB" msprop:Generator_ColumnPropNameInTable="TASK_SLABColumn" msprop:Generator_ColumnPropNameInRow="TASK_SLAB" msprop:Generator_ColumnVarNameInTable="columnTASK_SLAB" type="xs:decimal" minOccurs="0" />
+              <xs:element name="SLAB_ID" msprop:Generator_UserColumnName="SLAB_ID" msprop:Generator_ColumnPropNameInTable="SLAB_IDColumn" msprop:Generator_ColumnPropNameInRow="SLAB_ID" msprop:Generator_ColumnVarNameInTable="columnSLAB_ID" type="xs:string" minOccurs="0" />
+              <xs:element name="STEEL_GRADE" msprop:Generator_UserColumnName="STEEL_GRADE" msprop:Generator_ColumnPropNameInTable="STEEL_GRADEColumn" msprop:Generator_ColumnPropNameInRow="STEEL_GRADE" msprop:Generator_ColumnVarNameInTable="columnSTEEL_GRADE" type="xs:string" minOccurs="0" />
+              <xs:element name="DSC2_RAMP1" msprop:Generator_UserColumnName="DSC2_RAMP1" msprop:Generator_ColumnPropNameInTable="DSC2_RAMP1Column" msprop:Generator_ColumnPropNameInRow="DSC2_RAMP1" msprop:Generator_ColumnVarNameInTable="columnDSC2_RAMP1" type="xs:double" minOccurs="0" />
+              <xs:element name="DSC1_RAMP1" msprop:Generator_UserColumnName="DSC1_RAMP1" msprop:Generator_ColumnPropNameInTable="DSC1_RAMP1Column" msprop:Generator_ColumnPropNameInRow="DSC1_RAMP1" msprop:Generator_ColumnVarNameInTable="columnDSC1_RAMP1" type="xs:double" minOccurs="0" />
+              <xs:element name="ROLL_WEIGHT_H1" msprop:Generator_ColumnPropNameInRow="ROLL_WEIGHT_H1" msprop:Generator_ColumnPropNameInTable="ROLL_WEIGHT_H1Column" msprop:Generator_ColumnVarNameInTable="columnROLL_WEIGHT_H1" msprop:Generator_UserColumnName="ROLL_WEIGHT_H1" type="xs:string" minOccurs="0" />
+              <xs:element name="ROLL_WEIGHT_H2" msprop:Generator_ColumnPropNameInRow="ROLL_WEIGHT_H2" msprop:Generator_ColumnPropNameInTable="ROLL_WEIGHT_H2Column" msprop:Generator_ColumnVarNameInTable="columnROLL_WEIGHT_H2" msprop:Generator_UserColumnName="ROLL_WEIGHT_H2" type="xs:string" minOccurs="0" />
+              <xs:element name="ROLL_WEIGHT_F1" msprop:Generator_ColumnPropNameInRow="ROLL_WEIGHT_F1" msprop:Generator_ColumnPropNameInTable="ROLL_WEIGHT_F1Column" msprop:Generator_ColumnVarNameInTable="columnROLL_WEIGHT_F1" msprop:Generator_UserColumnName="ROLL_WEIGHT_F1" type="xs:string" minOccurs="0" />
+              <xs:element name="ROLL_WEIGHT_F2" msprop:Generator_ColumnPropNameInRow="ROLL_WEIGHT_F2" msprop:Generator_ColumnPropNameInTable="ROLL_WEIGHT_F2Column" msprop:Generator_ColumnVarNameInTable="columnROLL_WEIGHT_F2" msprop:Generator_UserColumnName="ROLL_WEIGHT_F2" type="xs:string" minOccurs="0" />
+              <xs:element name="ROLL_WEIGHT_F3" msprop:Generator_ColumnPropNameInRow="ROLL_WEIGHT_F3" msprop:Generator_ColumnPropNameInTable="ROLL_WEIGHT_F3Column" msprop:Generator_ColumnVarNameInTable="columnROLL_WEIGHT_F3" msprop:Generator_UserColumnName="ROLL_WEIGHT_F3" type="xs:string" minOccurs="0" />
+              <xs:element name="ROLL_WEIGHT_F4" msprop:Generator_ColumnPropNameInRow="ROLL_WEIGHT_F4" msprop:Generator_ColumnPropNameInTable="ROLL_WEIGHT_F4Column" msprop:Generator_ColumnVarNameInTable="columnROLL_WEIGHT_F4" msprop:Generator_UserColumnName="ROLL_WEIGHT_F4" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -166,8 +166,36 @@ export default {
           icon: "bx bxs-report",
           name: "Báo cáo",
           url: "ID-01-BaoCao",
-          role: [0, 1, 2],
+          role: [0, 1, 2, 3],
           subMenus: [
+            {
+              icon: "bx bx-folder-plus",
+              name: "Khu vực Đúc",
+              url: "ID-02-TSC1",
+              role: [0, 3],
+              subChildMenu: [
+                {
+                  icon: "",
+                  name: "Tình trạng thiết bị",
+                  url: "/baocao/tsc1/equipment",
+                  role: [0, 3],
+                }
+              ],
+            },
+            {
+              icon: "bx bx-folder-plus",
+              name: "Khu vực Lò",
+              url: "ID-02-LF",
+              role: [0, 4],
+              subChildMenu: [
+                {
+                  icon: "",
+                  name: "Báo cáo LF",
+                  url: "/baocao/lf",
+                  role: [0, 1],
+                },
+              ],
+            },
             {
               icon: "bx bx-folder-plus",
               name: "Khu vực Cán",
@@ -203,34 +231,6 @@ export default {
                   name: "Thay trục WR",
                   url: "/baocao/thay-truc-wr",
                   role: [0, 2],
-                },
-              ],
-            },
-            {
-              icon: "bx bx-folder-plus",
-              name: "Khu vực Đúc",
-              url: "ID-02-TSC1",
-              role: [0, 3],
-              subChildMenu: [
-                {
-                  icon: "",
-                  name: "Báo cáo TSC",
-                  url: "/baocao/tsc",
-                  role: [0, 1],
-                },
-              ],
-            },
-            {
-              icon: "bx bx-folder-plus",
-              name: "Khu vực Lò",
-              url: "ID-02-LF",
-              role: [0, 3],
-              subChildMenu: [
-                {
-                  icon: "",
-                  name: "Báo cáo LF",
-                  url: "/baocao/lf",
-                  role: [0, 1],
                 },
               ],
             },

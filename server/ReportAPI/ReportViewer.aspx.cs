@@ -16,7 +16,6 @@ namespace ReportAPI
         private dynamic toValue = null;
         protected void Page_Load(object sender, EventArgs e)
         {
-
             if (!Page.IsPostBack)
             {
                 try
@@ -95,6 +94,9 @@ namespace ReportAPI
 								 FROM [HSM_HOAPHAT].[dbo].[SC_MEASURE_DEVICE]
 								 WHERE PIECE_ID = A.PIECE_ID
 									AND DEVICE_ID = 'PYR5') AS TEMP_DWC,
+
+                                F.TARGET_EOR_TEMP AS TARGET_EOR_TEMP,
+                                F.TARGET_ROT_TEMP AS TARGET_ROT_TEMP,
 
                                 CAST(ROUND(E.AVG_VALUE, 2) AS FLOAT) AS FLATNEES,
                                 CAST(ROUND(E.AVG_HEAD, 2) AS FLOAT) AS SymHeadFlatness,

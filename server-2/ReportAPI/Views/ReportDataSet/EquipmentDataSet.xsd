@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="EquipmentDataSet" targetNamespace="http://tempuri.org/EquipmentDataSet.xsd" xmlns:mstns="http://tempuri.org/EquipmentDataSet.xsd" xmlns="http://tempuri.org/EquipmentDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="EquipmentDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_UserDSName="EquipmentDataSet" msprop:Generator_DataSetName="EquipmentDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="EquipmentDataTable" msprop:Generator_RowEvHandlerName="EquipmentDataTableRowChangeEventHandler" msprop:Generator_RowDeletedName="EquipmentDataTableRowDeleted" msprop:Generator_RowDeletingName="EquipmentDataTableRowDeleting" msprop:Generator_RowEvArgName="EquipmentDataTableRowChangeEvent" msprop:Generator_TablePropName="EquipmentDataTable" msprop:Generator_RowChangedName="EquipmentDataTableRowChanged" msprop:Generator_RowChangingName="EquipmentDataTableRowChanging" msprop:Generator_TableClassName="EquipmentDataTableDataTable" msprop:Generator_RowClassName="EquipmentDataTableRow" msprop:Generator_TableVarName="tableEquipmentDataTable" msprop:Generator_UserTableName="EquipmentDataTable">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="EQUIPMENT_ID" msprop:Generator_ColumnPropNameInRow="EQUIPMENT_ID" msprop:Generator_ColumnPropNameInTable="EQUIPMENT_IDColumn" msprop:Generator_ColumnVarNameInTable="columnEQUIPMENT_ID" msprop:Generator_UserColumnName="EQUIPMENT_ID" type="xs:string" minOccurs="0" />
+              <xs:element name="EQUIPMENT_NAME" msprop:Generator_ColumnPropNameInRow="EQUIPMENT_NAME" msprop:Generator_ColumnPropNameInTable="EQUIPMENT_NAMEColumn" msprop:Generator_ColumnVarNameInTable="columnEQUIPMENT_NAME" msprop:Generator_UserColumnName="EQUIPMENT_NAME" type="xs:string" minOccurs="0" />
+              <xs:element name="NOTE" msprop:Generator_ColumnPropNameInRow="NOTE" msprop:Generator_ColumnPropNameInTable="NOTEColumn" msprop:Generator_ColumnVarNameInTable="columnNOTE" msprop:Generator_UserColumnName="NOTE" type="xs:string" minOccurs="0" />
+              <xs:element name="VENDOR" msprop:Generator_ColumnPropNameInRow="VENDOR" msprop:Generator_ColumnPropNameInTable="VENDORColumn" msprop:Generator_ColumnVarNameInTable="columnVENDOR" msprop:Generator_UserColumnName="VENDOR" type="xs:string" minOccurs="0" />
+              <xs:element name="TSC_NO" msprop:Generator_ColumnPropNameInRow="TSC_NO" msprop:Generator_ColumnPropNameInTable="TSC_NOColumn" msprop:Generator_ColumnVarNameInTable="columnTSC_NO" msprop:Generator_UserColumnName="TSC_NO" type="xs:string" minOccurs="0" />
+              <xs:element name="PARENT_NAME" msprop:Generator_ColumnPropNameInRow="PARENT_NAME" msprop:Generator_ColumnPropNameInTable="PARENT_NAMEColumn" msprop:Generator_ColumnVarNameInTable="columnPARENT_NAME" msprop:Generator_UserColumnName="PARENT_NAME" type="xs:string" minOccurs="0" />
+              <xs:element name="WORK_NAME" msprop:Generator_ColumnPropNameInRow="WORK_NAME" msprop:Generator_ColumnPropNameInTable="WORK_NAMEColumn" msprop:Generator_ColumnVarNameInTable="columnWORK_NAME" msprop:Generator_UserColumnName="WORK_NAME" type="xs:string" minOccurs="0" />
+              <xs:element name="MOVEMENT_DATE" msprop:Generator_ColumnPropNameInRow="MOVEMENT_DATE" msprop:Generator_ColumnPropNameInTable="MOVEMENT_DATEColumn" msprop:Generator_ColumnVarNameInTable="columnMOVEMENT_DATE" msprop:Generator_UserColumnName="MOVEMENT_DATE" type="xs:string" minOccurs="0" />
+              <xs:element name="LIFE_FROM_NEW" msprop:Generator_ColumnPropNameInRow="LIFE_FROM_NEW" msprop:Generator_ColumnPropNameInTable="LIFE_FROM_NEWColumn" msprop:Generator_ColumnVarNameInTable="columnLIFE_FROM_NEW" msprop:Generator_UserColumnName="LIFE_FROM_NEW" type="xs:string" minOccurs="0" />
+              <xs:element name="LIFE_FROM_RENEW" msprop:Generator_ColumnPropNameInRow="LIFE_FROM_RENEW" msprop:Generator_ColumnPropNameInTable="LIFE_FROM_RENEWColumn" msprop:Generator_ColumnVarNameInTable="columnLIFE_FROM_RENEW" msprop:Generator_UserColumnName="LIFE_FROM_RENEW" type="xs:string" minOccurs="0" />
+              <xs:element name="PRODUCTS" msprop:Generator_ColumnPropNameInRow="PRODUCTS" msprop:Generator_ColumnPropNameInTable="PRODUCTSColumn" msprop:Generator_ColumnVarNameInTable="columnPRODUCTS" msprop:Generator_UserColumnName="PRODUCTS" type="xs:string" minOccurs="0" />
+              <xs:element name="T_PRODUCTS" msprop:Generator_ColumnPropNameInRow="T_PRODUCTS" msprop:Generator_ColumnPropNameInTable="T_PRODUCTSColumn" msprop:Generator_ColumnVarNameInTable="columnT_PRODUCTS" msprop:Generator_UserColumnName="T_PRODUCTS" type="xs:string" minOccurs="0" />
+              <xs:element name="RENEW_CYCLE_COUNT" msprop:Generator_ColumnPropNameInRow="RENEW_CYCLE_COUNT" msprop:Generator_ColumnPropNameInTable="RENEW_CYCLE_COUNTColumn" msprop:Generator_ColumnVarNameInTable="columnRENEW_CYCLE_COUNT" msprop:Generator_UserColumnName="RENEW_CYCLE_COUNT" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
