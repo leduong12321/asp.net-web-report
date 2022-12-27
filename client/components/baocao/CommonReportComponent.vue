@@ -11,7 +11,7 @@
         </b-form-checkbox>
       </div>
       
-      <div class="pl-0 pt-1 fs-13 mb-3 d-flex ">
+      <div class="pl-0 pt-1 fs-13 mb-3 d-flex justify-content-center">
         <b-form-select v-model="selectedEquipment" :options="optionsEquipment"></b-form-select>
         <div
           v-b-toggle.sidebar-right
