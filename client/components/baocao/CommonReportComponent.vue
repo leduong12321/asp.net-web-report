@@ -35,29 +35,15 @@
         <template header-close>
           <div class="p-3 body-head">
             <b-form-group label="Chọn thời gian" v-slot="{ ariaDescribedby }">
-              <b-form-radio-group
-                v-model="selected"
-                :options="options"
-                :aria-describedby="ariaDescribedby"
-                name="plain-stacked"
-                plain
-                stacked
-              ></b-form-radio-group>
+              <b-form-radio-group v-model="selected" :options="options" :aria-describedby="ariaDescribedby"
+                name="plain-stacked" plain stacked></b-form-radio-group>
             </b-form-group>
 
             <div class="pr-0" v-if="isManually">
               <div class="mr-2 text-date mb-1">Ngày bắt đầu:</div>
-              <date-picker
-                v-model="fromDay"
-                type="datetime"
-                placeholder="Ngày bắt đầu"
-                value-type="timestamp"
-                :show-time-panel="showTimePanel"
-                @close="handleOpenChange"
-                format="DD-MM-YYYY    HH:mm"
-                :class="checkError"
-                class="date-ui mb-2"
-              >
+              <date-picker v-model="fromDay" type="datetime" placeholder="Ngày bắt đầu" value-type="timestamp"
+                :show-time-panel="showTimePanel" @close="handleOpenChange" format="DD-MM-YYYY    HH:mm"
+                :class="checkError" class="date-ui mb-2">
                 <template v-slot:footer>
                   <button class="mx-btn mx-btn-text" @click="toggleTimePanel">
                     {{ showTimePanel ? "Chọn ngày" : "Chọn thời gian" }}
@@ -65,17 +51,9 @@
                 </template>
               </date-picker>
               <div class="mr-2 text-date mb-1">Ngày kết thúc:</div>
-              <date-picker
-                v-model="toDay"
-                type="datetime"
-                placeholder="Ngày kết thúc"
-                value-type="timestamp"
-                :show-time-panel="showTimePanel"
-                @close="handleOpenChange"
-                format="DD-MM-YYYY    HH:mm"
-                :class="checkError"
-                class="date-ui mb-2"
-              >
+              <date-picker v-model="toDay" type="datetime" placeholder="Ngày kết thúc" value-type="timestamp"
+                :show-time-panel="showTimePanel" @close="handleOpenChange" format="DD-MM-YYYY    HH:mm"
+                :class="checkError" class="date-ui mb-2">
                 <template v-slot:footer>
                   <button class="mx-btn mx-btn-text" @click="toggleTimePanel">
                     {{ showTimePanel ? "Chọn ngày" : "Chọn thời gian" }}
@@ -87,34 +65,21 @@
               </p>
             </div>
 
-            <b-button
-              class="mt-4 btn btn-secondary btn-sm btn-search"
-              :disabled="errorInputDate.length > 0"
-              block
-              @click="showTime(), (isHide = false)"
-              >Tìm kiếm</b-button
-            >
+            <b-button class="mt-4 btn btn-secondary btn-sm btn-search" :disabled="errorInputDate.length > 0" block
+              @click="showTime(), (isHide = false)">Tìm kiếm</b-button>
           </div>
         </template>
         <template #footer="{ hide }">
-       <div class="d-flex bg-dark text-light align-items-center px-3 py-2">
-        <strong class="mr-auto">NM.CT QSP</strong>
-        <b-button size="sm" @click="hide">Đóng</b-button>
-       </div>
-      </template>
+          <div class="d-flex bg-dark text-light align-items-center px-3 py-2">
+            <strong class="mr-auto">NM.CT QSP</strong>
+            <b-button size="sm" @click="hide">Đóng</b-button>
+          </div>
+        </template>
       </b-sidebar>
     </div>
-    <div :class="{'hidden' : checked}">
-      <iframe
-      id="iframe"
-      v-if="url"
-      :src="url"
-      width="100%"
-      height="700px"
-      allowfullscreen
-      style="background-color: white"
-      class="mb-5 iframe"
-    ></iframe>
+    <div :class="{ 'hidden': checked }">
+      <iframe id="iframe" v-if="url" :src="url" width="100%" height="700px" allowfullscreen
+        style="background-color: white" class="mb-5 iframe"></iframe>
     </div>
     <div class="chart-div" v-if="checked">
       <div class="time-chart d-flex">
@@ -123,8 +88,8 @@
           <div>Đến ngày:</div>
         </div>
         <div class="txt-time">
-          <div>{{formatDate(this.fromDay)}}</div>
-          <div>{{formatDate(this.toDay)}}</div>
+          <div>{{ formatDate(this.fromDay) }}</div>
+          <div>{{ formatDate(this.toDay) }}</div>
         </div>
       </div>
       <Chart class="chart" v-if="load" :chartData="chartData" :options="chartOptions" />
@@ -201,19 +166,24 @@ export default {
         responsive: true,
         maintainAspectRatio: false,
         scales: {
-            xAxes: [{
-                type: 'time',
-                position: 'bottom',
-                ticks: {
-                    autoSkip: true,
-                    maxTicksLimit: 10
-                }
-            }],
-            yAxes: [{
-                ticks: {
-                    beginAtZero: true
-                }
-            }]
+          xAxes: [{
+            type: 'time',
+            position: 'bottom',
+            ticks: {
+              autoSkip: true,
+              maxTicksLimit: 10
+            }
+          }],
+          yAxes: [{
+            ticks: {
+              beginAtZero: true
+            }
+          },
+          {
+                id: 'y2',
+                type: 'linear',
+                position: 'right'
+          }],
         },
         legend: {
           position: 'bottom',
@@ -249,7 +219,7 @@ export default {
   },
   watch: {
     selected(value) {
-      if(value == "set-manually") {
+      if (value == "set-manually") {
         this.isManually = true;
         // this.isHideTextShowChart = false;
       } else {
@@ -266,7 +236,7 @@ export default {
     },
     checked() {
       this.countChecked++;
-      if(this.countChecked == 1) {
+      if (this.countChecked == 1) {
         this.getDataChart();
       }
     },
@@ -283,7 +253,7 @@ export default {
   mounted() {
     this.userLocal = JSON.parse(localStorage.getItem('user'));
     this.selected = "this-shift";
-    if(this.title == 'Báo cáo sản xuất') {
+    if (this.title == 'Báo cáo sản xuất') {
       this.isHideTextShowChart = true;
     } else {
       this.isHideTextShowChart = false;
@@ -297,9 +267,9 @@ export default {
     handleOpenChange() {
       this.showTimePanel = false;
     },
-    
+
     showTime() {
-      let curentDate = parseInt((Date.now() - 3600000)/12/3600000)*12*3600000 + 3600000;
+      let curentDate = parseInt((Date.now() - 3600000) / 12 / 3600000) * 12 * 3600000 + 3600000;
       console.log('curentDate', curentDate);
       if (this.selected != "set-manually") {
         switch (this.selected) {
@@ -341,10 +311,10 @@ export default {
             break;
           case "this-shift":
             this.fromDay = curentDate;
-            this.toDay = curentDate + 12*3600*1000 - 1;
+            this.toDay = curentDate + 12 * 3600 * 1000 - 1;
             break;
           case "last-shift":
-            this.fromDay = curentDate - 12*3600*1000;
+            this.fromDay = curentDate - 12 * 3600 * 1000;
             this.toDay = curentDate - 1;
             break;
           default:
@@ -367,8 +337,9 @@ export default {
       this.countChecked = 0;
     },
     async getDataChart() {
-      const {data} = await this.$axios.get("/api/baocaosanxuat/get?from=" + this.fromDay + "&to=" + this.toDay);
-      if(data) {
+      const { data } = await this.$axios.get("/api/baocaosanxuat/get?from=" + this.fromDay + "&to=" + this.toDay);
+
+      if (data) {
         let tsc1 = data.filter(res => res.SLAB_ID.charAt() == '1');
         let tsc2 = data.filter(res => res.SLAB_ID.charAt() == '2');
         this.changeDataChart(tsc1, tsc2);
@@ -382,19 +353,20 @@ export default {
       };
       let chartTargThk1 = {
         label: 'Target Thick',
-        data: tsc1.map(res  => (
+        data: tsc1.map(res => (
           {
             x: res.ROLLING_STOP,
             y: res.TARGET_THICK
           }
         )),
+        yAxisID: 'y2',
         borderColor: "#FF0000",
         backgroundColor: "#FF0000",
       };
 
       let chartCrown1 = {
         label: 'Crown',
-        data: tsc1.map(res  => (
+        data: tsc1.map(res => (
           {
             x: res.ROLLING_STOP,
             y: res.AVG_CROWN
@@ -407,7 +379,7 @@ export default {
 
       let chartWedge1 = {
         label: 'Wedge',
-        data: tsc1.map(res  => (
+        data: tsc1.map(res => (
           {
             x: res.ROLLING_STOP,
             y: res.AVG_WEDGE
@@ -420,7 +392,7 @@ export default {
 
       let chartFlatness1 = {
         label: 'Flatnees',
-        data: tsc1.map(res  => (
+        data: tsc1.map(res => (
           {
             x: res.ROLLING_STOP,
             y: res.FLATNEES
@@ -433,7 +405,7 @@ export default {
 
       let chartSymHeadFlatness1 = {
         label: 'Sym Head Flatness',
-        data: tsc1.map(res  => (
+        data: tsc1.map(res => (
           {
             x: res.ROLLING_STOP,
             y: res.SymHeadFlatness
@@ -446,7 +418,7 @@ export default {
 
       let chartSymBodyFlatness1 = {
         label: 'Sym Body Flatness',
-        data: tsc1.map(res  => (
+        data: tsc1.map(res => (
           {
             x: res.ROLLING_STOP,
             y: res.SymBodyFlatness
@@ -459,7 +431,7 @@ export default {
 
       let chartSymTailFlatness1 = {
         label: 'Sym Tail Flatness',
-        data: tsc1.map(res  => (
+        data: tsc1.map(res => (
           {
             x: res.ROLLING_STOP,
             y: res.SymTailFlatness
@@ -472,7 +444,7 @@ export default {
 
       let chartASymHeadFlatness1 = {
         label: 'ASym Head Flatness',
-        data: tsc1.map(res  => (
+        data: tsc1.map(res => (
           {
             x: res.ROLLING_STOP,
             y: res.ASymHeadFlatness
@@ -485,7 +457,7 @@ export default {
 
       let chartASymBodyFlatness1 = {
         label: 'ASym Body Flatness',
-        data: tsc1.map(res  => (
+        data: tsc1.map(res => (
           {
             x: res.ROLLING_STOP,
             y: res.ASymBodyFlatness
@@ -498,7 +470,7 @@ export default {
 
       let chartASymTailFlatness1 = {
         label: 'ASym Tail Flatness',
-        data: tsc1.map(res  => (
+        data: tsc1.map(res => (
           {
             x: res.ROLLING_STOP,
             y: res.ASymTailFlatness
@@ -511,7 +483,7 @@ export default {
 
       let chartDSC1 = {
         label: 'DSC1 (bar)',
-        data: tsc1.map(res  => (
+        data: tsc1.map(res => (
           {
             x: res.ROLLING_STOP,
             y: res.DSC1_RAMP1
@@ -529,7 +501,7 @@ export default {
 
       let chartDSC2 = {
         label: 'DSC2 (bar)',
-        data: tsc1.map(res  => (
+        data: tsc1.map(res => (
           {
             x: res.ROLLING_STOP,
             y: res.DSC2_RAMP1
@@ -542,7 +514,7 @@ export default {
       // TSC 2
       let chartTargThk2 = {
         label: 'Target Thick',
-        data: tsc2.map(res  => (
+        data: tsc2.map(res => (
           {
             x: res.ROLLING_STOP,
             y: res.TARGET_THICK
@@ -554,7 +526,7 @@ export default {
 
       let chartCrown2 = {
         label: 'Crown',
-        data: tsc2.map(res  => (
+        data: tsc2.map(res => (
           {
             x: res.ROLLING_STOP,
             y: res.AVG_CROWN
@@ -567,7 +539,7 @@ export default {
 
       let chartWedge2 = {
         label: 'Wedge',
-        data: tsc2.map(res  => (
+        data: tsc2.map(res => (
           {
             x: res.ROLLING_STOP,
             y: res.AVG_WEDGE
@@ -580,7 +552,7 @@ export default {
 
       let chartFlatness2 = {
         label: 'Flatnees',
-        data: tsc2.map(res  => (
+        data: tsc2.map(res => (
           {
             x: res.ROLLING_STOP,
             y: res.FLATNEES
@@ -593,7 +565,7 @@ export default {
 
       let chartSymHeadFlatness2 = {
         label: 'Sym Head Flatness',
-        data: tsc2.map(res  => (
+        data: tsc2.map(res => (
           {
             x: res.ROLLING_STOP,
             y: res.SymHeadFlatness
@@ -606,7 +578,7 @@ export default {
 
       let chartSymBodyFlatness2 = {
         label: 'Sym Body Flatness',
-        data: tsc2.map(res  => (
+        data: tsc2.map(res => (
           {
             x: res.ROLLING_STOP,
             y: res.SymBodyFlatness
@@ -619,7 +591,7 @@ export default {
 
       let chartSymTailFlatness2 = {
         label: 'Sym Tail Flatness',
-        data: tsc2.map(res  => (
+        data: tsc2.map(res => (
           {
             x: res.ROLLING_STOP,
             y: res.SymTailFlatness
@@ -632,7 +604,7 @@ export default {
 
       let chartASymHeadFlatness2 = {
         label: 'ASym Head Flatness',
-        data: tsc2.map(res  => (
+        data: tsc2.map(res => (
           {
             x: res.ROLLING_STOP,
             y: res.ASymHeadFlatness
@@ -645,7 +617,7 @@ export default {
 
       let chartASymBodyFlatness2 = {
         label: 'ASym Body Flatness',
-        data: tsc2.map(res  => (
+        data: tsc2.map(res => (
           {
             x: res.ROLLING_STOP,
             y: res.ASymBodyFlatness
@@ -658,7 +630,7 @@ export default {
 
       let chartASymTailFlatness2 = {
         label: 'ASym Tail Flatness',
-        data: tsc2.map(res  => (
+        data: tsc2.map(res => (
           {
             x: res.ROLLING_STOP,
             y: res.ASymTailFlatness
@@ -672,30 +644,30 @@ export default {
       this.chartData.datasets = [];
       this.chartData.datasets.push(
         Name1,
-        chartTargThk1, 
-        chartCrown1, 
-        chartWedge1, 
-        chartFlatness1, 
-        chartSymHeadFlatness1, 
-        chartSymBodyFlatness1, 
-        chartSymTailFlatness1, 
-        chartASymHeadFlatness1, 
-        chartASymBodyFlatness1, 
-        chartASymTailFlatness1, 
-        chartDSC1, 
+        chartTargThk1,
+        chartCrown1,
+        chartWedge1,
+        chartFlatness1,
+        chartSymHeadFlatness1,
+        chartSymBodyFlatness1,
+        chartSymTailFlatness1,
+        chartASymHeadFlatness1,
+        chartASymBodyFlatness1,
+        chartASymTailFlatness1,
+        chartDSC1,
         Name2,
         chartTargThk2,
-        chartCrown2, 
-        chartWedge2, 
-        chartFlatness2, 
-        chartSymHeadFlatness2, 
-        chartSymBodyFlatness2, 
-        chartSymTailFlatness2, 
-        chartASymHeadFlatness2, 
-        chartASymBodyFlatness2, 
-        chartASymTailFlatness2, 
+        chartCrown2,
+        chartWedge2,
+        chartFlatness2,
+        chartSymHeadFlatness2,
+        chartSymBodyFlatness2,
+        chartSymTailFlatness2,
+        chartASymHeadFlatness2,
+        chartASymBodyFlatness2,
+        chartASymTailFlatness2,
         chartDSC2,
-        );
+      );
       this.load = true;
     },
   },
@@ -708,10 +680,12 @@ export default {
   font-size: 13px;
   text-align: left;
 }
+
 .date-ui {
   input {
     border: 1px solid #555;
   }
+
   &.error-input-date {
     input {
       border: 1px solid #cc0033;
@@ -719,100 +693,124 @@ export default {
     }
   }
 }
+
 .text-date {
   font-size: 13px;
 }
+
 .search-text {
   text-decoration: underline;
   font-style: italic;
   font-weight: bold;
 }
+
 .submit {
   color: #11101d;
 }
+
 .iframe {
   border: 0px;
   min-height: 800px;
   max-height: calc(100% - 100px);
 }
+
 .date-ui {
   .mx-input-wrapper {
     width: 250px;
   }
+
   input {
     height: 28px;
   }
 }
+
 .mx-datepicker-popup {
   left: unset !important;
   right: 54px;
 }
+
 .sidebar-right {
   header {
-    background-color: #343a40 ;
+    background-color: #343a40;
     height: 60px;
     color: white;
     box-shadow: 0 10px 30px 0 rgb(47 60 74 / 15%);
+
     button {
       opacity: 1;
     }
+
     svg {
       color: white;
       font-size: 1.8rem;
     }
+
     strong {
       font-size: 1rem;
       font-weight: inherit;
     }
   }
+
   .b-sidebar-body {
     margin-top: 10px;
+
     .body-head {
       legend {
         font-size: 14px;
       }
     }
   }
+
   .form-check {
     float: left;
     width: 50%;
     margin-bottom: 6px;
+
     input,
     label {
       cursor: pointer;
     }
   }
+
   .active {
     color: #fff !important;
     background-color: #28a745 !important;
     border-color: #28a745 !important;
   }
+
   .btn-search {
     width: 50%;
     font-size: 14px;
   }
 }
+
 .chart-div {
   padding-bottom: 100px;
   background-color: white;
 }
+
 .hidden {
   display: none;
 }
+
 .time-chart {
   font-size: 11px;
   padding: 20px;
   font-style: italic;
+
   .txt-date {
     width: 70px;
   }
+
   .txt-time {
     font-weight: bold;
   }
 }
+
 .view-chart-txt {
   padding-top: 3px;
 }
+
 .chart {
   padding: 20px;
 }

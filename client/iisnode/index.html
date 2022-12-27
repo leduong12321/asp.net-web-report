@@ -1,34 +1,36 @@
 <html>
+
 <head>
     <title>iisnode logs</title>
     <style type="text/css">
-        body
-        {
-            font-family: "Trebuchet MS" , Arial, Helvetica, sans-serif;
+        body {
+            font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
         }
-        table
-        {
+
+        table {
             border-collapse: collapse;
         }
-        td, th
-        {
+
+        td,
+        th {
             border: 1px solid lightgray;
             padding: 3px 7px 2px 7px;
         }
-        th
-        {
+
+        th {
             text-align: left;
             padding-top: 5px;
             padding-bottom: 4px;
             background-color: Gray;
             color: #ffffff;
         }
-        td.stderr
-        {
+
+        td.stderr {
             color: Red;
         }
     </style>
 </head>
+
 <body>
     <table id="logFilesTable">
         <tr>
@@ -50,10 +52,11 @@
         </tr>
     </table>
     <p id="lastUpdated"></p>
+
     <script type="text/javascript">
 
         // this is replaced with actual data at runtime by code in interceptor.js
-        var logFiles = [{"file":"LENOVO-LEGION-21612-stderr-1663554022366.txt","computername":"LENOVO-LEGION","pid":21612,"type":"stderr","created":1663554022366},{"file":"LENOVO-LEGION-2344-stderr-1663554023131.txt","computername":"LENOVO-LEGION","pid":2344,"type":"stderr","created":1663554023131},{"file":"LENOVO-LEGION-5756-stderr-1663554378465.txt","computername":"LENOVO-LEGION","pid":5756,"type":"stderr","created":1663554378465},{"file":"LENOVO-LEGION-5756-stdout-1663554378464.txt","computername":"LENOVO-LEGION","pid":5756,"type":"stdout","created":1663554378464}];
+        var logFiles = [{ "file": "LENOVO-LEGION-21612-stderr-1663554022366.txt", "computername": "LENOVO-LEGION", "pid": 21612, "type": "stderr", "created": 1663554022366 }, { "file": "LENOVO-LEGION-2344-stderr-1663554023131.txt", "computername": "LENOVO-LEGION", "pid": 2344, "type": "stderr", "created": 1663554023131 }, { "file": "LENOVO-LEGION-5756-stderr-1663554378465.txt", "computername": "LENOVO-LEGION", "pid": 5756, "type": "stderr", "created": 1663554378465 }, { "file": "LENOVO-LEGION-5756-stdout-1663554378464.txt", "computername": "LENOVO-LEGION", "pid": 5756, "type": "stdout", "created": 1663554378464 }];
         var lastUpdated = 1663554380190;
         var date = new Date();
 
@@ -82,6 +85,85 @@
             logCell.innerHTML = '<a href="' + logFile.file + '">log</a>';
         };
 
+        anychart.onDocumentReady(function () {
+            // create data set on our data
+            var dataSet = anychart.data.set([
+                ['P1', 96.5, 2040, 1200, 1600],
+                ['P2', 77.1, 1794, 1124, 1724],
+                ['P3', 73.2, 2026, 1006, 1806],
+                ['P4', 61.1, 2341, 921, 1621],
+                ['P5', 70.0, 1800, 1500, 1700],
+                ['P6', 60.7, 1507, 1007, 1907],
+                ['P7', 62.1, 2701, 921, 1821],
+                ['P8', 75.1, 1671, 971, 1671],
+                ['P9', 80.0, 1980, 1080, 1880],
+                ['P10', 54.1, 1041, 1041, 1641],
+                ['P11', 51.3, 813, 1113, 1913],
+                ['P12', 59.1, 691, 1091, 1691]
+            ]);
+
+            // map data for the first series, take x from the zero column and value from the first column of data set
+            var firstSeriesData = dataSet.mapAs({ x: 0, value: 1 });
+
+            // map data for the second series, take x from the zero column and value from the second column of data set
+            var secondSeriesData = dataSet.mapAs({ x: 0, value: 2 });
+
+            // map data for the third series, take x from the zero column and value from the third column of data set
+            var thirdSeriesData = dataSet.mapAs({ x: 0, value: 3 });
+
+            // map data for the fourth series, take x from the zero column and value from the fourth column of data set
+            var fourthSeriesData = dataSet.mapAs({ x: 0, value: 4 });
+
+            // create column chart
+            var chart = anychart.column();
+
+            // turn on chart animation
+            chart.animation(true);
+
+            // set chart title text settings
+            chart.title(
+                'Combination of Stacked Column and Line Chart (Dual Y-Axis)'
+            );
+
+            // force chart scale to stuck series values
+            chart.yScale().stackMode('value');
+
+            // create scale for line series and extraYAxis
+            // it force line series to not stuck with over series
+            var scale = anychart.scales.linear();
+            scale.minimum(0).maximum(100).ticks({ interval: 20 });
+
+            // create extra axis on the right side of chart
+            // and set scale for it
+            var extraYAxis = chart.yAxis(1);
+            extraYAxis.orientation('right').scale(scale);
+            extraYAxis.labels().padding(0, 0, 0, 5);
+
+            // setup axis to append '%' symbol to label values
+            extraYAxis.labels().format('{%Value}%');
+
+            // create second series with mapped data
+            chart.column(secondSeriesData);
+
+            chart.crosshair(true);
+
+            // create line series and set scale for it
+            var lineSeries = chart.line(firstSeriesData);
+            lineSeries.yScale(scale).markers(true);
+
+            // create third series with mapped data
+            chart.column(thirdSeriesData);
+
+            // create fourth series with mapped data
+            chart.column(fourthSeriesData);
+
+            // set container id for the chart
+            chart.container('container');
+
+            // initiate chart drawing
+            chart.draw();
+        });
     </script>
 </body>
+
 </html>

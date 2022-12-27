@@ -1,26 +1,18 @@
-﻿using Microsoft.ReportingServices.Diagnostics.Internal;
-using Microsoft.ReportingServices.ReportProcessing.ReportObjectModel;
-using System;
-using System.Collections.Generic;
-using System.Configuration;
+﻿using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
-using System.Web.UI.WebControls;
-using System.Xml;
 
 namespace ReportAPI.Controllers
 {
-    public class DepartmentController : ApiController
-    {
-        [HttpGet]
-        public HttpResponseMessage Get()
-        {
-            string query = @"
+	public class DepartmentController : ApiController
+	{
+		[HttpGet]
+		public HttpResponseMessage Get()
+		{
+			string query = @"
                             SELECT F.ROLLING_STOP,
 									A.PIECE_ID,
 									A.TARGET_THICK,
@@ -66,21 +58,21 @@ namespace ReportAPI.Controllers
 							ORDER BY F.ROLLING_STOP
                             ";
 
-            DataTable table = new DataTable();
-            string connectionString = ConfigurationManager.ConnectionStrings["HSM_HOAPHATConnectionString"].ConnectionString;
-            using (SqlConnection con = new SqlConnection(connectionString))
-            {
-                con.Open();
-                using (SqlCommand sqlCommand = new SqlCommand(query, con))
-                {
-                    SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(sqlCommand);
+			DataTable table = new DataTable();
+			string connectionString = ConfigurationManager.ConnectionStrings["HSM_HOAPHATConnectionString"].ConnectionString;
+			using (SqlConnection con = new SqlConnection(connectionString))
+			{
+				con.Open();
+				using (SqlCommand sqlCommand = new SqlCommand(query, con))
+				{
+					SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(sqlCommand);
 
-                    sqlCommand.CommandType = CommandType.Text;
-                    sqlDataAdapter.Fill(table);
-                }
-            }
-            return Request.CreateResponse(HttpStatusCode.OK, table);
-        }
+					sqlCommand.CommandType = CommandType.Text;
+					_ = sqlDataAdapter.Fill(table);
+				}
+			}
+			return Request.CreateResponse(HttpStatusCode.OK, table);
+		}
 
-    }
+	}
 }
