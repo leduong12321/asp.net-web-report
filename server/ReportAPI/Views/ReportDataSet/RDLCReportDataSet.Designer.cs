@@ -347,6 +347,10 @@ namespace ReportAPI.Views.ReportDataSet {
             
             private global::System.Data.DataColumn columnTEMP_DWC;
             
+            private global::System.Data.DataColumn columnTARGET_EOR_TEMP;
+            
+            private global::System.Data.DataColumn columnTARGET_ROT_TEMP;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public BaoCaoSanXuatDataTable() {
@@ -654,6 +658,22 @@ namespace ReportAPI.Views.ReportDataSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn TARGET_EOR_TEMPColumn {
+                get {
+                    return this.columnTARGET_EOR_TEMP;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn TARGET_ROT_TEMPColumn {
+                get {
+                    return this.columnTARGET_ROT_TEMP;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -723,7 +743,9 @@ namespace ReportAPI.Views.ReportDataSet {
                         string SymHeadFlatness, 
                         string SymBodyFlatness, 
                         string SymTailFlatness, 
-                        string TEMP_DWC) {
+                        string TEMP_DWC, 
+                        string TARGET_EOR_TEMP, 
+                        string TARGET_ROT_TEMP) {
                 BaoCaoSanXuatRow rowBaoCaoSanXuatRow = ((BaoCaoSanXuatRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         ROLLING_STOP,
@@ -759,7 +781,9 @@ namespace ReportAPI.Views.ReportDataSet {
                         SymHeadFlatness,
                         SymBodyFlatness,
                         SymTailFlatness,
-                        TEMP_DWC};
+                        TEMP_DWC,
+                        TARGET_EOR_TEMP,
+                        TARGET_ROT_TEMP};
                 rowBaoCaoSanXuatRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowBaoCaoSanXuatRow);
                 return rowBaoCaoSanXuatRow;
@@ -816,6 +840,8 @@ namespace ReportAPI.Views.ReportDataSet {
                 this.columnSymBodyFlatness = base.Columns["SymBodyFlatness"];
                 this.columnSymTailFlatness = base.Columns["SymTailFlatness"];
                 this.columnTEMP_DWC = base.Columns["TEMP_DWC"];
+                this.columnTARGET_EOR_TEMP = base.Columns["TARGET_EOR_TEMP"];
+                this.columnTARGET_ROT_TEMP = base.Columns["TARGET_ROT_TEMP"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -889,6 +915,10 @@ namespace ReportAPI.Views.ReportDataSet {
                 base.Columns.Add(this.columnSymTailFlatness);
                 this.columnTEMP_DWC = new global::System.Data.DataColumn("TEMP_DWC", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTEMP_DWC);
+                this.columnTARGET_EOR_TEMP = new global::System.Data.DataColumn("TARGET_EOR_TEMP", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTARGET_EOR_TEMP);
+                this.columnTARGET_ROT_TEMP = new global::System.Data.DataColumn("TARGET_ROT_TEMP", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTARGET_ROT_TEMP);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1575,6 +1605,38 @@ namespace ReportAPI.Views.ReportDataSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string TARGET_EOR_TEMP {
+                get {
+                    try {
+                        return ((string)(this[this.tableBaoCaoSanXuat.TARGET_EOR_TEMPColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'TARGET_EOR_TEMP\' in table \'BaoCaoSanXuat\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableBaoCaoSanXuat.TARGET_EOR_TEMPColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string TARGET_ROT_TEMP {
+                get {
+                    try {
+                        return ((string)(this[this.tableBaoCaoSanXuat.TARGET_ROT_TEMPColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'TARGET_ROT_TEMP\' in table \'BaoCaoSanXuat\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableBaoCaoSanXuat.TARGET_ROT_TEMPColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool IsROLLING_STOPNull() {
                 return this.IsNull(this.tableBaoCaoSanXuat.ROLLING_STOPColumn);
             }
@@ -1979,6 +2041,30 @@ namespace ReportAPI.Views.ReportDataSet {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void SetTEMP_DWCNull() {
                 this[this.tableBaoCaoSanXuat.TEMP_DWCColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsTARGET_EOR_TEMPNull() {
+                return this.IsNull(this.tableBaoCaoSanXuat.TARGET_EOR_TEMPColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetTARGET_EOR_TEMPNull() {
+                this[this.tableBaoCaoSanXuat.TARGET_EOR_TEMPColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsTARGET_ROT_TEMPNull() {
+                return this.IsNull(this.tableBaoCaoSanXuat.TARGET_ROT_TEMPColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetTARGET_ROT_TEMPNull() {
+                this[this.tableBaoCaoSanXuat.TARGET_ROT_TEMPColumn] = global::System.Convert.DBNull;
             }
         }
         

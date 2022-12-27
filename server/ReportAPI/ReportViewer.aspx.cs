@@ -96,6 +96,9 @@ namespace ReportAPI
 								 WHERE PIECE_ID = A.PIECE_ID
 									AND DEVICE_ID = 'PYR5') AS TEMP_DWC,
 
+                                F.TARGET_EOR_TEMP AS TARGET_EOR_TEMP,
+                                F.TARGET_ROT_TEMP AS TARGET_ROT_TEMP,
+
                                 CAST(ROUND(E.AVG_VALUE, 2) AS FLOAT) AS FLATNEES,
                                 CAST(ROUND(E.AVG_HEAD, 2) AS FLOAT) AS SymHeadFlatness,
                                 CAST(ROUND(E.AVG_BODY, 2) AS FLOAT) AS SymBodyFlatness,
