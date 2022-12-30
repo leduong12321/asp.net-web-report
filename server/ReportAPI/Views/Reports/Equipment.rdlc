@@ -17,22 +17,6 @@
         <CommandText>/* Local Query */</CommandText>
       </Query>
       <Fields>
-        <Field Name="EQUIPMENT_ID">
-          <DataField>EQUIPMENT_ID</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="EQUIPMENT_NAME">
-          <DataField>EQUIPMENT_NAME</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="NOTE">
-          <DataField>NOTE</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="VENDOR">
-          <DataField>VENDOR</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
         <Field Name="TSC_NO">
           <DataField>TSC_NO</DataField>
           <rd:TypeName>System.String</rd:TypeName>
@@ -69,8 +53,8 @@
           <DataField>RENEW_CYCLE_COUNT</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="LAST_MOUNT_DATE">
-          <DataField>LAST_MOUNT_DATE</DataField>
+        <Field Name="LAST_DISMOUNT_DATE">
+          <DataField>LAST_DISMOUNT_DATE</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="TOTAL_WEIGHT_NEW">
@@ -79,6 +63,18 @@
         </Field>
         <Field Name="TOTAL_WEIGHT_RENEW">
           <DataField>TOTAL_WEIGHT_RENEW</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="NAME">
+          <DataField>NAME</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="NOTE">
+          <DataField>NOTE</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="VENDOR">
+          <DataField>VENDOR</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
       </Fields>
@@ -872,14 +868,14 @@ Kíp</Value>
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="LAST_MOUNT_DATE">
+                        <Textbox Name="LAST_DISMOUNT_DATE">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!LAST_MOUNT_DATE.Value</Value>
+                                  <Value>=Fields!LAST_DISMOUNT_DATE.Value</Value>
                                   <Style />
                                 </TextRun>
                               </TextRuns>
@@ -888,7 +884,7 @@ Kíp</Value>
                               </Style>
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>LAST_MOUNT_DATE</rd:DefaultName>
+                          <rd:DefaultName>LAST_DISMOUNT_DATE</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -947,10 +943,8 @@ Kíp</Value>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!TOTAL_WEIGHT_NEW.Value.ToString() + " (" + Fields!TOTAL_WEIGHT_RENEW.Value.ToString() + ")"</Value>
-                                  <Style>
-                                    <Format>#,0,.00;(#,0,.00)</Format>
-                                  </Style>
+                                  <Value>=IIF((First(Fields!TOTAL_WEIGHT_RENEW.Value.ToString().Length, "EquipmentDataSet") &gt; 3) , 0 , Fields!TOTAL_WEIGHT_RENEW.Value.ToString().Remove(Fields!TOTAL_WEIGHT_RENEW.Value.ToString().Length - 3))</Value>
+                                  <Style />
                                 </TextRun>
                               </TextRuns>
                               <Style>
@@ -972,6 +966,7 @@ Kíp</Value>
                             <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
+                        <rd:Selected>true</rd:Selected>
                       </CellContents>
                     </TablixCell>
                     <TablixCell>
@@ -1441,14 +1436,14 @@ Kíp</Value>
                   </TablixMembers>
                 </TablixMember>
                 <TablixMember>
-                  <Group Name="EQUIPMENT_NAME">
+                  <Group Name="NAME">
                     <GroupExpressions>
-                      <GroupExpression>=Fields!EQUIPMENT_NAME.Value</GroupExpression>
+                      <GroupExpression>=Fields!NAME.Value</GroupExpression>
                     </GroupExpressions>
                   </Group>
                   <SortExpressions>
                     <SortExpression>
-                      <Value>=Fields!EQUIPMENT_NAME.Value</Value>
+                      <Value>=Fields!NAME.Value</Value>
                     </SortExpression>
                   </SortExpressions>
                   <TablixHeader>
@@ -1461,7 +1456,7 @@ Kíp</Value>
                           <Paragraph>
                             <TextRuns>
                               <TextRun>
-                                <Value>=Runningvalue(Fields!EQUIPMENT_NAME.Value,CountDistinct,"EquipmentDataSet")</Value>
+                                <Value>=Runningvalue(Fields!NAME.Value,CountDistinct,"EquipmentDataSet")</Value>
                                 <Style />
                               </TextRun>
                             </TextRuns>
@@ -1498,7 +1493,7 @@ Kíp</Value>
                               <Paragraph>
                                 <TextRuns>
                                   <TextRun>
-                                    <Value>=Fields!EQUIPMENT_NAME.Value</Value>
+                                    <Value>=Fields!NAME.Value</Value>
                                     <Style />
                                   </TextRun>
                                 </TextRuns>

@@ -279,14 +279,6 @@ namespace ReportAPI.Views.ReportDataSet {
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class EquipmentDataTableDataTable : global::System.Data.TypedTableBase<EquipmentDataTableRow> {
             
-            private global::System.Data.DataColumn columnEQUIPMENT_ID;
-            
-            private global::System.Data.DataColumn columnEQUIPMENT_NAME;
-            
-            private global::System.Data.DataColumn columnNOTE;
-            
-            private global::System.Data.DataColumn columnVENDOR;
-            
             private global::System.Data.DataColumn columnTSC_NO;
             
             private global::System.Data.DataColumn columnWORK_TEAM;
@@ -305,11 +297,17 @@ namespace ReportAPI.Views.ReportDataSet {
             
             private global::System.Data.DataColumn columnRENEW_CYCLE_COUNT;
             
-            private global::System.Data.DataColumn columnLAST_MOUNT_DATE;
+            private global::System.Data.DataColumn columnLAST_DISMOUNT_DATE;
             
             private global::System.Data.DataColumn columnTOTAL_WEIGHT_NEW;
             
             private global::System.Data.DataColumn columnTOTAL_WEIGHT_RENEW;
+            
+            private global::System.Data.DataColumn columnNAME;
+            
+            private global::System.Data.DataColumn columnNOTE;
+            
+            private global::System.Data.DataColumn columnVENDOR;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
@@ -342,38 +340,6 @@ namespace ReportAPI.Views.ReportDataSet {
             protected EquipmentDataTableDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn EQUIPMENT_IDColumn {
-                get {
-                    return this.columnEQUIPMENT_ID;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn EQUIPMENT_NAMEColumn {
-                get {
-                    return this.columnEQUIPMENT_NAME;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn NOTEColumn {
-                get {
-                    return this.columnNOTE;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn VENDORColumn {
-                get {
-                    return this.columnVENDOR;
-                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -450,9 +416,9 @@ namespace ReportAPI.Views.ReportDataSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn LAST_MOUNT_DATEColumn {
+            public global::System.Data.DataColumn LAST_DISMOUNT_DATEColumn {
                 get {
-                    return this.columnLAST_MOUNT_DATE;
+                    return this.columnLAST_DISMOUNT_DATE;
                 }
             }
             
@@ -469,6 +435,30 @@ namespace ReportAPI.Views.ReportDataSet {
             public global::System.Data.DataColumn TOTAL_WEIGHT_RENEWColumn {
                 get {
                     return this.columnTOTAL_WEIGHT_RENEW;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn NAMEColumn {
+                get {
+                    return this.columnNAME;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn NOTEColumn {
+                get {
+                    return this.columnNOTE;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn VENDORColumn {
+                get {
+                    return this.columnVENDOR;
                 }
             }
             
@@ -509,29 +499,9 @@ namespace ReportAPI.Views.ReportDataSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public EquipmentDataTableRow AddEquipmentDataTableRow(
-                        string EQUIPMENT_ID, 
-                        string EQUIPMENT_NAME, 
-                        string NOTE, 
-                        string VENDOR, 
-                        string TSC_NO, 
-                        string WORK_TEAM, 
-                        string MOVEMENT_DATE, 
-                        string TOTAL_LIFE_FROM_NEW, 
-                        string TOTAL_LIFE_FROM_RENEW, 
-                        string PARENT_NAME, 
-                        string INDEX_NUMBER, 
-                        string CHAR_VALUE, 
-                        string RENEW_CYCLE_COUNT, 
-                        string LAST_MOUNT_DATE, 
-                        string TOTAL_WEIGHT_NEW, 
-                        string TOTAL_WEIGHT_RENEW) {
+            public EquipmentDataTableRow AddEquipmentDataTableRow(string TSC_NO, string WORK_TEAM, string MOVEMENT_DATE, string TOTAL_LIFE_FROM_NEW, string TOTAL_LIFE_FROM_RENEW, string PARENT_NAME, string INDEX_NUMBER, string CHAR_VALUE, string RENEW_CYCLE_COUNT, string LAST_DISMOUNT_DATE, string TOTAL_WEIGHT_NEW, string TOTAL_WEIGHT_RENEW, string NAME, string NOTE, string VENDOR) {
                 EquipmentDataTableRow rowEquipmentDataTableRow = ((EquipmentDataTableRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        EQUIPMENT_ID,
-                        EQUIPMENT_NAME,
-                        NOTE,
-                        VENDOR,
                         TSC_NO,
                         WORK_TEAM,
                         MOVEMENT_DATE,
@@ -541,9 +511,12 @@ namespace ReportAPI.Views.ReportDataSet {
                         INDEX_NUMBER,
                         CHAR_VALUE,
                         RENEW_CYCLE_COUNT,
-                        LAST_MOUNT_DATE,
+                        LAST_DISMOUNT_DATE,
                         TOTAL_WEIGHT_NEW,
-                        TOTAL_WEIGHT_RENEW};
+                        TOTAL_WEIGHT_RENEW,
+                        NAME,
+                        NOTE,
+                        VENDOR};
                 rowEquipmentDataTableRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowEquipmentDataTableRow);
                 return rowEquipmentDataTableRow;
@@ -566,10 +539,6 @@ namespace ReportAPI.Views.ReportDataSet {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             internal void InitVars() {
-                this.columnEQUIPMENT_ID = base.Columns["EQUIPMENT_ID"];
-                this.columnEQUIPMENT_NAME = base.Columns["EQUIPMENT_NAME"];
-                this.columnNOTE = base.Columns["NOTE"];
-                this.columnVENDOR = base.Columns["VENDOR"];
                 this.columnTSC_NO = base.Columns["TSC_NO"];
                 this.columnWORK_TEAM = base.Columns["WORK_TEAM"];
                 this.columnMOVEMENT_DATE = base.Columns["MOVEMENT_DATE"];
@@ -579,22 +548,17 @@ namespace ReportAPI.Views.ReportDataSet {
                 this.columnINDEX_NUMBER = base.Columns["INDEX_NUMBER"];
                 this.columnCHAR_VALUE = base.Columns["CHAR_VALUE"];
                 this.columnRENEW_CYCLE_COUNT = base.Columns["RENEW_CYCLE_COUNT"];
-                this.columnLAST_MOUNT_DATE = base.Columns["LAST_MOUNT_DATE"];
+                this.columnLAST_DISMOUNT_DATE = base.Columns["LAST_DISMOUNT_DATE"];
                 this.columnTOTAL_WEIGHT_NEW = base.Columns["TOTAL_WEIGHT_NEW"];
                 this.columnTOTAL_WEIGHT_RENEW = base.Columns["TOTAL_WEIGHT_RENEW"];
+                this.columnNAME = base.Columns["NAME"];
+                this.columnNOTE = base.Columns["NOTE"];
+                this.columnVENDOR = base.Columns["VENDOR"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             private void InitClass() {
-                this.columnEQUIPMENT_ID = new global::System.Data.DataColumn("EQUIPMENT_ID", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnEQUIPMENT_ID);
-                this.columnEQUIPMENT_NAME = new global::System.Data.DataColumn("EQUIPMENT_NAME", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnEQUIPMENT_NAME);
-                this.columnNOTE = new global::System.Data.DataColumn("NOTE", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnNOTE);
-                this.columnVENDOR = new global::System.Data.DataColumn("VENDOR", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnVENDOR);
                 this.columnTSC_NO = new global::System.Data.DataColumn("TSC_NO", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTSC_NO);
                 this.columnWORK_TEAM = new global::System.Data.DataColumn("WORK_TEAM", typeof(string), null, global::System.Data.MappingType.Element);
@@ -613,12 +577,18 @@ namespace ReportAPI.Views.ReportDataSet {
                 base.Columns.Add(this.columnCHAR_VALUE);
                 this.columnRENEW_CYCLE_COUNT = new global::System.Data.DataColumn("RENEW_CYCLE_COUNT", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnRENEW_CYCLE_COUNT);
-                this.columnLAST_MOUNT_DATE = new global::System.Data.DataColumn("LAST_MOUNT_DATE", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnLAST_MOUNT_DATE);
+                this.columnLAST_DISMOUNT_DATE = new global::System.Data.DataColumn("LAST_DISMOUNT_DATE", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnLAST_DISMOUNT_DATE);
                 this.columnTOTAL_WEIGHT_NEW = new global::System.Data.DataColumn("TOTAL_WEIGHT_NEW", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTOTAL_WEIGHT_NEW);
                 this.columnTOTAL_WEIGHT_RENEW = new global::System.Data.DataColumn("TOTAL_WEIGHT_RENEW", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTOTAL_WEIGHT_RENEW);
+                this.columnNAME = new global::System.Data.DataColumn("NAME", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNAME);
+                this.columnNOTE = new global::System.Data.DataColumn("NOTE", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNOTE);
+                this.columnVENDOR = new global::System.Data.DataColumn("VENDOR", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnVENDOR);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -757,70 +727,6 @@ namespace ReportAPI.Views.ReportDataSet {
             internal EquipmentDataTableRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
                 this.tableEquipmentDataTable = ((EquipmentDataTableDataTable)(this.Table));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string EQUIPMENT_ID {
-                get {
-                    try {
-                        return ((string)(this[this.tableEquipmentDataTable.EQUIPMENT_IDColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'EQUIPMENT_ID\' in table \'EquipmentDataTable\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableEquipmentDataTable.EQUIPMENT_IDColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string EQUIPMENT_NAME {
-                get {
-                    try {
-                        return ((string)(this[this.tableEquipmentDataTable.EQUIPMENT_NAMEColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'EQUIPMENT_NAME\' in table \'EquipmentDataTable\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableEquipmentDataTable.EQUIPMENT_NAMEColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string NOTE {
-                get {
-                    try {
-                        return ((string)(this[this.tableEquipmentDataTable.NOTEColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'NOTE\' in table \'EquipmentDataTable\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableEquipmentDataTable.NOTEColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string VENDOR {
-                get {
-                    try {
-                        return ((string)(this[this.tableEquipmentDataTable.VENDORColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'VENDOR\' in table \'EquipmentDataTable\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableEquipmentDataTable.VENDORColumn] = value;
-                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -972,17 +878,18 @@ namespace ReportAPI.Views.ReportDataSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string LAST_MOUNT_DATE {
+            public string LAST_DISMOUNT_DATE {
                 get {
                     try {
-                        return ((string)(this[this.tableEquipmentDataTable.LAST_MOUNT_DATEColumn]));
+                        return ((string)(this[this.tableEquipmentDataTable.LAST_DISMOUNT_DATEColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'LAST_MOUNT_DATE\' in table \'EquipmentDataTable\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'LAST_DISMOUNT_DATE\' in table \'EquipmentDataTable\' is DBNull" +
+                                ".", e);
                     }
                 }
                 set {
-                    this[this.tableEquipmentDataTable.LAST_MOUNT_DATEColumn] = value;
+                    this[this.tableEquipmentDataTable.LAST_DISMOUNT_DATEColumn] = value;
                 }
             }
             
@@ -1021,50 +928,50 @@ namespace ReportAPI.Views.ReportDataSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsEQUIPMENT_IDNull() {
-                return this.IsNull(this.tableEquipmentDataTable.EQUIPMENT_IDColumn);
+            public string NAME {
+                get {
+                    try {
+                        return ((string)(this[this.tableEquipmentDataTable.NAMEColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'NAME\' in table \'EquipmentDataTable\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableEquipmentDataTable.NAMEColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetEQUIPMENT_IDNull() {
-                this[this.tableEquipmentDataTable.EQUIPMENT_IDColumn] = global::System.Convert.DBNull;
+            public string NOTE {
+                get {
+                    try {
+                        return ((string)(this[this.tableEquipmentDataTable.NOTEColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'NOTE\' in table \'EquipmentDataTable\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableEquipmentDataTable.NOTEColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsEQUIPMENT_NAMENull() {
-                return this.IsNull(this.tableEquipmentDataTable.EQUIPMENT_NAMEColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetEQUIPMENT_NAMENull() {
-                this[this.tableEquipmentDataTable.EQUIPMENT_NAMEColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsNOTENull() {
-                return this.IsNull(this.tableEquipmentDataTable.NOTEColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetNOTENull() {
-                this[this.tableEquipmentDataTable.NOTEColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsVENDORNull() {
-                return this.IsNull(this.tableEquipmentDataTable.VENDORColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetVENDORNull() {
-                this[this.tableEquipmentDataTable.VENDORColumn] = global::System.Convert.DBNull;
+            public string VENDOR {
+                get {
+                    try {
+                        return ((string)(this[this.tableEquipmentDataTable.VENDORColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'VENDOR\' in table \'EquipmentDataTable\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableEquipmentDataTable.VENDORColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1177,14 +1084,14 @@ namespace ReportAPI.Views.ReportDataSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsLAST_MOUNT_DATENull() {
-                return this.IsNull(this.tableEquipmentDataTable.LAST_MOUNT_DATEColumn);
+            public bool IsLAST_DISMOUNT_DATENull() {
+                return this.IsNull(this.tableEquipmentDataTable.LAST_DISMOUNT_DATEColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetLAST_MOUNT_DATENull() {
-                this[this.tableEquipmentDataTable.LAST_MOUNT_DATEColumn] = global::System.Convert.DBNull;
+            public void SetLAST_DISMOUNT_DATENull() {
+                this[this.tableEquipmentDataTable.LAST_DISMOUNT_DATEColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1209,6 +1116,42 @@ namespace ReportAPI.Views.ReportDataSet {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void SetTOTAL_WEIGHT_RENEWNull() {
                 this[this.tableEquipmentDataTable.TOTAL_WEIGHT_RENEWColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsNAMENull() {
+                return this.IsNull(this.tableEquipmentDataTable.NAMEColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetNAMENull() {
+                this[this.tableEquipmentDataTable.NAMEColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsNOTENull() {
+                return this.IsNull(this.tableEquipmentDataTable.NOTEColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetNOTENull() {
+                this[this.tableEquipmentDataTable.NOTEColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsVENDORNull() {
+                return this.IsNull(this.tableEquipmentDataTable.VENDORColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetVENDORNull() {
+                this[this.tableEquipmentDataTable.VENDORColumn] = global::System.Convert.DBNull;
             }
         }
         
