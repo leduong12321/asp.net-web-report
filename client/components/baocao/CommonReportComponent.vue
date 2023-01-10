@@ -4,7 +4,7 @@
       <div class="align-items-center pl-0 pt-1 fs-13 mb-3">
         Báo cáo > {{ title }}
       </div>
-      <div v-if="isHideTextShowChart && userLocal.Name == 'Admin'">
+      <div v-if="(isHideTextShowChart && userLocal.Name == 'Admin') || (isHideTextShowChart && userLocal?.Name == 'HSM')">
         <div v-if="selected == 'set-manually' && this.toDay - this.fromDay > 2678400000"></div>
         <b-form-checkbox v-model="checked" class="fs-13" name="check-button" switch v-else>
           <span class="view-chart-txt">Xem biểu đồ</span>
@@ -12,7 +12,7 @@
       </div>
       
       <div class="pl-0 pt-1 fs-13 mb-3 d-flex justify-content-center">
-        <b-form-select v-model="selectedEquipment" :options="optionsEquipment"></b-form-select>
+        <b-form-select v-if="API_URL.includes('Equipment')" v-model="selectedEquipment" :options="optionsEquipment"></b-form-select>
         <div
           v-b-toggle.sidebar-right
           class="align-items-center pl-0 pt-1 fs-13 search-text ml-3"
@@ -163,6 +163,18 @@ export default {
         datasets: []
       },
       chartOptions: {
+        plugins: {
+          datalabels: {
+            anchor: 'end',
+            align: 'top',
+            font: {
+              weight: 'bold',
+            },
+            formatter: (value, context) => {
+              return '';
+            }
+          }
+        },
         responsive: true,
         maintainAspectRatio: false,
         scales: {
@@ -178,11 +190,6 @@ export default {
             ticks: {
               beginAtZero: true
             }
-          },
-          {
-                id: 'y2',
-                type: 'linear',
-                position: 'right'
           }],
         },
         legend: {
@@ -259,6 +266,7 @@ export default {
       this.isHideTextShowChart = false;
     }
     this.showTime();
+    console.log('user', this.userLocal);
   },
   methods: {
     toggleTimePanel() {
@@ -359,7 +367,6 @@ export default {
             y: res.TARGET_THICK
           }
         )),
-        yAxisID: 'y2',
         borderColor: "#FF0000",
         backgroundColor: "#FF0000",
       };

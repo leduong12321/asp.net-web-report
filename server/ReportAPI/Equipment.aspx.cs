@@ -139,7 +139,7 @@ namespace ReportAPI
 	                        SELECT * FROM E_TSC2 WHERE EQUIPMENT_NAME IS NOT NULL
                             ";
 
-            string connectionString = ConfigurationManager.ConnectionStrings["TSC_HOAPHAT_PRD1"].ConnectionString;
+            string connectionString = ConfigurationManager.ConnectionStrings["TSC_PRODUCT"].ConnectionString;
             dataSet = new DataSet();
             using (SqlConnection con = new SqlConnection(connectionString))
             {
