@@ -166,19 +166,25 @@ export default {
           icon: "bx bxs-report",
           name: "Báo cáo",
           url: "ID-01-BaoCao",
-          role: [0, 1, 2, 3],
+          role: [0, 1, 2, 3, 4],
           subMenus: [
             {
               icon: "bx bx-folder-plus",
               name: "Khu vực Đúc",
               url: "ID-02-TSC1",
-              role: [0],
+              role: [0, 4],
               subChildMenu: [
                 {
                   icon: "",
+                  name: "Sản xuất theo sequence",
+                  url: "/baocao/tsc/sequence",
+                  role: [0, 4],
+                },
+                {
+                  icon: "",
                   name: "Tình trạng thiết bị",
-                  url: "/baocao/tsc1/equipment",
-                  role: [0],
+                  url: "/baocao/tsc/equipment",
+                  role: [0, 4],
                 }
               ],
             },
@@ -186,7 +192,7 @@ export default {
               icon: "bx bx-folder-plus",
               name: "Khu vực Lò",
               url: "ID-02-LF",
-              role: [0, 4],
+              role: [0, 5],
               subChildMenu: [
                 {
                   icon: "",
