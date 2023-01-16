@@ -1,19 +1,12 @@
-﻿using Microsoft.ReportingServices.Diagnostics.Internal;
-using Microsoft.ReportingServices.ReportProcessing.ReportObjectModel;
-using Newtonsoft.Json.Linq;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
-using System.Data.SqlTypes;
-using System.Drawing;
-using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
-using System.Web.UI.WebControls;
-using System.Xml;
+
 
 namespace ProductsApp.Controllers
 {

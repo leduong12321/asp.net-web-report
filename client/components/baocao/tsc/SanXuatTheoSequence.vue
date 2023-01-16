@@ -1,5 +1,10 @@
 <template>
   <div>
+    <b-form-group label="Chọn thời gian: " v-slot="{ ariaDescribedby }">
+      <b-form-radio-group v-model="selected" :options="options" :aria-describedby="ariaDescribedby"
+        name="plain-stacked" plain stacked></b-form-radio-group>
+    </b-form-group>
+    <b-form-select v-model="selectedMonth" :options="months"></b-form-select>
     <div
       class="chart-div"
       v-if="userLocal?.Name == 'Admin' || userLocal?.Name == 'TSC'"
@@ -29,11 +34,22 @@ export default {
   data() {
     return {
       isHideTextShowChart: false,
+      tscName: 'tsc1',
       userLocal: null,
+      fromDay: null,
+      toDay: null,
       chartDataAPI: [],
       listTotalWeight: [],
       listSequence: [],
+      customData: null,
       load: false,
+      selected: "tsc1",
+      options: [
+        { text: "TSC 1", value: "tsc1" },
+        { text: "TSC 2", value: "tsc2" },
+      ],
+      selectedMonth: null,
+      months: [],
       chartData: {
         datasets: [
           {
@@ -148,28 +164,65 @@ export default {
       },
     };
   },
+  watch: {
+    selected(value) {
+      this.load = false;
+      if (value) {
+        this.tscName = value;
+        this.getDataChart(value);
+        console.log('1');
+      } 
+    },
+    selectedMonth(value) {
+      this.load = false;
+      if(value) {
+        this.fromDay = moment(value).startOf("month").valueOf();
+        this.toDay = moment(value).endOf("month").valueOf();
+        this.getDataChart(this.tscName);
+        console.log('2');
+      }
+    }
+  },
   mounted() {
     this.userLocal = JSON.parse(localStorage.getItem("user"));
-    this.getDataChart();
+    this.getMonths();
   },
   methods: {
     unique(arr) {
-      return Array.from(new Set(arr)); //
+      return Array.from(new Set(arr)); 
     },
-    async getDataChart() {
-      const { data } = await this.$axios.get("/api/SanXuatTheoSequence/get/");
-      
+    getMonths() {
+      for (let i = 0; i < 5; i++) {
+        this.months.push(
+          {
+            text: 'Tháng ' + moment().subtract(i, "months").format('MM - YYYY'),
+            value: moment().subtract(i, "months").startOf("day")
+          }
+        )
+      }
+      this.selectedMonth = this.months[0].value;
+      this.fromDay = moment(this.selectedMonth).startOf("month").valueOf();
+      this.toDay = moment(this.selectedMonth).endOf("month").valueOf();
+    },
+    async getDataChart(tscName) {
+      const { data } = await this.$axios.get("/api/sanxuattheosequence/get?from=" + this.fromDay + "&to=" + this.toDay);
       data.forEach(e => {
         if(e.SEQ_HEAT_COUNTER == 1 
-            && moment(e.LADLE_OPENING_DATE).valueOf() >= moment('2022-11-15T17:50:42').startOf("month").valueOf() - 4*3600*1000
-            && moment(e.LADLE_OPENING_DATE).valueOf() < moment('2022-11-15T17:50:42').endOf("month").valueOf() - 20*3600*1000
+            && moment(e.LADLE_OPENING_DATE).valueOf() >= this.fromDay - 4*3600*1000
+            && moment(e.LADLE_OPENING_DATE).valueOf() < this.toDay - 20*3600*1000
           ) {
           this.listSequence.push(e.SEQ_COUNTER);
         }
       });
 
+      if(tscName == 'tsc2') {
+        this.customData = data.filter(res =>  res.REPORT_COUNTER % 2 == 0);
+      } else {
+        this.customData = data.filter(res =>  res.REPORT_COUNTER % 2 == 1);
+      }
+
       this.listSequence.forEach((item) => {
-        let dataFilter = data
+        let dataFilter = this.customData
           .filter((res) => res.SEQ_COUNTER == item)
           .reduce((total, currentValue) => {
             return (
@@ -178,6 +231,10 @@ export default {
           }, 0);
         this.listTotalWeight.push(dataFilter);
       });
+
+      console.log('data', this.listTotalWeight);
+      console.log('labels', this.listSequence);
+
 
       this.changeDataChart();
     },
