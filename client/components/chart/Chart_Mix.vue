@@ -8,7 +8,6 @@ Chart.plugins.register(ChartDataLabels);
 
 const { Line, Bar } = VueChart;
 
-
 export default {
   extends: Line,
   extends: Bar,
@@ -19,7 +18,7 @@ export default {
   watch: {
     'chartData'(to, from) {
       this.renderChart(this.chartData, this.options)
-    }
-  }
+    },
+  },
 }
 </script>>

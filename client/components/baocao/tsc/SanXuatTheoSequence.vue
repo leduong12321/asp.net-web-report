@@ -1,10 +1,13 @@
 <template>
   <div>
-    <b-form-group label="Chọn thời gian: " v-slot="{ ariaDescribedby }">
-      <b-form-radio-group v-model="selected" :options="options" :aria-describedby="ariaDescribedby"
-        name="plain-stacked" plain stacked></b-form-radio-group>
-    </b-form-group>
-    <b-form-select v-model="selectedMonth" :options="months"></b-form-select>
+    <div>
+      <div>Xem trên: </div>
+      <b-form-group v-slot="{ ariaDescribedby }">
+        <b-form-radio-group v-model="selected" :options="options" :aria-describedby="ariaDescribedby"
+        name="radio-inline"></b-form-radio-group>
+      </b-form-group>
+      <b-form-select v-model="selectedMonth" :options="months" class="mb-3"></b-form-select>
+    </div>
     <div
       class="chart-div"
       v-if="userLocal?.Name == 'Admin' || userLocal?.Name == 'TSC'"
@@ -53,7 +56,7 @@ export default {
       chartData: {
         datasets: [
           {
-            label: "Sản lượng TSC1",
+            label: "Sản lượng TSC1 (Nghìn tấn)",
             data: [],
             yAxisID: "y1",
             backgroundColor: "#ed7d31",
@@ -94,18 +97,30 @@ export default {
                 datasetArray.push(dataset.data[context.dataIndex]);
               }
 
-              if (context.datasetIndex == datasetArray.length - 1) {
-                return value.toLocaleString("en-IN", {
-                  minimumFractionDigits: 1,
+              function totalSum(total, datapoint) {
+                return total + datapoint;
+              }
+              let sum = datasetArray.reduce(totalSum, 0);
 
-                });
+
+              if (context.datasetIndex == datasetArray.length - 1) {
+                // return (value/10000).toString().replace(/\B(?=(\d{2})+(?!\d))/g, ",");
+                let str = (value/10000).toString().replace(/\B(?=(\d{2})+(?!\d))/g, ",");
+                return str.replace(str, str.slice(0,4));
+              }
+              if (context.datasetIndex == datasetArray.length - 1) {
+                return (value/1000).toFixed().toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+              } else if (context.datasetIndex == 1 && (context.dataIndex == (context.chart.data.datasets[1].data.length - 1))) {
+                return (value/1000).toFixed().toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+              } else {
+                return '';
               }
             },
           },
         },
         title: {
           display: true,
-          text: "SẢN LƯỢNG THEO SEQUENCE",
+          text: "SẢN LƯỢNG THEO SEQUENCE THÁNG" ,
           fontSize: 15,
         },
         tooltips: {
@@ -170,7 +185,6 @@ export default {
       if (value) {
         this.tscName = value;
         this.getDataChart(value);
-        console.log('1');
       } 
     },
     selectedMonth(value) {
@@ -179,7 +193,6 @@ export default {
         this.fromDay = moment(value).startOf("month").valueOf();
         this.toDay = moment(value).endOf("month").valueOf();
         this.getDataChart(this.tscName);
-        console.log('2');
       }
     }
   },
@@ -205,6 +218,10 @@ export default {
       this.toDay = moment(this.selectedMonth).endOf("month").valueOf();
     },
     async getDataChart(tscName) {
+      this.listSequence = [];
+      this.customData = [];
+      this.listTotalWeight =[];
+
       const { data } = await this.$axios.get("/api/sanxuattheosequence/get?from=" + this.fromDay + "&to=" + this.toDay);
       data.forEach(e => {
         if(e.SEQ_HEAT_COUNTER == 1 
@@ -232,10 +249,6 @@ export default {
         this.listTotalWeight.push(dataFilter);
       });
 
-      console.log('data', this.listTotalWeight);
-      console.log('labels', this.listSequence);
-
-
       this.changeDataChart();
     },
     changeDataChart() {
@@ -249,15 +262,15 @@ export default {
       this.chartData.datasets[0].data = [];
       this.chartData.datasets[0].data = this.listTotalWeight;
 
-    //   this.chartData.datasets[1].data = [];
-    //   this.chartData.datasets[1].data = listTotal;
+      this.chartData.datasets[1].data = [];
+      this.chartData.datasets[1].data = listTotal;
 
       this.chartData.labels = [];
       this.chartData.labels = this.listSequence;
+      console.log('caaaaaaaaaaaaaaa', this.chartData)
 
       // this.chartOptions.scales.yAxes[0].ticks.max = (total[total.length - 1])*1.5
       this.load = true;
-      console.log("chartdata", this.chartData);
     },
   },
 };
