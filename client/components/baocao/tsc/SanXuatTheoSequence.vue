@@ -223,6 +223,7 @@ export default {
       this.listTotalWeight =[];
 
       const { data } = await this.$axios.get("/api/sanxuattheosequence/get?from=" + this.fromDay + "&to=" + this.toDay);
+      
       data.forEach(e => {
         if(e.SEQ_HEAT_COUNTER == 1 
             && moment(e.LADLE_OPENING_DATE).valueOf() >= this.fromDay - 4*3600*1000

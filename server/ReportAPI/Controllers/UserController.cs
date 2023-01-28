@@ -24,7 +24,7 @@ namespace ReportAPI.Controllers
             new User { Id = 2, Name = "KCS", UserName = "kcs", Password = "kcs", Description = "Truy cập giới hạn", Role = 1 },
             new User { Id = 3, Name = "CNC", UserName = "cnc", Password = "cnc", Description = "Truy cập giới hạn", Role = 2 },
             new User { Id = 4, Name = "HSM", UserName = "HSM", Password = "HSM", Description = "Truy cập giới hạn", Role = 3 },
-            new User { Id = 4, Name = "TSC", UserName = "tsc", Password = "tsc", Description = "Truy cập giới hạn", Role = 4 },
+            new User { Id = 5, Name = "TSC", UserName = "tsc", Password = "tsc", Description = "Truy cập giới hạn", Role = 4 },
         };
         public dynamic Get()
         {
