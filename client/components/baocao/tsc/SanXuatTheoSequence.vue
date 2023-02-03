@@ -56,7 +56,7 @@ export default {
       chartData: {
         datasets: [
           {
-            label: "Sản lượng TSC1 (Nghìn tấn)",
+            label: "Sản lượng (Nghìn tấn)",
             data: [],
             yAxisID: "y1",
             backgroundColor: "#ed7d31",
@@ -97,21 +97,15 @@ export default {
                 datasetArray.push(dataset.data[context.dataIndex]);
               }
 
-              function totalSum(total, datapoint) {
-                return total + datapoint;
-              }
-              let sum = datasetArray.reduce(totalSum, 0);
-
-
               if (context.datasetIndex == datasetArray.length - 1) {
                 // return (value/10000).toString().replace(/\B(?=(\d{2})+(?!\d))/g, ",");
-                let str = (value/10000).toString().replace(/\B(?=(\d{2})+(?!\d))/g, ",");
+                let str = (value/100).toString().replace(/\B(?=(\d{2})+(?!\d))/g, ",");
                 return str.replace(str, str.slice(0,4));
               }
               if (context.datasetIndex == datasetArray.length - 1) {
-                return (value/1000).toFixed().toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                return (value/10).toFixed().toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
               } else if (context.datasetIndex == 1 && (context.dataIndex == (context.chart.data.datasets[1].data.length - 1))) {
-                return (value/1000).toFixed().toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                return (value/10).toFixed().toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
               } else {
                 return '';
               }
@@ -120,7 +114,7 @@ export default {
         },
         title: {
           display: true,
-          text: "SẢN LƯỢNG THEO SEQUENCE THÁNG" ,
+          text: "SẢN LƯỢNG SEQUENCE THEO THÁNG" ,
           fontSize: 15,
         },
         tooltips: {
@@ -205,7 +199,7 @@ export default {
       return Array.from(new Set(arr)); 
     },
     getMonths() {
-      for (let i = 0; i < 5; i++) {
+      for (let i = 0; i < 6; i++) {
         this.months.push(
           {
             text: 'Tháng ' + moment().subtract(i, "months").format('MM - YYYY'),
@@ -226,19 +220,21 @@ export default {
       
       data.forEach(e => {
         if(e.SEQ_HEAT_COUNTER == 1 
-            && moment(e.LADLE_OPENING_DATE).valueOf() >= this.fromDay - 4*3600*1000
-            && moment(e.LADLE_OPENING_DATE).valueOf() < this.toDay - 20*3600*1000
+            && moment(e.LADLE_OPENING_DATE).valueOf() >= this.fromDay + 8*3600*1000
+            && moment(e.LADLE_OPENING_DATE).valueOf() < this.toDay + 8*3600*1000
           ) {
           this.listSequence.push(e.SEQ_COUNTER);
         }
       });
 
       if(tscName == 'tsc2') {
-        this.customData = data.filter(res =>  res.REPORT_COUNTER % 2 == 0);
+        this.customData = data.filter(res =>  res.SEQ_COUNTER / 1000 < 2);
+        this.listSequence = this.listSequence.filter(res =>  res / 1000 < 2);
       } else {
-        this.customData = data.filter(res =>  res.REPORT_COUNTER % 2 == 1);
+        this.customData = data.filter(res =>  res.SEQ_COUNTER  / 1000 >= 2);
+        this.listSequence = this.listSequence.filter(res =>  res / 1000 >= 2);
       }
-
+      
       this.listSequence.forEach((item) => {
         let dataFilter = this.customData
           .filter((res) => res.SEQ_COUNTER == item)
@@ -268,7 +264,6 @@ export default {
 
       this.chartData.labels = [];
       this.chartData.labels = this.listSequence;
-      console.log('caaaaaaaaaaaaaaa', this.chartData)
 
       // this.chartOptions.scales.yAxes[0].ticks.max = (total[total.length - 1])*1.5
       this.load = true;

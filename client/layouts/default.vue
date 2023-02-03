@@ -182,6 +182,12 @@ export default {
                 },
                 {
                   icon: "",
+                  name: "Sản xuất theo ngay",
+                  url: "/baocao/tsc/sl-ngay",
+                  role: [0, 4],
+                },
+                {
+                  icon: "",
                   name: "Tình trạng thiết bị",
                   url: "/baocao/tsc/equipment",
                   role: [0, 4],

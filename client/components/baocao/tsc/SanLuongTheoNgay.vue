@@ -1,0 +1,1 @@
+Sản lượng theo sequence
