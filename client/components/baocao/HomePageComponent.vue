@@ -3,11 +3,10 @@
     <div>
       TRANG CHỦ
     </div>
-    <div class="chart-div">
+    <div class="chart-div" v-if="userLocal?.Name == 'Admin' || userLocal?.Name == 'HSM'">
       <Chart class="chart" v-if="load" :chartData="chartData" :options="chartOptions" />
     </div>
   </div>
-
 </template>
 
 <script>
@@ -23,18 +22,20 @@ export default {
   },
   data() {
     return {
+      isHideTextShowChart: false,
+      userLocal: null,
       chartDataAPI: [],
       load: false,
       chartData: {
         datasets: [{
-          label: 'Kíp A',
+          label: 'Sản lượng kíp A (Tấn)',
           data: [],
           yAxisID: 'y1',
           stack: '1',
           backgroundColor: '#4472c4',
           order: 2,
         }, {
-          label: 'Kíp B',
+          label: 'Sản lượng kíp B (Tấn)',
           data: [],
           yAxisID: 'y1',
           stack: '1',
@@ -42,7 +43,7 @@ export default {
           order: 2,
         },
         {
-          label: 'Kíp C',
+          label: 'Sản lượng kíp C (Tấn)',
           data: [],
           yAxisID: 'y1',
           stack: '1',
@@ -50,12 +51,12 @@ export default {
           order: 2
         },
         {
-          label: 'Lũy kế tháng',
+          label: 'Lũy kế tháng (Tấn)',
           data: [],
           type: 'line',
           yAxisID: 'y2',
-          backgroundColor: ['rgba(255, 26, 104, 0)'],
-          borderColor: ['#f6bb1a'],
+          backgroundColor: 'rgba(255, 26, 104, 0)',
+          borderColor: '#f6bb1a',
           order: 1,
         }],
         labels: []
@@ -87,7 +88,7 @@ export default {
               if (context.datasetIndex == datasetArray.length - 1) {
                 return sum.toLocaleString('en-IN', { minimumFractionDigits: 1, maximumFractionDigits: 1 });
               } else if (context.datasetIndex == 3 && (context.dataIndex == (context.chart.data.datasets[3].data.length - 1))) {
-                return value
+                return value.toLocaleString('en-IN', { minimumFractionDigits: 1, maximumFractionDigits: 1 });
               } else {
                 return '';
               }
@@ -125,13 +126,14 @@ export default {
             position: 'left',
             ticks: {
               beginAtZero: true,
-              max: 12000,
+              // max: 12000,
               // callback: function(value, index, values) {
               //           return value + ' tấn';
               //       }
             },
             gridLines: {
-              offsetGridLines: true
+              // lineWidth: 0,
+              // display: false
             }
           },
           {
@@ -140,11 +142,12 @@ export default {
             position: 'right',
             ticks: {
               beginAtZero: true,
-              max: 240000,
-              stepSize: 20000
+              // max: 240000,
+              // stepSize: 20000
             },
-            grid: {
-              display: false,
+            gridLines: {
+              // lineWidth: 0
+              // display: false
             }
           }],
         },
@@ -161,7 +164,9 @@ export default {
     };
   },
   mounted() {
+    this.userLocal = JSON.parse(localStorage.getItem('user'));
     this.getDataChart();
+    console.log('user', this.userLocal)
   },
   methods: {
     async getDataChart() {
@@ -201,7 +206,8 @@ export default {
       this.chartData.labels = [];
       this.chartData.labels = archivedDate;
 
-      console.log('chart', this.chartData);
+      this.chartOptions.scales.yAxes[0].ticks.max = (crewA[crewA.length - 1] + crewB[crewB.length - 1] + crewC[crewC.length - 1])*1.5
+
       this.load = true;
     },
   }
@@ -211,8 +217,5 @@ export default {
 <style lang="scss">
 .chart-div {
   padding-top: 20px;
-
-}
-.chart {
 }
 </style>

@@ -160,25 +160,37 @@ export default {
           name: "Trang chủ",
           url: "/",
           subMenus: [],
-          role: [0, 1, 2],
+          role: [0, 1, 2, 3],
         },
         {
           icon: "bx bxs-report",
           name: "Báo cáo",
           url: "ID-01-BaoCao",
-          role: [0, 1, 2, 3],
+          role: [0, 1, 2, 3, 4],
           subMenus: [
             {
               icon: "bx bx-folder-plus",
               name: "Khu vực Đúc",
               url: "ID-02-TSC1",
-              role: [0, 3],
+              role: [0, 4],
               subChildMenu: [
                 {
                   icon: "",
+                  name: "Sản xuất theo sequence",
+                  url: "/baocao/tsc/sequence",
+                  role: [0, 4],
+                },
+                {
+                  icon: "",
+                  name: "Sản xuất theo ngay",
+                  url: "/baocao/tsc/sl-ngay",
+                  role: [0, 4],
+                },
+                {
+                  icon: "",
                   name: "Tình trạng thiết bị",
-                  url: "/baocao/tsc1/equipment",
-                  role: [0, 3],
+                  url: "/baocao/tsc/equipment",
+                  role: [0, 4],
                 }
               ],
             },
@@ -186,7 +198,7 @@ export default {
               icon: "bx bx-folder-plus",
               name: "Khu vực Lò",
               url: "ID-02-LF",
-              role: [0, 4],
+              role: [0, 5],
               subChildMenu: [
                 {
                   icon: "",
@@ -200,37 +212,37 @@ export default {
               icon: "bx bx-folder-plus",
               name: "Khu vực Cán",
               url: "ID-02-HSM",
-              role: [0, 1, 2],
+              role: [0, 1, 2, 3],
               subChildMenu: [
                 {
                   icon: "",
                   name: "Sản xuất",
                   url: "/baocao/sanxuat",
-                  role: [0, 1],
+                  role: [0, 1, 3],
                 },
                 {
                   icon: "",
                   name: "Tổng hợp sản lượng HRC",
                   url: "/baocao/sanluong-hrc",
-                  role: [0],
+                  role: [0, 3],
                 },
                 {
                   icon: "",
                   name: "Chất lượng thành phẩm HRC",
                   url: "/baocao/chatluong-hrc",
-                  role: [0],
+                  role: [0, 3],
                 },
                 {
                   icon: "",
                   name: "Thay trục BUR",
                   url: "/baocao/thay-truc-bur",
-                  role: [0, 2],
+                  role: [0, 2, 3],
                 },
                 {
                   icon: "",
                   name: "Thay trục WR",
                   url: "/baocao/thay-truc-wr",
-                  role: [0, 2],
+                  role: [0, 2, 3],
                 },
               ],
             },
@@ -241,7 +253,7 @@ export default {
           name: "Hỗ trợ",
           url: "/ho-tro",
           subMenus: [],
-          role: [0, 1, 2],
+          role: [0, 1, 2, 3],
         },
       ],
     };

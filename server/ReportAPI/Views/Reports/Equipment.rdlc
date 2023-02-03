@@ -834,7 +834,7 @@ Kíp</Value>
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="MOVEMENT_DATE">
+                        <Textbox Name="Textbox2">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
@@ -850,7 +850,7 @@ Kíp</Value>
                               </Style>
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>MOVEMENT_DATE</rd:DefaultName>
+                          <rd:DefaultName>Textbox2</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -1069,6 +1069,7 @@ Kíp</Value>
                             <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
+                        <rd:Selected>true</rd:Selected>
                       </CellContents>
                     </TablixCell>
                     <TablixCell>
@@ -1130,24 +1131,16 @@ Kíp</Value>
                   <TablixHeader>
                     <Size>4.98426in</Size>
                     <CellContents>
-                      <Textbox Name="Textbox128">
+                      <Textbox Name="NOTE">
                         <CanGrow>true</CanGrow>
                         <KeepTogether>true</KeepTogether>
                         <Paragraphs>
                           <Paragraph>
                             <TextRuns>
                               <TextRun>
-                                <Value>Type (Loại):</Value>
+                                <Value>="Type (Loại): " + Parameters!textType.Value</Value>
                                 <Style>
                                   <FontStyle>Italic</FontStyle>
-                                  <FontSize>9pt</FontSize>
-                                  <FontWeight>Medium</FontWeight>
-                                  <Color>White</Color>
-                                </Style>
-                              </TextRun>
-                              <TextRun>
-                                <Value> BROADPLATES</Value>
-                                <Style>
                                   <FontSize>9pt</FontSize>
                                   <FontWeight>Medium</FontWeight>
                                   <Color>White</Color>
@@ -1159,7 +1152,7 @@ Kíp</Value>
                             </Style>
                           </Paragraph>
                         </Paragraphs>
-                        <rd:DefaultName>Textbox128</rd:DefaultName>
+                        <rd:DefaultName>NOTE</rd:DefaultName>
                         <Style>
                           <Border>
                             <Color>Gray</Color>
@@ -2019,6 +2012,10 @@ ToLocalTime(Parameters!toDate.Value), "dd.MM.yyyy HH:mm tt")</Value>
       <DataType>DateTime</DataType>
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
+    <ReportParameter Name="textType">
+      <DataType>String</DataType>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
   </ReportParameters>
   <ReportParametersLayout>
     <GridLayoutDefinition>
@@ -2034,6 +2031,11 @@ ToLocalTime(Parameters!toDate.Value), "dd.MM.yyyy HH:mm tt")</Value>
           <ColumnIndex>1</ColumnIndex>
           <RowIndex>0</RowIndex>
           <ParameterName>fromDate</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>2</ColumnIndex>
+          <RowIndex>0</RowIndex>
+          <ParameterName>textType</ParameterName>
         </CellDefinition>
       </CellDefinitions>
     </GridLayoutDefinition>

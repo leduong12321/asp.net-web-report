@@ -14,6 +14,7 @@ namespace ReportAPI
         private DataSet dataSet;
         private dynamic fromValue = null;
         private dynamic toValue = null;
+        private dynamic textType = null;
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!Page.IsPostBack)
@@ -139,7 +140,7 @@ namespace ReportAPI
                             SELECT * FROM E_TSC2 WHERE NAME IS NOT NULL AND MOVEMENT_DATE IS NOT NULL 
                             ";
 
-            string connectionString = ConfigurationManager.ConnectionStrings["TSC_HOAPHAT_PRD1"].ConnectionString;
+            string connectionString = ConfigurationManager.ConnectionStrings["TSC_PRODUCT"].ConnectionString;
             dataSet = new DataSet();
             using (SqlConnection con = new SqlConnection(connectionString))
             {
@@ -173,10 +174,57 @@ namespace ReportAPI
                     EquipmentReportViewer.LocalReport.DisplayName = "Baocaotinhtrangthietbi " + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
                     ReportParameter fromDateValue = new ReportParameter("fromDate", fromValue.ToString());
                     ReportParameter toDateValue = new ReportParameter("toDate", toValue.ToString());
+                    
+                    switch (time[2].Value)
+                    {
+                        case "4":
+                            textType = "BROADPLATES";
+                            break;
+                        case "5":
+                            textType = "NARROWPLATES";
+                            break;
+                        case "7":
+                            textType = "TUNDISHES";
+                            break;
+                        case "8":
+                            textType = "SEN";
+                            break;
+                        case "9":
+                            textType = "SHEARKNIFE";
+                            break;
+                        case "10":
+                            textType = "SEG0";
+                            break;
+                        case "11":
+                            textType = "SEGA";
+                            break;
+                        case "12":
+                            textType = "SEGB";
+                            break;
+                        case "13":
+                            textType = "SEGC";
+                            break;
+                        case "14":
+                            textType = "SEGD";
+                            break;
+                        case "15":
+                            textType = "SEGE";
+                            break;
+                        case "16":
+                            textType = "VUHZ";
+                            break;
+                        default:
+                            textType = "MOULDS";
+                            // code block
+                            break;
+                    }
+                    ReportParameter textTypeView = new ReportParameter("textType", textType);
+
                     fromValue = null;
                     toValue = null;
                     EquipmentReportViewer.LocalReport.SetParameters(fromDateValue);
                     EquipmentReportViewer.LocalReport.SetParameters(toDateValue);
+                    EquipmentReportViewer.LocalReport.SetParameters(textTypeView);
                 }
             }
         }

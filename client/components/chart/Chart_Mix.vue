@@ -1,6 +1,5 @@
 
 <script>
-// import Chart from "chart.js";
 import VueChart from "vue-chartjs";
 import Chart from "chart.js";
 import ChartDataLabels from "chartjs-plugin-datalabels"
@@ -8,7 +7,6 @@ import ChartDataLabels from "chartjs-plugin-datalabels"
 Chart.plugins.register(ChartDataLabels);
 
 const { Line, Bar } = VueChart;
-
 
 export default {
   extends: Line,
@@ -20,7 +18,7 @@ export default {
   watch: {
     'chartData'(to, from) {
       this.renderChart(this.chartData, this.options)
-    }
-  }
+    },
+  },
 }
 </script>>
