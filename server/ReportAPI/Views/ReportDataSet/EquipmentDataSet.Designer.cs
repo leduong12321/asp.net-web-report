@@ -517,15 +517,15 @@ namespace ReportAPI.Views.ReportDataSet {
                         string TSC_NO, 
                         string WORK_TEAM, 
                         string MOVEMENT_DATE, 
-                        string TOTAL_LIFE_FROM_NEW, 
-                        string TOTAL_LIFE_FROM_RENEW, 
+                        double TOTAL_LIFE_FROM_NEW, 
+                        double TOTAL_LIFE_FROM_RENEW, 
                         string PARENT_NAME, 
                         string INDEX_NUMBER, 
                         string CHAR_VALUE, 
                         string RENEW_CYCLE_COUNT, 
                         string LAST_MOUNT_DATE, 
-                        string TOTAL_WEIGHT_NEW, 
-                        string TOTAL_WEIGHT_RENEW) {
+                        double TOTAL_WEIGHT_NEW, 
+                        double TOTAL_WEIGHT_RENEW) {
                 EquipmentDataTableRow rowEquipmentDataTableRow = ((EquipmentDataTableRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         EQUIPMENT_ID,
@@ -601,9 +601,9 @@ namespace ReportAPI.Views.ReportDataSet {
                 base.Columns.Add(this.columnWORK_TEAM);
                 this.columnMOVEMENT_DATE = new global::System.Data.DataColumn("MOVEMENT_DATE", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnMOVEMENT_DATE);
-                this.columnTOTAL_LIFE_FROM_NEW = new global::System.Data.DataColumn("TOTAL_LIFE_FROM_NEW", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnTOTAL_LIFE_FROM_NEW = new global::System.Data.DataColumn("TOTAL_LIFE_FROM_NEW", typeof(double), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTOTAL_LIFE_FROM_NEW);
-                this.columnTOTAL_LIFE_FROM_RENEW = new global::System.Data.DataColumn("TOTAL_LIFE_FROM_RENEW", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnTOTAL_LIFE_FROM_RENEW = new global::System.Data.DataColumn("TOTAL_LIFE_FROM_RENEW", typeof(double), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTOTAL_LIFE_FROM_RENEW);
                 this.columnPARENT_NAME = new global::System.Data.DataColumn("PARENT_NAME", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnPARENT_NAME);
@@ -615,9 +615,9 @@ namespace ReportAPI.Views.ReportDataSet {
                 base.Columns.Add(this.columnRENEW_CYCLE_COUNT);
                 this.columnLAST_MOUNT_DATE = new global::System.Data.DataColumn("LAST_MOUNT_DATE", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnLAST_MOUNT_DATE);
-                this.columnTOTAL_WEIGHT_NEW = new global::System.Data.DataColumn("TOTAL_WEIGHT_NEW", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnTOTAL_WEIGHT_NEW = new global::System.Data.DataColumn("TOTAL_WEIGHT_NEW", typeof(double), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTOTAL_WEIGHT_NEW);
-                this.columnTOTAL_WEIGHT_RENEW = new global::System.Data.DataColumn("TOTAL_WEIGHT_RENEW", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnTOTAL_WEIGHT_RENEW = new global::System.Data.DataColumn("TOTAL_WEIGHT_RENEW", typeof(double), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTOTAL_WEIGHT_RENEW);
             }
             
@@ -873,10 +873,10 @@ namespace ReportAPI.Views.ReportDataSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string TOTAL_LIFE_FROM_NEW {
+            public double TOTAL_LIFE_FROM_NEW {
                 get {
                     try {
-                        return ((string)(this[this.tableEquipmentDataTable.TOTAL_LIFE_FROM_NEWColumn]));
+                        return ((double)(this[this.tableEquipmentDataTable.TOTAL_LIFE_FROM_NEWColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'TOTAL_LIFE_FROM_NEW\' in table \'EquipmentDataTable\' is DBNul" +
@@ -890,10 +890,10 @@ namespace ReportAPI.Views.ReportDataSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string TOTAL_LIFE_FROM_RENEW {
+            public double TOTAL_LIFE_FROM_RENEW {
                 get {
                     try {
-                        return ((string)(this[this.tableEquipmentDataTable.TOTAL_LIFE_FROM_RENEWColumn]));
+                        return ((double)(this[this.tableEquipmentDataTable.TOTAL_LIFE_FROM_RENEWColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'TOTAL_LIFE_FROM_RENEW\' in table \'EquipmentDataTable\' is DBN" +
@@ -988,10 +988,10 @@ namespace ReportAPI.Views.ReportDataSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string TOTAL_WEIGHT_NEW {
+            public double TOTAL_WEIGHT_NEW {
                 get {
                     try {
-                        return ((string)(this[this.tableEquipmentDataTable.TOTAL_WEIGHT_NEWColumn]));
+                        return ((double)(this[this.tableEquipmentDataTable.TOTAL_WEIGHT_NEWColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'TOTAL_WEIGHT_NEW\' in table \'EquipmentDataTable\' is DBNull.", e);
@@ -1004,10 +1004,10 @@ namespace ReportAPI.Views.ReportDataSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string TOTAL_WEIGHT_RENEW {
+            public double TOTAL_WEIGHT_RENEW {
                 get {
                     try {
-                        return ((string)(this[this.tableEquipmentDataTable.TOTAL_WEIGHT_RENEWColumn]));
+                        return ((double)(this[this.tableEquipmentDataTable.TOTAL_WEIGHT_RENEWColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'TOTAL_WEIGHT_RENEW\' in table \'EquipmentDataTable\' is DBNull" +

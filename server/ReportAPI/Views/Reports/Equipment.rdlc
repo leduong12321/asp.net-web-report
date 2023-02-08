@@ -47,11 +47,11 @@
         </Field>
         <Field Name="TOTAL_LIFE_FROM_NEW">
           <DataField>TOTAL_LIFE_FROM_NEW</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
+          <rd:TypeName>System.Double</rd:TypeName>
         </Field>
         <Field Name="TOTAL_LIFE_FROM_RENEW">
           <DataField>TOTAL_LIFE_FROM_RENEW</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
+          <rd:TypeName>System.Double</rd:TypeName>
         </Field>
         <Field Name="PARENT_NAME">
           <DataField>PARENT_NAME</DataField>
@@ -75,11 +75,11 @@
         </Field>
         <Field Name="TOTAL_WEIGHT_NEW">
           <DataField>TOTAL_WEIGHT_NEW</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
+          <rd:TypeName>System.Double</rd:TypeName>
         </Field>
         <Field Name="TOTAL_WEIGHT_RENEW">
           <DataField>TOTAL_WEIGHT_RENEW</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
+          <rd:TypeName>System.Double</rd:TypeName>
         </Field>
       </Fields>
       <rd:DataSetInfo>
@@ -913,7 +913,7 @@ Kíp</Value>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!TOTAL_LIFE_FROM_NEW.Value.ToString()+ " (" + Fields!TOTAL_LIFE_FROM_RENEW.Value.ToString() + ")"</Value>
+                                  <Value>=FormatNumber(Fields!TOTAL_LIFE_FROM_NEW.Value,0) + " (" + FormatNumber(Fields!TOTAL_LIFE_FROM_NEW.Value,0) + ")"</Value>
                                   <Style />
                                 </TextRun>
                               </TextRuns>
@@ -947,7 +947,7 @@ Kíp</Value>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!TOTAL_WEIGHT_NEW.Value.ToString() + " (" + Fields!TOTAL_WEIGHT_RENEW.Value.ToString() + ")"</Value>
+                                  <Value>=FormatNumber(Fields!TOTAL_WEIGHT_NEW.Value / 1000 ,0) + " (" + FormatNumber(Fields!TOTAL_WEIGHT_RENEW.Value / 1000,0) + ")"</Value>
                                   <Style>
                                     <Format>#,0,.00;(#,0,.00)</Format>
                                   </Style>
@@ -972,6 +972,7 @@ Kíp</Value>
                             <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
+                        <rd:Selected>true</rd:Selected>
                       </CellContents>
                     </TablixCell>
                     <TablixCell>
@@ -1074,7 +1075,6 @@ Kíp</Value>
                             <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
-                        <rd:Selected>true</rd:Selected>
                       </CellContents>
                     </TablixCell>
                     <TablixCell>

@@ -239,6 +239,7 @@
     <Compile Include="Controllers\AccumulatedController.cs" />
     <Compile Include="Controllers\BaoCaoSanXuatController.cs" />
     <Compile Include="Controllers\DepartmentController.cs" />
+    <Compile Include="Controllers\SanLuongTheoNgayController.cs" />
     <Compile Include="Controllers\SanXuatTheoSequenceController.cs" />
     <Compile Include="Controllers\TongHopSanLuongHRCController.cs" />
     <Compile Include="Controllers\ChatLuongThanhPhamHRCController.cs" />

@@ -43,36 +43,6 @@ namespace ReportAPI
         private void GetDataTable()
         {
 
-            //string query v2 = @"
-            //                 WITH 
-            //                 E_INFO AS (
-            //                  SELECT A.NAME,
-            //                  B.MOVEMENT_DATE,
-            //                  B.CODE_NAME,
-            //                  B.EQUIPMENT_NAME,
-            //                  B.VENDOR,
-            //                  B.NOTE,
-            //                  B.TSC_NO,
-            //                  B.WORK_TEAM,
-            //                  B.PARENT_NAME,
-            //                  B.MOVEMENT_SEQ,
-            //                  C.LIFE_ACCOUNT_CODE,
-            //                  C.TOTAL_LIFE_FROM_NEW,
-            //                  C.TOTAL_LIFE_FROM_RENEW,
-            //                  C.TOTAL_WEIGHT_NEW,
-            //                  C.TOTAL_WEIGHT_RENEW
-            //                  FROM (SELECT * FROM [HOAPHAT_TSC1_PRD].[dbo].[MDB_EQUIPMENTS_CFG] WHERE ID = @Type) A
-            //                  LEFT JOIN (SELECT * FROM [HOAPHAT_TSC1_PRD].[dbo].[REP_EQUIPMENT_MOVEMENTS] WHERE MOVEMENT_DATE >= @FromDay AND MOVEMENT_DATE <= @ToDay) B ON A.NAME = B.CODE_NAME 
-            //                  LEFT JOIN (
-
-            //                  SELECT * FROM ( SELECT * FROM [HOAPHAT_TSC1_PRD].[dbo].[REP_EQP_MOV_LIFE_ACCOUNTS] WHERE LIFE_ACCOUNT_CODE = 1 ) F
-            //                  LEFT JOIN (SELECT MOVEMENT_SEQ AS M1, TOTAL_LIFE_FROM_NEW AS TOTAL_WEIGHT_NEW, TOTAL_LIFE_FROM_RENEW AS TOTAL_WEIGHT_RENEW FROM [HOAPHAT_TSC1_PRD].[dbo].[REP_EQP_MOV_LIFE_ACCOUNTS] WHERE LIFE_ACCOUNT_CODE = 5) G ON G.M1 = F.MOVEMENT_SEQ
-
-            //                  ) C ON C.MOVEMENT_SEQ = B.MOVEMENT_SEQ 
-            //                 )
-            //                 SELECT * FROM E_INFO ORDER BY MOVEMENT_DATE DESC
-            //                ";
-
             string query = @"
                             WITH 
 	                        E_TSC1 AS (

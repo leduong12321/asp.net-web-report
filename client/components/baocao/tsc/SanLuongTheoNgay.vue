@@ -46,15 +46,15 @@
         months: [],
         chartData: {
             datasets: [{
-                label: 'Sản lượng thép lỏng TSC1',
-                data: [4005595, 1948272, 3685970],
+                label: 'Sản lượng TSC1',
+                data: [],
                 yAxisID: 'y1',
                 stack: '1',
                 backgroundColor: '#4472c4',
                 order: 2,
             }, {
-                label: 'Sản lượng thép lỏng TSC2',
-                data: [2005595, 948272, 2685970],
+                label: 'Sản lượng TSC2',
+                data: [],
                 yAxisID: 'y1',
                 stack: '1',
                 backgroundColor: '#ed7d31',
