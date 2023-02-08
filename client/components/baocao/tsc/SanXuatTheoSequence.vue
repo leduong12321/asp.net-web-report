@@ -56,7 +56,7 @@ export default {
       chartData: {
         datasets: [
           {
-            label: "Sản lượng (Nghìn tấn)",
+            label: "Sản lượng",
             data: [],
             yAxisID: "y1",
             backgroundColor: "#ed7d31",

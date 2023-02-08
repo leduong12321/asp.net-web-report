@@ -171,6 +171,7 @@ export default {
   methods: {
     async getDataChart() {
       const { data } = await this.$axios.get("/api/Accumulated/get/");
+      console.log('data', data);
 
       this.changeDataChart(data);
     },
@@ -207,7 +208,7 @@ export default {
       this.chartData.labels = archivedDate;
 
       this.chartOptions.scales.yAxes[0].ticks.max = (crewA[crewA.length - 1] + crewB[crewB.length - 1] + crewC[crewC.length - 1])*1.5
-
+      console.log('data=========>', this.chartData);
       this.load = true;
     },
   }
